@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="access-level" content="public">
+    <meta name="auth-type" content="none">
+    <title>AWS Cloud Solutions & Accelerators | CloudNestle Consulting</title>
+    <meta name="description" content="Pre-built AWS cloud solutions and accelerators for rapid deployment. Industry-specific solutions for Education, Retail, and SMB with proven architectures and best practices.">
+    <meta name="keywords" content="AWS solutions, cloud accelerators, pre-built solutions, industry solutions, education cloud, retail cloud, SMB solutions">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/solutions.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="access-public">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="contact-info">
+                        <span><i class="fas fa-phone"></i> +91-XXXXXXXXXX</span>
+                        <span><i class="fas fa-envelope"></i> info@cloudnestle.com</span>
+                        <span><i class="fas fa-building"></i> CIN: U72900DL2024OPC428XXX</span>
+                    </div>
+                    <div class="header-actions">
+                        <div class="language-selector">
+                            <select id="language-select">
+                                <option value="global-en" selected>English (Global)</option>
+                                <option value="en-us">English (US)</option>
+                                <option value="en-in">English (India)</option>
+                            </select>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="logo">
+                        <a href="/index.html">
+                            <img src="/assets/images/logo/cloudnestle-logo.svg" alt="CloudNestle" class="logo-img">
+                            <span class="logo-text">CloudNestle</span>
+                        </a>
+                    </div>
+                    
+                    <div class="nav-menu" id="nav-menu">
+                        <ul class="nav-list">
+                            <li><a href="/index.html">Home</a></li>
+                            <li><a href="/services.html">Services</a></li>
+                            <li><a href="/solutions.html" class="active">Solutions</a></li>
+                            <li><a href="/industries.html">Industries</a></li>
+                            <li><a href="/about.html">About</a></li>
+                            <li><a href="/contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="nav-actions">
+                        <a href="/registration/reg-solution-finder.html" class="btn btn-primary">Find Solution</a>
+                        <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Pre-Built AWS Cloud Solutions</h1>
+                        <p class="hero-subtitle">Accelerate your cloud journey with proven, industry-specific solutions and deployment accelerators</p>
+                        <div class="hero-features">
+                            <div class="feature">
+                                <i class="fas fa-rocket"></i>
+                                <span>70% Faster Deployment</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Security Best Practices</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-dollar-sign"></i>
+                                <span>Cost Optimized</span>
+                            </div>
+                        </div>
+                        <div class="hero-actions">
+                            <a href="/registration/reg-solution-finder.html" class="btn btn-primary btn-lg">Find Your Solution</a>
+                            <a href="/demo.html" class="btn btn-outline btn-lg">View Demo</a>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <img src="/assets/images/solutions/solutions-hero.svg" alt="AWS Solutions" class="hero-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Categories -->
+        <section class="solution-categories">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Solution Categories</h2>
+                    <p>Choose from our comprehensive library of pre-built, tested, and optimized AWS solutions</p>
+                </div>
+                
+                <div class="category-tabs">
+                    <button class="tab-button active" data-category="all">All Solutions</button>
+                    <button class="tab-button" data-category="industry">Industry-Specific</button>
+                    <button class="tab-button" data-category="size">By Company Size</button>
+                    <button class="tab-button" data-category="use-case">By Use Case</button>
+                </div>
+                
+                <div class="solutions-grid" id="solutions-grid">
+                    <!-- Education Solutions -->
+                    <div class="solution-card" data-category="industry education">
+                        <div class="solution-header">
+                            <div class="solution-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="solution-meta">
+                                <span class="solution-category">Education</span>
+                                <span class="solution-complexity">Intermediate</span>
+                            </div>
+                        </div>
+                        <div class="solution-content">
+                            <h3>EdTech Learning Management Platform</h3>
+                            <p>Complete LMS solution with FERPA compliance, student analytics, and scalable architecture</p>
+                            <div class="solution-features">
+                                <span class="feature-tag">FERPA Compliant</span>
+                                <span class="feature-tag">Auto-scaling</span>
+                                <span class="feature-tag">Analytics</span>
+                            </div>
+                            <div class="solution-stats">
+                                <div class="stat">
+                                    <span class="stat-label">Deployment Time</span>
+                                    <span class="stat-value">2-3 weeks</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Cost Savings</span>
+                                    <span class="stat-value">40-60%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="solution-actions">
+                            <a href="/solutions/education/lms-platform.html" class="btn btn-primary">View Details</a>
+                            <a href="/registration/reg-solution-demo.html" class="btn btn-outline">Request Demo</a>
+                        </div>
+                    </div>
+
+                    <!-- Retail Solutions -->
+                    <div class="solution-card" data-category="industry retail">
+                        <div class="solution-header">
+                            <div class="solution-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <div class="solution-meta">
+                                <span class="solution-category">Retail</span>
+                                <span class="solution-complexity">Advanced</span>
+                            </div>
+                        </div>
+                        <div class="solution-content">
+                            <h3>Omnichannel E-commerce Platform</h3>
+                            <p>Unified commerce solution with inventory management, customer analytics, and personalization</p>
+                            <div class="solution-features">
+                                <span class="feature-tag">Omnichannel</span>
+                                <span class="feature-tag">Real-time Inventory</span>
+                                <span class="feature-tag">AI Recommendations</span>
+                            </div>
+                            <div class="solution-stats">
+                                <div class="stat">
+                                    <span class="stat-label">Deployment Time</span>
+                                    <span class="stat-value">4-6 weeks</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Revenue Increase</span>
+                                    <span class="stat-value">25-35%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="solution-actions">
+                            <a href="/solutions/retail/ecommerce-platform.html" class="btn btn-primary">View Details</a>
+                            <a href="/registration/reg-solution-demo.html" class="btn btn-outline">Request Demo</a>
+                        </div>
+                    </div>
+
+                    <!-- SMB Solutions -->
+                    <div class="solution-card" data-category="size smb">
+                        <div class="solution-header">
+                            <div class="solution-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="solution-meta">
+                                <span class="solution-category">SMB</span>
+                                <span class="solution-complexity">Beginner</span>
+                            </div>
+                        </div>
+                        <div class="solution-content">
+                            <h3>SMB Cloud Foundation</h3>
+                            <p>Essential cloud infrastructure for small businesses with security, backup, and monitoring</p>
+                            <div class="solution-features">
+                                <span class="feature-tag">Cost-Effective</span>
+                                <span class="feature-tag">Easy Setup</span>
+                                <span class="feature-tag">24/7 Monitoring</span>
+                            </div>
+                            <div class="solution-stats">
+                                <div class="stat">
+                                    <span class="stat-label">Deployment Time</span>
+                                    <span class="stat-value">1-2 weeks</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Cost Savings</span>
+                                    <span class="stat-value">50-70%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="solution-actions">
+                            <a href="/solutions/smb/cloud-foundation.html" class="btn btn-primary">View Details</a>
+                            <a href="/registration/reg-solution-demo.html" class="btn btn-outline">Request Demo</a>
+                        </div>
+                    </div>
+
+                    <!-- Startup Solutions -->
+                    <div class="solution-card" data-category="size startup">
+                        <div class="solution-header">
+                            <div class="solution-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="solution-meta">
+                                <span class="solution-category">Startup</span>
+                                <span class="solution-complexity">Beginner</span>
+                            </div>
+                        </div>
+                        <div class="solution-content">
+                            <h3>Startup MVP Platform</h3>
+                            <p>Rapid deployment platform for startups to launch MVPs with scalable architecture</p>
+                            <div class="solution-features">
+                                <span class="feature-tag">MVP Ready</span>
+                                <span class="feature-tag">Auto-scaling</span>
+                                <span class="feature-tag">Pay-as-Grow</span>
+                            </div>
+                            <div class="solution-stats">
+                                <div class="stat">
+                                    <span class="stat-label">Deployment Time</span>
+                                    <span class="stat-value">3-5 days</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Time to Market</span>
+                                    <span class="stat-value">60% Faster</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="solution-actions">
+                            <a href="/solutions/startup/mvp-platform.html" class="btn btn-primary">View Details</a>
+                            <a href="/registration/reg-solution-demo.html" class="btn btn-outline">Request Demo</a>
+                        </div>
+                    </div>
+
+                    <!-- Migration Solutions -->
+                    <div class="solution-card" data-category="use-case migration">
+                        <div class="solution-header">
+                            <div class="solution-icon">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+                            <div class="solution-meta">
+                                <span class="solution-category">Migration</span>
+                                <span class="solution-complexity">Intermediate</span>
+                            </div>
+                        </div>
+                        <div class="solution-content">
+                            <h3>Legacy System Migration</h3>
+                            <p>Comprehensive migration solution for legacy applications with minimal downtime</p>
+                            <div class="solution-features">
+                                <span class="feature-tag">Zero Downtime</span>
+                                <span class="feature-tag">Data Integrity</span>
+                                <span class="feature-tag">Rollback Ready</span>
+                            </div>
+                            <div class="solution-stats">
+                                <div class="stat">
+                                    <span class="stat-label">Success Rate</span>
+                                    <span class="stat-value">98%</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Downtime</span>
+                                    <span class="stat-value">&lt; 4 hours</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="solution-actions">
+                            <a href="/solutions/migration/legacy-migration.html" class="btn btn-primary">View Details</a>
+                            <a href="/registration/reg-migration-assessment.html" class="btn btn-outline">Get Assessment</a>
+                        </div>
+                    </div>
+
+                    <!-- Analytics Solutions -->
+                    <div class="solution-card" data-category="use-case analytics">
+                        <div class="solution-header">
+                            <div class="solution-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div class="solution-meta">
+                                <span class="solution-category">Analytics</span>
+                                <span class="solution-complexity">Advanced</span>
+                            </div>
+                        </div>
+                        <div class="solution-content">
+                            <h3>Real-time Analytics Platform</h3>
+                            <p>Complete analytics solution with data lakes, ML pipelines, and visualization dashboards</p>
+                            <div class="solution-features">
+                                <span class="feature-tag">Real-time</span>
+                                <span class="feature-tag">ML Ready</span>
+                                <span class="feature-tag">Scalable</span>
+                            </div>
+                            <div class="solution-stats">
+                                <div class="stat">
+                                    <span class="stat-label">Data Processing</span>
+                                    <span class="stat-value">TB/hour</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Query Speed</span>
+                                    <span class="stat-value">Sub-second</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="solution-actions">
+                            <a href="/solutions/analytics/realtime-platform.html" class="btn btn-primary">View Details</a>
+                            <a href="/registration/reg-solution-demo.html" class="btn btn-outline">Request Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Benefits -->
+        <section class="solution-benefits">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Choose Our Pre-Built Solutions?</h2>
+                    <p>Accelerate your cloud transformation with battle-tested, optimized solutions</p>
+                </div>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h3>Rapid Deployment</h3>
+                        <p>Deploy in days, not months. Our pre-built solutions reduce implementation time by 70%.</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Security by Design</h3>
+                        <p>Built-in security best practices and compliance frameworks from day one.</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Proven Architecture</h3>
+                        <p>Battle-tested architectures following AWS Well-Architected principles.</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3>Cost Optimized</h3>
+                        <p>Pre-optimized for cost efficiency with built-in monitoring and alerts.</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </div>
+                        <h3>Scalable Design</h3>
+                        <p>Auto-scaling capabilities to handle growth from startup to enterprise.</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-life-ring"></i>
+                        </div>
+                        <h3>Ongoing Support</h3>
+                        <p>Comprehensive support and maintenance included with every solution.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Process -->
+        <section class="solution-process">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Solution Deployment Process</h2>
+                    <p>Streamlined process for rapid solution deployment and optimization</p>
+                </div>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>Solution Discovery</h3>
+                            <p>Identify the perfect solution for your needs using our intelligent matching system</p>
+                            <div class="step-duration">Duration: 1-2 days</div>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>Customization</h3>
+                            <p>Tailor the solution to your specific requirements and business needs</p>
+                            <div class="step-duration">Duration: 2-5 days</div>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>Deployment</h3>
+                            <p>Automated deployment with monitoring and validation at every step</p>
+                            <div class="step-duration">Duration: 1-3 weeks</div>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>Optimization</h3>
+                            <p>Continuous monitoring and optimization for peak performance</p>
+                            <div class="step-duration">Duration: Ongoing</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Stories -->
+        <section class="success-stories">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Solution Success Stories</h2>
+                    <p>Real results from organizations that chose our pre-built solutions</p>
+                </div>
+                
+                <div class="stories-grid">
+                    <div class="story-card">
+                        <div class="story-header">
+                            <div class="company-logo">
+                                <img src="/assets/images/clients/education-client-1.png" alt="Education Client">
+                            </div>
+                            <div class="story-meta">
+                                <h4>Leading University</h4>
+                                <span class="industry">Education</span>
+                            </div>
+                        </div>
+                        <div class="story-content">
+                            <p>"CloudNestle's EdTech LMS solution helped us migrate 50,000 students to a modern learning platform in just 3 weeks with zero downtime."</p>
+                            <div class="story-results">
+                                <div class="result">
+                                    <span class="result-value">50K+</span>
+                                    <span class="result-label">Students Migrated</span>
+                                </div>
+                                <div class="result">
+                                    <span class="result-value">0</span>
+                                    <span class="result-label">Downtime</span>
+                                </div>
+                                <div class="result">
+                                    <span class="result-value">60%</span>
+                                    <span class="result-label">Cost Savings</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="story-card">
+                        <div class="story-header">
+                            <div class="company-logo">
+                                <img src="/assets/images/clients/retail-client-1.png" alt="Retail Client">
+                            </div>
+                            <div class="story-meta">
+                                <h4>Fashion Retailer</h4>
+                                <span class="industry">Retail</span>
+                            </div>
+                        </div>
+                        <div class="story-content">
+                            <p>"The omnichannel e-commerce platform transformed our business, increasing online sales by 40% and improving customer satisfaction."</p>
+                            <div class="story-results">
+                                <div class="result">
+                                    <span class="result-value">40%</span>
+                                    <span class="result-label">Sales Increase</span>
+                                </div>
+                                <div class="result">
+                                    <span class="result-value">95%</span>
+                                    <span class="result-label">Customer Satisfaction</span>
+                                </div>
+                                <div class="result">
+                                    <span class="result-value">30%</span>
+                                    <span class="result-label">Operational Efficiency</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="story-card">
+                        <div class="story-header">
+                            <div class="company-logo">
+                                <img src="/assets/images/clients/smb-client-1.png" alt="SMB Client">
+                            </div>
+                            <div class="story-meta">
+                                <h4>Manufacturing SMB</h4>
+                                <span class="industry">Manufacturing</span>
+                            </div>
+                        </div>
+                        <div class="story-content">
+                            <p>"The SMB Cloud Foundation solution modernized our entire IT infrastructure while reducing costs by 50% and improving reliability."</p>
+                            <div class="story-results">
+                                <div class="result">
+                                    <span class="result-value">50%</span>
+                                    <span class="result-label">Cost Reduction</span>
+                                </div>
+                                <div class="result">
+                                    <span class="result-value">99.9%</span>
+                                    <span class="result-label">Uptime</span>
+                                </div>
+                                <div class="result">
+                                    <span class="result-value">2 weeks</span>
+                                    <span class="result-label">Migration Time</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <div class="cta-text">
+                        <h2>Ready to Accelerate Your Cloud Journey?</h2>
+                        <p>Discover the perfect pre-built solution for your business and deploy in days, not months</p>
+                    </div>
+                    <div class="cta-actions">
+                        <a href="/registration/reg-solution-finder.html" class="btn btn-primary btn-lg">Find Your Solution</a>
+                        <a href="/contact.html" class="btn btn-outline btn-lg">Speak with Expert</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="/assets/images/logo/cloudnestle-logo-white.svg" alt="CloudNestle" class="footer-logo-img">
+                        <span class="footer-logo-text">CloudNestle</span>
+                    </div>
+                    <p class="footer-description">
+                        Professional AWS cloud consulting services specializing in framework-driven transformations for Education, Retail, and SMB sectors.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Solutions</h4>
+                    <ul class="footer-links">
+                        <li><a href="/solutions/education/">Education Solutions</a></li>
+                        <li><a href="/solutions/retail/">Retail Solutions</a></li>
+                        <li><a href="/solutions/smb/">SMB Solutions</a></li>
+                        <li><a href="/solutions/startup/">Startup Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Industries</h4>
+                    <ul class="footer-links">
+                        <li><a href="/industries/education/">Education</a></li>
+                        <li><a href="/industries/retail/">Retail</a></li>
+                        <li><a href="/industries/smb/">Small & Medium Business</a></li>
+                        <li><a href="/solutions-by-size/">Solutions by Size</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="/registration/reg-solution-finder.html">Solution Finder</a></li>
+                        <li><a href="/demo.html">Solution Demos</a></li>
+                        <li><a href="/case-studies.html">Case Studies</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +91-XXXXXXXXXX</p>
+                        <p><i class="fas fa-envelope"></i> info@cloudnestle.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 CloudNestle Consulting & Services (OPC) Pvt. Ltd. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="/privacy-policy.html">Privacy Policy</a>
+                        <a href="/terms-conditions.html">Terms & Conditions</a>
+                        <a href="/sitemap.html">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/solutions.js"></script>
+</body>
+</html>

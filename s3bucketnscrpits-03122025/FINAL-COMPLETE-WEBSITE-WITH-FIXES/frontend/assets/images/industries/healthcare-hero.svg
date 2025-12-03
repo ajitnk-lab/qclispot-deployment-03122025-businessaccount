@@ -1,0 +1,5 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+    <rect width="400" height="300" fill="#232F3E"/>
+    <text x="200" y="150" font-family="Arial" font-size="16" fill="#FF9900" text-anchor="middle">CloudNestle Image</text>
+    <text x="200" y="180" font-family="Arial" font-size="12" fill="#FFFFFF" text-anchor="middle">healthcare-hero.jpg</text>
+</svg>

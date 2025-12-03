@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="access-level" content="public">
+    <meta name="auth-type" content="none">
+    <title>AWS Framework Services | CAF, Well-Architected & Security Maturity | CloudNestle</title>
+    <meta name="description" content="Expert AWS framework services including Cloud Adoption Framework (CAF), Well-Architected Framework, and Security Maturity Model assessments and implementations.">
+    <meta name="keywords" content="AWS CAF, Well-Architected Framework, Security Maturity Model, framework assessment, cloud transformation">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/frameworks.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="access-public">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="contact-info">
+                        <span><i class="fas fa-phone"></i> +91-XXXXXXXXXX</span>
+                        <span><i class="fas fa-envelope"></i> info@cloudnestle.com</span>
+                        <span><i class="fas fa-building"></i> CIN: U72900DL2024OPC428XXX</span>
+                    </div>
+                    <div class="header-actions">
+                        <div class="language-selector">
+                            <select id="language-select">
+                                <option value="global-en" selected>English (Global)</option>
+                                <option value="en-us">English (US)</option>
+                                <option value="en-in">English (India)</option>
+                            </select>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="logo">
+                        <a href="/index.html">
+                            <img src="/assets/images/logo/cloudnestle-logo.svg" alt="CloudNestle" class="logo-img">
+                            <span class="logo-text">CloudNestle</span>
+                        </a>
+                    </div>
+                    
+                    <div class="nav-menu" id="nav-menu">
+                        <ul class="nav-list">
+                            <li><a href="/index.html">Home</a></li>
+                            <li><a href="/services.html">Services</a></li>
+                            <li><a href="/solutions.html">Solutions</a></li>
+                            <li><a href="/frameworks/" class="active">Frameworks</a></li>
+                            <li><a href="/industries.html">Industries</a></li>
+                            <li><a href="/about.html">About</a></li>
+                            <li><a href="/contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="nav-actions">
+                        <a href="/registration/reg-caf-readiness-assessment.html" class="btn btn-primary">Free Assessment</a>
+                        <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>AWS Framework-Driven Excellence</h1>
+                        <p class="hero-subtitle">Structured cloud transformation using proven AWS frameworks - CAF, Well-Architected, and Security Maturity Model</p>
+                        <div class="hero-frameworks">
+                            <div class="framework-badge">
+                                <i class="fas fa-chart-line"></i>
+                                <span>CAF</span>
+                            </div>
+                            <div class="framework-badge">
+                                <i class="fas fa-cogs"></i>
+                                <span>Well-Architected</span>
+                            </div>
+                            <div class="framework-badge">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Security Maturity</span>
+                            </div>
+                        </div>
+                        <div class="hero-actions">
+                            <a href="/registration/reg-caf-readiness-assessment.html" class="btn btn-primary btn-lg">Start CAF Assessment</a>
+                            <a href="/contact.html" class="btn btn-outline btn-lg">Speak with Expert</a>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <img src="/assets/images/frameworks/frameworks-hero.svg" alt="AWS Frameworks" class="hero-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Framework Overview -->
+        <section class="framework-overview">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Framework-Driven Transformation?</h2>
+                    <p>Structured, proven methodologies that reduce risk and accelerate success</p>
+                </div>
+                
+                <div class="overview-grid">
+                    <div class="overview-item">
+                        <div class="overview-icon">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <h3>Structured Approach</h3>
+                        <p>Follow proven methodologies developed by AWS and validated by thousands of successful transformations</p>
+                    </div>
+                    
+                    <div class="overview-item">
+                        <div class="overview-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Risk Mitigation</h3>
+                        <p>Identify and address potential issues before they become problems with comprehensive assessments</p>
+                    </div>
+                    
+                    <div class="overview-item">
+                        <div class="overview-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h3>Accelerated Results</h3>
+                        <p>Achieve faster time-to-value with pre-defined best practices and proven implementation patterns</p>
+                    </div>
+                    
+                    <div class="overview-item">
+                        <div class="overview-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Measurable Outcomes</h3>
+                        <p>Track progress with clear metrics and KPIs aligned to business objectives and technical excellence</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Framework Services -->
+        <section class="framework-services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Framework Services</h2>
+                    <p>Comprehensive services across all major AWS frameworks</p>
+                </div>
+                
+                <div class="frameworks-grid">
+                    <!-- CAF Framework -->
+                    <div class="framework-card caf">
+                        <div class="framework-header">
+                            <div class="framework-icon">
+                                <img src="/assets/images/frameworks/caf-icon.svg" alt="CAF" class="framework-logo">
+                            </div>
+                            <div class="framework-title">
+                                <h3>Cloud Adoption Framework (CAF)</h3>
+                                <p class="framework-subtitle">Holistic cloud transformation guidance</p>
+                            </div>
+                        </div>
+                        
+                        <div class="framework-content">
+                            <div class="framework-description">
+                                <p>Comprehensive assessment and roadmap development across all 6 perspectives of cloud adoption with stakeholder alignment and change management.</p>
+                            </div>
+                            
+                            <div class="framework-perspectives">
+                                <h4>6 Perspectives Coverage</h4>
+                                <div class="perspectives-grid">
+                                    <div class="perspective-item">
+                                        <i class="fas fa-briefcase"></i>
+                                        <span>Business</span>
+                                    </div>
+                                    <div class="perspective-item">
+                                        <i class="fas fa-users"></i>
+                                        <span>People</span>
+                                    </div>
+                                    <div class="perspective-item">
+                                        <i class="fas fa-cogs"></i>
+                                        <span>Governance</span>
+                                    </div>
+                                    <div class="perspective-item">
+                                        <i class="fas fa-server"></i>
+                                        <span>Platform</span>
+                                    </div>
+                                    <div class="perspective-item">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span>Security</span>
+                                    </div>
+                                    <div class="perspective-item">
+                                        <i class="fas fa-chart-bar"></i>
+                                        <span>Operations</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="framework-benefits">
+                                <h4>Key Benefits</h4>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> 54 capability assessment</li>
+                                    <li><i class="fas fa-check"></i> Stakeholder alignment</li>
+                                    <li><i class="fas fa-check"></i> Transformation roadmap</li>
+                                    <li><i class="fas fa-check"></i> Change management</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="framework-stats">
+                                <div class="stat">
+                                    <span class="stat-number">54</span>
+                                    <span class="stat-label">Capabilities</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">6</span>
+                                    <span class="stat-label">Perspectives</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">95%</span>
+                                    <span class="stat-label">Success Rate</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="framework-actions">
+                            <a href="/frameworks/caf-assessment.html" class="btn btn-primary">Learn More</a>
+                            <a href="/registration/reg-caf-readiness-assessment.html" class="btn btn-outline">Start Assessment</a>
+                        </div>
+                    </div>
+
+                    <!-- Well-Architected Framework -->
+                    <div class="framework-card well-architected">
+                        <div class="framework-header">
+                            <div class="framework-icon">
+                                <img src="/assets/images/frameworks/well-architected-icon.svg" alt="Well-Architected" class="framework-logo">
+                            </div>
+                            <div class="framework-title">
+                                <h3>Well-Architected Framework</h3>
+                                <p class="framework-subtitle">Architecture excellence and optimization</p>
+                            </div>
+                        </div>
+                        
+                        <div class="framework-content">
+                            <div class="framework-description">
+                                <p>Architecture optimization across all 6 pillars for operational excellence, security, reliability, performance efficiency, cost optimization, and sustainability.</p>
+                            </div>
+                            
+                            <div class="framework-pillars">
+                                <h4>6 Pillars Excellence</h4>
+                                <div class="pillars-grid">
+                                    <div class="pillar-item">
+                                        <i class="fas fa-cogs"></i>
+                                        <span>Operational Excellence</span>
+                                    </div>
+                                    <div class="pillar-item">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span>Security</span>
+                                    </div>
+                                    <div class="pillar-item">
+                                        <i class="fas fa-heartbeat"></i>
+                                        <span>Reliability</span>
+                                    </div>
+                                    <div class="pillar-item">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                        <span>Performance</span>
+                                    </div>
+                                    <div class="pillar-item">
+                                        <i class="fas fa-dollar-sign"></i>
+                                        <span>Cost Optimization</span>
+                                    </div>
+                                    <div class="pillar-item">
+                                        <i class="fas fa-leaf"></i>
+                                        <span>Sustainability</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="framework-benefits">
+                                <h4>Key Benefits</h4>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Architecture assessment</li>
+                                    <li><i class="fas fa-check"></i> Risk identification</li>
+                                    <li><i class="fas fa-check"></i> Best practice implementation</li>
+                                    <li><i class="fas fa-check"></i> Performance optimization</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="framework-stats">
+                                <div class="stat">
+                                    <span class="stat-number">6</span>
+                                    <span class="stat-label">Pillars</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">40%</span>
+                                    <span class="stat-label">Cost Savings</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">60%</span>
+                                    <span class="stat-label">Performance Gain</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="framework-actions">
+                            <a href="/frameworks/well-architected-review.html" class="btn btn-primary">Learn More</a>
+                            <a href="/registration/reg-well-architected-review.html" class="btn btn-outline">Start Review</a>
+                        </div>
+                    </div>
+
+                    <!-- Security Maturity Model -->
+                    <div class="framework-card security-maturity">
+                        <div class="framework-header">
+                            <div class="framework-icon">
+                                <img src="/assets/images/frameworks/security-maturity-icon.svg" alt="Security Maturity" class="framework-logo">
+                            </div>
+                            <div class="framework-title">
+                                <h3>Security Maturity Model</h3>
+                                <p class="framework-subtitle">Progressive security enhancement</p>
+                            </div>
+                        </div>
+                        
+                        <div class="framework-content">
+                            <div class="framework-description">
+                                <p>Progressive security enhancement through crawl-walk-run methodology with comprehensive security posture evaluation and maturity roadmap development.</p>
+                            </div>
+                            
+                            <div class="framework-phases">
+                                <h4>3-Phase Approach</h4>
+                                <div class="phases-grid">
+                                    <div class="phase-item crawl">
+                                        <i class="fas fa-baby"></i>
+                                        <div class="phase-content">
+                                            <h5>Crawl Phase</h5>
+                                            <p>Foundation & Basic Controls</p>
+                                        </div>
+                                    </div>
+                                    <div class="phase-item walk">
+                                        <i class="fas fa-walking"></i>
+                                        <div class="phase-content">
+                                            <h5>Walk Phase</h5>
+                                            <p>Operationalization & Process</p>
+                                        </div>
+                                    </div>
+                                    <div class="phase-item run">
+                                        <i class="fas fa-running"></i>
+                                        <div class="phase-content">
+                                            <h5>Run Phase</h5>
+                                            <p>Optimization & Advanced</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="framework-benefits">
+                                <h4>Key Benefits</h4>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Security posture evaluation</li>
+                                    <li><i class="fas fa-check"></i> Maturity roadmap</li>
+                                    <li><i class="fas fa-check"></i> Compliance framework</li>
+                                    <li><i class="fas fa-check"></i> Risk mitigation</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="framework-stats">
+                                <div class="stat">
+                                    <span class="stat-number">3</span>
+                                    <span class="stat-label">Phases</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">100%</span>
+                                    <span class="stat-label">Compliance</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">80%</span>
+                                    <span class="stat-label">Risk Reduction</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="framework-actions">
+                            <a href="/frameworks/security-maturity-assessment.html" class="btn btn-primary">Learn More</a>
+                            <a href="/registration/reg-security-maturity-assessment.html" class="btn btn-outline">Start Assessment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Framework Integration -->
+        <section class="framework-integration">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Integrated Framework Approach</h2>
+                    <p>Combining multiple frameworks for comprehensive transformation</p>
+                </div>
+                
+                <div class="integration-content">
+                    <div class="integration-visual">
+                        <img src="/assets/images/frameworks/framework-integration.svg" alt="Framework Integration" class="integration-image">
+                    </div>
+                    <div class="integration-text">
+                        <h3>Multi-Framework Excellence</h3>
+                        <p>Our unique approach combines CAF, Well-Architected, and Security Maturity frameworks for holistic transformation that addresses all aspects of cloud adoption.</p>
+                        
+                        <div class="integration-benefits">
+                            <div class="benefit-item">
+                                <i class="fas fa-sync-alt"></i>
+                                <div class="benefit-content">
+                                    <h4>Synchronized Assessment</h4>
+                                    <p>Coordinated evaluation across all frameworks to identify synergies and dependencies</p>
+                                </div>
+                            </div>
+                            
+                            <div class="benefit-item">
+                                <i class="fas fa-route"></i>
+                                <div class="benefit-content">
+                                    <h4>Unified Roadmap</h4>
+                                    <p>Single, integrated roadmap that addresses business, technical, and security requirements</p>
+                                </div>
+                            </div>
+                            
+                            <div class="benefit-item">
+                                <i class="fas fa-chart-line"></i>
+                                <div class="benefit-content">
+                                    <h4>Accelerated Results</h4>
+                                    <p>Faster implementation with reduced complexity and improved coordination</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="integration-actions">
+                            <a href="/frameworks/transformation-roadmap.html" class="btn btn-primary">View Integration Approach</a>
+                            <a href="/contact.html" class="btn btn-outline">Discuss Your Needs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Stories -->
+        <section class="success-stories">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Framework Success Stories</h2>
+                    <p>Real results from framework-driven transformations</p>
+                </div>
+                
+                <div class="stories-grid">
+                    <div class="story-card">
+                        <div class="story-header">
+                            <div class="story-framework">
+                                <span class="framework-tag caf">CAF</span>
+                                <span class="framework-tag well-architected">Well-Architected</span>
+                            </div>
+                            <div class="story-industry">Education</div>
+                        </div>
+                        <div class="story-content">
+                            <h3>Major University Transformation</h3>
+                            <p>"CloudNestle's framework-driven approach helped us transform our entire IT infrastructure while maintaining FERPA compliance and improving student experience."</p>
+                            <div class="story-results">
+                                <div class="result">
+                                    <span class="result-value">60%</span>
+                                    <span class="result-label">Cost Reduction</span>
+                                </div>
+                                <div class="result">
+                                    <span class="result-value">3x</span>
+                                    <span class="result-label">Performance</span>
+                                </div>
+                                <div class="result">
+                                    <span class="result-value">100%</span>
+                                    <span class="result-label">Compliance</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="story-card">
+                        <div class="story-header">
+                            <div class="story-framework">
+                                <span class="framework-tag well-architected">Well-Architected</span>
+                                <span class="framework-tag security-maturity">Security</span>
+                            </div>
+                            <div class="story-industry">Retail</div>
+                        </div>
+                        <div class="story-content">
+                            <h3>E-commerce Platform Optimization</h3>
+                            <p>"The Well-Architected review identified critical performance bottlenecks and security gaps. The improvements exceeded our expectations."</p>
+                            <div class="story-results">
+                                <div class="result">
+                                    <span class="result-value">40%</span>
+                                    <span class="result-label">Faster Response</span>
+                                </div>
+                                <div class="result">
+                                    <span class="result-value">99.9%</span>
+                                    <span class="result-label">Uptime</span>
+                                </div>
+                                <div class="result">
+                                    <span class="result-value">25%</span>
+                                    <span class="result-label">Cost Savings</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="story-card">
+                        <div class="story-header">
+                            <div class="story-framework">
+                                <span class="framework-tag caf">CAF</span>
+                                <span class="framework-tag security-maturity">Security</span>
+                            </div>
+                            <div class="story-industry">SMB</div>
+                        </div>
+                        <div class="story-content">
+                            <h3>SMB Digital Transformation</h3>
+                            <p>"CloudNestle's framework approach made cloud adoption simple and secure for our small business. The results speak for themselves."</p>
+                            <div class="story-results">
+                                <div class="result">
+                                    <span class="result-value">50%</span>
+                                    <span class="result-label">Cost Reduction</span>
+                                </div>
+                                <div class="result">
+                                    <span class="result-value">2 weeks</span>
+                                    <span class="result-label">Migration Time</span>
+                                </div>
+                                <div class="result">
+                                    <span class="result-value">Zero</span>
+                                    <span class="result-label">Downtime</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <div class="cta-text">
+                        <h2>Ready to Start Your Framework-Driven Transformation?</h2>
+                        <p>Begin with a comprehensive assessment to understand your current state and transformation opportunities</p>
+                    </div>
+                    <div class="cta-actions">
+                        <a href="/registration/reg-caf-readiness-assessment.html" class="btn btn-primary btn-lg">Start CAF Assessment</a>
+                        <a href="/contact.html" class="btn btn-outline btn-lg">Schedule Expert Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="/assets/images/logo/cloudnestle-logo-white.svg" alt="CloudNestle" class="footer-logo-img">
+                        <span class="footer-logo-text">CloudNestle</span>
+                    </div>
+                    <p class="footer-description">
+                        Professional AWS cloud consulting services specializing in framework-driven transformations for Education, Retail, and SMB sectors.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Framework Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="/frameworks/caf-assessment.html">CAF Assessment</a></li>
+                        <li><a href="/frameworks/well-architected-review.html">Well-Architected Review</a></li>
+                        <li><a href="/frameworks/security-maturity-assessment.html">Security Maturity</a></li>
+                        <li><a href="/frameworks/transformation-roadmap.html">Transformation Roadmap</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Assessments</h4>
+                    <ul class="footer-links">
+                        <li><a href="/registration/reg-caf-readiness-assessment.html">CAF Readiness</a></li>
+                        <li><a href="/registration/reg-well-architected-review.html">Well-Architected</a></li>
+                        <li><a href="/registration/reg-security-maturity-assessment.html">Security Maturity</a></li>
+                        <li><a href="/registration/reg-roi-calculator.html">ROI Calculator</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="/case-studies.html">Success Stories</a></li>
+                        <li><a href="/blog/">Framework Insights</a></li>
+                        <li><a href="/webinars.html">Framework Webinars</a></li>
+                        <li><a href="/whitepapers.html">Framework Guides</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +91-XXXXXXXXXX</p>
+                        <p><i class="fas fa-envelope"></i> info@cloudnestle.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 CloudNestle Consulting & Services (OPC) Pvt. Ltd. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="/privacy-policy.html">Privacy Policy</a>
+                        <a href="/terms-conditions.html">Terms & Conditions</a>
+                        <a href="/sitemap.html">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/frameworks.js"></script>
+</body>
+</html>

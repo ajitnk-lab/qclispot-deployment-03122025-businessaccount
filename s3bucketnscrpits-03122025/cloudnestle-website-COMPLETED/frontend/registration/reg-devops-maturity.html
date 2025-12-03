@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Maturity Assessment - CloudNestle</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/auth-manager.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><a href="../index.html">CloudNestle</a></div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="../solutions.html" class="nav-link">Solutions</a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="assessment-hero">
+        <div class="container">
+            <h1>DevOps Maturity Assessment</h1>
+            <p>Evaluate your organization's DevOps practices and identify areas for improvement.</p>
+        </div>
+    </section>
+
+    <section class="assessment-form-section">
+        <div class="container">
+            <form class="assessment-form" id="devopsMaturity">
+                <div class="form-section">
+                    <h3>Contact Information</h3>
+                    <div class="form-row">
+                        <input type="text" name="firstName" placeholder="First Name" required>
+                        <input type="text" name="lastName" placeholder="Last Name" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="email" name="email" placeholder="Business Email" required>
+                        <input type="text" name="company" placeholder="Company Name" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Current DevOps Practices</h3>
+                    <div class="question-group">
+                        <label>How would you describe your current CI/CD maturity?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="cicdMaturity" value="none"> No CI/CD processes</label>
+                            <label><input type="radio" name="cicdMaturity" value="basic"> Basic CI/CD pipelines</label>
+                            <label><input type="radio" name="cicdMaturity" value="intermediate"> Automated testing and deployment</label>
+                            <label><input type="radio" name="cicdMaturity" value="advanced"> Advanced with monitoring and rollback</label>
+                        </div>
+                    </div>
+                    
+                    <div class="question-group">
+                        <label>Which tools do you currently use? (Select all that apply)</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="tools" value="jenkins"> Jenkins</label>
+                            <label><input type="checkbox" name="tools" value="gitlab"> GitLab CI</label>
+                            <label><input type="checkbox" name="tools" value="github-actions"> GitHub Actions</label>
+                            <label><input type="checkbox" name="tools" value="aws-codepipeline"> AWS CodePipeline</label>
+                            <label><input type="checkbox" name="tools" value="docker"> Docker</label>
+                            <label><input type="checkbox" name="tools" value="kubernetes"> Kubernetes</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Infrastructure Management</h3>
+                    <div class="question-group">
+                        <label>How do you manage infrastructure?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="infrastructure" value="manual"> Manual configuration</label>
+                            <label><input type="radio" name="infrastructure" value="scripts"> Custom scripts</label>
+                            <label><input type="radio" name="infrastructure" value="iac-basic"> Basic Infrastructure as Code</label>
+                            <label><input type="radio" name="infrastructure" value="iac-advanced"> Advanced IaC with GitOps</label>
+                        </div>
+                    </div>
+                    
+                    <div class="question-group">
+                        <label>Which IaC tools do you use? (Select all that apply)</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="iacTools" value="terraform"> Terraform</label>
+                            <label><input type="checkbox" name="iacTools" value="cloudformation"> CloudFormation</label>
+                            <label><input type="checkbox" name="iacTools" value="cdk"> AWS CDK</label>
+                            <label><input type="checkbox" name="iacTools" value="ansible"> Ansible</label>
+                            <label><input type="checkbox" name="iacTools" value="pulumi"> Pulumi</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Monitoring & Observability</h3>
+                    <div class="question-group">
+                        <label>How comprehensive is your monitoring?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="monitoring" value="basic"> Basic uptime monitoring</label>
+                            <label><input type="radio" name="monitoring" value="metrics"> Application metrics</label>
+                            <label><input type="radio" name="monitoring" value="comprehensive"> Full observability stack</label>
+                            <label><input type="radio" name="monitoring" value="advanced"> AI-powered monitoring</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Get DevOps Assessment</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('devopsMaturity').addEventListener('submit', function(e) {
+            e.preventDefault();
+            authManager.requireRegistration('devops-maturity-assessment', 'Get your DevOps maturity report and improvement roadmap');
+        });
+    </script>
+</body>
+</html>

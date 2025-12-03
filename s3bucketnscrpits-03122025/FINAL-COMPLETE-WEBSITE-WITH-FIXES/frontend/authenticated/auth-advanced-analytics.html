@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Analytics Dashboard - CloudNestle</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/auth-manager.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><a href="/../index.html">CloudNestle</a></div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="/../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/../services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="/../solutions.html" class="nav-link">Solutions</a></li>
+                <li class="nav-item"><a href="/../contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="authManager.logout()">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard-hero">
+        <div class="container">
+            <h1>Advanced Analytics Dashboard</h1>
+            <p>Deep insights into your AWS environment performance, costs, and optimization opportunities.</p>
+        </div>
+    </section>
+
+    <section class="analytics-dashboard">
+        <div class="container">
+            <div class="dashboard-tabs">
+                <button class="tab-btn active" data-tab="overview">Overview</button>
+                <button class="tab-btn" data-tab="cost-analysis">Cost Analysis</button>
+                <button class="tab-btn" data-tab="performance">Performance</button>
+                <button class="tab-btn" data-tab="security">Security</button>
+                <button class="tab-btn" data-tab="compliance">Compliance</button>
+            </div>
+
+            <div class="tab-content active" id="overview">
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <h3>Total Monthly Spend</h3>
+                        <div class="metric-value">$45,230</div>
+                        <div class="metric-change positive">-12% vs last month</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Cost Per Service</h3>
+                        <div class="metric-breakdown">
+                            <div class="breakdown-item">
+                                <span>EC2</span>
+                                <span>$18,500 (41%)</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span>RDS</span>
+                                <span>$12,200 (27%)</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span>S3</span>
+                                <span>$8,100 (18%)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Optimization Score</h3>
+                        <div class="metric-value">78/100</div>
+                        <div class="metric-change neutral">+5 points this month</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Security Score</h3>
+                        <div class="metric-value">92/100</div>
+                        <div class="metric-change positive">Excellent</div>
+                    </div>
+                </div>
+
+                <div class="chart-section">
+                    <div class="chart-container">
+                        <h3>Cost Trend (Last 6 Months)</h3>
+                        <div class="chart-placeholder">
+                            [Interactive cost trend chart would be rendered here]
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Resource Utilization</h3>
+                        <div class="chart-placeholder">
+                            [Resource utilization chart would be rendered here]
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="cost-analysis">
+                <div class="cost-analysis-section">
+                    <h3>Cost Optimization Opportunities</h3>
+                    <div class="opportunities-list">
+                        <div class="opportunity-item">
+                            <div class="opportunity-header">
+                                <h4>Right-size EC2 Instances</h4>
+                                <span class="savings-potential">$8,400/month</span>
+                            </div>
+                            <p>15 instances are over-provisioned and can be downsized</p>
+                            <button class="btn btn-secondary">View Details</button>
+                        </div>
+                        <div class="opportunity-item">
+                            <div class="opportunity-header">
+                                <h4>Reserved Instance Optimization</h4>
+                                <span class="savings-potential">$5,200/month</span>
+                            </div>
+                            <p>Purchase RIs for consistent workloads</p>
+                            <button class="btn btn-secondary">View Recommendations</button>
+                        </div>
+                        <div class="opportunity-item">
+                            <div class="opportunity-header">
+                                <h4>S3 Storage Class Optimization</h4>
+                                <span class="savings-potential">$2,100/month</span>
+                            </div>
+                            <p>Move infrequently accessed data to cheaper storage classes</p>
+                            <button class="btn btn-secondary">Implement</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cost-forecasting">
+                    <h3>Cost Forecasting</h3>
+                    <div class="forecast-chart">
+                        [Cost forecasting chart would be rendered here]
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="performance">
+                <div class="performance-metrics">
+                    <h3>Performance Insights</h3>
+                    <div class="performance-grid">
+                        <div class="performance-card">
+                            <h4>Application Response Time</h4>
+                            <div class="performance-value">245ms</div>
+                            <div class="performance-trend">-15% improvement</div>
+                        </div>
+                        <div class="performance-card">
+                            <h4>Database Performance</h4>
+                            <div class="performance-value">98.5%</div>
+                            <div class="performance-trend">Query success rate</div>
+                        </div>
+                        <div class="performance-card">
+                            <h4>CDN Cache Hit Rate</h4>
+                            <div class="performance-value">94.2%</div>
+                            <div class="performance-trend">+2.1% this week</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="performance-recommendations">
+                    <h3>Performance Recommendations</h3>
+                    <div class="recommendations-list">
+                        <div class="recommendation-item">
+                            <div class="recommendation-priority high">High</div>
+                            <div class="recommendation-content">
+                                <h4>Optimize Database Queries</h4>
+                                <p>3 slow queries identified that could benefit from indexing</p>
+                            </div>
+                        </div>
+                        <div class="recommendation-item">
+                            <div class="recommendation-priority medium">Medium</div>
+                            <div class="recommendation-content">
+                                <h4>Enable Auto Scaling</h4>
+                                <p>Configure auto scaling for web tier to handle traffic spikes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="security">
+                <div class="security-overview">
+                    <h3>Security Posture</h3>
+                    <div class="security-metrics">
+                        <div class="security-metric">
+                            <h4>Critical Findings</h4>
+                            <div class="metric-value critical">2</div>
+                        </div>
+                        <div class="security-metric">
+                            <h4>High Priority</h4>
+                            <div class="metric-value high">5</div>
+                        </div>
+                        <div class="security-metric">
+                            <h4>Medium Priority</h4>
+                            <div class="metric-value medium">12</div>
+                        </div>
+                        <div class="security-metric">
+                            <h4>Compliance Score</h4>
+                            <div class="metric-value">89%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="security-findings">
+                    <h3>Security Findings</h3>
+                    <div class="findings-list">
+                        <div class="finding-item critical">
+                            <div class="finding-header">
+                                <h4>Unrestricted Security Group</h4>
+                                <span class="finding-severity">Critical</span>
+                            </div>
+                            <p>Security group allows inbound traffic from 0.0.0.0/0 on port 22</p>
+                            <button class="btn btn-primary">Remediate</button>
+                        </div>
+                        <div class="finding-item high">
+                            <div class="finding-header">
+                                <h4>Unencrypted EBS Volumes</h4>
+                                <span class="finding-severity">High</span>
+                            </div>
+                            <p>8 EBS volumes are not encrypted at rest</p>
+                            <button class="btn btn-primary">Fix Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="compliance">
+                <div class="compliance-overview">
+                    <h3>Compliance Status</h3>
+                    <div class="compliance-frameworks">
+                        <div class="framework-status">
+                            <h4>SOC 2</h4>
+                            <div class="compliance-score">94%</div>
+                            <div class="compliance-status compliant">Compliant</div>
+                        </div>
+                        <div class="framework-status">
+                            <h4>PCI DSS</h4>
+                            <div class="compliance-score">87%</div>
+                            <div class="compliance-status needs-attention">Needs Attention</div>
+                        </div>
+                        <div class="framework-status">
+                            <h4>HIPAA</h4>
+                            <div class="compliance-score">91%</div>
+                            <div class="compliance-status compliant">Compliant</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="compliance-actions">
+                    <h3>Required Actions</h3>
+                    <div class="actions-list">
+                        <div class="action-item">
+                            <div class="action-priority high">High</div>
+                            <div class="action-content">
+                                <h4>Enable CloudTrail Logging</h4>
+                                <p>Required for PCI DSS compliance</p>
+                                <div class="action-deadline">Due: 7 days</div>
+                            </div>
+                        </div>
+                        <div class="action-item">
+                            <div class="action-priority medium">Medium</div>
+                            <div class="action-content">
+                                <h4>Update Access Policies</h4>
+                                <p>Review and update IAM policies for least privilege</p>
+                                <div class="action-deadline">Due: 14 days</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Check authentication
+        if (!authManager.isAuthenticated()) {
+            window.location.href = '../index.html';
+        }
+
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const targetTab = this.getAttribute('data-tab');
+                    
+                    // Remove active class from all tabs and contents
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked tab and corresponding content
+                    this.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+
+            // Simulate real-time data updates
+            setInterval(updateMetrics, 30000); // Update every 30 seconds
+        });
+
+        function updateMetrics() {
+            // Simulate metric updates
+            console.log('Updating metrics...');
+        }
+    </script>
+</body>
+</html>

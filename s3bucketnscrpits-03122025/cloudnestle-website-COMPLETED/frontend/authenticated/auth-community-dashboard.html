@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Dashboard - CloudNestle</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/auth-manager.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><a href="../index.html">CloudNestle</a></div>
+            <ul class="nav-menu">
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="../solutions.html">Solutions</a></li>
+                <li><a href="../industries.html">Industries</a></li>
+                <li><a href="../community/index.html">Community</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="#" onclick="authManager.logout()" class="nav-cta">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Community Dashboard</h1>
+                <p class="hero-subtitle">Your personalized hub for community engagement, learning, and collaboration</p>
+                <div class="user-welcome">
+                    <p>Welcome back, <strong>Alex Chen</strong>! You have 3 new notifications and 2 pending invitations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="dashboard-grid">
+                <div class="dashboard-main">
+                    <div class="activity-feed">
+                        <div class="feed-header">
+                            <h2>Recent Activity</h2>
+                            <div class="feed-filters">
+                                <button class="filter-btn active">All</button>
+                                <button class="filter-btn">My Groups</button>
+                                <button class="filter-btn">Following</button>
+                                <button class="filter-btn">Mentions</button>
+                            </div>
+                        </div>
+                        <div class="feed-items">
+                            <div class="feed-item">
+                                <div class="item-avatar">
+                                    <img src="../assets/images/avatar-placeholder.png" alt="Sarah Kim" onerror="this.style.display='none'">
+                                    <div class="avatar-fallback">SK</div>
+                                </div>
+                                <div class="item-content">
+                                    <div class="item-header">
+                                        <span class="author">Sarah Kim</span>
+                                        <span class="group">in Solutions Architects</span>
+                                        <span class="timestamp">2 hours ago</span>
+                                    </div>
+                                    <div class="item-text">
+                                        <p>Just completed a multi-region disaster recovery setup using AWS Backup and Cross-Region Replication. Happy to share the architecture patterns and lessons learned!</p>
+                                    </div>
+                                    <div class="item-actions">
+                                        <button class="action-btn">👍 12</button>
+                                        <button class="action-btn">💬 5</button>
+                                        <button class="action-btn">🔄 Share</button>
+                                        <button class="action-btn">🔖 Save</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="feed-item">
+                                <div class="item-avatar">
+                                    <div class="avatar-fallback">MR</div>
+                                </div>
+                                <div class="item-content">
+                                    <div class="item-header">
+                                        <span class="author">Michael Rodriguez</span>
+                                        <span class="group">in DevOps Engineers</span>
+                                        <span class="timestamp">4 hours ago</span>
+                                    </div>
+                                    <div class="item-text">
+                                        <p>New workshop alert! 🚀 "Advanced EKS Security Patterns" - covering Pod Security Standards, Network Policies, and IRSA best practices. Registration opens tomorrow!</p>
+                                    </div>
+                                    <div class="item-actions">
+                                        <button class="action-btn">👍 28</button>
+                                        <button class="action-btn">💬 12</button>
+                                        <button class="action-btn">🔄 Share</button>
+                                        <button class="action-btn">📅 Remind Me</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="feed-item">
+                                <div class="item-avatar">
+                                    <div class="avatar-fallback">DK</div>
+                                </div>
+                                <div class="item-content">
+                                    <div class="item-header">
+                                        <span class="author">David Kim</span>
+                                        <span class="group">in Security Specialists</span>
+                                        <span class="timestamp">6 hours ago</span>
+                                    </div>
+                                    <div class="item-text">
+                                        <p>Question for the group: What's your preferred approach for implementing zero-trust networking in AWS? Looking at VPC Lattice vs traditional NACLs/Security Groups approach.</p>
+                                    </div>
+                                    <div class="item-actions">
+                                        <button class="action-btn">👍 8</button>
+                                        <button class="action-btn">💬 15</button>
+                                        <button class="action-btn">🔄 Share</button>
+                                        <button class="action-btn">💡 Answer</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="feed-item">
+                                <div class="item-avatar">
+                                    <div class="avatar-fallback">LJ</div>
+                                </div>
+                                <div class="item-content">
+                                    <div class="item-header">
+                                        <span class="author">Lisa Johnson</span>
+                                        <span class="group">in Startup Founders</span>
+                                        <span class="timestamp">8 hours ago</span>
+                                    </div>
+                                    <div class="item-text">
+                                        <p>Milestone achieved! 🎉 Our startup just passed the $1M ARR mark, and our AWS infrastructure scaled seamlessly. Special thanks to the community for all the architecture advice during our early days!</p>
+                                    </div>
+                                    <div class="item-actions">
+                                        <button class="action-btn">🎉 45</button>
+                                        <button class="action-btn">💬 23</button>
+                                        <button class="action-btn">🔄 Share</button>
+                                        <button class="action-btn">👏 Congratulate</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feed-load-more">
+                            <button class="btn-secondary">Load More Activity</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-sidebar">
+                    <div class="sidebar-section">
+                        <h3>Your Groups</h3>
+                        <div class="groups-list">
+                            <div class="group-item">
+                                <div class="group-info">
+                                    <span class="group-name">Solutions Architects</span>
+                                    <span class="group-members">1,247 members</span>
+                                </div>
+                                <div class="group-activity">
+                                    <span class="activity-indicator active">●</span>
+                                    <span class="new-posts">5 new</span>
+                                </div>
+                            </div>
+                            <div class="group-item">
+                                <div class="group-info">
+                                    <span class="group-name">Security Specialists</span>
+                                    <span class="group-members">823 members</span>
+                                </div>
+                                <div class="group-activity">
+                                    <span class="activity-indicator active">●</span>
+                                    <span class="new-posts">2 new</span>
+                                </div>
+                            </div>
+                            <div class="group-item">
+                                <div class="group-info">
+                                    <span class="group-name">Cost Optimization</span>
+                                    <span class="group-members">654 members</span>
+                                </div>
+                                <div class="group-activity">
+                                    <span class="activity-indicator">●</span>
+                                    <span class="new-posts">0 new</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-secondary btn-small">Browse All Groups</button>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3>Upcoming Events</h3>
+                        <div class="events-list">
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <span class="month">AUG</span>
+                                    <span class="day">15</span>
+                                </div>
+                                <div class="event-info">
+                                    <span class="event-name">AI Innovation Hackathon</span>
+                                    <span class="event-time">9:00 AM PST</span>
+                                </div>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <span class="month">AUG</span>
+                                    <span class="day">22</span>
+                                </div>
+                                <div class="event-info">
+                                    <span class="event-name">Security Workshop</span>
+                                    <span class="event-time">2:00 PM EST</span>
+                                </div>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <span class="month">SEP</span>
+                                    <span class="day">05</span>
+                                </div>
+                                <div class="event-info">
+                                    <span class="event-name">Monthly Architecture Review</span>
+                                    <span class="event-time">11:00 AM PST</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-secondary btn-small">View All Events</button>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3>Learning Progress</h3>
+                        <div class="learning-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Current Streak</span>
+                                <span class="stat-value">12 days</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Points This Month</span>
+                                <span class="stat-value">2,450</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Rank</span>
+                                <span class="stat-value">#23</span>
+                            </div>
+                        </div>
+                        <div class="current-course">
+                            <h4>Current Course</h4>
+                            <div class="course-info">
+                                <span class="course-name">AWS Security Specialty</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 68%"></div>
+                                </div>
+                                <span class="progress-text">68% complete</span>
+                            </div>
+                        </div>
+                        <button class="btn-secondary btn-small">Continue Learning</button>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3>Trending Topics</h3>
+                        <div class="trending-topics">
+                            <div class="topic-item">
+                                <span class="topic-name">#EKSSecurity</span>
+                                <span class="topic-count">45 posts</span>
+                            </div>
+                            <div class="topic-item">
+                                <span class="topic-name">#CostOptimization</span>
+                                <span class="topic-count">32 posts</span>
+                            </div>
+                            <div class="topic-item">
+                                <span class="topic-name">#ServerlessPatterns</span>
+                                <span class="topic-count">28 posts</span>
+                            </div>
+                            <div class="topic-item">
+                                <span class="topic-name">#MultiAccount</span>
+                                <span class="topic-count">21 posts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-light">
+        <div class="container">
+            <div class="quick-actions">
+                <h2>Quick Actions</h2>
+                <div class="actions-grid">
+                    <div class="action-card">
+                        <div class="action-icon">💬</div>
+                        <h3>Start Discussion</h3>
+                        <p>Ask a question or share knowledge with the community</p>
+                        <button class="btn-primary">New Post</button>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon">👥</div>
+                        <h3>Find Experts</h3>
+                        <p>Connect with AWS experts in your area of interest</p>
+                        <button class="btn-primary">Browse Experts</button>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon">📚</div>
+                        <h3>Join Study Group</h3>
+                        <p>Collaborate with peers preparing for AWS certifications</p>
+                        <button class="btn-primary">Find Groups</button>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon">🎯</div>
+                        <h3>Mentorship Program</h3>
+                        <p>Get guidance from senior AWS professionals</p>
+                        <button class="btn-primary">Apply Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CloudNestle</h3>
+                    <p>Expert AWS consulting and implementation services for businesses of all sizes.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services.html">AWS Consulting</a></li>
+                        <li><a href="../solutions.html">Cloud Solutions</a></li>
+                        <li><a href="../frameworks/index.html">Framework Assessment</a></li>
+                        <li><a href="../training.html">Training Programs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="../knowledge-center/index.html">Knowledge Center</a></li>
+                        <li><a href="../workshops/index.html">Workshops</a></li>
+                        <li><a href="../community/index.html">Community</a></li>
+                        <li><a href="../guarantees/index.html">Service Guarantees</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../company.html">Leadership</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="../careers.html">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CloudNestle. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            authManager.init();
+            authManager.requireAuth();
+            
+            // Feed filter functionality
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Action button interactions
+            const actionBtns = document.querySelectorAll('.action-btn');
+            actionBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Handle action button clicks
+                    console.log('Action clicked:', this.textContent);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

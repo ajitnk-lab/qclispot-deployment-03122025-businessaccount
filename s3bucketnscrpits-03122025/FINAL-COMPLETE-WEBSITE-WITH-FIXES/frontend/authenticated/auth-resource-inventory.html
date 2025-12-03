@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="access-level" content="authenticated">
+    <meta name="auth-type" content="full-profile">
+    <title>Resource Inventory - CloudNestle Academy</title>
+    <meta name="description" content="Comprehensive AWS resource inventory management with real-time tracking, cost allocation, and optimization recommendations.">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/authenticated.css">
+</head>
+<body class="access-authenticated">
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <a href="/../index.html">CloudNestle</a>
+            </div>
+            <div class="nav-menu">
+                <a href="/auth-academy-dashboard.html">Dashboard</a>
+                <a href="/auth-resource-inventory.html" class="active">Resources</a>
+                <a href="/auth-cost-optimizer.html">Cost Optimizer</a>
+                <a href="/auth-expert-consultation.html">Experts</a>
+                <div class="user-menu">
+                    <span class="user-name">Welcome, User</span>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="content-auth-required gated">
+            <div class="dashboard-container">
+                <div class="dashboard-header">
+                    <h1>AWS Resource Inventory</h1>
+                    <p>Comprehensive view of your AWS resources with cost tracking and optimization insights</p>
+                    <div class="header-actions">
+                        <button class="btn-primary" id="refresh-inventory-btn">Refresh Inventory</button>
+                        <button class="btn-secondary" id="export-inventory-btn">Export Report</button>
+                    </div>
+                </div>
+
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">📦</div>
+                        <div class="stat-content">
+                            <div class="stat-value">1,247</div>
+                            <div class="stat-label">Total Resources</div>
+                            <div class="stat-change positive">+23 this week</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🌍</div>
+                        <div class="stat-content">
+                            <div class="stat-value">8</div>
+                            <div class="stat-label">Active Regions</div>
+                            <div class="stat-change neutral">No change</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-content">
+                            <div class="stat-value">$12,450</div>
+                            <div class="stat-label">Monthly Cost</div>
+                            <div class="stat-change positive">-8% vs last month</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⚠️</div>
+                        <div class="stat-content">
+                            <div class="stat-value">34</div>
+                            <div class="stat-label">Optimization Opportunities</div>
+                            <div class="stat-change negative">+5 new findings</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-content">
+                    <div class="main-content">
+                        <div class="inventory-filters">
+                            <div class="filter-group">
+                                <label>Service</label>
+                                <select id="service-filter">
+                                    <option value="all">All Services</option>
+                                    <option value="ec2">Amazon EC2</option>
+                                    <option value="s3">Amazon S3</option>
+                                    <option value="rds">Amazon RDS</option>
+                                    <option value="lambda">AWS Lambda</option>
+                                    <option value="iam">AWS IAM</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label>Region</label>
+                                <select id="region-filter">
+                                    <option value="all">All Regions</option>
+                                    <option value="us-east-1">US East (N. Virginia)</option>
+                                    <option value="us-west-2">US West (Oregon)</option>
+                                    <option value="eu-west-1">Europe (Ireland)</option>
+                                    <option value="ap-southeast-1">Asia Pacific (Singapore)</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label>Status</label>
+                                <select id="status-filter">
+                                    <option value="all">All Status</option>
+                                    <option value="running">Running</option>
+                                    <option value="stopped">Stopped</option>
+                                    <option value="terminated">Terminated</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label>Cost Range</label>
+                                <select id="cost-filter">
+                                    <option value="all">All Costs</option>
+                                    <option value="high">High (>$500/month)</option>
+                                    <option value="medium">Medium ($100-$500/month)</option>
+                                    <option value="low">Low (<$100/month)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="resource-summary">
+                            <h2>Resource Summary by Service</h2>
+                            <div class="service-summary-grid">
+                                <div class="service-summary-card">
+                                    <div class="service-header">
+                                        <div class="service-info">
+                                            <span class="service-name">Amazon EC2</span>
+                                            <span class="service-count">156 instances</span>
+                                        </div>
+                                        <div class="service-cost">$6,200/month</div>
+                                    </div>
+                                    <div class="service-breakdown">
+                                        <div class="breakdown-item">
+                                            <span class="breakdown-label">Running:</span>
+                                            <span class="breakdown-value">142</span>
+                                        </div>
+                                        <div class="breakdown-item">
+                                            <span class="breakdown-label">Stopped:</span>
+                                            <span class="breakdown-value">14</span>
+                                        </div>
+                                        <div class="breakdown-item">
+                                            <span class="breakdown-label">Optimization:</span>
+                                            <span class="breakdown-value">12 opportunities</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="service-summary-card">
+                                    <div class="service-header">
+                                        <div class="service-info">
+                                            <span class="service-name">Amazon S3</span>
+                                            <span class="service-count">89 buckets</span>
+                                        </div>
+                                        <div class="service-cost">$2,100/month</div>
+                                    </div>
+                                    <div class="service-breakdown">
+                                        <div class="breakdown-item">
+                                            <span class="breakdown-label">Storage:</span>
+                                            <span class="breakdown-value">2.5 TB</span>
+                                        </div>
+                                        <div class="breakdown-item">
+                                            <span class="breakdown-label">Requests:</span>
+                                            <span class="breakdown-value">1.2M/month</span>
+                                        </div>
+                                        <div class="breakdown-item">
+                                            <span class="breakdown-label">Optimization:</span>
+                                            <span class="breakdown-value">8 opportunities</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="service-summary-card">
+                                    <div class="service-header">
+                                        <div class="service-info">
+                                            <span class="service-name">Amazon RDS</span>
+                                            <span class="service-count">24 databases</span>
+                                        </div>
+                                        <div class="service-cost">$1,800/month</div>
+                                    </div>
+                                    <div class="service-breakdown">
+                                        <div class="breakdown-item">
+                                            <span class="breakdown-label">Running:</span>
+                                            <span class="breakdown-value">22</span>
+                                        </div>
+                                        <div class="breakdown-item">
+                                            <span class="breakdown-label">Stopped:</span>
+                                            <span class="breakdown-value">2</span>
+                                        </div>
+                                        <div class="breakdown-item">
+                                            <span class="breakdown-label">Optimization:</span>
+                                            <span class="breakdown-value">5 opportunities</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="service-summary-card">
+                                    <div class="service-header">
+                                        <div class="service-info">
+                                            <span class="service-name">AWS Lambda</span>
+                                            <span class="service-count">342 functions</span>
+                                        </div>
+                                        <div class="service-cost">$450/month</div>
+                                    </div>
+                                    <div class="service-breakdown">
+                                        <div class="breakdown-item">
+                                            <span class="breakdown-label">Invocations:</span>
+                                            <span class="breakdown-value">2.8M/month</span>
+                                        </div>
+                                        <div class="breakdown-item">
+                                            <span class="breakdown-label">Duration:</span>
+                                            <span class="breakdown-value">145ms avg</span>
+                                        </div>
+                                        <div class="breakdown-item">
+                                            <span class="breakdown-label">Optimization:</span>
+                                            <span class="breakdown-value">6 opportunities</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="resource-table-section">
+                            <div class="section-header">
+                                <h2>Resource Details</h2>
+                                <div class="table-controls">
+                                    <input type="text" id="search-resources" placeholder="Search resources...">
+                                    <button class="btn-small btn-secondary" id="bulk-actions-btn">Bulk Actions</button>
+                                </div>
+                            </div>
+
+                            <div class="resource-table-container">
+                                <table class="resource-table">
+                                    <thead>
+                                        <tr>
+                                            <th><input type="checkbox" id="select-all"></th>
+                                            <th>Resource ID</th>
+                                            <th>Service</th>
+                                            <th>Type</th>
+                                            <th>Region</th>
+                                            <th>Status</th>
+                                            <th>Monthly Cost</th>
+                                            <th>Tags</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>i-0123456789abcdef0</td>
+                                            <td>EC2</td>
+                                            <td>m5.large</td>
+                                            <td>us-east-1</td>
+                                            <td><span class="status-badge running">Running</span></td>
+                                            <td>$89.50</td>
+                                            <td>
+                                                <span class="tag">Environment: Production</span>
+                                                <span class="tag">Team: Backend</span>
+                                            </td>
+                                            <td>
+                                                <button class="btn-small btn-primary">Optimize</button>
+                                                <button class="btn-small btn-secondary">Details</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>company-data-backup</td>
+                                            <td>S3</td>
+                                            <td>Bucket</td>
+                                            <td>us-west-2</td>
+                                            <td><span class="status-badge active">Active</span></td>
+                                            <td>$245.30</td>
+                                            <td>
+                                                <span class="tag">Purpose: Backup</span>
+                                                <span class="tag">Retention: 7years</span>
+                                            </td>
+                                            <td>
+                                                <button class="btn-small btn-primary">Optimize</button>
+                                                <button class="btn-small btn-secondary">Details</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>prod-database-cluster</td>
+                                            <td>RDS</td>
+                                            <td>Aurora MySQL</td>
+                                            <td>us-east-1</td>
+                                            <td><span class="status-badge running">Running</span></td>
+                                            <td>$456.80</td>
+                                            <td>
+                                                <span class="tag">Environment: Production</span>
+                                                <span class="tag">Backup: Enabled</span>
+                                            </td>
+                                            <td>
+                                                <button class="btn-small btn-primary">Optimize</button>
+                                                <button class="btn-small btn-secondary">Details</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>user-auth-function</td>
+                                            <td>Lambda</td>
+                                            <td>Function</td>
+                                            <td>us-east-1</td>
+                                            <td><span class="status-badge active">Active</span></td>
+                                            <td>$12.45</td>
+                                            <td>
+                                                <span class="tag">Runtime: Node.js</span>
+                                                <span class="tag">Memory: 256MB</span>
+                                            </td>
+                                            <td>
+                                                <button class="btn-small btn-primary">Optimize</button>
+                                                <button class="btn-small btn-secondary">Details</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-pagination">
+                                <div class="pagination-info">
+                                    Showing 1-10 of 1,247 resources
+                                </div>
+                                <div class="pagination-controls">
+                                    <button class="btn-small btn-secondary" disabled>Previous</button>
+                                    <span class="page-numbers">
+                                        <button class="page-btn active">1</button>
+                                        <button class="page-btn">2</button>
+                                        <button class="page-btn">3</button>
+                                        <span>...</span>
+                                        <button class="page-btn">125</button>
+                                    </span>
+                                    <button class="btn-small btn-secondary">Next</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="sidebar-section">
+                            <h3>Quick Actions</h3>
+                            <div class="quick-actions">
+                                <button class="action-btn">
+                                    <span class="action-icon">🔍</span>
+                                    <span class="action-text">Resource Discovery</span>
+                                </button>
+                                <button class="action-btn">
+                                    <span class="action-icon">📊</span>
+                                    <span class="action-text">Cost Analysis</span>
+                                </button>
+                                <button class="action-btn">
+                                    <span class="action-icon">🏷️</span>
+                                    <span class="action-text">Bulk Tagging</span>
+                                </button>
+                                <button class="action-btn">
+                                    <span class="action-icon">⚡</span>
+                                    <span class="action-text">Optimization Scan</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <h3>Cost Distribution</h3>
+                            <div class="cost-distribution">
+                                <div class="cost-item">
+                                    <span class="cost-service">EC2</span>
+                                    <span class="cost-amount">$6,200</span>
+                                    <div class="cost-bar">
+                                        <div class="cost-fill" style="width: 50%"></div>
+                                    </div>
+                                </div>
+                                <div class="cost-item">
+                                    <span class="cost-service">S3</span>
+                                    <span class="cost-amount">$2,100</span>
+                                    <div class="cost-bar">
+                                        <div class="cost-fill" style="width: 17%"></div>
+                                    </div>
+                                </div>
+                                <div class="cost-item">
+                                    <span class="cost-service">RDS</span>
+                                    <span class="cost-amount">$1,800</span>
+                                    <div class="cost-bar">
+                                        <div class="cost-fill" style="width: 14%"></div>
+                                    </div>
+                                </div>
+                                <div class="cost-item">
+                                    <span class="cost-service">Other</span>
+                                    <span class="cost-amount">$2,350</span>
+                                    <div class="cost-bar">
+                                        <div class="cost-fill" style="width: 19%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <h3>Top Optimization Opportunities</h3>
+                            <div class="optimization-list">
+                                <div class="optimization-item">
+                                    <div class="optimization-title">Right-size EC2 Instances</div>
+                                    <div class="optimization-savings">$1,200/month</div>
+                                    <div class="optimization-count">12 instances</div>
+                                </div>
+                                <div class="optimization-item">
+                                    <div class="optimization-title">S3 Storage Class Optimization</div>
+                                    <div class="optimization-savings">$850/month</div>
+                                    <div class="optimization-count">5 buckets</div>
+                                </div>
+                                <div class="optimization-item">
+                                    <div class="optimization-title">Reserved Instance Purchase</div>
+                                    <div class="optimization-savings">$650/month</div>
+                                    <div class="optimization-count">8 instances</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <h3>Resource Health</h3>
+                            <div class="health-indicators">
+                                <div class="health-item">
+                                    <span class="health-label">Healthy</span>
+                                    <span class="health-count">1,156</span>
+                                    <div class="health-status success"></div>
+                                </div>
+                                <div class="health-item">
+                                    <span class="health-label">Warning</span>
+                                    <span class="health-count">67</span>
+                                    <div class="health-status warning"></div>
+                                </div>
+                                <div class="health-item">
+                                    <span class="health-label">Critical</span>
+                                    <span class="health-count">24</span>
+                                    <div class="health-status critical"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>CloudNestle Academy</h4>
+                    <p>Comprehensive AWS resource management</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="/../support.html">Help Center</a></li>
+                        <li><a href="/../contact.html">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CloudNestle Consulting & Services (OPC) Pvt. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/authentication-manager.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+    <script src="../assets/js/resource-inventory.js"></script>
+</body>
+</html>

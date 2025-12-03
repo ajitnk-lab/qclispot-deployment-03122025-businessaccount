@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="access-level" content="authenticated">
+    <meta name="auth-type" content="full-profile">
+    <title>Implementation Tracker - CloudNestle Academy</title>
+    <meta name="description" content="Track your AWS implementation progress, milestones, and project outcomes with real-time monitoring and expert guidance.">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/authenticated.css">
+</head>
+<body class="access-authenticated">
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <a href="/../index.html">CloudNestle</a>
+            </div>
+            <div class="nav-menu">
+                <a href="/auth-academy-dashboard.html">Dashboard</a>
+                <a href="/auth-learning-progress.html">Learning</a>
+                <a href="/auth-implementation-tracker.html" class="active">Projects</a>
+                <a href="/auth-expert-consultation.html">Experts</a>
+                <div class="user-menu">
+                    <span class="user-name">Welcome, User</span>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="content-auth-required gated">
+            <div class="dashboard-container">
+                <div class="dashboard-header">
+                    <h1>Implementation Tracker</h1>
+                    <p>Monitor your AWS implementation projects and track progress toward success</p>
+                    <div class="header-actions">
+                        <button class="btn-primary" id="new-project-btn">New Project</button>
+                        <button class="btn-secondary" id="export-report-btn">Export Report</button>
+                    </div>
+                </div>
+
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">🚀</div>
+                        <div class="stat-content">
+                            <div class="stat-value">8</div>
+                            <div class="stat-label">Active Projects</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-content">
+                            <div class="stat-value">24</div>
+                            <div class="stat-label">Completed Tasks</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-content">
+                            <div class="stat-value">85%</div>
+                            <div class="stat-label">On-Time Delivery</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-content">
+                            <div class="stat-value">$45K</div>
+                            <div class="stat-label">Cost Savings</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-content">
+                    <div class="main-content">
+                        <div class="projects-section">
+                            <div class="section-header">
+                                <h2>Current Projects</h2>
+                                <div class="filter-controls">
+                                    <select id="status-filter">
+                                        <option value="all">All Status</option>
+                                        <option value="planning">Planning</option>
+                                        <option value="in-progress">In Progress</option>
+                                        <option value="testing">Testing</option>
+                                        <option value="completed">Completed</option>
+                                    </select>
+                                    <select id="priority-filter">
+                                        <option value="all">All Priorities</option>
+                                        <option value="high">High</option>
+                                        <option value="medium">Medium</option>
+                                        <option value="low">Low</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="projects-grid">
+                                <div class="project-card" data-status="in-progress" data-priority="high">
+                                    <div class="project-header">
+                                        <h3>E-commerce Platform Migration</h3>
+                                        <span class="priority-badge high">High Priority</span>
+                                    </div>
+                                    <div class="project-meta">
+                                        <span class="project-type">Migration</span>
+                                        <span class="project-timeline">Due: Aug 15, 2025</span>
+                                    </div>
+                                    <div class="progress-section">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 65%"></div>
+                                        </div>
+                                        <span class="progress-text">65% Complete</span>
+                                    </div>
+                                    <div class="project-details">
+                                        <div class="detail-item">
+                                            <span class="detail-label">Framework:</span>
+                                            <span class="detail-value">Well-Architected</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">Budget:</span>
+                                            <span class="detail-value">$25,000</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">Team:</span>
+                                            <span class="detail-value">5 members</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-actions">
+                                        <button class="btn-small btn-primary">View Details</button>
+                                        <button class="btn-small btn-secondary">Update Status</button>
+                                    </div>
+                                </div>
+
+                                <div class="project-card" data-status="planning" data-priority="medium">
+                                    <div class="project-header">
+                                        <h3>Security Maturity Assessment</h3>
+                                        <span class="priority-badge medium">Medium Priority</span>
+                                    </div>
+                                    <div class="project-meta">
+                                        <span class="project-type">Assessment</span>
+                                        <span class="project-timeline">Due: Sep 1, 2025</span>
+                                    </div>
+                                    <div class="progress-section">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 25%"></div>
+                                        </div>
+                                        <span class="progress-text">25% Complete</span>
+                                    </div>
+                                    <div class="project-details">
+                                        <div class="detail-item">
+                                            <span class="detail-label">Framework:</span>
+                                            <span class="detail-value">Security Maturity</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">Budget:</span>
+                                            <span class="detail-value">$15,000</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">Team:</span>
+                                            <span class="detail-value">3 members</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-actions">
+                                        <button class="btn-small btn-primary">View Details</button>
+                                        <button class="btn-small btn-secondary">Update Status</button>
+                                    </div>
+                                </div>
+
+                                <div class="project-card" data-status="testing" data-priority="high">
+                                    <div class="project-header">
+                                        <h3>Data Analytics Pipeline</h3>
+                                        <span class="priority-badge high">High Priority</span>
+                                    </div>
+                                    <div class="project-meta">
+                                        <span class="project-type">Development</span>
+                                        <span class="project-timeline">Due: Jul 30, 2025</span>
+                                    </div>
+                                    <div class="progress-section">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 90%"></div>
+                                        </div>
+                                        <span class="progress-text">90% Complete</span>
+                                    </div>
+                                    <div class="project-details">
+                                        <div class="detail-item">
+                                            <span class="detail-label">Framework:</span>
+                                            <span class="detail-value">CAF</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">Budget:</span>
+                                            <span class="detail-value">$35,000</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">Team:</span>
+                                            <span class="detail-value">7 members</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-actions">
+                                        <button class="btn-small btn-primary">View Details</button>
+                                        <button class="btn-small btn-secondary">Update Status</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="milestones-section">
+                            <h2>Upcoming Milestones</h2>
+                            <div class="milestones-timeline">
+                                <div class="milestone-item">
+                                    <div class="milestone-date">Jul 28</div>
+                                    <div class="milestone-content">
+                                        <h4>Data Pipeline Testing Complete</h4>
+                                        <p>Complete UAT for analytics pipeline</p>
+                                        <span class="milestone-project">Data Analytics Pipeline</span>
+                                    </div>
+                                </div>
+                                <div class="milestone-item">
+                                    <div class="milestone-date">Aug 5</div>
+                                    <div class="milestone-content">
+                                        <h4>Security Assessment Phase 1</h4>
+                                        <p>Complete initial security evaluation</p>
+                                        <span class="milestone-project">Security Maturity Assessment</span>
+                                    </div>
+                                </div>
+                                <div class="milestone-item">
+                                    <div class="milestone-date">Aug 12</div>
+                                    <div class="milestone-content">
+                                        <h4>Migration Go-Live</h4>
+                                        <p>Production deployment of e-commerce platform</p>
+                                        <span class="milestone-project">E-commerce Platform Migration</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="sidebar-section">
+                            <h3>Quick Actions</h3>
+                            <div class="quick-actions">
+                                <button class="action-btn">
+                                    <span class="action-icon">📊</span>
+                                    <span class="action-text">Generate Report</span>
+                                </button>
+                                <button class="action-btn">
+                                    <span class="action-icon">📅</span>
+                                    <span class="action-text">Schedule Review</span>
+                                </button>
+                                <button class="action-btn">
+                                    <span class="action-icon">💬</span>
+                                    <span class="action-text">Expert Consultation</span>
+                                </button>
+                                <button class="action-btn">
+                                    <span class="action-icon">🔔</span>
+                                    <span class="action-text">Set Alerts</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <h3>Project Health</h3>
+                            <div class="health-metrics">
+                                <div class="health-item">
+                                    <span class="health-label">On Track</span>
+                                    <span class="health-value">6 projects</span>
+                                    <div class="health-bar">
+                                        <div class="health-fill success" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                                <div class="health-item">
+                                    <span class="health-label">At Risk</span>
+                                    <span class="health-value">2 projects</span>
+                                    <div class="health-bar">
+                                        <div class="health-fill warning" style="width: 25%"></div>
+                                    </div>
+                                </div>
+                                <div class="health-item">
+                                    <span class="health-label">Delayed</span>
+                                    <span class="health-value">0 projects</span>
+                                    <div class="health-bar">
+                                        <div class="health-fill danger" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <h3>Recent Activity</h3>
+                            <div class="activity-feed">
+                                <div class="activity-item">
+                                    <div class="activity-time">2 hours ago</div>
+                                    <div class="activity-content">
+                                        <strong>Sarah Chen</strong> updated milestone for E-commerce Migration
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-time">5 hours ago</div>
+                                    <div class="activity-content">
+                                        <strong>Mike Rodriguez</strong> completed security assessment task
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-time">1 day ago</div>
+                                    <div class="activity-content">
+                                        <strong>Expert Review</strong> scheduled for Data Analytics project
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- New Project Modal -->
+    <div class="modal" id="new-project-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create New Project</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="project-form">
+                    <div class="form-group">
+                        <label>Project Name</label>
+                        <input type="text" placeholder="Enter project name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Project Type</label>
+                        <select required>
+                            <option value="">Select type</option>
+                            <option value="migration">Migration</option>
+                            <option value="assessment">Assessment</option>
+                            <option value="development">Development</option>
+                            <option value="optimization">Optimization</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Framework</label>
+                        <select required>
+                            <option value="">Select framework</option>
+                            <option value="caf">Cloud Adoption Framework</option>
+                            <option value="well-architected">Well-Architected</option>
+                            <option value="security-maturity">Security Maturity</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Priority</label>
+                        <select required>
+                            <option value="high">High</option>
+                            <option value="medium">Medium</option>
+                            <option value="low">Low</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Due Date</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Budget</label>
+                        <input type="number" placeholder="Enter budget" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Create Project</button>
+                        <button type="button" class="btn-secondary modal-close">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>CloudNestle Academy</h4>
+                    <p>Your AWS implementation success partner</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="/../support.html">Help Center</a></li>
+                        <li><a href="/../contact.html">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CloudNestle Consulting & Services (OPC) Pvt. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/authentication-manager.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>

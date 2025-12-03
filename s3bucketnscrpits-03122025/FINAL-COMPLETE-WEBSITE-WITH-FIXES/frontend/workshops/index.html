@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Workshops - CloudNestle</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/auth-manager.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/../index.html">CloudNestle</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/../about.html">About</a></li>
+                <li><a href="/../services.html">Services</a></li>
+                <li><a href="/../solutions.html">Solutions</a></li>
+                <li><a href="/../industries.html">Industries</a></li>
+                <li><a href="/../frameworks/index.html">Frameworks</a></li>
+                <li><a href="/index.html" class="active">Workshops</a></li>
+                <li><a href="/../contact.html">Contact</a></li>
+                <li><a href="#" onclick="authManager.showLogin()" class="nav-cta">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>AWS Hands-On Workshops</h1>
+                <p class="hero-subtitle">Accelerate your AWS expertise through immersive, practical workshops led by certified experts</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Workshops Delivered</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">95%</span>
+                        <span class="stat-label">Certification Success Rate</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">4.9/5</span>
+                        <span class="stat-label">Average Rating</span>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="#workshops" class="btn-primary">Browse Workshops</a>
+                    <a href="#" onclick="authManager.showRegistration()" class="btn-secondary">Register Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshop Categories -->
+    <section class="section" id="workshops">
+        <div class="container">
+            <h2 class="section-title">Workshop Categories</h2>
+            <div class="workshop-categories">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Architecture & Design</h3>
+                    <p>Master AWS architectural patterns and design principles through hands-on building exercises</p>
+                    <div class="category-stats">
+                        <span>12 Workshops</span>
+                        <span>2-3 Days Each</span>
+                    </div>
+                    <a href="#architecture-workshops" class="btn-secondary">View Workshops</a>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <circle cx="12" cy="16" r="1"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                    </div>
+                    <h3>Security & Compliance</h3>
+                    <p>Implement robust security controls and compliance frameworks in AWS environments</p>
+                    <div class="category-stats">
+                        <span>8 Workshops</span>
+                        <span>1-2 Days Each</span>
+                    </div>
+                    <a href="#security-workshops" class="btn-secondary">View Workshops</a>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <h3>DevOps & Automation</h3>
+                    <p>Build CI/CD pipelines and automation solutions using AWS DevOps services</p>
+                    <div class="category-stats">
+                        <span>10 Workshops</span>
+                        <span>1-3 Days Each</span>
+                    </div>
+                    <a href="#devops-workshops" class="btn-secondary">View Workshops</a>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                        </svg>
+                    </div>
+                    <h3>Data & Analytics</h3>
+                    <p>Harness AWS data services for analytics, machine learning, and business intelligence</p>
+                    <div class="category-stats">
+                        <span>9 Workshops</span>
+                        <span>2-4 Days Each</span>
+                    </div>
+                    <a href="#data-workshops" class="btn-secondary">View Workshops</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Workshops -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Featured Workshops</h2>
+            <div class="featured-workshops">
+                <div class="workshop-card featured">
+                    <div class="workshop-badge">Most Popular</div>
+                    <div class="workshop-header">
+                        <h3>AWS Solutions Architect Bootcamp</h3>
+                        <div class="workshop-meta">
+                            <span class="duration">3 Days</span>
+                            <span class="level">Intermediate</span>
+                            <span class="format">Hands-On</span>
+                        </div>
+                    </div>
+                    <div class="workshop-content">
+                        <p>Comprehensive 3-day intensive workshop covering all aspects of AWS Solutions Architecture with hands-on labs and real-world scenarios.</p>
+                        <div class="workshop-highlights">
+                            <div class="highlight">✓ 15+ Hands-on Labs</div>
+                            <div class="highlight">✓ Real Architecture Projects</div>
+                            <div class="highlight">✓ Certification Prep Included</div>
+                            <div class="highlight">✓ Expert Instructor Support</div>
+                        </div>
+                    </div>
+                    <div class="workshop-footer">
+                        <div class="workshop-price">
+                            <span class="price">$2,499</span>
+                            <span class="price-note">per person</span>
+                        </div>
+                        <div class="workshop-actions">
+                            <a href="#" onclick="authManager.showRegistration()" class="btn-primary">Register Now</a>
+                            <a href="#" class="btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="workshop-card">
+                    <div class="workshop-badge">New</div>
+                    <div class="workshop-header">
+                        <h3>AWS Security & Compliance Deep Dive</h3>
+                        <div class="workshop-meta">
+                            <span class="duration">2 Days</span>
+                            <span class="level">Advanced</span>
+                            <span class="format">Lab-Intensive</span>
+                        </div>
+                    </div>
+                    <div class="workshop-content">
+                        <p>Advanced security workshop focusing on implementing enterprise-grade security controls and compliance frameworks in AWS.</p>
+                        <div class="workshop-highlights">
+                            <div class="highlight">✓ Zero-Trust Architecture</div>
+                            <div class="highlight">✓ Compliance Automation</div>
+                            <div class="highlight">✓ Incident Response</div>
+                            <div class="highlight">✓ Security Assessment Tools</div>
+                        </div>
+                    </div>
+                    <div class="workshop-footer">
+                        <div class="workshop-price">
+                            <span class="price">$1,899</span>
+                            <span class="price-note">per person</span>
+                        </div>
+                        <div class="workshop-actions">
+                            <a href="#" onclick="authManager.showRegistration()" class="btn-primary">Register Now</a>
+                            <a href="#" class="btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="workshop-card">
+                    <div class="workshop-badge">Expert Level</div>
+                    <div class="workshop-header">
+                        <h3>Serverless Architecture Mastery</h3>
+                        <div class="workshop-meta">
+                            <span class="duration">2 Days</span>
+                            <span class="level">Expert</span>
+                            <span class="format">Project-Based</span>
+                        </div>
+                    </div>
+                    <div class="workshop-content">
+                        <p>Master serverless architecture patterns and build production-ready serverless applications using AWS Lambda, API Gateway, and more.</p>
+                        <div class="workshop-highlights">
+                            <div class="highlight">✓ Event-Driven Architecture</div>
+                            <div class="highlight">✓ Performance Optimization</div>
+                            <div class="highlight">✓ Cost Management</div>
+                            <div class="highlight">✓ Production Deployment</div>
+                        </div>
+                    </div>
+                    <div class="workshop-footer">
+                        <div class="workshop-price">
+                            <span class="price">$2,199</span>
+                            <span class="price-note">per person</span>
+                        </div>
+                        <div class="workshop-actions">
+                            <a href="#" onclick="authManager.showRegistration()" class="btn-primary">Register Now</a>
+                            <a href="#" class="btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshop Format -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Workshop Experience</h2>
+            <div class="workshop-format">
+                <div class="format-content">
+                    <h3>Immersive Learning Experience</h3>
+                    <p>Our workshops combine theoretical knowledge with extensive hands-on practice, ensuring you gain practical skills that can be immediately applied in your work environment.</p>
+                    
+                    <div class="format-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Expert Instructors</h4>
+                                <p>Learn from AWS-certified professionals with real-world implementation experience</p>
+                            </div>
+                        </div>
+
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2z"/>
+                                    <path d="M21 11h-4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2z"/>
+                                    <path d="M7 21V9a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Hands-On Labs</h4>
+                                <p>70% hands-on practice with real AWS environments and production scenarios</p>
+                            </div>
+                        </div>
+
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Small Class Sizes</h4>
+                                <p>Maximum 12 participants per workshop for personalized attention and support</p>
+                            </div>
+                        </div>
+
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14,2 14,8 20,8"/>
+                                    <line x1="16" y1="13" x2="8" y2="13"/>
+                                    <line x1="16" y1="17" x2="8" y2="17"/>
+                                    <polyline points="10,9 9,9 8,9"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Comprehensive Materials</h4>
+                                <p>Take-home resources, code samples, and reference architectures</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="format-visual">
+                    <div class="workshop-schedule">
+                        <h4>Typical Workshop Day</h4>
+                        <div class="schedule-item">
+                            <span class="time">9:00 AM</span>
+                            <span class="activity">Welcome & Objectives</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">9:30 AM</span>
+                            <span class="activity">Theory & Best Practices</span>
+                        </div>
+                        <div class="schedule-item active">
+                            <span class="time">10:30 AM</span>
+                            <span class="activity">Hands-On Lab Session</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">12:00 PM</span>
+                            <span class="activity">Lunch Break</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">1:00 PM</span>
+                            <span class="activity">Advanced Concepts</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">2:30 PM</span>
+                            <span class="activity">Project Work</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">4:00 PM</span>
+                            <span class="activity">Review & Q&A</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">5:00 PM</span>
+                            <span class="activity">Wrap-up & Next Steps</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Success Stories</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The AWS Solutions Architect workshop was transformative. The hands-on approach and real-world scenarios prepared me perfectly for both the certification and my daily work."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Sarah Chen</h4>
+                            <span>Senior Cloud Engineer, TechCorp</span>
+                        </div>
+                        <div class="testimonial-rating">
+                            <span>★★★★★</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Excellent security workshop! The instructors' expertise and the practical labs gave me the confidence to implement enterprise security controls in our AWS environment."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Michael Rodriguez</h4>
+                            <span>Security Architect, FinanceFirst</span>
+                        </div>
+                        <div class="testimonial-rating">
+                            <span>★★★★★</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The DevOps workshop revolutionized our deployment process. We implemented the CI/CD pipeline patterns immediately and saw 60% faster deployments."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>David Kim</h4>
+                            <span>DevOps Lead, StartupXYZ</span>
+                        </div>
+                        <div class="testimonial-rating">
+                            <span>★★★★★</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Process -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Registration Process</h2>
+            <div class="registration-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Choose Workshop</h3>
+                        <p>Browse our catalog and select the workshop that matches your learning objectives and skill level</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Register & Pay</h3>
+                        <p>Complete registration with secure payment processing and receive immediate confirmation</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Pre-Workshop Prep</h3>
+                        <p>Receive pre-workshop materials, setup instructions, and access to practice environments</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Attend Workshop</h3>
+                        <p>Participate in immersive learning experience with expert instructors and hands-on labs</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Post-Workshop Support</h3>
+                        <p>Access to resources, community forum, and 30-day instructor support for implementation questions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Accelerate Your AWS Skills?</h2>
+                <p>Join hundreds of professionals who have advanced their careers through our expert-led workshops</p>
+                <div class="cta-buttons">
+                    <a href="#" onclick="authManager.showRegistration()" class="btn-primary">Register for Workshop</a>
+                    <a href="/../contact.html" class="btn-secondary">Contact for Group Training</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CloudNestle</h3>
+                    <p>Expert AWS consulting and implementation services for businesses of all sizes.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/../services.html">AWS Consulting</a></li>
+                        <li><a href="/../solutions.html">Cloud Solutions</a></li>
+                        <li><a href="/../frameworks/index.html">Framework Assessment</a></li>
+                        <li><a href="/../training.html">Training Programs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/../knowledge-center/index.html">Knowledge Center</a></li>
+                        <li><a href="/index.html">Workshops</a></li>
+                        <li><a href="/../community/index.html">Community</a></li>
+                        <li><a href="/../guarantees/index.html">Service Guarantees</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/../about.html">About Us</a></li>
+                        <li><a href="/../company.html">Leadership</a></li>
+                        <li><a href="/../contact.html">Contact</a></li>
+                        <li><a href="/../careers.html">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CloudNestle. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize authentication manager
+        document.addEventListener('DOMContentLoaded', function() {
+            authManager.init();
+        });
+
+        // Workshop registration functionality
+        function registerForWorkshop(workshopId) {
+            authManager.showRegistration();
+        }
+
+        // Workshop filtering
+        function filterWorkshops(category) {
+            // Implement workshop filtering logic
+            console.log('Filtering workshops by category:', category);
+        }
+    </script>
+</body>
+</html>

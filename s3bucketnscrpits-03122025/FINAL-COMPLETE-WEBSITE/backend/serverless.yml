@@ -1,0 +1,551 @@
+# CloudNestle Serverless Backend
+# Competitive Advantage: Cost-effective, scalable, and secure serverless architecture
+
+service: cloudnestle-backend
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-west-2
+  stage: ${opt:stage, 'dev'}
+  memorySize: 512
+  timeout: 30
+  
+  environment:
+    COGNITO_USER_POOL_ID: ${self:custom.cognitoUserPoolId}
+    COGNITO_CLIENT_ID: ${self:custom.cognitoClientId}
+    DYNAMODB_TABLE: ${self:custom.dynamodbTable}
+    STAGE: ${self:provider.stage}
+    NODE_ENV: ${self:provider.stage}
+    
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+          Resource:
+            - "arn:aws:dynamodb:${self:provider.region}:*:table/${self:custom.dynamodbTable}"
+            - "arn:aws:dynamodb:${self:provider.region}:*:table/${self:custom.dynamodbTable}/index/*"
+        - Effect: Allow
+          Action:
+            - cognito-idp:AdminCreateUser
+            - cognito-idp:AdminSetUserPassword
+            - cognito-idp:AdminInitiateAuth
+            - cognito-idp:AdminGetUser
+            - cognito-idp:AdminUpdateUserAttributes
+          Resource:
+            - "arn:aws:cognito-idp:${self:provider.region}:*:userpool/${self:custom.cognitoUserPoolId}"
+        - Effect: Allow
+          Action:
+            - ses:SendEmail
+            - ses:SendRawEmail
+          Resource: "*"
+
+custom:
+  cognitoUserPoolId:
+    Ref: CognitoUserPool
+  cognitoClientId:
+    Ref: CognitoUserPoolClient
+  dynamodbTable: cloudnestle-users-${self:provider.stage}
+  
+  # Webpack configuration for optimized bundles
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+    packager: npm
+    excludeFiles: src/**/*.test.js
+
+functions:
+  # Authentication Functions
+  register:
+    handler: src/auth/register.handler
+    description: User registration with Cognito and profile creation
+    events:
+      - http:
+          path: /auth/register
+          method: POST
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+            allowCredentials: false
+    environment:
+      FUNCTION_NAME: register
+
+  login:
+    handler: src/auth/login.handler
+    description: User authentication with Cognito
+    events:
+      - http:
+          path: /auth/login
+          method: POST
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+            allowCredentials: false
+    environment:
+      FUNCTION_NAME: login
+
+  logout:
+    handler: src/auth/logout.handler
+    description: User logout and token invalidation
+    events:
+      - http:
+          path: /auth/logout
+          method: POST
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+            allowCredentials: false
+          authorizer:
+            name: cognitoAuthorizer
+            type: COGNITO_USER_POOLS
+            arn:
+              Fn::GetAtt: [CognitoUserPool, Arn]
+    environment:
+      FUNCTION_NAME: logout
+
+  resetPassword:
+    handler: src/auth/resetPassword.handler
+    description: Password reset functionality
+    events:
+      - http:
+          path: /auth/reset-password
+          method: POST
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+            allowCredentials: false
+    environment:
+      FUNCTION_NAME: resetPassword
+
+  # Protected API Functions
+  getProfile:
+    handler: src/api/profile.getHandler
+    description: Get user profile information
+    events:
+      - http:
+          path: /api/profile
+          method: GET
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+            allowCredentials: false
+          authorizer:
+            name: cognitoAuthorizer
+            type: COGNITO_USER_POOLS
+            arn:
+              Fn::GetAtt: [CognitoUserPool, Arn]
+    environment:
+      FUNCTION_NAME: getProfile
+
+  updateProfile:
+    handler: src/api/profile.updateHandler
+    description: Update user profile information
+    events:
+      - http:
+          path: /api/profile
+          method: PUT
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+            allowCredentials: false
+          authorizer:
+            name: cognitoAuthorizer
+            type: COGNITO_USER_POOLS
+            arn:
+              Fn::GetAtt: [CognitoUserPool, Arn]
+    environment:
+      FUNCTION_NAME: updateProfile
+
+  # AI-Powered Services
+  getRecommendations:
+    handler: src/api/recommendations.handler
+    description: AI-powered personalized recommendations
+    memorySize: 1024
+    timeout: 60
+    events:
+      - http:
+          path: /api/recommendations
+          method: GET
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+            allowCredentials: false
+          authorizer:
+            name: cognitoAuthorizer
+            type: COGNITO_USER_POOLS
+            arn:
+              Fn::GetAtt: [CognitoUserPool, Arn]
+    environment:
+      FUNCTION_NAME: getRecommendations
+
+  analyzeArchitecture:
+    handler: src/api/architecture.analyzeHandler
+    description: AI-powered architecture analysis
+    memorySize: 1024
+    timeout: 300
+    events:
+      - http:
+          path: /api/architecture/analyze
+          method: POST
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+            allowCredentials: false
+          authorizer:
+            name: cognitoAuthorizer
+            type: COGNITO_USER_POOLS
+            arn:
+              Fn::GetAtt: [CognitoUserPool, Arn]
+    environment:
+      FUNCTION_NAME: analyzeArchitecture
+
+  # Assessment Functions
+  submitAssessment:
+    handler: src/api/assessments.submitHandler
+    description: Submit CAF/Well-Architected assessments
+    events:
+      - http:
+          path: /api/assessments
+          method: POST
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+            allowCredentials: false
+    environment:
+      FUNCTION_NAME: submitAssessment
+
+  getAssessmentResults:
+    handler: src/api/assessments.getResultsHandler
+    description: Get assessment results and recommendations
+    events:
+      - http:
+          path: /api/assessments/{assessmentId}
+          method: GET
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+            allowCredentials: false
+          authorizer:
+            name: cognitoAuthorizer
+            type: COGNITO_USER_POOLS
+            arn:
+              Fn::GetAtt: [CognitoUserPool, Arn]
+    environment:
+      FUNCTION_NAME: getAssessmentResults
+
+  # Dashboard Functions
+  getDashboard:
+    handler: src/api/dashboard.handler
+    description: Get user dashboard data
+    events:
+      - http:
+          path: /api/dashboard
+          method: GET
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+            allowCredentials: false
+          authorizer:
+            name: cognitoAuthorizer
+            type: COGNITO_USER_POOLS
+            arn:
+              Fn::GetAtt: [CognitoUserPool, Arn]
+    environment:
+      FUNCTION_NAME: getDashboard
+
+resources:
+  Resources:
+    # Cognito User Pool
+    CognitoUserPool:
+      Type: AWS::Cognito::UserPool
+      Properties:
+        UserPoolName: cloudnestle-users-${self:provider.stage}
+        UsernameAttributes:
+          - email
+        AutoVerifiedAttributes:
+          - email
+        Policies:
+          PasswordPolicy:
+            MinimumLength: 8
+            RequireUppercase: true
+            RequireLowercase: true
+            RequireNumbers: true
+            RequireSymbols: false
+        Schema:
+          - Name: email
+            AttributeDataType: String
+            Required: true
+            Mutable: true
+          - Name: name
+            AttributeDataType: String
+            Required: true
+            Mutable: true
+          - Name: company
+            AttributeDataType: String
+            Required: false
+            Mutable: true
+          - Name: industry
+            AttributeDataType: String
+            Required: false
+            Mutable: true
+        UserPoolTags:
+          Environment: ${self:provider.stage}
+          Service: cloudnestle-backend
+          CostCenter: engineering
+
+    # Cognito User Pool Client
+    CognitoUserPoolClient:
+      Type: AWS::Cognito::UserPoolClient
+      Properties:
+        ClientName: cloudnestle-client-${self:provider.stage}
+        UserPoolId:
+          Ref: CognitoUserPool
+        GenerateSecret: false
+        ExplicitAuthFlows:
+          - ADMIN_NO_SRP_AUTH
+          - USER_PASSWORD_AUTH
+          - ALLOW_USER_SRP_AUTH
+          - ALLOW_REFRESH_TOKEN_AUTH
+        TokenValidityUnits:
+          AccessToken: hours
+          IdToken: hours
+          RefreshToken: days
+        AccessTokenValidity: 24
+        IdTokenValidity: 24
+        RefreshTokenValidity: 30
+        PreventUserExistenceErrors: ENABLED
+
+    # DynamoDB Table for User Profiles
+    UserProfilesTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:custom.dynamodbTable}
+        AttributeDefinitions:
+          - AttributeName: userId
+            AttributeType: S
+          - AttributeName: email
+            AttributeType: S
+          - AttributeName: industry
+            AttributeType: S
+        KeySchema:
+          - AttributeName: userId
+            KeyType: HASH
+        GlobalSecondaryIndexes:
+          - IndexName: EmailIndex
+            KeySchema:
+              - AttributeName: email
+                KeyType: HASH
+            Projection:
+              ProjectionType: ALL
+            BillingMode: PAY_PER_REQUEST
+          - IndexName: IndustryIndex
+            KeySchema:
+              - AttributeName: industry
+                KeyType: HASH
+            Projection:
+              ProjectionType: ALL
+            BillingMode: PAY_PER_REQUEST
+        BillingMode: PAY_PER_REQUEST
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES
+        PointInTimeRecoverySpecification:
+          PointInTimeRecoveryEnabled: true
+        Tags:
+          - Key: Environment
+            Value: ${self:provider.stage}
+          - Key: Service
+            Value: cloudnestle-backend
+          - Key: CostCenter
+            Value: engineering
+
+    # DynamoDB Table for Assessments
+    AssessmentsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: cloudnestle-assessments-${self:provider.stage}
+        AttributeDefinitions:
+          - AttributeName: assessmentId
+            AttributeType: S
+          - AttributeName: userId
+            AttributeType: S
+          - AttributeName: assessmentType
+            AttributeType: S
+        KeySchema:
+          - AttributeName: assessmentId
+            KeyType: HASH
+        GlobalSecondaryIndexes:
+          - IndexName: UserAssessmentsIndex
+            KeySchema:
+              - AttributeName: userId
+                KeyType: HASH
+              - AttributeName: assessmentType
+                KeyType: RANGE
+            Projection:
+              ProjectionType: ALL
+            BillingMode: PAY_PER_REQUEST
+        BillingMode: PAY_PER_REQUEST
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES
+        PointInTimeRecoverySpecification:
+          PointInTimeRecoveryEnabled: true
+        Tags:
+          - Key: Environment
+            Value: ${self:provider.stage}
+          - Key: Service
+            Value: cloudnestle-backend
+
+    # S3 Bucket for File Uploads
+    FileUploadsBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: cloudnestle-uploads-${self:provider.stage}
+        CorsConfiguration:
+          CorsRules:
+            - AllowedHeaders:
+                - "*"
+              AllowedMethods:
+                - GET
+                - PUT
+                - POST
+                - DELETE
+                - HEAD
+              AllowedOrigins:
+                - "*"
+              MaxAge: 3000
+        PublicAccessBlockConfiguration:
+          BlockPublicAcls: true
+          BlockPublicPolicy: true
+          IgnorePublicAcls: true
+          RestrictPublicBuckets: true
+        VersioningConfiguration:
+          Status: Enabled
+        LifecycleConfiguration:
+          Rules:
+            - Id: DeleteIncompleteMultipartUploads
+              Status: Enabled
+              AbortIncompleteMultipartUpload:
+                DaysAfterInitiation: 7
+            - Id: TransitionToIA
+              Status: Enabled
+              Transition:
+                Days: 30
+                StorageClass: STANDARD_IA
+            - Id: TransitionToGlacier
+              Status: Enabled
+              Transition:
+                Days: 90
+                StorageClass: GLACIER
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+  - serverless-domain-manager
+  - serverless-prune-plugin
+
+# Package configuration
+package:
+  exclude:
+    - node_modules/**
+    - .git/**
+    - .env
+    - README.md
+    - package-lock.json
+    - yarn.lock
+    - tests/**
+    - coverage/**
+    - .nyc_output/**
+
+# Outputs
+outputs:
+  CognitoUserPoolId:
+    Value:
+      Ref: CognitoUserPool
+    Export:
+      Name: ${self:service}-${self:provider.stage}-CognitoUserPoolId
+
+  CognitoUserPoolClientId:
+    Value:
+      Ref: CognitoUserPoolClient
+    Export:
+      Name: ${self:service}-${self:provider.stage}-CognitoUserPoolClientId
+
+  ApiGatewayRestApiId:
+    Value:
+      Ref: ApiGatewayRestApi
+    Export:
+      Name: ${self:service}-${self:provider.stage}-ApiGatewayRestApiId
+
+  ApiGatewayRestApiUrl:
+    Value:
+      Fn::Join:
+        - ""
+        - - "https://"
+          - Ref: ApiGatewayRestApi
+          - ".execute-api."
+          - ${self:provider.region}
+          - ".amazonaws.com/"
+          - ${self:provider.stage}
+    Export:
+      Name: ${self:service}-${self:provider.stage}-ApiGatewayRestApiUrl

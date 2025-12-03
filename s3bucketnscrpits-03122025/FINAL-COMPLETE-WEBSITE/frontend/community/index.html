@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Platform - CloudNestle</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/auth-manager.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">CloudNestle</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="../solutions.html">Solutions</a></li>
+                <li><a href="../industries.html">Industries</a></li>
+                <li><a href="../frameworks/index.html">Frameworks</a></li>
+                <li><a href="index.html" class="active">Community</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="#" onclick="authManager.showLogin()" class="nav-cta">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>AWS Community Platform</h1>
+                <p class="hero-subtitle">Connect, learn, and grow with the most vibrant AWS community of professionals, experts, and innovators</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">5,000+</span>
+                        <span class="stat-label">Active Members</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">150+</span>
+                        <span class="stat-label">Expert Contributors</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">95%</span>
+                        <span class="stat-label">Problem Resolution Rate</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Features -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Community Features</h2>
+            <div class="community-features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Expert Network</h3>
+                    <p>Connect with AWS-certified professionals, solution architects, and industry leaders</p>
+                    <div class="feature-stats">
+                        <span>150+ Experts</span>
+                        <span>24/7 Support</span>
+                    </div>
+                    <a href="#experts" class="btn-secondary">Meet Experts</a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14,2 14,8 20,8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10,9 9,9 8,9"/>
+                        </svg>
+                    </div>
+                    <h3>Knowledge Sharing</h3>
+                    <p>Access shared resources, best practices, and real-world implementation guides</p>
+                    <div class="feature-stats">
+                        <span>2,500+ Resources</span>
+                        <span>Weekly Updates</span>
+                    </div>
+                    <a href="#knowledge" class="btn-secondary">Browse Resources</a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <h3>Learning Academy</h3>
+                    <p>Structured learning paths, certification prep, and hands-on labs</p>
+                    <div class="feature-stats">
+                        <span>50+ Courses</span>
+                        <span>93% Pass Rate</span>
+                    </div>
+                    <a href="#academy" class="btn-secondary">Start Learning</a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <h3>Innovation Incubator</h3>
+                    <p>Collaborate on cutting-edge projects and breakthrough AWS solutions</p>
+                    <div class="feature-stats">
+                        <span>25+ Projects</span>
+                        <span>$2M Funding</span>
+                    </div>
+                    <a href="#innovation" class="btn-secondary">Join Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Academy -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">CloudNestle Academy</h2>
+            <div class="academy-overview">
+                <div class="academy-content">
+                    <h3>Accelerate Your AWS Journey</h3>
+                    <p>Our community-driven academy offers comprehensive learning paths designed by experts and validated by real-world implementations.</p>
+                    
+                    <div class="academy-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Personalized Learning Paths</h4>
+                                <p>AI-powered recommendations based on your role, experience, and career goals</p>
+                            </div>
+                        </div>
+
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2z"/>
+                                    <path d="M21 11h-4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2z"/>
+                                    <path d="M7 21V9a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Hands-On Labs</h4>
+                                <p>Practice with real AWS environments and production-like scenarios</p>
+                            </div>
+                        </div>
+
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Certification Support</h4>
+                                <p>Comprehensive exam preparation with 93% pass rate guarantee</p>
+                            </div>
+                        </div>
+
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Peer Learning</h4>
+                                <p>Study groups, mentorship programs, and collaborative projects</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="academy-cta">
+                        <a href="#" onclick="authManager.showRegistration()" class="btn-primary">Join Academy</a>
+                        <a href="#" class="btn-secondary">Browse Courses</a>
+                    </div>
+                </div>
+
+                <div class="academy-dashboard">
+                    <div class="dashboard-header">
+                        <h4>Your Academy Dashboard</h4>
+                        <div class="progress-overview">
+                            <span>Overall Progress: 72%</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 72%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-content">
+                        <div class="current-courses">
+                            <h5>Current Courses</h5>
+                            <div class="course-item">
+                                <span class="course-name">AWS Solutions Architect</span>
+                                <span class="course-progress">85%</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">Security Specialization</span>
+                                <span class="course-progress">45%</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-name">DevOps Engineering</span>
+                                <span class="course-progress">20%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="achievements">
+                            <h5>Recent Achievements</h5>
+                            <div class="achievement">
+                                <span class="achievement-badge">🏆</span>
+                                <span class="achievement-name">Well-Architected Expert</span>
+                            </div>
+                            <div class="achievement">
+                                <span class="achievement-badge">⭐</span>
+                                <span class="achievement-name">Security Champion</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Groups -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Community User Groups</h2>
+            <div class="user-groups">
+                <div class="group-card">
+                    <div class="group-header">
+                        <h3>Solutions Architects</h3>
+                        <span class="member-count">1,200+ members</span>
+                    </div>
+                    <p>Connect with fellow solutions architects to discuss design patterns, best practices, and architectural challenges</p>
+                    <div class="group-activity">
+                        <div class="activity-item">
+                            <span class="activity-type">Discussion</span>
+                            <span class="activity-title">Multi-region disaster recovery strategies</span>
+                            <span class="activity-time">2 hours ago</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-type">Resource</span>
+                            <span class="activity-title">Well-Architected Review checklist</span>
+                            <span class="activity-time">1 day ago</span>
+                        </div>
+                    </div>
+                    <a href="#" onclick="authManager.showRegistration()" class="btn-primary">Join Group</a>
+                </div>
+
+                <div class="group-card">
+                    <div class="group-header">
+                        <h3>DevOps Engineers</h3>
+                        <span class="member-count">950+ members</span>
+                    </div>
+                    <p>Share automation scripts, CI/CD pipelines, and infrastructure as code best practices</p>
+                    <div class="group-activity">
+                        <div class="activity-item">
+                            <span class="activity-type">Code</span>
+                            <span class="activity-title">Terraform modules for EKS</span>
+                            <span class="activity-time">4 hours ago</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-type">Discussion</span>
+                            <span class="activity-title">GitOps with AWS CodeCommit</span>
+                            <span class="activity-time">6 hours ago</span>
+                        </div>
+                    </div>
+                    <a href="#" onclick="authManager.showRegistration()" class="btn-primary">Join Group</a>
+                </div>
+
+                <div class="group-card">
+                    <div class="group-header">
+                        <h3>Security Specialists</h3>
+                        <span class="member-count">800+ members</span>
+                    </div>
+                    <p>Discuss security best practices, compliance frameworks, and threat mitigation strategies</p>
+                    <div class="group-activity">
+                        <div class="activity-item">
+                            <span class="activity-type">Alert</span>
+                            <span class="activity-title">New AWS security service updates</span>
+                            <span class="activity-time">1 hour ago</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-type">Guide</span>
+                            <span class="activity-title">Zero-trust implementation guide</span>
+                            <span class="activity-time">3 hours ago</span>
+                        </div>
+                    </div>
+                    <a href="#" onclick="authManager.showRegistration()" class="btn-primary">Join Group</a>
+                </div>
+
+                <div class="group-card">
+                    <div class="group-header">
+                        <h3>Data Engineers</h3>
+                        <span class="member-count">650+ members</span>
+                    </div>
+                    <p>Explore data pipelines, analytics solutions, and machine learning implementations</p>
+                    <div class="group-activity">
+                        <div class="activity-item">
+                            <span class="activity-type">Tutorial</span>
+                            <span class="activity-title">Real-time analytics with Kinesis</span>
+                            <span class="activity-time">5 hours ago</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-type">Discussion</span>
+                            <span class="activity-title">Data lake architecture patterns</span>
+                            <span class="activity-time">8 hours ago</span>
+                        </div>
+                    </div>
+                    <a href="#" onclick="authManager.showRegistration()" class="btn-primary">Join Group</a>
+                </div>
+
+                <div class="group-card">
+                    <div class="group-header">
+                        <h3>Startup Founders</h3>
+                        <span class="member-count">400+ members</span>
+                    </div>
+                    <p>Network with fellow entrepreneurs and share cost-effective AWS strategies for startups</p>
+                    <div class="group-activity">
+                        <div class="activity-item">
+                            <span class="activity-type">Success Story</span>
+                            <span class="activity-title">Scaling from 0 to 1M users</span>
+                            <span class="activity-time">2 hours ago</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-type">Resource</span>
+                            <span class="activity-title">AWS credits and startup programs</span>
+                            <span class="activity-time">1 day ago</span>
+                        </div>
+                    </div>
+                    <a href="#" onclick="authManager.showRegistration()" class="btn-primary">Join Group</a>
+                </div>
+
+                <div class="group-card">
+                    <div class="group-header">
+                        <h3>Industry Specialists</h3>
+                        <span class="member-count">300+ members</span>
+                    </div>
+                    <p>Industry-specific discussions for healthcare, finance, education, and retail sectors</p>
+                    <div class="group-activity">
+                        <div class="activity-item">
+                            <span class="activity-type">Compliance</span>
+                            <span class="activity-title">HIPAA compliance checklist</span>
+                            <span class="activity-time">3 hours ago</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-type">Case Study</span>
+                            <span class="activity-title">Retail analytics implementation</span>
+                            <span class="activity-time">12 hours ago</span>
+                        </div>
+                    </div>
+                    <a href="#" onclick="authManager.showRegistration()" class="btn-primary">Join Group</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Events -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Upcoming Community Events</h2>
+            <div class="events-grid">
+                <div class="event-card featured">
+                    <div class="event-badge">Featured</div>
+                    <div class="event-header">
+                        <h3>AWS Community Summit 2025</h3>
+                        <div class="event-date">August 15-17, 2025</div>
+                    </div>
+                    <div class="event-content">
+                        <p>Annual community summit featuring keynotes, workshops, and networking opportunities</p>
+                        <div class="event-highlights">
+                            <div class="highlight">50+ Sessions</div>
+                            <div class="highlight">20+ Speakers</div>
+                            <div class="highlight">500+ Attendees</div>
+                            <div class="highlight">3 Days</div>
+                        </div>
+                        <div class="event-location">San Francisco, CA</div>
+                    </div>
+                    <div class="event-actions">
+                        <a href="#" class="btn-primary">Register Now</a>
+                        <a href="#" class="btn-secondary">View Agenda</a>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-header">
+                        <h3>Monthly Architecture Review</h3>
+                        <div class="event-date">August 5, 2025</div>
+                    </div>
+                    <div class="event-content">
+                        <p>Community-driven architecture review session with expert feedback</p>
+                        <div class="event-location">Virtual Event</div>
+                    </div>
+                    <div class="event-actions">
+                        <a href="#" class="btn-primary">Join Session</a>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-header">
+                        <h3>Security Best Practices Workshop</h3>
+                        <div class="event-date">August 12, 2025</div>
+                    </div>
+                    <div class="event-content">
+                        <p>Hands-on workshop covering latest AWS security features and implementations</p>
+                        <div class="event-location">New York, NY</div>
+                    </div>
+                    <div class="event-actions">
+                        <a href="#" class="btn-primary">Register</a>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-header">
+                        <h3>Startup Pitch Night</h3>
+                        <div class="event-date">August 20, 2025</div>
+                    </div>
+                    <div class="event-content">
+                        <p>Startup founders pitch their AWS-powered solutions to investors and experts</p>
+                        <div class="event-location">Austin, TX</div>
+                    </div>
+                    <div class="event-actions">
+                        <a href="#" class="btn-primary">Apply to Pitch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Impact -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Community Impact</h2>
+            <div class="impact-metrics">
+                <div class="impact-stat">
+                    <div class="stat-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <div class="stat-value">5,000+</div>
+                    <div class="stat-label">Active Members</div>
+                    <div class="stat-growth">+25% this quarter</div>
+                </div>
+
+                <div class="impact-stat">
+                    <div class="stat-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14,2 14,8 20,8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10,9 9,9 8,9"/>
+                        </svg>
+                    </div>
+                    <div class="stat-value">15,000+</div>
+                    <div class="stat-label">Resources Shared</div>
+                    <div class="stat-growth">+40% this quarter</div>
+                </div>
+
+                <div class="impact-stat">
+                    <div class="stat-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <div class="stat-value">2,500+</div>
+                    <div class="stat-label">Certifications Earned</div>
+                    <div class="stat-growth">+35% this quarter</div>
+                </div>
+
+                <div class="impact-stat">
+                    <div class="stat-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <div class="stat-value">150+</div>
+                    <div class="stat-label">Innovation Projects</div>
+                    <div class="stat-growth">+20% this quarter</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Join the CloudNestle Community</h2>
+                <p>Connect with thousands of AWS professionals and accelerate your cloud journey</p>
+                <div class="cta-buttons">
+                    <a href="#" onclick="authManager.showRegistration()" class="btn-primary">Join Community</a>
+                    <a href="../contact.html" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CloudNestle</h3>
+                    <p>Expert AWS consulting and implementation services for businesses of all sizes.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services.html">AWS Consulting</a></li>
+                        <li><a href="../solutions.html">Cloud Solutions</a></li>
+                        <li><a href="../frameworks/index.html">Framework Assessment</a></li>
+                        <li><a href="../training.html">Training Programs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="../knowledge-center/index.html">Knowledge Center</a></li>
+                        <li><a href="../workshops/index.html">Workshops</a></li>
+                        <li><a href="index.html">Community</a></li>
+                        <li><a href="../guarantees/index.html">Service Guarantees</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../company.html">Leadership</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="../careers.html">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CloudNestle. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize authentication manager
+        document.addEventListener('DOMContentLoaded', function() {
+            authManager.init();
+        });
+
+        // Community interactions
+        function joinGroup(groupId) {
+            authManager.showRegistration();
+        }
+
+        function registerForEvent(eventId) {
+            authManager.showRegistration();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive AWS Security Maturity Assessment using crawl-walk-run methodology to evaluate and improve your cloud security posture.">
+    <meta name="keywords" content="AWS security assessment, security maturity, crawl walk run, cloud security, security controls">
+    <meta name="access-level" content="registration">
+    <meta name="auth-type" content="email-only">
+    <title>AWS Security Maturity Assessment - CloudNestle</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/assessments.css">
+</head>
+<body class="access-registration">
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>CloudNestle</h1>
+                    <span>Security Assessment</span>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../frameworks/index.html">Frameworks</a></li>
+                        <li><a href="../knowledge-center/index.html">Knowledge Center</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Assessment Preview -->
+    <section class="assessment-preview">
+        <div class="container">
+            <div class="preview-content">
+                <h1>AWS Security Maturity Assessment</h1>
+                <p class="assessment-subtitle">Evaluate your cloud security posture using the proven crawl-walk-run methodology and get a comprehensive roadmap for security improvement</p>
+                
+                <div class="maturity-methodology">
+                    <h3>Crawl-Walk-Run Security Maturity Model</h3>
+                    <div class="methodology-stages">
+                        <div class="stage-item">
+                            <div class="stage-icon crawl">🐛</div>
+                            <div class="stage-content">
+                                <h4>Crawl Phase</h4>
+                                <p>Foundation security controls and basic compliance requirements</p>
+                                <ul>
+                                    <li>Identity and access management basics</li>
+                                    <li>Network security fundamentals</li>
+                                    <li>Data encryption at rest and in transit</li>
+                                    <li>Basic monitoring and logging</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="stage-item">
+                            <div class="stage-icon walk">🚶</div>
+                            <div class="stage-content">
+                                <h4>Walk Phase</h4>
+                                <p>Operationalized security with automated controls and processes</p>
+                                <ul>
+                                    <li>Automated security monitoring</li>
+                                    <li>Incident response procedures</li>
+                                    <li>Security configuration management</li>
+                                    <li>Compliance automation</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="stage-item">
+                            <div class="stage-icon run">🏃</div>
+                            <div class="stage-content">
+                                <h4>Run Phase</h4>
+                                <p>Advanced security operations with predictive capabilities</p>
+                                <ul>
+                                    <li>Advanced threat detection and response</li>
+                                    <li>Security analytics and intelligence</li>
+                                    <li>Zero trust architecture</li>
+                                    <li>Continuous security optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="assessment-benefits">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🔍</div>
+                        <h3>Comprehensive Security Evaluation</h3>
+                        <p>Assess 47 security controls across identity, infrastructure, data, and incident response domains.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">📈</div>
+                        <h3>Maturity Positioning</h3>
+                        <p>Understand your current security maturity level and identify the next steps for advancement.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🛣️</div>
+                        <h3>Phased Improvement Roadmap</h3>
+                        <p>Get a prioritized roadmap for advancing through crawl, walk, and run phases systematically.</p>
+                    </div>
+                </div>
+
+                <div class="security-domains">
+                    <h3>Security Assessment Domains</h3>
+                    <div class="domains-grid">
+                        <div class="domain-item">
+                            <span class="domain-icon">👤</span>
+                            <span class="domain-name">Identity & Access Management</span>
+                        </div>
+                        <div class="domain-item">
+                            <span class="domain-icon">🛡️</span>
+                            <span class="domain-name">Infrastructure Protection</span>
+                        </div>
+                        <div class="domain-item">
+                            <span class="domain-icon">🔐</span>
+                            <span class="domain-name">Data Protection</span>
+                        </div>
+                        <div class="domain-item">
+                            <span class="domain-icon">🚨</span>
+                            <span class="domain-name">Detective Controls</span>
+                        </div>
+                        <div class="domain-item">
+                            <span class="domain-icon">⚡</span>
+                            <span class="domain-name">Incident Response</span>
+                        </div>
+                        <div class="domain-item">
+                            <span class="domain-icon">📋</span>
+                            <span class="domain-name">Compliance & Governance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <button class="btn-primary" id="start-assessment">Start Security Assessment</button>
+                    <p class="cta-note">Complete assessment in 15-20 minutes and get instant results</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Capture Modal -->
+    <div class="auth-modal" id="email-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Access Your Security Maturity Assessment</h3>
+                <p>Enter your details to access this comprehensive security assessment and receive your detailed maturity analysis</p>
+            </div>
+            <form class="email-capture-form" id="email-capture-form">
+                <div class="form-group">
+                    <input type="email" id="user-email" placeholder="Enter your business email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="user-name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="user-company" placeholder="Company name" required>
+                </div>
+                <div class="form-group">
+                    <select id="user-role" required>
+                        <option value="">Select your role</option>
+                        <option value="security-engineer">Security Engineer</option>
+                        <option value="cloud-architect">Cloud Architect</option>
+                        <option value="devops-engineer">DevOps Engineer</option>
+                        <option value="ciso">CISO/Security Leader</option>
+                        <option value="it-manager">IT Manager</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">Get Free Security Assessment</button>
+            </form>
+            <div class="trust-indicators">
+                <div class="trust-item">
+                    <span class="trust-icon">🔒</span>
+                    <span>Enterprise-grade security and privacy</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">📊</span>
+                    <span>Detailed maturity analysis and roadmap</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Assessment Tool (Hidden until email captured) -->
+    <div class="content-registration-required gated" id="assessment-content">
+        <section class="assessment-tool">
+            <div class="container">
+                <div class="assessment-header">
+                    <h2>AWS Security Maturity Assessment</h2>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                        <span class="progress-text" id="progress-text">Question 1 of 25</span>
+                    </div>
+                </div>
+
+                <div class="assessment-form" id="assessment-form">
+                    <!-- Questions will be dynamically loaded here -->
+                </div>
+
+                <div class="assessment-results" id="assessment-results" style="display: none;">
+                    <h2>Your Security Maturity Assessment Results</h2>
+                    <div class="maturity-level" id="maturity-level">
+                        <!-- Maturity level will be displayed here -->
+                    </div>
+                    <div class="domain-scores" id="domain-scores">
+                        <!-- Domain scores will be displayed here -->
+                    </div>
+                    <div class="improvement-roadmap" id="improvement-roadmap">
+                        <!-- Improvement roadmap will be displayed here -->
+                    </div>
+                    <div class="next-steps">
+                        <h3>Next Steps</h3>
+                        <div class="next-steps-actions">
+                            <a href="#" class="btn-primary">Schedule Security Consultation</a>
+                            <a href="#" class="btn-secondary">Download Detailed Report</a>
+                            <a href="../frameworks/security-maturity-assessment.html" class="btn-secondary">Learn About Our Security Services</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CloudNestle</h3>
+                    <p>Expert AWS consulting with industry specialization and outcome guarantees.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Security Services</h4>
+                    <ul>
+                        <li><a href="../frameworks/security-maturity-assessment.html">Security Maturity Assessment</a></li>
+                        <li><a href="../knowledge-center/best-practices.html">Security Best Practices</a></li>
+                        <li><a href="../workshops/index.html">Security Workshops</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: security@cloudnestle.com</p>
+                    <p>Phone: +91-XXXXXXXXXX</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CloudNestle Consulting & Services (OPC) Pvt. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/registration-manager.js"></script>
+    <script>
+        // Security Maturity Assessment Questions
+        const assessmentQuestions = [
+            {
+                domain: "Identity & Access Management",
+                question: "How do you manage user identities and authentication?",
+                options: [
+                    "Centralized identity provider with MFA enforced for all users",
+                    "Centralized identity provider with MFA for privileged users",
+                    "Basic user management with some MFA implementation",
+                    "Local accounts with password-based authentication"
+                ],
+                weights: [4, 3, 2, 1],
+                maturityLevels: ["run", "walk", "crawl", "crawl"]
+            },
+            {
+                domain: "Identity & Access Management",
+                question: "How do you implement least privilege access?",
+                options: [
+                    "Automated role-based access with regular reviews and just-in-time access",
+                    "Role-based access control with quarterly access reviews",
+                    "Basic role assignments with annual reviews",
+                    "Broad permissions with minimal access controls"
+                ],
+                weights: [4, 3, 2, 1],
+                maturityLevels: ["run", "walk", "crawl", "crawl"]
+            },
+            {
+                domain: "Infrastructure Protection",
+                question: "How do you secure your network infrastructure?",
+                options: [
+                    "Zero trust network with micro-segmentation and automated security groups",
+                    "Network segmentation with security groups and NACLs",
+                    "Basic VPC configuration with some security groups",
+                    "Minimal network security controls"
+                ],
+                weights: [4, 3, 2, 1],
+                maturityLevels: ["run", "walk", "crawl", "crawl"]
+            },
+            {
+                domain: "Infrastructure Protection",
+                question: "How do you manage security configurations?",
+                options: [
+                    "Automated configuration management with continuous compliance monitoring",
+                    "Configuration management tools with regular compliance checks",
+                    "Manual configuration with periodic security reviews",
+                    "Ad-hoc configuration management"
+                ],
+                weights: [4, 3, 2, 1],
+                maturityLevels: ["run", "walk", "crawl", "crawl"]
+            },
+            {
+                domain: "Data Protection",
+                question: "How do you protect data at rest?",
+                options: [
+                    "Comprehensive encryption with automated key rotation and access logging",
+                    "Encryption enabled with managed key rotation",
+                    "Basic encryption for sensitive data",
+                    "Limited or no encryption implementation"
+                ],
+                weights: [4, 3, 2, 1],
+                maturityLevels: ["run", "walk", "crawl", "crawl"]
+            },
+            {
+                domain: "Data Protection",
+                question: "How do you protect data in transit?",
+                options: [
+                    "End-to-end encryption with certificate management and perfect forward secrecy",
+                    "TLS encryption for all communications with certificate management",
+                    "TLS encryption for external communications",
+                    "Limited encryption for data in transit"
+                ],
+                weights: [4, 3, 2, 1],
+                maturityLevels: ["run", "walk", "crawl", "crawl"]
+            },
+            {
+                domain: "Detective Controls",
+                question: "How do you monitor security events?",
+                options: [
+                    "Comprehensive SIEM with automated threat detection and response",
+                    "Centralized logging with security monitoring and alerting",
+                    "Basic logging with manual security reviews",
+                    "Minimal logging and monitoring"
+                ],
+                weights: [4, 3, 2, 1],
+                maturityLevels: ["run", "walk", "crawl", "crawl"]
+            },
+            {
+                domain: "Detective Controls",
+                question: "How do you detect and respond to threats?",
+                options: [
+                    "AI-powered threat detection with automated response and forensics",
+                    "Threat detection tools with defined response procedures",
+                    "Basic intrusion detection with manual response",
+                    "Limited threat detection capabilities"
+                ],
+                weights: [4, 3, 2, 1],
+                maturityLevels: ["run", "walk", "crawl", "crawl"]
+            },
+            {
+                domain: "Incident Response",
+                question: "How prepared are you for security incidents?",
+                options: [
+                    "Automated incident response with playbooks and continuous improvement",
+                    "Documented incident response procedures with regular testing",
+                    "Basic incident response plan with some testing",
+                    "Informal incident response approach"
+                ],
+                weights: [4, 3, 2, 1],
+                maturityLevels: ["run", "walk", "crawl", "crawl"]
+            },
+            {
+                domain: "Incident Response",
+                question: "How do you handle security incident communication?",
+                options: [
+                    "Automated stakeholder notification with real-time status updates",
+                    "Defined communication procedures with stakeholder notification",
+                    "Basic communication plan for major incidents",
+                    "Ad-hoc incident communication"
+                ],
+                weights: [4, 3, 2, 1],
+                maturityLevels: ["run", "walk", "crawl", "crawl"]
+            },
+            {
+                domain: "Compliance & Governance",
+                question: "How do you manage security compliance?",
+                options: [
+                    "Automated compliance monitoring with continuous assessment and reporting",
+                    "Regular compliance assessments with documented controls",
+                    "Annual compliance reviews with basic documentation",
+                    "Minimal compliance management"
+                ],
+                weights: [4, 3, 2, 1],
+                maturityLevels: ["run", "walk", "crawl", "crawl"]
+            },
+            {
+                domain: "Compliance & Governance",
+                question: "How do you manage security policies and procedures?",
+                options: [
+                    "Comprehensive security governance with automated policy enforcement",
+                    "Documented security policies with regular reviews and updates",
+                    "Basic security policies with annual reviews",
+                    "Informal security guidelines"
+                ],
+                weights: [4, 3, 2, 1],
+                maturityLevels: ["run", "walk", "crawl", "crawl"]
+            }
+        ];
+
+        let currentQuestion = 0;
+        let answers = [];
+
+        // Initialize assessment
+        function initializeAssessment() {
+            showQuestion(currentQuestion);
+        }
+
+        // Show question
+        function showQuestion(questionIndex) {
+            const question = assessmentQuestions[questionIndex];
+            const formHtml = `
+                <div class="question-card">
+                    <div class="question-domain">${question.domain}</div>
+                    <h3 class="question-text">${question.question}</h3>
+                    <div class="question-options">
+                        ${question.options.map((option, index) => `
+                            <label class="option-label">
+                                <input type="radio" name="question_${questionIndex}" value="${index}" />
+                                <span class="option-text">${option}</span>
+                                <span class="maturity-indicator ${question.maturityLevels[index]}">${question.maturityLevels[index].toUpperCase()}</span>
+                            </label>
+                        `).join('')}
+                    </div>
+                    <div class="question-actions">
+                        ${questionIndex > 0 ? '<button type="button" class="btn-secondary" onclick="previousQuestion()">Previous</button>' : ''}
+                        <button type="button" class="btn-primary" onclick="nextQuestion()" id="next-btn" disabled>
+                            ${questionIndex === assessmentQuestions.length - 1 ? 'Complete Assessment' : 'Next Question'}
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('assessment-form').innerHTML = formHtml;
+            
+            // Add event listeners for radio buttons
+            document.querySelectorAll(`input[name="question_${questionIndex}"]`).forEach(radio => {
+                radio.addEventListener('change', () => {
+                    document.getElementById('next-btn').disabled = false;
+                });
+            });
+            
+            updateProgress();
+        }
+
+        // Next question
+        function nextQuestion() {
+            const selectedOption = document.querySelector(`input[name="question_${currentQuestion}"]:checked`);
+            if (!selectedOption) return;
+            
+            answers[currentQuestion] = parseInt(selectedOption.value);
+            
+            if (currentQuestion < assessmentQuestions.length - 1) {
+                currentQuestion++;
+                showQuestion(currentQuestion);
+            } else {
+                showResults();
+            }
+        }
+
+        // Previous question
+        function previousQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                showQuestion(currentQuestion);
+            }
+        }
+
+        // Update progress
+        function updateProgress() {
+            const progress = ((currentQuestion + 1) / assessmentQuestions.length) * 100;
+            document.getElementById('progress-fill').style.width = progress + '%';
+            document.getElementById('progress-text').textContent = `Question ${currentQuestion + 1} of ${assessmentQuestions.length}`;
+        }
+
+        // Show results
+        function showResults() {
+            document.getElementById('assessment-form').style.display = 'none';
+            document.getElementById('assessment-results').style.display = 'block';
+            
+            // Calculate scores by domain
+            const domainScores = {};
+            const maturityCounts = { crawl: 0, walk: 0, run: 0 };
+            
+            assessmentQuestions.forEach((question, index) => {
+                if (!domainScores[question.domain]) {
+                    domainScores[question.domain] = { total: 0, count: 0 };
+                }
+                domainScores[question.domain].total += question.weights[answers[index]];
+                domainScores[question.domain].count++;
+                
+                // Count maturity levels
+                const maturityLevel = question.maturityLevels[answers[index]];
+                maturityCounts[maturityLevel]++;
+            });
+            
+            // Calculate percentages and overall maturity
+            const domainPercentages = {};
+            Object.keys(domainScores).forEach(domain => {
+                domainPercentages[domain] = Math.round((domainScores[domain].total / (domainScores[domain].count * 4)) * 100);
+            });
+            
+            // Determine overall maturity level
+            const overallMaturity = determineMaturityLevel(maturityCounts);
+            
+            // Display results
+            displayResults(domainPercentages, overallMaturity, maturityCounts);
+        }
+
+        // Determine maturity level
+        function determineMaturityLevel(counts) {
+            const total = counts.crawl + counts.walk + counts.run;
+            const runPercentage = (counts.run / total) * 100;
+            const walkPercentage = (counts.walk / total) * 100;
+            
+            if (runPercentage >= 60) return 'run';
+            if (walkPercentage + runPercentage >= 60) return 'walk';
+            return 'crawl';
+        }
+
+        // Display results
+        function displayResults(domainScores, maturityLevel, maturityCounts) {
+            // Display maturity level
+            const maturityHtml = `
+                <div class="maturity-result ${maturityLevel}">
+                    <div class="maturity-icon">${maturityLevel === 'run' ? '🏃' : maturityLevel === 'walk' ? '🚶' : '🐛'}</div>
+                    <div class="maturity-content">
+                        <h3>Your Security Maturity Level: ${maturityLevel.toUpperCase()}</h3>
+                        <p>${getMaturityDescription(maturityLevel)}</p>
+                        <div class="maturity-breakdown">
+                            <div class="breakdown-item">
+                                <span class="breakdown-label">Crawl Phase:</span>
+                                <span class="breakdown-value">${maturityCounts.crawl} responses</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="breakdown-label">Walk Phase:</span>
+                                <span class="breakdown-value">${maturityCounts.walk} responses</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="breakdown-label">Run Phase:</span>
+                                <span class="breakdown-value">${maturityCounts.run} responses</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('maturity-level').innerHTML = maturityHtml;
+            
+            // Display domain scores
+            const domainHtml = `
+                <h3>Security Domain Scores</h3>
+                <div class="domain-scores-grid">
+                    ${Object.keys(domainScores).map(domain => `
+                        <div class="domain-score">
+                            <div class="domain-name">${domain}</div>
+                            <div class="score-bar">
+                                <div class="score-fill" style="width: ${domainScores[domain]}%"></div>
+                            </div>
+                            <div class="score-value">${domainScores[domain]}%</div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            
+            document.getElementById('domain-scores').innerHTML = domainHtml;
+            
+            // Generate improvement roadmap
+            generateImprovementRoadmap(domainScores, maturityLevel);
+        }
+
+        // Get maturity description
+        function getMaturityDescription(level) {
+            const descriptions = {
+                crawl: "You have basic security controls in place but need to strengthen foundational security practices and implement more comprehensive controls.",
+                walk: "You have solid security foundations and are operationalizing security controls. Focus on automation and advanced monitoring capabilities.",
+                run: "You have mature security operations with advanced capabilities. Continue to optimize and innovate your security posture."
+            };
+            return descriptions[level];
+        }
+
+        // Generate improvement roadmap
+        function generateImprovementRoadmap(domainScores, currentLevel) {
+            const roadmapHtml = `
+                <h3>Your Security Improvement Roadmap</h3>
+                <div class="roadmap-phases">
+                    ${generatePhaseRecommendations(domainScores, currentLevel)}
+                </div>
+            `;
+            
+            document.getElementById('improvement-roadmap').innerHTML = roadmapHtml;
+        }
+
+        // Generate phase recommendations
+        function generatePhaseRecommendations(domainScores, currentLevel) {
+            const recommendations = {
+                crawl: [
+                    "Implement centralized identity and access management",
+                    "Enable encryption for data at rest and in transit",
+                    "Set up basic network security controls",
+                    "Establish logging and monitoring foundations",
+                    "Create incident response procedures"
+                ],
+                walk: [
+                    "Automate security configuration management",
+                    "Implement advanced threat detection",
+                    "Establish security incident response automation",
+                    "Deploy comprehensive compliance monitoring",
+                    "Enhance security training and awareness"
+                ],
+                run: [
+                    "Implement zero trust architecture",
+                    "Deploy AI-powered security analytics",
+                    "Establish predictive threat intelligence",
+                    "Implement continuous security optimization",
+                    "Develop security innovation programs"
+                ]
+            };
+
+            const phases = ['crawl', 'walk', 'run'];
+            const currentIndex = phases.indexOf(currentLevel);
+            
+            return phases.map((phase, index) => {
+                const isCompleted = index < currentIndex;
+                const isCurrent = index === currentIndex;
+                const isNext = index === currentIndex + 1;
+                
+                return `
+                    <div class="roadmap-phase ${isCompleted ? 'completed' : isCurrent ? 'current' : isNext ? 'next' : 'future'}">
+                        <div class="phase-header">
+                            <div class="phase-icon">${phase === 'run' ? '🏃' : phase === 'walk' ? '🚶' : '🐛'}</div>
+                            <h4>${phase.toUpperCase()} Phase</h4>
+                            <span class="phase-status">${isCompleted ? 'Completed' : isCurrent ? 'Current' : isNext ? 'Next' : 'Future'}</span>
+                        </div>
+                        <div class="phase-recommendations">
+                            ${recommendations[phase].map(rec => `
+                                <div class="recommendation-item">
+                                    <span class="recommendation-status">${isCompleted ? '✅' : isCurrent || isNext ? '🎯' : '⏳'}</span>
+                                    <span class="recommendation-text">${rec}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Email capture and assessment initialization
+        document.getElementById('start-assessment').addEventListener('click', function() {
+            document.getElementById('email-modal').style.display = 'flex';
+        });
+
+        // Initialize registration manager
+        document.addEventListener('DOMContentLoaded', function() {
+            new RegistrationManager();
+            
+            // Override the showRegisteredContent method to initialize assessment
+            const originalShowContent = RegistrationManager.prototype.showRegisteredContent;
+            RegistrationManager.prototype.showRegisteredContent = function() {
+                originalShowContent.call(this);
+                initializeAssessment();
+            };
+        });
+    </script>
+</body>
+</html>

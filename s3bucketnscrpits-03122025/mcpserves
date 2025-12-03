@@ -1,0 +1,60 @@
+Based on the MCP configuration file, you have 54 total MCP servers configured:
+
+Enabled servers: 14
+• awslabs.core-mcp-server
+• awslabs.aws-documentation-mcp-server
+• awslabs.aws-pricing-mcp-server
+• awslabs.aws-diagram-mcp-server
+• awslabs.cfn-mcp-server
+• awslabs.git-repo-research-mcp-server
+• puppeteer
+• firecrawl-mcp
+• awslabs.cost-explorer-mcp-server
+• awslabs.cdk-mcp-server
+• awslabs.nova-canvas-mcp-server
+• sequentialthinking
+• time
+• playwright-mcp
+
+Disabled servers: 40
+• awslabs.aurora-dsql-mcp-server
+• awslabs.mysql-mcp-server
+• awslabs.postgres-mcp-server
+• awslabs.cloudwatch-appsignals-mcp-server
+• awslabs.cloudwatch-mcp-server
+• awslabs.aws-dataprocessing-mcp-server
+• awslabs.documentdb-mcp-server
+• awslabs.dynamodb-mcp-server
+• awslabs.valkey-mcp-server
+• awslabs.memcached-mcp-server
+• awslabs.elasticache-mcp-server
+• awslabs.amazon-kendra-index-mcp-server
+• awslabs.amazon-keyspaces-mcp-server
+• awslabs.aws-location-mcp-server
+• awslabs.amazon-mq-mcp-server
+• awslabs.amazon-neptune-mcp-server
+• awslabs.amazon-qbusiness-anonymous-mcp-server
+• awslabs.amazon-qindex-mcp-server
+• awslabs.redshift-mcp-server
+• awslabs.amazon-rekognition-mcp-server
+• awslabs.amazon-sns-sqs-mcp-server
+• awslabs.timestream-for-influxdb-mcp-server
+• awslabs.aws-healthomics-mcp-server
+• awslabs.iam-mcp-server
+• awslabs.lambda-tool-mcp-server
+• awslabs.prometheus-mcp-server
+• awslabs.aws-msk-mcp-server
+• awslabs.aws-serverless-mcp-server
+• awslabs.stepfunctions-tool-mcp-server
+• awslabs.terraform-mcp-server
+• awslabs.code-doc-gen-mcp-server
+• awslabs.finch-mcp-server
+• awslabs.frontend-mcp-server
+• awslabs.openapi-mcp-server
+• awslabs.syntheticdata-mcp-server
+• awslabs.aws-bedrock-data-automation-mcp-server
+• awslabs.bedrock-kb-retrieval-mcp-server
+• awslabs.ecs-mcp-server
+• awslabs.eks-mcp-server
+• awslabs.s3-tables-mcp-server
+• awslabs.aws-support-mcp-server

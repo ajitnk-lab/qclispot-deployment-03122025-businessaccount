@@ -1,0 +1,579 @@
+{
+  "mcpServers": {
+    "fetch": {
+      "command": "uvx",
+      "args": ["mcp-server-fetch"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "awslabs.core-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.core-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "autoApprove": [],
+      "disabled": false
+    },
+    "awslabs.aws-documentation-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.aws-documentation-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "awslabs.aws-pricing-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.aws-pricing-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "awslabs.aws-diagram-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.aws-diagram-mcp-server"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "autoApprove": [],
+      "disabled": false
+    },
+    "awslabs.cfn-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.cfn-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "awslabs.git-repo-research-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.git-repo-research-mcp-server@latest"],
+      "env": {
+        "AWS_PROFILE": "default",
+        "AWS_REGION": "us-west-2",
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "GITHUB_TOKEN": "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"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "puppeteer": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-puppeteer"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "disabled": true,
+      "autoApprove": ["*"]
+    },
+    "firecrawl-mcp": {
+      "command": "npx",
+      "args": ["-y", "firecrawl-mcp"],
+      "env": {
+        "FIRECRAWL_API_KEY": "fc-fe43ba9746564496b8ff51ba1b66e9f9",
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "disabled": false,
+      "autoApprove": ["*"]
+    },
+    "awslabs.cost-explorer-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.cost-explorer-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "disabled": false,
+      "autoApprove": ["*"]
+    },
+    "awslabs.cdk-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.cdk-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "disabled": false,
+      "autoApprove": ["*"]
+    },
+    "awslabs.nova-canvas-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.nova-canvas-mcp-server@latest"],
+      "env": {
+        "AWS_REGION": "us-east-1",
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "disabled": true,
+      "autoApprove": ["*"]
+    },
+    "sequentialthinking": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "mcp/sequentialthinking"
+      ]
+    },
+
+    "time": {
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "mcp/time"]
+    },
+    "playwright-mcp": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "--init",
+        "--cap-add=SYS_ADMIN",
+        "mcp/playwright"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "disabled": false,
+      "autoApprove": ["*"]
+    },
+    "awslabs.aurora-dsql-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.aurora-dsql-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.mysql-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.mysql-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.postgres-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.postgres-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.cloudwatch-appsignals-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.cloudwatch-appsignals-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.cloudwatch-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.cloudwatch-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.aws-dataprocessing-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.aws-dataprocessing-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.documentdb-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.documentdb-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.dynamodb-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.dynamodb-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.valkey-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.valkey-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.memcached-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.memcached-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.elasticache-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.elasticache-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.amazon-kendra-index-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.amazon-kendra-index-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.amazon-keyspaces-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.amazon-keyspaces-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.aws-location-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.aws-location-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.amazon-mq-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.amazon-mq-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.amazon-neptune-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.amazon-neptune-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.amazon-qbusiness-anonymous-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.amazon-qbusiness-anonymous-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.amazon-qindex-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.amazon-qindex-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.redshift-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.redshift-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.amazon-rekognition-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.amazon-rekognition-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.amazon-sns-sqs-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.amazon-sns-sqs-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.timestream-for-influxdb-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.timestream-for-influxdb-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.aws-healthomics-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.aws-healthomics-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.iam-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.iam-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.lambda-tool-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.lambda-tool-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.prometheus-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.prometheus-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.aws-msk-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.aws-msk-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.aws-serverless-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.aws-serverless-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.stepfunctions-tool-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.stepfunctions-tool-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.terraform-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.terraform-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.code-doc-gen-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.code-doc-gen-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.finch-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.finch-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.frontend-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.frontend-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.openapi-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.openapi-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.syntheticdata-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.syntheticdata-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.aws-bedrock-data-automation-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.aws-bedrock-data-automation-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.bedrock-kb-retrieval-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.bedrock-kb-retrieval-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.ecs-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.ecs-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.eks-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.eks-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.s3-tables-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.s3-tables-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.aws-support-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.aws-support-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "github": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "ghcr.io/github/github-mcp-server"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "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",
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}

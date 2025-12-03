@@ -1,0 +1,9 @@
+{
+  "api_key": "AIzaSyCz1XCvBqdV6OIINGUHcf19bivQU1fecyQ",
+  "model": "gemini-2.0-flash-exp",
+  "temperature": 0.7,
+  "max_tokens": 2048,
+  "persistent_storage": "/persistent/home/ubuntu/.config/gemini-cli",
+  "installation_date": "2025-07-09T11:44:22Z",
+  "version": "v10-enhanced-with-gemini-flash25-apikey-simplecommands"
+}

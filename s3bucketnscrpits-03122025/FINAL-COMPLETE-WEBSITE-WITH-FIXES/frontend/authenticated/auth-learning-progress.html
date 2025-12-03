@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="access-level" content="authenticated">
+    <meta name="auth-type" content="full-profile">
+    <title>Learning Progress Tracker - CloudNestle Academy</title>
+    <meta name="description" content="Track your AWS learning journey, monitor certification progress, and access personalized learning recommendations.">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/authenticated.css">
+</head>
+<body class="access-authenticated">
+    <!-- Header -->
+    <header class="main-header authenticated-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>CloudNestle Academy</h1>
+                    <span>Learning Progress Tracker</span>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/auth-academy-dashboard.html">Dashboard</a></li>
+                        <li><a href="/auth-learning-progress.html" class="active">Progress</a></li>
+                        <li><a href="/auth-certification-tracking.html">Certifications</a></li>
+                        <li><a href="/auth-personalized-recommendations.html">Recommendations</a></li>
+                    </ul>
+                </nav>
+                <div class="user-menu">
+                    <div class="user-avatar">
+                        <i class="icon-user"></i>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name" id="user-name">Loading...</span>
+                        <span class="user-role" id="user-role">Member</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Progress Overview -->
+    <section class="progress-overview">
+        <div class="container">
+            <div class="overview-header">
+                <h1>Your Learning Journey</h1>
+                <p>Track your progress across AWS certifications, skills development, and practical implementations.</p>
+            </div>
+            
+            <div class="progress-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="icon-courses"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number" id="completed-courses">12</span>
+                        <span class="stat-label">Courses Completed</span>
+                    </div>
+                    <div class="stat-trend">
+                        <i class="icon-trend-up"></i>
+                        <span>+3 this month</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="icon-hours"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number" id="learning-hours">84</span>
+                        <span class="stat-label">Learning Hours</span>
+                    </div>
+                    <div class="stat-trend">
+                        <i class="icon-trend-up"></i>
+                        <span>+12 this week</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="icon-certificates"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number" id="certifications">2</span>
+                        <span class="stat-label">Certifications</span>
+                    </div>
+                    <div class="stat-trend">
+                        <i class="icon-target"></i>
+                        <span>1 in progress</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="icon-streak"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number" id="learning-streak">15</span>
+                        <span class="stat-label">Day Streak</span>
+                    </div>
+                    <div class="stat-trend">
+                        <i class="icon-fire"></i>
+                        <span>Keep it up!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Learning Paths -->
+    <section class="current-learning-paths">
+        <div class="container">
+            <div class="section-header">
+                <h2>Active Learning Paths</h2>
+                <p>Your current learning journeys and progress towards certification goals.</p>
+            </div>
+            
+            <div class="learning-paths-grid">
+                <div class="path-card active">
+                    <div class="path-header">
+                        <div class="path-info">
+                            <h3>AWS Solutions Architect Associate</h3>
+                            <span class="path-level">Associate Level</span>
+                        </div>
+                        <div class="path-progress-circle">
+                            <svg class="progress-ring" width="60" height="60">
+                                <circle class="progress-ring-circle" cx="30" cy="30" r="25" stroke-width="4" fill="transparent" stroke-dasharray="157" stroke-dashoffset="47"></circle>
+                            </svg>
+                            <span class="progress-percentage">70%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="path-details">
+                        <div class="path-timeline">
+                            <span class="timeline-item">Started: Jan 15, 2025</span>
+                            <span class="timeline-item">Target: Mar 30, 2025</span>
+                        </div>
+                        
+                        <div class="path-modules">
+                            <div class="module-item completed">
+                                <i class="icon-check"></i>
+                                <span>Design Resilient Architectures</span>
+                            </div>
+                            <div class="module-item completed">
+                                <i class="icon-check"></i>
+                                <span>Design High-Performing Architectures</span>
+                            </div>
+                            <div class="module-item in-progress">
+                                <i class="icon-progress"></i>
+                                <span>Design Secure Applications</span>
+                            </div>
+                            <div class="module-item pending">
+                                <i class="icon-pending"></i>
+                                <span>Design Cost-Optimized Architectures</span>
+                            </div>
+                        </div>
+                        
+                        <div class="path-actions">
+                            <a href="/auth-certification-tracking.html" class="btn btn-primary btn-sm">Continue Learning</a>
+                            <a href="#" class="btn btn-outline btn-sm">View Schedule</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="path-card">
+                    <div class="path-header">
+                        <div class="path-info">
+                            <h3>AWS Security Specialty</h3>
+                            <span class="path-level">Specialty Level</span>
+                        </div>
+                        <div class="path-progress-circle">
+                            <svg class="progress-ring" width="60" height="60">
+                                <circle class="progress-ring-circle" cx="30" cy="30" r="25" stroke-width="4" fill="transparent" stroke-dasharray="157" stroke-dashoffset="110"></circle>
+                            </svg>
+                            <span class="progress-percentage">30%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="path-details">
+                        <div class="path-timeline">
+                            <span class="timeline-item">Started: Feb 1, 2025</span>
+                            <span class="timeline-item">Target: May 15, 2025</span>
+                        </div>
+                        
+                        <div class="path-modules">
+                            <div class="module-item completed">
+                                <i class="icon-check"></i>
+                                <span>Incident Response</span>
+                            </div>
+                            <div class="module-item in-progress">
+                                <i class="icon-progress"></i>
+                                <span>Logging and Monitoring</span>
+                            </div>
+                            <div class="module-item pending">
+                                <i class="icon-pending"></i>
+                                <span>Infrastructure Security</span>
+                            </div>
+                            <div class="module-item pending">
+                                <i class="icon-pending"></i>
+                                <span>Identity and Access Management</span>
+                            </div>
+                        </div>
+                        
+                        <div class="path-actions">
+                            <a href="#" class="btn btn-primary btn-sm">Continue Learning</a>
+                            <a href="#" class="btn btn-outline btn-sm">View Schedule</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Activity -->
+    <section class="learning-activity">
+        <div class="container">
+            <div class="activity-header">
+                <h2>Recent Activity</h2>
+                <div class="activity-filters">
+                    <button class="filter-btn active" data-filter="all">All Activity</button>
+                    <button class="filter-btn" data-filter="courses">Courses</button>
+                    <button class="filter-btn" data-filter="labs">Labs</button>
+                    <button class="filter-btn" data-filter="assessments">Assessments</button>
+                </div>
+            </div>
+            
+            <div class="activity-timeline">
+                <div class="activity-item" data-type="course">
+                    <div class="activity-icon">
+                        <i class="icon-course"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>Completed: AWS Lambda Deep Dive</h4>
+                        <p>Finished comprehensive course on serverless computing with AWS Lambda, including hands-on labs and real-world scenarios.</p>
+                        <div class="activity-meta">
+                            <span class="activity-time">2 hours ago</span>
+                            <span class="activity-score">Score: 92%</span>
+                            <span class="activity-duration">3.5 hours</span>
+                        </div>
+                    </div>
+                    <div class="activity-badge">
+                        <i class="icon-trophy"></i>
+                    </div>
+                </div>
+                
+                <div class="activity-item" data-type="lab">
+                    <div class="activity-icon">
+                        <i class="icon-lab"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>Lab: Building Serverless Web Applications</h4>
+                        <p>Successfully deployed a full-stack serverless application using Lambda, API Gateway, and DynamoDB.</p>
+                        <div class="activity-meta">
+                            <span class="activity-time">1 day ago</span>
+                            <span class="activity-score">Completed</span>
+                            <span class="activity-duration">2 hours</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-item" data-type="assessment">
+                    <div class="activity-icon">
+                        <i class="icon-assessment"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>Practice Exam: Solutions Architect Associate</h4>
+                        <p>Completed practice exam covering design principles, security, and cost optimization.</p>
+                        <div class="activity-meta">
+                            <span class="activity-time">2 days ago</span>
+                            <span class="activity-score">Score: 78%</span>
+                            <span class="activity-duration">90 minutes</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-item" data-type="course">
+                    <div class="activity-icon">
+                        <i class="icon-course"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>Started: Advanced VPC Networking</h4>
+                        <p>Beginning advanced networking concepts including VPC peering, transit gateways, and network security.</p>
+                        <div class="activity-meta">
+                            <span class="activity-time">3 days ago</span>
+                            <span class="activity-score">In Progress</span>
+                            <span class="activity-duration">4 hours estimated</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-item" data-type="lab">
+                    <div class="activity-icon">
+                        <i class="icon-lab"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>Lab: Multi-Tier Architecture Deployment</h4>
+                        <p>Built and deployed a scalable three-tier web application with load balancing and auto-scaling.</p>
+                        <div class="activity-meta">
+                            <span class="activity-time">4 days ago</span>
+                            <span class="activity-score">Completed</span>
+                            <span class="activity-duration">3 hours</span>
+                        </div>
+                    </div>
+                    <div class="activity-badge">
+                        <i class="icon-star"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="activity-load-more">
+                <button class="btn btn-outline">Load More Activity</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Progress -->
+    <section class="skills-progress">
+        <div class="container">
+            <div class="section-header">
+                <h2>Skills Development</h2>
+                <p>Track your progress across different AWS skill areas and competencies.</p>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Core AWS Services</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">EC2 & Compute</span>
+                                <span class="skill-level">Advanced</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">S3 & Storage</span>
+                                <span class="skill-level">Expert</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="progress-fill" style="width: 92%"></div>
+                            </div>
+                            <span class="skill-percentage">92%</span>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">RDS & Databases</span>
+                                <span class="skill-level">Intermediate</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="progress-fill" style="width: 68%"></div>
+                            </div>
+                            <span class="skill-percentage">68%</span>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Lambda & Serverless</span>
+                                <span class="skill-level">Advanced</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="progress-fill" style="width: 78%"></div>
+                            </div>
+                            <span class="skill-percentage">78%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Security & Compliance</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">IAM & Access Control</span>
+                                <span class="skill-level">Advanced</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="progress-fill" style="width: 82%"></div>
+                            </div>
+                            <span class="skill-percentage">82%</span>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">VPC & Networking</span>
+                                <span class="skill-level">Intermediate</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="progress-fill" style="width: 65%"></div>
+                            </div>
+                            <span class="skill-percentage">65%</span>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">CloudTrail & Monitoring</span>
+                                <span class="skill-level">Beginner</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="progress-fill" style="width: 45%"></div>
+                            </div>
+                            <span class="skill-percentage">45%</span>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Encryption & KMS</span>
+                                <span class="skill-level">Intermediate</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="progress-fill" style="width: 58%"></div>
+                            </div>
+                            <span class="skill-percentage">58%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>DevOps & Automation</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">CloudFormation</span>
+                                <span class="skill-level">Intermediate</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="progress-fill" style="width: 72%"></div>
+                            </div>
+                            <span class="skill-percentage">72%</span>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">CodePipeline & CI/CD</span>
+                                <span class="skill-level">Beginner</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="progress-fill" style="width: 38%"></div>
+                            </div>
+                            <span class="skill-percentage">38%</span>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">ECS & Containers</span>
+                                <span class="skill-level">Beginner</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="progress-fill" style="width: 42%"></div>
+                            </div>
+                            <span class="skill-percentage">42%</span>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">CloudWatch & Monitoring</span>
+                                <span class="skill-level">Intermediate</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="progress-fill" style="width: 61%"></div>
+                            </div>
+                            <span class="skill-percentage">61%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Goals -->
+    <section class="learning-goals">
+        <div class="container">
+            <div class="section-header">
+                <h2>Learning Goals & Milestones</h2>
+                <p>Set and track your learning objectives with personalized milestones and deadlines.</p>
+            </div>
+            
+            <div class="goals-grid">
+                <div class="goal-card active">
+                    <div class="goal-header">
+                        <h3>AWS Solutions Architect Associate</h3>
+                        <span class="goal-deadline">Target: Mar 30, 2025</span>
+                    </div>
+                    <div class="goal-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 70%"></div>
+                        </div>
+                        <span class="progress-text">70% Complete</span>
+                    </div>
+                    <div class="goal-milestones">
+                        <div class="milestone completed">
+                            <i class="icon-check"></i>
+                            <span>Complete Core Services Training</span>
+                        </div>
+                        <div class="milestone completed">
+                            <i class="icon-check"></i>
+                            <span>Pass Practice Exam #1</span>
+                        </div>
+                        <div class="milestone in-progress">
+                            <i class="icon-progress"></i>
+                            <span>Complete Security Module</span>
+                        </div>
+                        <div class="milestone pending">
+                            <i class="icon-pending"></i>
+                            <span>Schedule Certification Exam</span>
+                        </div>
+                    </div>
+                    <div class="goal-actions">
+                        <button class="btn btn-primary btn-sm">Update Goal</button>
+                        <button class="btn btn-outline btn-sm">View Details</button>
+                    </div>
+                </div>
+                
+                <div class="goal-card">
+                    <div class="goal-header">
+                        <h3>Complete 5 Hands-on Labs</h3>
+                        <span class="goal-deadline">Target: Feb 28, 2025</span>
+                    </div>
+                    <div class="goal-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%"></div>
+                        </div>
+                        <span class="progress-text">3 of 5 Complete</span>
+                    </div>
+                    <div class="goal-milestones">
+                        <div class="milestone completed">
+                            <i class="icon-check"></i>
+                            <span>Serverless Web App Lab</span>
+                        </div>
+                        <div class="milestone completed">
+                            <i class="icon-check"></i>
+                            <span>Multi-Tier Architecture Lab</span>
+                        </div>
+                        <div class="milestone completed">
+                            <i class="icon-check"></i>
+                            <span>Database Migration Lab</span>
+                        </div>
+                        <div class="milestone pending">
+                            <i class="icon-pending"></i>
+                            <span>Security Implementation Lab</span>
+                        </div>
+                        <div class="milestone pending">
+                            <i class="icon-pending"></i>
+                            <span>DevOps Pipeline Lab</span>
+                        </div>
+                    </div>
+                    <div class="goal-actions">
+                        <button class="btn btn-primary btn-sm">Continue Labs</button>
+                        <button class="btn btn-outline btn-sm">View Schedule</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="add-goal">
+                <button class="btn btn-outline">
+                    <i class="icon-plus"></i>
+                    Add New Learning Goal
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="authenticated-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>CloudNestle Academy</h4>
+                    <p>Your personalized AWS learning journey with expert guidance and community support.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/auth-academy-dashboard.html">Dashboard</a></li>
+                        <li><a href="/auth-certification-tracking.html">Certifications</a></li>
+                        <li><a href="/auth-personalized-recommendations.html">Recommendations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="/../contact.html">Contact Support</a></li>
+                        <li><a href="#">Learning Resources</a></li>
+                        <li><a href="#">Community Forum</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/authentication-manager.js"></script>
+    <script src="../assets/js/learning-progress.js"></script>
+</body>
+</html>

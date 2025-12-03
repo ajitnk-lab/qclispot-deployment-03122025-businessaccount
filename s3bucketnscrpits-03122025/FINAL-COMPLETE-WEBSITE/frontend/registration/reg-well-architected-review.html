@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Well-Architected Review - CloudNestle</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/auth-manager.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><a href="../index.html">CloudNestle</a></div>
+            <ul class="nav-menu">
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="../solutions.html">Solutions</a></li>
+                <li><a href="../industries.html">Industries</a></li>
+                <li><a href="../frameworks/index.html">Frameworks</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="#" onclick="authManager.showLogin()" class="nav-cta">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>AWS Well-Architected Review</h1>
+                <p class="hero-subtitle">Comprehensive assessment of your AWS architecture against the six pillars of the Well-Architected Framework</p>
+                <div class="registration-notice">
+                    <p><strong>Registration Required:</strong> Complete the form below to access your personalized Well-Architected Review</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="registration-form-container">
+                <div class="form-header">
+                    <h2>Get Your Well-Architected Review</h2>
+                    <p>Provide your information to receive a comprehensive architecture assessment</p>
+                </div>
+
+                <form class="registration-form" id="warForm">
+                    <div class="form-section">
+                        <h3>Contact Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Company Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company">Company Name *</label>
+                                <input type="text" id="company" name="company" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Job Title *</label>
+                                <input type="text" id="title" name="title" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="industry">Industry</label>
+                                <select id="industry" name="industry">
+                                    <option value="">Select Industry</option>
+                                    <option value="technology">Technology</option>
+                                    <option value="healthcare">Healthcare</option>
+                                    <option value="financial">Financial Services</option>
+                                    <option value="retail">Retail</option>
+                                    <option value="education">Education</option>
+                                    <option value="manufacturing">Manufacturing</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="companySize">Company Size</label>
+                                <select id="companySize" name="companySize">
+                                    <option value="">Select Size</option>
+                                    <option value="startup">Startup (1-50)</option>
+                                    <option value="smb">Small-Medium (51-500)</option>
+                                    <option value="enterprise">Enterprise (500+)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Architecture Information</h3>
+                        <div class="form-group">
+                            <label for="workloadType">Primary Workload Type *</label>
+                            <select id="workloadType" name="workloadType" required>
+                                <option value="">Select Workload Type</option>
+                                <option value="web-application">Web Application</option>
+                                <option value="mobile-backend">Mobile Backend</option>
+                                <option value="data-analytics">Data Analytics</option>
+                                <option value="machine-learning">Machine Learning</option>
+                                <option value="microservices">Microservices</option>
+                                <option value="batch-processing">Batch Processing</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="awsServices">Primary AWS Services Used</label>
+                            <textarea id="awsServices" name="awsServices" rows="3" placeholder="e.g., EC2, RDS, Lambda, S3, etc."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="currentChallenges">Current Architecture Challenges</label>
+                            <textarea id="currentChallenges" name="currentChallenges" rows="4" placeholder="Describe any performance, cost, security, or operational challenges you're experiencing"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Review Preferences</h3>
+                        <div class="form-group">
+                            <label>Which pillars are most important to your organization? (Select all that apply)</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="pillars" value="operational-excellence">
+                                    <span class="checkmark"></span>
+                                    Operational Excellence
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="pillars" value="security">
+                                    <span class="checkmark"></span>
+                                    Security
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="pillars" value="reliability">
+                                    <span class="checkmark"></span>
+                                    Reliability
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="pillars" value="performance">
+                                    <span class="checkmark"></span>
+                                    Performance Efficiency
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="pillars" value="cost">
+                                    <span class="checkmark"></span>
+                                    Cost Optimization
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="pillars" value="sustainability">
+                                    <span class="checkmark"></span>
+                                    Sustainability
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="timeline">Preferred Review Timeline</label>
+                            <select id="timeline" name="timeline">
+                                <option value="">Select Timeline</option>
+                                <option value="asap">ASAP</option>
+                                <option value="1-2-weeks">1-2 weeks</option>
+                                <option value="3-4-weeks">3-4 weeks</option>
+                                <option value="flexible">Flexible</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Request Well-Architected Review</button>
+                        <p class="form-disclaimer">
+                            By submitting this form, you agree to our <a href="../privacy.html">Privacy Policy</a> and consent to being contacted by CloudNestle regarding your Well-Architected Review.
+                        </p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="review-benefits">
+                <h2>What You'll Receive</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">📊</div>
+                        <h3>Comprehensive Assessment Report</h3>
+                        <p>Detailed analysis of your architecture against all six Well-Architected pillars</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🎯</div>
+                        <h3>Prioritized Recommendations</h3>
+                        <p>Actionable improvement recommendations ranked by impact and effort</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">📈</div>
+                        <h3>ROI Analysis</h3>
+                        <p>Cost-benefit analysis of recommended improvements with projected savings</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🗺️</div>
+                        <h3>Implementation Roadmap</h3>
+                        <p>Step-by-step plan for implementing improvements with timelines</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CloudNestle</h3>
+                    <p>Expert AWS consulting and implementation services for businesses of all sizes.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services.html">AWS Consulting</a></li>
+                        <li><a href="../solutions.html">Cloud Solutions</a></li>
+                        <li><a href="../frameworks/index.html">Framework Assessment</a></li>
+                        <li><a href="../training.html">Training Programs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="../knowledge-center/index.html">Knowledge Center</a></li>
+                        <li><a href="../workshops/index.html">Workshops</a></li>
+                        <li><a href="../community/index.html">Community</a></li>
+                        <li><a href="../guarantees/index.html">Service Guarantees</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../company.html">Leadership</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="../careers.html">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CloudNestle. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            authManager.init();
+            
+            document.getElementById('warForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Handle form submission
+                alert('Thank you! Your Well-Architected Review request has been submitted. We will contact you within 24 hours.');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,412 @@
+{
+  "mcpServers": {
+    "awslabs.core-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.core-mcp-server@latest"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default",
+        "INSTANCE_FAMILY": "c5",
+        "NODE_OPTIONS": "--max-old-space-size=512"
+      },
+      "autoApprove": [],
+      "disabled": false
+    },
+    "awslabs.aws-documentation-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.aws-documentation-mcp-server@latest"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default",
+        "INSTANCE_FAMILY": "c5"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "awslabs.eks-mcp-server": {
+      "autoApprove": [],
+      "disabled": true,
+      "command": "uvx",
+      "args": [
+        "awslabs.eks-mcp-server@latest",
+        "--allow-write"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default",
+        "INSTANCE_FAMILY": "c5"
+      },
+      "transportType": "stdio"
+    },
+    "awslabs.cost-analysis-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.cost-analysis-mcp-server@latest"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default",
+        "INSTANCE_FAMILY": "c5"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "awslabs.aws-diagram-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.aws-diagram-mcp-server"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default",
+        "INSTANCE_FAMILY": "c5"
+      },
+      "autoApprove": [],
+      "disabled": false
+    },
+    "awslabs.cfn-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.cfn-mcp-server@latest"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "INSTANCE_FAMILY": "c5"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "awslabs.git-repo-research-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.git-repo-research-mcp-server@latest"
+      ],
+      "env": {
+        "AWS_PROFILE": "default",
+        "AWS_REGION": "us-west-2",
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "GITHUB_TOKEN": "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",
+        "INSTANCE_FAMILY": "c5"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "awslabs.ecs-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "awslabs-ecs-mcp-server",
+        "ecs-mcp-server"
+      ],
+      "env": {
+        "AWS_PROFILE": "default",
+        "AWS_REGION": "us-west-2",
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "ALLOW_WRITE": "true",
+        "ALLOW_SENSITIVE_DATA": "true",
+        "INSTANCE_FAMILY": "c5"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "puppeteer": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-puppeteer"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "NODE_OPTIONS": "--max-old-space-size=512"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "*"
+      ]
+    },
+    "firecrawl-mcp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "firecrawl-mcp"
+      ],
+      "env": {
+        "FIRECRAWL_API_KEY": "fc-fe43ba9746564496b8ff51ba1b66e9f9",
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "NODE_OPTIONS": "--max-old-space-size=512"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "*"
+      ]
+    },
+    "duckduckgo-search": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "duckduckgo-mcp-server"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "NODE_OPTIONS": "--max-old-space-size=512"
+      },
+      "disabled": true,
+      "autoApprove": [
+        "*"
+      ]
+    },
+    "awslabs.cost-explorer-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.cost-explorer-mcp-server@latest"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "INSTANCE_FAMILY": "c5"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "*"
+      ]
+    },
+    "awslabs.support-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.aws-support-mcp-server@latest",
+        "--debug",
+        "--log-file",
+        "./logs/mcp_support_server.log"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "INSTANCE_FAMILY": "c5"
+      },
+      "disabled": true,
+      "autoApprove": [
+        "*"
+      ]
+    },
+    "awslabs.bedrock-kb-retrieval-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.bedrock-kb-retrieval-mcp-server@latest"
+      ],
+      "env": {
+        "AWS_REGION": "us-east-1",
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "KB_INCLUSION_TAG_KEY": "optional-tag-key-to-filter-kbs",
+        "BEDROCK_KB_RERANKING_ENABLED": "false",
+        "INSTANCE_FAMILY": "c5"
+      },
+      "disabled": true,
+      "autoApprove": [
+        "*"
+      ]
+    },
+    "awslabs.cdk-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.cdk-mcp-server@latest"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "INSTANCE_FAMILY": "c5"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "*"
+      ]
+    },
+    "awslabs.nova-canvas-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.nova-canvas-mcp-server@latest"
+      ],
+      "env": {
+        "AWS_REGION": "us-east-1",
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "INSTANCE_FAMILY": "c5"
+      },
+      "disabled": true,
+      "autoApprove": [
+        "*"
+      ]
+    },
+    "awslabs.aws-bedrock-data-automation-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.aws-bedrock-data-automation-mcp-server@latest"
+      ],
+      "env": {
+        "AWS_REGION": "us-east-1",
+        "AWS_BUCKET_NAME": "",
+        "BASE_DIR": "/home/ubuntu",
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "INSTANCE_FAMILY": "c5"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "awslabs.aws-pricing-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.aws-pricing-mcp-server@latest"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default",
+        "INSTANCE_FAMILY": "c5"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "awslabs.aws-api-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.aws-api-mcp-server@latest"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default",
+        "INSTANCE_FAMILY": "c5"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "awslabs.aws-cdk-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.aws-cdk-mcp-server@latest"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default",
+        "INSTANCE_FAMILY": "c5"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "awslabs.aws-knowledge-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.aws-knowledge-mcp-server@latest"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default",
+        "INSTANCE_FAMILY": "c5"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "awslabs.aws-dataprocessing-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.aws-dataprocessing-mcp-server@latest"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default",
+        "INSTANCE_FAMILY": "c5"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "awslabs.cloudwatch-appsignals-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.cloudwatch-appsignals-mcp-server@latest"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default",
+        "INSTANCE_FAMILY": "c5"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "awslabs.code-doc-gen-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.code-doc-gen-mcp-server@latest"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default",
+        "INSTANCE_FAMILY": "c5"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "awslabs.cloudwatch-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.cloudwatch-mcp-server@latest"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default",
+        "INSTANCE_FAMILY": "c5"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "awslabs.frontend-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.frontend-mcp-server@latest"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default",
+        "INSTANCE_FAMILY": "c5"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "awslabs.introducing-aws-serverless-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.introducing-aws-serverless-mcp-server@latest"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default",
+        "INSTANCE_FAMILY": "c5"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "github-mcp-server": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "ghcr.io/github/github-mcp-server"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "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",
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "disabled": false,
+      "autoApprove": []
+    }
+  },
+  "instance_config": {
+    "instance_type": "c5.2xlarge",
+    "instance_family": "c5",
+    "instance_category": "Compute Optimized",
+    "memory_config": "standard",
+    "cpu_config": "high",
+    "mcp_memory_limit": "512",
+    "mcp_log_level": "ERROR",
+    "setup_timestamp": "2025-07-03T10:55:45Z"
+  }
+}

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="access-level" content="authenticated">
+    <meta name="auth-type" content="full-profile">
+    
+    <!-- SEO Meta Tags -->
+    <title>Academy Dashboard - CloudNestle</title>
+    <meta name="description" content="Your personalized CloudNestle Academy dashboard with learning progress, certifications, and AI-powered recommendations.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body class="access-authenticated">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">CN</div>
+                    CloudNestle Academy
+                </div>
+                
+                <nav class="nav">
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="/auth-academy-dashboard.html" class="nav-link active">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/auth-learning-paths.html" class="nav-link">Learning Paths</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/auth-certifications.html" class="nav-link">Certifications</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/auth-labs.html" class="nav-link">Hands-on Labs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/auth-community.html" class="nav-link">Community</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="nav-actions">
+                        <div class="user-profile">
+                            <span class="user-name">Loading...</span>
+                            <div class="user-dropdown">
+                                <a href="/auth-profile.html">Profile Settings</a>
+                                <a href="/auth-billing.html">Billing</a>
+                                <a href="#" class="logout-btn">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Protected Content -->
+    <div class="content-auth-required gated">
+        <div class="auth-required-overlay">
+            <div class="login-prompt">
+                <h3>🔐 Member Access Required</h3>
+                <p>Please log in to access your personalized Academy dashboard</p>
+                <div class="login-benefits">
+                    <ul>
+                        <li>✅ Personalized learning recommendations</li>
+                        <li>✅ Progress tracking and analytics</li>
+                        <li>✅ Hands-on lab environments</li>
+                        <li>✅ Expert mentorship access</li>
+                        <li>✅ Certification guarantee program</li>
+                    </ul>
+                </div>
+                <div class="login-actions">
+                    <a href="/login.html?redirect=/auth-academy-dashboard.html" class="btn btn-primary">Member Login</a>
+                    <a href="/register.html" class="btn btn-outline">Create Account</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Dashboard Content (Hidden until authenticated) -->
+        <main class="dashboard-main">
+            <!-- Welcome Section -->
+            <section class="dashboard-welcome">
+                <div class="container">
+                    <div class="welcome-header">
+                        <h1>Welcome back, <span class="user-name">Member</span>! 👋</h1>
+                        <p>Continue your AWS learning journey with personalized recommendations</p>
+                    </div>
+                    
+                    <div class="quick-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">📚</div>
+                            <div class="stat-content">
+                                <div class="stat-number" id="courses-completed">0</div>
+                                <div class="stat-label">Courses Completed</div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">🏆</div>
+                            <div class="stat-content">
+                                <div class="stat-number" id="certifications-earned">0</div>
+                                <div class="stat-label">Certifications Earned</div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">⚡</div>
+                            <div class="stat-content">
+                                <div class="stat-number" id="labs-completed">0</div>
+                                <div class="stat-label">Labs Completed</div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">🎯</div>
+                            <div class="stat-content">
+                                <div class="stat-number" id="skill-score">0</div>
+                                <div class="stat-label">Skill Score</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI-Powered Recommendations -->
+            <section class="section">
+                <div class="container">
+                    <h2>🤖 AI-Powered Recommendations</h2>
+                    <p>Based on your learning history and career goals</p>
+                    
+                    <div class="personalized-recommendations">
+                        <div class="recommendation-card priority">
+                            <div class="recommendation-header">
+                                <div class="recommendation-badge">High Priority</div>
+                                <div class="recommendation-type">Next Certification</div>
+                            </div>
+                            <h3>AWS Solutions Architect Associate</h3>
+                            <p>Based on your current progress, you're 78% ready for this certification. Estimated study time: 3 weeks.</p>
+                            <div class="recommendation-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 78%"></div>
+                                </div>
+                                <span class="progress-text">78% Ready</span>
+                            </div>
+                            <div class="recommendation-actions">
+                                <a href="/auth-certification-prep.html?cert=saa" class="btn btn-primary">Start Preparation</a>
+                                <a href="/auth-practice-exam.html?cert=saa" class="btn btn-outline">Take Practice Exam</a>
+                            </div>
+                        </div>
+                        
+                        <div class="recommendation-card">
+                            <div class="recommendation-header">
+                                <div class="recommendation-badge">Skill Gap</div>
+                                <div class="recommendation-type">Learning Path</div>
+                            </div>
+                            <h3>Advanced Security Practices</h3>
+                            <p>Strengthen your security knowledge with hands-on labs in IAM, KMS, and compliance frameworks.</p>
+                            <div class="recommendation-skills">
+                                <span class="skill-tag">IAM</span>
+                                <span class="skill-tag">KMS</span>
+                                <span class="skill-tag">CloudTrail</span>
+                                <span class="skill-tag">Config</span>
+                            </div>
+                            <div class="recommendation-actions">
+                                <a href="/auth-learning-path.html?path=security" class="btn btn-primary">Start Learning</a>
+                            </div>
+                        </div>
+                        
+                        <div class="recommendation-card">
+                            <div class="recommendation-header">
+                                <div class="recommendation-badge">Industry Focus</div>
+                                <div class="recommendation-type">Specialization</div>
+                            </div>
+                            <h3>Education Sector AWS Solutions</h3>
+                            <p>Deep dive into FERPA compliance, student data protection, and EdTech architecture patterns.</p>
+                            <div class="recommendation-industry">
+                                <span class="industry-icon">🎓</span>
+                                <span class="industry-name">Education Specialization</span>
+                            </div>
+                            <div class="recommendation-actions">
+                                <a href="/auth-industry-specialization.html?industry=education" class="btn btn-primary">Explore Specialization</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Current Learning Progress -->
+            <section class="section section-alt">
+                <div class="container">
+                    <h2>📊 Current Learning Progress</h2>
+                    
+                    <div class="grid grid-2">
+                        <div class="progress-card">
+                            <h3>Active Courses</h3>
+                            
+                            <div class="course-item">
+                                <div class="course-info">
+                                    <h4>AWS Well-Architected Framework Deep Dive</h4>
+                                    <p>Module 3 of 8: Security Pillar</p>
+                                </div>
+                                <div class="course-progress">
+                                    <div class="progress-circle" data-progress="37">
+                                        <span class="progress-text">37%</span>
+                                    </div>
+                                </div>
+                                <div class="course-actions">
+                                    <a href="/auth-course.html?id=well-architected" class="btn btn-outline btn-sm">Continue</a>
+                                </div>
+                            </div>
+                            
+                            <div class="course-item">
+                                <div class="course-info">
+                                    <h4>Serverless Architecture Patterns</h4>
+                                    <p>Module 5 of 6: Event-Driven Design</p>
+                                </div>
+                                <div class="course-progress">
+                                    <div class="progress-circle" data-progress="83">
+                                        <span class="progress-text">83%</span>
+                                    </div>
+                                </div>
+                                <div class="course-actions">
+                                    <a href="/auth-course.html?id=serverless" class="btn btn-outline btn-sm">Continue</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-card">
+                            <h3>Upcoming Labs</h3>
+                            
+                            <div class="lab-item">
+                                <div class="lab-info">
+                                    <h4>🧪 Multi-Region RDS Setup</h4>
+                                    <p>Hands-on: Configure cross-region replication</p>
+                                    <div class="lab-meta">
+                                        <span class="lab-duration">⏱️ 45 min</span>
+                                        <span class="lab-difficulty">🔥 Intermediate</span>
+                                    </div>
+                                </div>
+                                <div class="lab-actions">
+                                    <a href="/auth-lab.html?id=rds-multiregion" class="btn btn-primary btn-sm">Start Lab</a>
+                                </div>
+                            </div>
+                            
+                            <div class="lab-item">
+                                <div class="lab-info">
+                                    <h4>🛡️ IAM Policy Optimization</h4>
+                                    <p>Practice: Implement least privilege access</p>
+                                    <div class="lab-meta">
+                                        <span class="lab-duration">⏱️ 30 min</span>
+                                        <span class="lab-difficulty">🔥🔥 Advanced</span>
+                                    </div>
+                                </div>
+                                <div class="lab-actions">
+                                    <a href="/auth-lab.html?id=iam-optimization" class="btn btn-primary btn-sm">Start Lab</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Achievement Showcase -->
+            <section class="section">
+                <div class="container">
+                    <h2>🏆 Recent Achievements</h2>
+                    
+                    <div class="achievements-grid">
+                        <div class="achievement-card earned">
+                            <div class="achievement-icon">🎯</div>
+                            <h3>Well-Architected Expert</h3>
+                            <p>Completed all 6 pillars with 95% score</p>
+                            <div class="achievement-date">Earned 3 days ago</div>
+                        </div>
+                        
+                        <div class="achievement-card earned">
+                            <div class="achievement-icon">⚡</div>
+                            <h3>Lab Master</h3>
+                            <p>Completed 25 hands-on labs</p>
+                            <div class="achievement-date">Earned 1 week ago</div>
+                        </div>
+                        
+                        <div class="achievement-card locked">
+                            <div class="achievement-icon">🚀</div>
+                            <h3>Certification Champion</h3>
+                            <p>Earn 3 AWS certifications</p>
+                            <div class="achievement-progress">2/3 completed</div>
+                        </div>
+                        
+                        <div class="achievement-card locked">
+                            <div class="achievement-icon">👥</div>
+                            <h3>Community Leader</h3>
+                            <p>Help 10 community members</p>
+                            <div class="achievement-progress">7/10 completed</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Community Activity -->
+            <section class="section section-alt">
+                <div class="container">
+                    <h2>👥 Community Activity</h2>
+                    
+                    <div class="grid grid-2">
+                        <div class="community-card">
+                            <h3>Discussion Forums</h3>
+                            <div class="forum-activity">
+                                <div class="activity-item">
+                                    <div class="activity-icon">💬</div>
+                                    <div class="activity-content">
+                                        <p><strong>Sarah M.</strong> replied to your question about Lambda cold starts</p>
+                                        <span class="activity-time">2 hours ago</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon">❓</div>
+                                    <div class="activity-content">
+                                        <p>New question in <strong>Education AWS</strong> group</p>
+                                        <span class="activity-time">4 hours ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/auth-community-forums.html" class="btn btn-outline">View All Activity</a>
+                        </div>
+                        
+                        <div class="community-card">
+                            <h3>Upcoming Events</h3>
+                            <div class="events-list">
+                                <div class="event-item">
+                                    <div class="event-date">
+                                        <span class="event-day">28</span>
+                                        <span class="event-month">Jul</span>
+                                    </div>
+                                    <div class="event-content">
+                                        <h4>AWS Security Best Practices</h4>
+                                        <p>Expert webinar with Q&A</p>
+                                        <span class="event-time">2:00 PM EST</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="event-item">
+                                    <div class="event-date">
+                                        <span class="event-day">02</span>
+                                        <span class="event-month">Aug</span>
+                                    </div>
+                                    <div class="event-content">
+                                        <h4>Education User Group Meetup</h4>
+                                        <p>Local networking event</p>
+                                        <span class="event-time">6:00 PM EST</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/auth-community-events.html" class="btn btn-outline">View All Events</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Academy</h4>
+                    <ul>
+                        <li><a href="/auth-learning-paths.html">Learning Paths</a></li>
+                        <li><a href="/auth-certifications.html">Certifications</a></li>
+                        <li><a href="/auth-labs.html">Hands-on Labs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="/auth-help.html">Help Center</a></li>
+                        <li><a href="/auth-mentorship.html">Expert Mentorship</a></li>
+                        <li><a href="/auth-support.html">Technical Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 CloudNestle Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/auth-manager.js"></script>
+    <script>
+        // Dashboard-specific functionality
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Track dashboard access
+            CloudNestleAuth.trackEvent('academy_dashboard_accessed', {
+                timestamp: new Date().toISOString()
+            });
+            
+            // Load user dashboard data
+            await loadDashboardData();
+            
+            // Initialize progress circles
+            initializeProgressCircles();
+            
+            // Setup real-time updates
+            setupRealTimeUpdates();
+        });
+        
+        async function loadDashboardData() {
+            try {
+                const token = localStorage.getItem('auth_token');
+                if (!token) return;
+                
+                const response = await fetch('/api/dashboard', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    updateDashboardStats(data);
+                    updateRecommendations(data.recommendations);
+                    updateProgress(data.progress);
+                }
+            } catch (error) {
+                console.error('Failed to load dashboard data:', error);
+            }
+        }
+        
+        function updateDashboardStats(data) {
+            document.getElementById('courses-completed').textContent = data.coursesCompleted || 0;
+            document.getElementById('certifications-earned').textContent = data.certificationsEarned || 0;
+            document.getElementById('labs-completed').textContent = data.labsCompleted || 0;
+            document.getElementById('skill-score').textContent = data.skillScore || 0;
+        }
+        
+        function initializeProgressCircles() {
+            document.querySelectorAll('.progress-circle').forEach(circle => {
+                const progress = circle.getAttribute('data-progress');
+                // Animate progress circle (implementation would go here)
+                circle.style.background = `conic-gradient(var(--primary-color) ${progress * 3.6}deg, var(--background-secondary) 0deg)`;
+            });
+        }
+        
+        function setupRealTimeUpdates() {
+            // Setup WebSocket or polling for real-time updates
+            setInterval(async () => {
+                await loadDashboardData();
+            }, 30000); // Update every 30 seconds
+        }
+    </script>
+</body>
+</html>

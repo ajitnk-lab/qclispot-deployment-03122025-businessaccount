@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - CloudNestle AWS Tools & Templates</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <meta name="description" content="Free AWS resources, tools, templates, and guides from CloudNestle's team of experts. Accelerate your cloud journey.">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">CloudNestle</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="solutions.html" class="nav-link">Solutions</a></li>
+                <li class="nav-item"><a href="industries.html" class="nav-link">Industries</a></li>
+                <li class="nav-item"><a href="frameworks/index.html" class="nav-link">Frameworks</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="#" class="nav-link login-btn" onclick="authManager.showLogin()">Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section resources-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">AWS Resources & Tools</h1>
+                <p class="hero-subtitle">Accelerate your cloud journey with our comprehensive library of free tools, templates, guides, and best practices developed by AWS experts.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label">Free Resources</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">Downloads</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">Weekly</div>
+                        <div class="stat-label">New Additions</div>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="#featured-resources" class="btn btn-primary">Browse Resources</a>
+                    <a href="#tools" class="btn btn-secondary">Try Our Tools</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resource Categories -->
+    <section class="resource-categories-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Resource Categories</h2>
+                <p>Find exactly what you need to accelerate your AWS projects and implementations.</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card" data-category="templates">
+                    <div class="category-icon">📋</div>
+                    <h3>CloudFormation Templates</h3>
+                    <p>Production-ready infrastructure templates following AWS best practices and Well-Architected principles.</p>
+                    <div class="category-stats">
+                        <span class="resource-count">45 templates</span>
+                        <span class="download-count">12K+ downloads</span>
+                    </div>
+                    <a href="#templates" class="category-link">Browse Templates →</a>
+                </div>
+                <div class="category-card" data-category="tools">
+                    <div class="category-icon">🛠️</div>
+                    <h3>Assessment Tools</h3>
+                    <p>Interactive tools for evaluating your AWS readiness, costs, and optimization opportunities.</p>
+                    <div class="category-stats">
+                        <span class="resource-count">12 tools</span>
+                        <span class="download-count">25K+ uses</span>
+                    </div>
+                    <a href="#tools" class="category-link">Try Tools →</a>
+                </div>
+                <div class="category-card" data-category="guides">
+                    <div class="category-icon">📚</div>
+                    <h3>Implementation Guides</h3>
+                    <p>Step-by-step guides for implementing AWS services and architectural patterns.</p>
+                    <div class="category-stats">
+                        <span class="resource-count">38 guides</span>
+                        <span class="download-count">18K+ downloads</span>
+                    </div>
+                    <a href="#guides" class="category-link">Read Guides →</a>
+                </div>
+                <div class="category-card" data-category="checklists">
+                    <div class="category-icon">✅</div>
+                    <h3>Checklists & Frameworks</h3>
+                    <p>Comprehensive checklists for security, compliance, migration, and operational excellence.</p>
+                    <div class="category-stats">
+                        <span class="resource-count">28 checklists</span>
+                        <span class="download-count">15K+ downloads</span>
+                    </div>
+                    <a href="#checklists" class="category-link">Get Checklists →</a>
+                </div>
+                <div class="category-card" data-category="scripts">
+                    <div class="category-icon">💻</div>
+                    <h3>Automation Scripts</h3>
+                    <p>Ready-to-use scripts for common AWS tasks, monitoring, and operational automation.</p>
+                    <div class="category-stats">
+                        <span class="resource-count">52 scripts</span>
+                        <span class="download-count">8K+ downloads</span>
+                    </div>
+                    <a href="#scripts" class="category-link">Download Scripts →</a>
+                </div>
+                <div class="category-card" data-category="whitepapers">
+                    <div class="category-icon">📄</div>
+                    <h3>Whitepapers & Research</h3>
+                    <p>In-depth research, industry analysis, and strategic insights from our expert team.</p>
+                    <div class="category-stats">
+                        <span class="resource-count">22 papers</span>
+                        <span class="download-count">9K+ downloads</span>
+                    </div>
+                    <a href="#whitepapers" class="category-link">Read Papers →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Resources -->
+    <section id="featured-resources" class="featured-resources-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Resources</h2>
+                <p>Our most popular and impactful resources, curated by our expert team.</p>
+            </div>
+            <div class="featured-resources-grid">
+                <div class="featured-resource-card">
+                    <div class="resource-badge">Most Popular</div>
+                    <div class="resource-icon">🏗️</div>
+                    <h3>Multi-Account Landing Zone Template</h3>
+                    <p>Complete CloudFormation template for setting up a secure, scalable multi-account AWS environment following Control Tower best practices.</p>
+                    <div class="resource-meta">
+                        <span class="resource-type">CloudFormation</span>
+                        <span class="resource-size">2.5MB</span>
+                        <span class="download-count">5,200 downloads</span>
+                    </div>
+                    <div class="resource-features">
+                        <span class="feature-tag">Security Baseline</span>
+                        <span class="feature-tag">Compliance Ready</span>
+                        <span class="feature-tag">Cost Optimized</span>
+                    </div>
+                    <a href="#" class="btn btn-primary resource-download">Download Template</a>
+                </div>
+
+                <div class="featured-resource-card">
+                    <div class="resource-badge">New Release</div>
+                    <div class="resource-icon">🔍</div>
+                    <h3>AWS Cost Optimization Assessment</h3>
+                    <p>Interactive tool that analyzes your AWS usage patterns and provides personalized cost optimization recommendations.</p>
+                    <div class="resource-meta">
+                        <span class="resource-type">Interactive Tool</span>
+                        <span class="resource-time">15 min assessment</span>
+                        <span class="download-count">3,800 uses</span>
+                    </div>
+                    <div class="resource-features">
+                        <span class="feature-tag">Instant Results</span>
+                        <span class="feature-tag">Personalized</span>
+                        <span class="feature-tag">Actionable</span>
+                    </div>
+                    <a href="#" class="btn btn-primary resource-download">Start Assessment</a>
+                </div>
+
+                <div class="featured-resource-card">
+                    <div class="resource-badge">Expert Guide</div>
+                    <div class="resource-icon">🚀</div>
+                    <h3>Zero-Downtime Migration Playbook</h3>
+                    <p>Comprehensive 50-page guide covering strategies, tools, and best practices for migrating critical applications to AWS without downtime.</p>
+                    <div class="resource-meta">
+                        <span class="resource-type">PDF Guide</span>
+                        <span class="resource-size">8.2MB</span>
+                        <span class="download-count">2,900 downloads</span>
+                    </div>
+                    <div class="resource-features">
+                        <span class="feature-tag">50 Pages</span>
+                        <span class="feature-tag">Case Studies</span>
+                        <span class="feature-tag">Templates</span>
+                    </div>
+                    <a href="#" class="btn btn-primary resource-download">Download Guide</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Tools Section -->
+    <section id="tools" class="tools-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Interactive Assessment Tools</h2>
+                <p>Get instant insights and recommendations with our expert-designed assessment tools.</p>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">💰</div>
+                        <h3>AWS Cost Calculator</h3>
+                    </div>
+                    <p>Estimate your AWS costs and identify optimization opportunities with our advanced calculator.</p>
+                    <div class="tool-features">
+                        <ul>
+                            <li>Multi-service cost estimation</li>
+                            <li>Reserved Instance recommendations</li>
+                            <li>Savings Plans analysis</li>
+                            <li>Regional pricing comparison</li>
+                        </ul>
+                    </div>
+                    <div class="tool-stats">
+                        <span class="usage-count">15,000+ calculations</span>
+                        <span class="avg-savings">Average 35% savings identified</span>
+                    </div>
+                    <a href="#" class="btn btn-primary tool-launch">Launch Calculator</a>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">🔒</div>
+                        <h3>Security Assessment</h3>
+                    </div>
+                    <p>Evaluate your AWS security posture against industry best practices and compliance frameworks.</p>
+                    <div class="tool-features">
+                        <ul>
+                            <li>Well-Architected security pillar</li>
+                            <li>Compliance framework mapping</li>
+                            <li>Risk prioritization matrix</li>
+                            <li>Remediation roadmap</li>
+                        </ul>
+                    </div>
+                    <div class="tool-stats">
+                        <span class="usage-count">8,500+ assessments</span>
+                        <span class="avg-savings">Average 12 critical findings</span>
+                    </div>
+                    <a href="#" class="btn btn-primary tool-launch">Start Assessment</a>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">📊</div>
+                        <h3>Migration Readiness Check</h3>
+                    </div>
+                    <p>Assess your organization's readiness for cloud migration and get a customized migration strategy.</p>
+                    <div class="tool-features">
+                        <ul>
+                            <li>Application portfolio analysis</li>
+                            <li>Migration complexity scoring</li>
+                            <li>Timeline and resource planning</li>
+                            <li>Risk mitigation strategies</li>
+                        </ul>
+                    </div>
+                    <div class="tool-stats">
+                        <span class="usage-count">6,200+ assessments</span>
+                        <span class="avg-savings">Average 6-month timeline</span>
+                    </div>
+                    <a href="#" class="btn btn-primary tool-launch">Check Readiness</a>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">⚡</div>
+                        <h3>Performance Optimizer</h3>
+                    </div>
+                    <p>Analyze your AWS infrastructure performance and get recommendations for optimization.</p>
+                    <div class="tool-features">
+                        <ul>
+                            <li>Resource utilization analysis</li>
+                            <li>Performance bottleneck identification</li>
+                            <li>Scaling recommendations</li>
+                            <li>Architecture optimization</li>
+                        </ul>
+                    </div>
+                    <div class="tool-stats">
+                        <span class="usage-count">4,800+ optimizations</span>
+                        <span class="avg-savings">Average 40% performance gain</span>
+                    </div>
+                    <a href="#" class="btn btn-primary tool-launch">Optimize Performance</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Templates Library -->
+    <section id="templates" class="templates-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>CloudFormation Templates</h2>
+                <p>Production-ready infrastructure templates following AWS best practices.</p>
+            </div>
+            <div class="templates-filter">
+                <button class="filter-btn active" data-filter="all">All Templates</button>
+                <button class="filter-btn" data-filter="security">Security</button>
+                <button class="filter-btn" data-filter="networking">Networking</button>
+                <button class="filter-btn" data-filter="compute">Compute</button>
+                <button class="filter-btn" data-filter="storage">Storage</button>
+                <button class="filter-btn" data-filter="database">Database</button>
+            </div>
+            <div class="templates-grid">
+                <div class="template-card" data-category="security">
+                    <div class="template-header">
+                        <h3>Security Baseline Template</h3>
+                        <div class="template-meta">
+                            <span class="template-type">Security</span>
+                            <span class="template-complexity">Intermediate</span>
+                        </div>
+                    </div>
+                    <p>Comprehensive security baseline including IAM roles, CloudTrail, Config, and GuardDuty setup.</p>
+                    <div class="template-features">
+                        <span class="feature-tag">IAM Baseline</span>
+                        <span class="feature-tag">Logging</span>
+                        <span class="feature-tag">Monitoring</span>
+                    </div>
+                    <div class="template-stats">
+                        <span class="download-count">2,100 downloads</span>
+                        <span class="rating">4.9/5 ⭐</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary template-download">Download</a>
+                </div>
+
+                <div class="template-card" data-category="networking">
+                    <div class="template-header">
+                        <h3>Multi-Tier VPC Template</h3>
+                        <div class="template-meta">
+                            <span class="template-type">Networking</span>
+                            <span class="template-complexity">Advanced</span>
+                        </div>
+                    </div>
+                    <p>Production-ready VPC with public/private subnets, NAT gateways, and security groups.</p>
+                    <div class="template-features">
+                        <span class="feature-tag">Multi-AZ</span>
+                        <span class="feature-tag">NAT Gateway</span>
+                        <span class="feature-tag">Security Groups</span>
+                    </div>
+                    <div class="template-stats">
+                        <span class="download-count">3,400 downloads</span>
+                        <span class="rating">4.8/5 ⭐</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary template-download">Download</a>
+                </div>
+
+                <div class="template-card" data-category="compute">
+                    <div class="template-header">
+                        <h3>Auto Scaling Web Tier</h3>
+                        <div class="template-meta">
+                            <span class="template-type">Compute</span>
+                            <span class="template-complexity">Intermediate</span>
+                        </div>
+                    </div>
+                    <p>Scalable web application tier with ALB, Auto Scaling Groups, and CloudWatch monitoring.</p>
+                    <div class="template-features">
+                        <span class="feature-tag">Auto Scaling</span>
+                        <span class="feature-tag">Load Balancer</span>
+                        <span class="feature-tag">Monitoring</span>
+                    </div>
+                    <div class="template-stats">
+                        <span class="download-count">1,800 downloads</span>
+                        <span class="rating">4.7/5 ⭐</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary template-download">Download</a>
+                </div>
+
+                <div class="template-card" data-category="database">
+                    <div class="template-header">
+                        <h3>RDS Aurora Cluster</h3>
+                        <div class="template-meta">
+                            <span class="template-type">Database</span>
+                            <span class="template-complexity">Advanced</span>
+                        </div>
+                    </div>
+                    <p>High-availability Aurora cluster with read replicas, backup, and monitoring configuration.</p>
+                    <div class="template-features">
+                        <span class="feature-tag">Multi-AZ</span>
+                        <span class="feature-tag">Read Replicas</span>
+                        <span class="feature-tag">Encryption</span>
+                    </div>
+                    <div class="template-stats">
+                        <span class="download-count">1,500 downloads</span>
+                        <span class="rating">4.9/5 ⭐</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary template-download">Download</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resource Download CTA -->
+    <section class="resource-cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Get Access to Premium Resources</h2>
+                <p>Unlock our complete library of advanced templates, tools, and exclusive content with a free CloudNestle account.</p>
+                <div class="premium-benefits">
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🎯</span>
+                        <span>Advanced assessment tools</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">📋</span>
+                        <span>Enterprise-grade templates</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🔄</span>
+                        <span>Regular updates & new releases</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">💬</span>
+                        <span>Expert community access</span>
+                    </div>
+                </div>
+                <div class="cta-buttons">
+                    <a href="#" onclick="authManager.showRegister()" class="btn btn-primary">Create Free Account</a>
+                    <a href="contact.html" class="btn btn-secondary">Contact for Enterprise</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CloudNestle</h3>
+                    <p>Transforming businesses through AWS cloud excellence and innovation.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="resources.html">All Resources</a></li>
+                        <li><a href="blog.html">Blog & Insights</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="knowledge-center/index.html">Knowledge Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Tools</h4>
+                    <ul class="footer-links">
+                        <li><a href="#tools">Assessment Tools</a></li>
+                        <li><a href="#templates">CloudFormation Templates</a></li>
+                        <li><a href="frameworks/index.html">Framework Assessments</a></li>
+                        <li><a href="pricing.html">Cost Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#" onclick="authManager.showLogin()">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CloudNestle. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/auth-manager.js"></script>
+    <script>
+        // Resource filtering and interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Template filtering
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const templateCards = document.querySelectorAll('.template-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter templates
+                    templateCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Category card navigation
+            document.querySelectorAll('.category-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = this.getAttribute('href');
+                    document.querySelector(target).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Tool launch handlers
+            document.querySelectorAll('.tool-launch').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const toolName = this.closest('.tool-card').querySelector('h3').textContent;
+                    alert(`Launching ${toolName}... (This would open the interactive tool)`);
+                });
+            });
+
+            // Download handlers
+            document.querySelectorAll('.resource-download, .template-download').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const resourceName = this.closest('.featured-resource-card, .template-card').querySelector('h3').textContent;
+                    alert(`Downloading ${resourceName}... (This would trigger the download)`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

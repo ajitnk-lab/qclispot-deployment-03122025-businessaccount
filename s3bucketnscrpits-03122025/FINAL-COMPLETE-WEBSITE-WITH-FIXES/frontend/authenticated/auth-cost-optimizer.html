@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="access-level" content="authenticated">
+    <meta name="auth-type" content="full-profile">
+    <title>Cost Optimizer - CloudNestle Academy</title>
+    <meta name="description" content="AI-powered AWS cost optimization tool. Analyze spending patterns, identify savings opportunities, and implement cost reduction strategies.">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/authenticated.css">
+</head>
+<body class="access-authenticated">
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <a href="/../index.html">CloudNestle</a>
+            </div>
+            <div class="nav-menu">
+                <a href="/auth-academy-dashboard.html">Dashboard</a>
+                <a href="/auth-cost-optimizer.html" class="active">Cost Optimizer</a>
+                <a href="/auth-ai-architecture-analysis.html">AI Analysis</a>
+                <a href="/auth-expert-consultation.html">Experts</a>
+                <div class="user-menu">
+                    <span class="user-name">Welcome, User</span>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="content-auth-required gated">
+            <div class="dashboard-container">
+                <div class="dashboard-header">
+                    <h1>AI-Powered Cost Optimizer</h1>
+                    <p>Analyze your AWS spending and discover intelligent cost optimization opportunities</p>
+                    <div class="header-actions">
+                        <button class="btn-primary" id="run-analysis-btn">Run Analysis</button>
+                        <button class="btn-secondary" id="export-report-btn">Export Report</button>
+                    </div>
+                </div>
+
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-content">
+                            <div class="stat-value">$12,450</div>
+                            <div class="stat-label">Monthly Spend</div>
+                            <div class="stat-change positive">-15% vs last month</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📉</div>
+                        <div class="stat-content">
+                            <div class="stat-value">$3,200</div>
+                            <div class="stat-label">Potential Savings</div>
+                            <div class="stat-change positive">26% of total spend</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-content">
+                            <div class="stat-value">18</div>
+                            <div class="stat-label">Optimization Opportunities</div>
+                            <div class="stat-change neutral">3 high priority</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-content">
+                            <div class="stat-value">85%</div>
+                            <div class="stat-label">Efficiency Score</div>
+                            <div class="stat-change positive">+12% improvement</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-content">
+                    <div class="main-content">
+                        <div class="cost-analysis-section">
+                            <div class="section-header">
+                                <h2>Cost Analysis Overview</h2>
+                                <div class="time-range-selector">
+                                    <select id="time-range">
+                                        <option value="7d">Last 7 days</option>
+                                        <option value="30d" selected>Last 30 days</option>
+                                        <option value="90d">Last 90 days</option>
+                                        <option value="12m">Last 12 months</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="cost-chart-container">
+                                <canvas id="cost-trend-chart" width="800" height="300"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="optimization-opportunities">
+                            <h2>Top Optimization Opportunities</h2>
+                            <div class="opportunities-list">
+                                <div class="opportunity-card high-priority">
+                                    <div class="opportunity-header">
+                                        <div class="opportunity-title">
+                                            <h3>Right-size EC2 Instances</h3>
+                                            <span class="priority-badge high">High Priority</span>
+                                        </div>
+                                        <div class="savings-potential">
+                                            <span class="savings-amount">$1,200/month</span>
+                                            <span class="savings-percentage">38% savings</span>
+                                        </div>
+                                    </div>
+                                    <div class="opportunity-details">
+                                        <p>12 EC2 instances are over-provisioned with average CPU utilization below 20%</p>
+                                        <div class="affected-resources">
+                                            <span class="resource-tag">i-0123456789abcdef0</span>
+                                            <span class="resource-tag">i-0987654321fedcba0</span>
+                                            <span class="resource-tag">+10 more</span>
+                                        </div>
+                                    </div>
+                                    <div class="opportunity-actions">
+                                        <button class="btn-small btn-primary">Apply Recommendations</button>
+                                        <button class="btn-small btn-secondary">View Details</button>
+                                        <button class="btn-small btn-tertiary">Schedule Implementation</button>
+                                    </div>
+                                </div>
+
+                                <div class="opportunity-card medium-priority">
+                                    <div class="opportunity-header">
+                                        <div class="opportunity-title">
+                                            <h3>Optimize Storage Classes</h3>
+                                            <span class="priority-badge medium">Medium Priority</span>
+                                        </div>
+                                        <div class="savings-potential">
+                                            <span class="savings-amount">$850/month</span>
+                                            <span class="savings-percentage">45% savings</span>
+                                        </div>
+                                    </div>
+                                    <div class="opportunity-details">
+                                        <p>2.5TB of S3 data can be moved to Intelligent Tiering or Glacier</p>
+                                        <div class="affected-resources">
+                                            <span class="resource-tag">backup-bucket-prod</span>
+                                            <span class="resource-tag">archive-data-2024</span>
+                                            <span class="resource-tag">+3 more buckets</span>
+                                        </div>
+                                    </div>
+                                    <div class="opportunity-actions">
+                                        <button class="btn-small btn-primary">Apply Recommendations</button>
+                                        <button class="btn-small btn-secondary">View Details</button>
+                                        <button class="btn-small btn-tertiary">Schedule Implementation</button>
+                                    </div>
+                                </div>
+
+                                <div class="opportunity-card high-priority">
+                                    <div class="opportunity-header">
+                                        <div class="opportunity-title">
+                                            <h3>Reserved Instance Opportunities</h3>
+                                            <span class="priority-badge high">High Priority</span>
+                                        </div>
+                                        <div class="savings-potential">
+                                            <span class="savings-amount">$950/month</span>
+                                            <span class="savings-percentage">30% savings</span>
+                                        </div>
+                                    </div>
+                                    <div class="opportunity-details">
+                                        <p>8 consistently running instances qualify for Reserved Instance pricing</p>
+                                        <div class="affected-resources">
+                                            <span class="resource-tag">m5.large (4 instances)</span>
+                                            <span class="resource-tag">c5.xlarge (2 instances)</span>
+                                            <span class="resource-tag">+2 more types</span>
+                                        </div>
+                                    </div>
+                                    <div class="opportunity-actions">
+                                        <button class="btn-small btn-primary">Purchase RIs</button>
+                                        <button class="btn-small btn-secondary">View Analysis</button>
+                                        <button class="btn-small btn-tertiary">Set Reminders</button>
+                                    </div>
+                                </div>
+
+                                <div class="opportunity-card low-priority">
+                                    <div class="opportunity-header">
+                                        <div class="opportunity-title">
+                                            <h3>Unused Load Balancers</h3>
+                                            <span class="priority-badge low">Low Priority</span>
+                                        </div>
+                                        <div class="savings-potential">
+                                            <span class="savings-amount">$200/month</span>
+                                            <span class="savings-percentage">100% savings</span>
+                                        </div>
+                                    </div>
+                                    <div class="opportunity-details">
+                                        <p>3 Application Load Balancers have no active targets or minimal traffic</p>
+                                        <div class="affected-resources">
+                                            <span class="resource-tag">alb-staging-unused</span>
+                                            <span class="resource-tag">alb-test-environment</span>
+                                            <span class="resource-tag">+1 more</span>
+                                        </div>
+                                    </div>
+                                    <div class="opportunity-actions">
+                                        <button class="btn-small btn-primary">Remove Resources</button>
+                                        <button class="btn-small btn-secondary">Investigate Usage</button>
+                                        <button class="btn-small btn-tertiary">Set Monitoring</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cost-breakdown-section">
+                            <h2>Cost Breakdown by Service</h2>
+                            <div class="cost-breakdown-grid">
+                                <div class="service-cost-card">
+                                    <div class="service-header">
+                                        <span class="service-name">Amazon EC2</span>
+                                        <span class="service-cost">$6,200</span>
+                                    </div>
+                                    <div class="service-details">
+                                        <div class="cost-bar">
+                                            <div class="cost-fill" style="width: 50%"></div>
+                                        </div>
+                                        <span class="cost-percentage">49.8% of total</span>
+                                    </div>
+                                    <div class="service-trend">
+                                        <span class="trend-indicator positive">↓ 8%</span>
+                                        <span class="trend-text">vs last month</span>
+                                    </div>
+                                </div>
+
+                                <div class="service-cost-card">
+                                    <div class="service-header">
+                                        <span class="service-name">Amazon S3</span>
+                                        <span class="service-cost">$2,100</span>
+                                    </div>
+                                    <div class="service-details">
+                                        <div class="cost-bar">
+                                            <div class="cost-fill" style="width: 17%"></div>
+                                        </div>
+                                        <span class="cost-percentage">16.9% of total</span>
+                                    </div>
+                                    <div class="service-trend">
+                                        <span class="trend-indicator negative">↑ 12%</span>
+                                        <span class="trend-text">vs last month</span>
+                                    </div>
+                                </div>
+
+                                <div class="service-cost-card">
+                                    <div class="service-header">
+                                        <span class="service-name">Amazon RDS</span>
+                                        <span class="service-cost">$1,800</span>
+                                    </div>
+                                    <div class="service-details">
+                                        <div class="cost-bar">
+                                            <div class="cost-fill" style="width: 14%"></div>
+                                        </div>
+                                        <span class="cost-percentage">14.5% of total</span>
+                                    </div>
+                                    <div class="service-trend">
+                                        <span class="trend-indicator neutral">→ 2%</span>
+                                        <span class="trend-text">vs last month</span>
+                                    </div>
+                                </div>
+
+                                <div class="service-cost-card">
+                                    <div class="service-header">
+                                        <span class="service-name">Data Transfer</span>
+                                        <span class="service-cost">$950</span>
+                                    </div>
+                                    <div class="service-details">
+                                        <div class="cost-bar">
+                                            <div class="cost-fill" style="width: 8%"></div>
+                                        </div>
+                                        <span class="cost-percentage">7.6% of total</span>
+                                    </div>
+                                    <div class="service-trend">
+                                        <span class="trend-indicator positive">↓ 15%</span>
+                                        <span class="trend-text">vs last month</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="sidebar-section">
+                            <h3>Quick Actions</h3>
+                            <div class="quick-actions">
+                                <button class="action-btn">
+                                    <span class="action-icon">🔍</span>
+                                    <span class="action-text">Deep Dive Analysis</span>
+                                </button>
+                                <button class="action-btn">
+                                    <span class="action-icon">📊</span>
+                                    <span class="action-text">Custom Report</span>
+                                </button>
+                                <button class="action-btn">
+                                    <span class="action-icon">⚙️</span>
+                                    <span class="action-text">Set Budget Alerts</span>
+                                </button>
+                                <button class="action-btn">
+                                    <span class="action-icon">💬</span>
+                                    <span class="action-text">Expert Consultation</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <h3>Optimization Score</h3>
+                            <div class="score-display">
+                                <div class="score-circle">
+                                    <div class="score-value">85</div>
+                                    <div class="score-label">Score</div>
+                                </div>
+                                <div class="score-breakdown">
+                                    <div class="score-item">
+                                        <span class="score-category">Compute</span>
+                                        <span class="score-points">78/100</span>
+                                    </div>
+                                    <div class="score-item">
+                                        <span class="score-category">Storage</span>
+                                        <span class="score-points">92/100</span>
+                                    </div>
+                                    <div class="score-item">
+                                        <span class="score-category">Network</span>
+                                        <span class="score-points">85/100</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <h3>Savings Tracker</h3>
+                            <div class="savings-progress">
+                                <div class="savings-target">
+                                    <span class="target-label">Monthly Target</span>
+                                    <span class="target-value">$2,500</span>
+                                </div>
+                                <div class="savings-achieved">
+                                    <span class="achieved-label">Achieved</span>
+                                    <span class="achieved-value">$1,850</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 74%"></div>
+                                </div>
+                                <span class="progress-text">74% of target</span>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <h3>Recent Optimizations</h3>
+                            <div class="recent-optimizations">
+                                <div class="optimization-item">
+                                    <div class="optimization-date">Jul 25</div>
+                                    <div class="optimization-content">
+                                        <strong>EBS Volume Optimization</strong>
+                                        <span class="optimization-savings">$320/month saved</span>
+                                    </div>
+                                </div>
+                                <div class="optimization-item">
+                                    <div class="optimization-date">Jul 22</div>
+                                    <div class="optimization-content">
+                                        <strong>Reserved Instance Purchase</strong>
+                                        <span class="optimization-savings">$450/month saved</span>
+                                    </div>
+                                </div>
+                                <div class="optimization-item">
+                                    <div class="optimization-date">Jul 18</div>
+                                    <div class="optimization-content">
+                                        <strong>S3 Lifecycle Policy</strong>
+                                        <span class="optimization-savings">$180/month saved</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>CloudNestle Academy</h4>
+                    <p>AI-powered AWS cost optimization</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="/../support.html">Help Center</a></li>
+                        <li><a href="/../contact.html">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CloudNestle Consulting & Services (OPC) Pvt. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/authentication-manager.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+    <script src="../assets/js/cost-optimizer.js"></script>
+</body>
+</html>

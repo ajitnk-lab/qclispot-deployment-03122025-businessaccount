@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Migration Readiness Assessment - CloudNestle</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/auth-manager.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><a href="../index.html">CloudNestle</a></div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="../solutions.html" class="nav-link">Solutions</a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="assessment-hero">
+        <div class="container">
+            <h1>Migration Readiness Assessment</h1>
+            <p>Evaluate your organization's readiness for AWS cloud migration with our comprehensive assessment framework.</p>
+        </div>
+    </section>
+
+    <section class="assessment-form-section">
+        <div class="container">
+            <form class="assessment-form" id="migrationAssessment">
+                <div class="form-section">
+                    <h3>Contact Information</h3>
+                    <div class="form-row">
+                        <input type="text" name="firstName" placeholder="First Name" required>
+                        <input type="text" name="lastName" placeholder="Last Name" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="email" name="email" placeholder="Business Email" required>
+                        <input type="text" name="company" placeholder="Company Name" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Current Infrastructure</h3>
+                    <div class="question-group">
+                        <label>What is your current infrastructure setup?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="infrastructure" value="on-premises"> On-premises data centers</label>
+                            <label><input type="radio" name="infrastructure" value="hybrid"> Hybrid cloud</label>
+                            <label><input type="radio" name="infrastructure" value="multi-cloud"> Multi-cloud</label>
+                            <label><input type="radio" name="infrastructure" value="legacy"> Legacy systems</label>
+                        </div>
+                    </div>
+                    
+                    <div class="question-group">
+                        <label>How many applications need migration?</label>
+                        <select name="appCount" required>
+                            <option value="">Select range</option>
+                            <option value="1-10">1-10 applications</option>
+                            <option value="11-50">11-50 applications</option>
+                            <option value="51-100">51-100 applications</option>
+                            <option value="100+">100+ applications</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Migration Drivers</h3>
+                    <div class="question-group">
+                        <label>What are your primary migration drivers? (Select all that apply)</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="drivers" value="cost-reduction"> Cost reduction</label>
+                            <label><input type="checkbox" name="drivers" value="scalability"> Scalability needs</label>
+                            <label><input type="checkbox" name="drivers" value="agility"> Business agility</label>
+                            <label><input type="checkbox" name="drivers" value="innovation"> Innovation enablement</label>
+                            <label><input type="checkbox" name="drivers" value="compliance"> Compliance requirements</label>
+                            <label><input type="checkbox" name="drivers" value="disaster-recovery"> Disaster recovery</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Timeline & Budget</h3>
+                    <div class="form-row">
+                        <select name="timeline" required>
+                            <option value="">Migration timeline</option>
+                            <option value="3-months">Within 3 months</option>
+                            <option value="6-months">3-6 months</option>
+                            <option value="12-months">6-12 months</option>
+                            <option value="12-months+">12+ months</option>
+                        </select>
+                        <select name="budget" required>
+                            <option value="">Budget range</option>
+                            <option value="under-100k">Under $100K</option>
+                            <option value="100k-500k">$100K - $500K</option>
+                            <option value="500k-1m">$500K - $1M</option>
+                            <option value="1m+">$1M+</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Get Migration Assessment</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('migrationAssessment').addEventListener('submit', function(e) {
+            e.preventDefault();
+            authManager.requireRegistration('migration-readiness-assessment', 'Get your personalized migration readiness report');
+        });
+    </script>
+</body>
+</html>

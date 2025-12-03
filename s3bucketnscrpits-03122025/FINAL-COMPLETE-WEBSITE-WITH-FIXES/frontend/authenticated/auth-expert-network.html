@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Network - CloudNestle</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/auth-manager.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><a href="/../index.html">CloudNestle</a></div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="/../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/../services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="/../solutions.html" class="nav-link">Solutions</a></li>
+                <li class="nav-item"><a href="/../contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="authManager.logout()">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard-hero">
+        <div class="container">
+            <h1>Expert Network</h1>
+            <p>Connect with AWS specialists, share knowledge, and collaborate on complex challenges.</p>
+        </div>
+    </section>
+
+    <section class="expert-network">
+        <div class="container">
+            <div class="network-tabs">
+                <button class="tab-btn active" data-tab="experts">Find Experts</button>
+                <button class="tab-btn" data-tab="questions">Ask Questions</button>
+                <button class="tab-btn" data-tab="discussions">Discussions</button>
+                <button class="tab-btn" data-tab="my-network">My Network</button>
+            </div>
+
+            <div class="tab-content active" id="experts">
+                <div class="experts-search">
+                    <div class="search-filters">
+                        <input type="text" placeholder="Search experts by name or expertise..." class="search-input">
+                        <select class="filter-select">
+                            <option value="">All Specializations</option>
+                            <option value="architecture">Solutions Architecture</option>
+                            <option value="security">Security & Compliance</option>
+                            <option value="devops">DevOps & Automation</option>
+                            <option value="data">Data & Analytics</option>
+                            <option value="ml">Machine Learning</option>
+                            <option value="cost">Cost Optimization</option>
+                        </select>
+                        <select class="filter-select">
+                            <option value="">All Levels</option>
+                            <option value="senior">Senior Expert</option>
+                            <option value="principal">Principal Expert</option>
+                            <option value="distinguished">Distinguished Expert</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="experts-grid">
+                    <div class="expert-card">
+                        <div class="expert-avatar">SC</div>
+                        <div class="expert-info">
+                            <h3>Sarah Chen</h3>
+                            <p class="expert-title">Principal Solutions Architect</p>
+                            <div class="expert-specializations">
+                                <span class="spec-tag">Multi-Account Strategy</span>
+                                <span class="spec-tag">Well-Architected</span>
+                                <span class="spec-tag">Serverless</span>
+                            </div>
+                            <div class="expert-stats">
+                                <div class="stat">
+                                    <span class="stat-value">4.9</span>
+                                    <span class="stat-label">Rating</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">127</span>
+                                    <span class="stat-label">Consultations</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">15</span>
+                                    <span class="stat-label">AWS Certs</span>
+                                </div>
+                            </div>
+                            <div class="expert-actions">
+                                <button class="btn btn-primary">Connect</button>
+                                <button class="btn btn-secondary">View Profile</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expert-card">
+                        <div class="expert-avatar">MR</div>
+                        <div class="expert-info">
+                            <h3>Marcus Rodriguez</h3>
+                            <p class="expert-title">Security Specialist</p>
+                            <div class="expert-specializations">
+                                <span class="spec-tag">Zero Trust</span>
+                                <span class="spec-tag">Compliance</span>
+                                <span class="spec-tag">Identity Management</span>
+                            </div>
+                            <div class="expert-stats">
+                                <div class="stat">
+                                    <span class="stat-value">4.8</span>
+                                    <span class="stat-label">Rating</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">89</span>
+                                    <span class="stat-label">Consultations</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">12</span>
+                                    <span class="stat-label">AWS Certs</span>
+                                </div>
+                            </div>
+                            <div class="expert-actions">
+                                <button class="btn btn-primary">Connect</button>
+                                <button class="btn btn-secondary">View Profile</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expert-card">
+                        <div class="expert-avatar">PP</div>
+                        <div class="expert-info">
+                            <h3>Priya Patel</h3>
+                            <p class="expert-title">DevOps Engineer</p>
+                            <div class="expert-specializations">
+                                <span class="spec-tag">CI/CD</span>
+                                <span class="spec-tag">Kubernetes</span>
+                                <span class="spec-tag">Infrastructure as Code</span>
+                            </div>
+                            <div class="expert-stats">
+                                <div class="stat">
+                                    <span class="stat-value">4.7</span>
+                                    <span class="stat-label">Rating</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">156</span>
+                                    <span class="stat-label">Consultations</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">8</span>
+                                    <span class="stat-label">AWS Certs</span>
+                                </div>
+                            </div>
+                            <div class="expert-actions">
+                                <button class="btn btn-primary">Connect</button>
+                                <button class="btn btn-secondary">View Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="questions">
+                <div class="ask-question-section">
+                    <h3>Ask the Expert Network</h3>
+                    <form class="question-form">
+                        <div class="form-group">
+                            <label>Question Title</label>
+                            <input type="text" placeholder="Summarize your question in one line" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Detailed Question</label>
+                            <textarea rows="6" placeholder="Provide detailed context, what you've tried, and specific requirements..." required></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Category</label>
+                                <select required>
+                                    <option value="">Select category</option>
+                                    <option value="architecture">Architecture Design</option>
+                                    <option value="security">Security & Compliance</option>
+                                    <option value="performance">Performance Optimization</option>
+                                    <option value="cost">Cost Management</option>
+                                    <option value="migration">Migration Strategy</option>
+                                    <option value="devops">DevOps & Automation</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Urgency</label>
+                                <select required>
+                                    <option value="">Select urgency</option>
+                                    <option value="low">Low - General guidance</option>
+                                    <option value="medium">Medium - Need answer this week</option>
+                                    <option value="high">High - Need answer today</option>
+                                    <option value="critical">Critical - Blocking issue</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Tags</label>
+                            <input type="text" placeholder="Add relevant tags (e.g., ec2, lambda, vpc)">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Post Question</button>
+                    </form>
+                </div>
+
+                <div class="recent-questions">
+                    <h3>Recent Questions</h3>
+                    <div class="questions-list">
+                        <div class="question-item">
+                            <div class="question-header">
+                                <h4>Best practices for multi-region RDS Aurora setup?</h4>
+                                <span class="question-status answered">Answered</span>
+                            </div>
+                            <p class="question-preview">Looking for guidance on setting up Aurora Global Database for disaster recovery...</p>
+                            <div class="question-meta">
+                                <span class="question-author">Asked by John Smith</span>
+                                <span class="question-time">2 hours ago</span>
+                                <span class="question-answers">3 answers</span>
+                            </div>
+                        </div>
+                        <div class="question-item">
+                            <div class="question-header">
+                                <h4>Lambda cold start optimization strategies</h4>
+                                <span class="question-status open">Open</span>
+                            </div>
+                            <p class="question-preview">Experiencing high cold start times with Python Lambda functions...</p>
+                            <div class="question-meta">
+                                <span class="question-author">Asked by Maria Garcia</span>
+                                <span class="question-time">4 hours ago</span>
+                                <span class="question-answers">1 answer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="discussions">
+                <div class="discussions-list">
+                    <div class="discussion-item">
+                        <div class="discussion-header">
+                            <h4>AWS re:Invent 2024 Key Takeaways</h4>
+                            <span class="discussion-category">General</span>
+                        </div>
+                        <p class="discussion-preview">Let's discuss the most impactful announcements from re:Invent 2024...</p>
+                        <div class="discussion-stats">
+                            <span class="stat">45 replies</span>
+                            <span class="stat">12 participants</span>
+                            <span class="stat">Last activity: 1 hour ago</span>
+                        </div>
+                    </div>
+                    <div class="discussion-item">
+                        <div class="discussion-header">
+                            <h4>Cost Optimization Success Stories</h4>
+                            <span class="discussion-category">Cost Management</span>
+                        </div>
+                        <p class="discussion-preview">Share your biggest cost optimization wins and lessons learned...</p>
+                        <div class="discussion-stats">
+                            <span class="stat">23 replies</span>
+                            <span class="stat">8 participants</span>
+                            <span class="stat">Last activity: 3 hours ago</span>
+                        </div>
+                    </div>
+                    <div class="discussion-item">
+                        <div class="discussion-header">
+                            <h4>Kubernetes on EKS vs ECS Fargate</h4>
+                            <span class="discussion-category">Containers</span>
+                        </div>
+                        <p class="discussion-preview">Comparing container orchestration options for different use cases...</p>
+                        <div class="discussion-stats">
+                            <span class="stat">67 replies</span>
+                            <span class="stat">18 participants</span>
+                            <span class="stat">Last activity: 5 hours ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="my-network">
+                <div class="my-connections">
+                    <h3>My Connections</h3>
+                    <div class="connections-grid">
+                        <div class="connection-card">
+                            <div class="connection-avatar">SC</div>
+                            <div class="connection-info">
+                                <h4>Sarah Chen</h4>
+                                <p>Principal Solutions Architect</p>
+                                <div class="connection-actions">
+                                    <button class="btn btn-secondary">Message</button>
+                                    <button class="btn btn-primary">Schedule Call</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="connection-card">
+                            <div class="connection-avatar">DK</div>
+                            <div class="connection-info">
+                                <h4>David Kim</h4>
+                                <p>Cost Optimization Specialist</p>
+                                <div class="connection-actions">
+                                    <button class="btn btn-secondary">Message</button>
+                                    <button class="btn btn-primary">Schedule Call</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-activity">
+                    <h3>My Activity</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-type">Question</div>
+                            <div class="activity-content">
+                                <h4>You asked: "Best practices for Lambda error handling"</h4>
+                                <p>2 answers received, marked as resolved</p>
+                                <span class="activity-time">Yesterday</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-type">Answer</div>
+                            <div class="activity-content">
+                                <h4>You answered: "VPC peering vs Transit Gateway"</h4>
+                                <p>Received 5 upvotes and 2 comments</p>
+                                <span class="activity-time">2 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Check authentication
+        if (!authManager.isAuthenticated()) {
+            window.location.href = '../index.html';
+        }
+
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const targetTab = this.getAttribute('data-tab');
+                    
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    this.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+
+            // Expert actions
+            document.querySelectorAll('.expert-actions .btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const action = this.textContent;
+                    const expertName = this.closest('.expert-card').querySelector('h3').textContent;
+                    
+                    if (action === 'Connect') {
+                        connectWithExpert(expertName);
+                    } else if (action === 'View Profile') {
+                        viewExpertProfile(expertName);
+                    }
+                });
+            });
+
+            // Question form
+            document.querySelector('.question-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                submitQuestion();
+            });
+        });
+
+        function connectWithExpert(expertName) {
+            alert(`Sending connection request to ${expertName}`);
+        }
+
+        function viewExpertProfile(expertName) {
+            alert(`Opening profile for ${expertName}`);
+        }
+
+        function submitQuestion() {
+            alert('Question submitted successfully! You will be notified when experts respond.');
+        }
+    </script>
+</body>
+</html>

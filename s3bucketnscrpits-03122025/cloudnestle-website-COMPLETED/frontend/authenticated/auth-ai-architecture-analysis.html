@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="access-level" content="authenticated">
+    <meta name="auth-type" content="full-profile">
+    <title>AI-Powered Architecture Analysis - CloudNestle Academy</title>
+    <meta name="description" content="Advanced AI-powered architecture analysis with automated Well-Architected reviews, cost optimization, and security assessment.">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/authenticated.css">
+    <link rel="stylesheet" href="../assets/css/ai-tools.css">
+</head>
+<body class="access-authenticated">
+    <!-- Header -->
+    <header class="header authenticated-header">
+        <div class="container">
+            <div class="header-top">
+                <div class="user-info">
+                    <span class="user-greeting">Welcome back, <span id="user-name">Loading...</span></span>
+                    <span class="user-plan">Premium Member</span>
+                </div>
+                <div class="user-menu">
+                    <div class="dropdown">
+                        <button class="dropdown-toggle">
+                            <img src="../assets/images/user-avatar.png" alt="User Avatar" class="user-avatar">
+                            <span class="dropdown-arrow">▼</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="auth-profile.html">Profile Settings</a>
+                            <a href="auth-academy-dashboard.html">Academy Dashboard</a>
+                            <a href="auth-billing.html">Billing & Subscription</a>
+                            <a href="#" onclick="logout()">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="nav">
+                <div class="nav-brand">
+                    <a href="../index.html">CloudNestle</a>
+                    <span class="nav-section">AI Architecture Analysis</span>
+                </div>
+                <div class="nav-menu authenticated-nav">
+                    <a href="auth-academy-dashboard.html">Dashboard</a>
+                    <a href="auth-learning-paths.html">Learning Paths</a>
+                    <a href="auth-ai-architecture-analysis.html" class="active">AI Analysis</a>
+                    <a href="auth-expert-consultation.html">Expert Consultation</a>
+                    <a href="auth-community.html">Community</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="page-title">
+                    <h1>🤖 AI-Powered Architecture Analysis</h1>
+                    <p>Advanced automated analysis of your cloud architecture with intelligent recommendations</p>
+                </div>
+                <div class="page-actions">
+                    <button class="btn btn-primary" id="new-analysis">
+                        <span class="btn-icon">➕</span>
+                        New Analysis
+                    </button>
+                    <button class="btn btn-outline" id="analysis-history">
+                        <span class="btn-icon">📊</span>
+                        Analysis History
+                    </button>
+                </div>
+            </div>
+
+            <!-- Analysis Dashboard -->
+            <div class="analysis-dashboard">
+                <!-- Quick Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">🏗️</div>
+                        <div class="stat-content">
+                            <div class="stat-value">12</div>
+                            <div class="stat-label">Architectures Analyzed</div>
+                            <div class="stat-trend positive">+3 this month</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⚠️</div>
+                        <div class="stat-content">
+                            <div class="stat-value">47</div>
+                            <div class="stat-label">Issues Identified</div>
+                            <div class="stat-trend negative">-12 resolved</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-content">
+                            <div class="stat-value">$23K</div>
+                            <div class="stat-label">Potential Savings</div>
+                            <div class="stat-trend positive">+$5K identified</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-content">
+                            <div class="stat-value">87%</div>
+                            <div class="stat-label">WAF Score</div>
+                            <div class="stat-trend positive">+12% improved</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analysis Tools -->
+                <div class="analysis-tools">
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">🤖</div>
+                            <div class="tool-info">
+                                <h3>Automated Well-Architected Review</h3>
+                                <p>AI-powered analysis across all 6 pillars with intelligent recommendations</p>
+                            </div>
+                            <div class="tool-status">
+                                <span class="status-badge active">Active</span>
+                            </div>
+                        </div>
+                        <div class="tool-content">
+                            <div class="tool-features">
+                                <div class="feature">✅ Real-time architecture scanning</div>
+                                <div class="feature">✅ Best practice compliance checking</div>
+                                <div class="feature">✅ Risk assessment and scoring</div>
+                                <div class="feature">✅ Automated improvement suggestions</div>
+                            </div>
+                            <div class="tool-actions">
+                                <button class="btn btn-primary" onclick="startWAFAnalysis()">Start Analysis</button>
+                                <button class="btn btn-outline" onclick="viewWAFHistory()">View History</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">💰</div>
+                            <div class="tool-info">
+                                <h3>Cost Optimization AI</h3>
+                                <p>Machine learning-driven cost analysis with predictive savings recommendations</p>
+                            </div>
+                            <div class="tool-status">
+                                <span class="status-badge active">Active</span>
+                            </div>
+                        </div>
+                        <div class="tool-content">
+                            <div class="tool-features">
+                                <div class="feature">✅ Resource utilization analysis</div>
+                                <div class="feature">✅ Right-sizing recommendations</div>
+                                <div class="feature">✅ Reserved instance optimization</div>
+                                <div class="feature">✅ Waste elimination detection</div>
+                            </div>
+                            <div class="tool-actions">
+                                <button class="btn btn-primary" onclick="startCostAnalysis()">Analyze Costs</button>
+                                <button class="btn btn-outline" onclick="viewCostTrends()">View Trends</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">🔒</div>
+                            <div class="tool-info">
+                                <h3>Security Vulnerability Scanner</h3>
+                                <p>Advanced AI-powered security assessment with threat modeling</p>
+                            </div>
+                            <div class="tool-status">
+                                <span class="status-badge premium">Premium</span>
+                            </div>
+                        </div>
+                        <div class="tool-content">
+                            <div class="tool-features">
+                                <div class="feature">✅ Automated vulnerability detection</div>
+                                <div class="feature">✅ Compliance gap analysis</div>
+                                <div class="feature">✅ Threat modeling and risk scoring</div>
+                                <div class="feature">✅ Remediation priority ranking</div>
+                            </div>
+                            <div class="tool-actions">
+                                <button class="btn btn-primary" onclick="startSecurityScan()">Security Scan</button>
+                                <button class="btn btn-outline" onclick="viewSecurityReports()">View Reports</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">⚡</div>
+                            <div class="tool-info">
+                                <h3>Performance Bottleneck Detector</h3>
+                                <p>AI-driven performance analysis with optimization recommendations</p>
+                            </div>
+                            <div class="tool-status">
+                                <span class="status-badge active">Active</span>
+                            </div>
+                        </div>
+                        <div class="tool-content">
+                            <div class="tool-features">
+                                <div class="feature">✅ Performance pattern analysis</div>
+                                <div class="feature">✅ Bottleneck identification</div>
+                                <div class="feature">✅ Scaling recommendations</div>
+                                <div class="feature">✅ Performance prediction modeling</div>
+                            </div>
+                            <div class="tool-actions">
+                                <button class="btn btn-primary" onclick="startPerformanceAnalysis()">Analyze Performance</button>
+                                <button class="btn btn-outline" onclick="viewPerformanceMetrics()">View Metrics</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Analysis Results -->
+                <div class="recent-analysis">
+                    <div class="section-header">
+                        <h2>Recent Analysis Results</h2>
+                        <div class="section-actions">
+                            <button class="btn btn-outline btn-sm" onclick="refreshAnalysis()">
+                                <span class="btn-icon">🔄</span>
+                                Refresh
+                            </button>
+                            <button class="btn btn-outline btn-sm" onclick="exportResults()">
+                                <span class="btn-icon">📊</span>
+                                Export
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="analysis-results">
+                        <div class="result-card">
+                            <div class="result-header">
+                                <div class="result-info">
+                                    <h3>E-commerce Platform Analysis</h3>
+                                    <p>Well-Architected Review • Completed 2 hours ago</p>
+                                </div>
+                                <div class="result-score">
+                                    <div class="score-circle">
+                                        <span class="score-value">87</span>
+                                        <span class="score-label">WAF Score</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="result-content">
+                                <div class="result-summary">
+                                    <div class="summary-item">
+                                        <span class="summary-label">Issues Found:</span>
+                                        <span class="summary-value">12 (3 High, 9 Medium)</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span class="summary-label">Potential Savings:</span>
+                                        <span class="summary-value">$8,500/month</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span class="summary-label">Security Score:</span>
+                                        <span class="summary-value">92/100</span>
+                                    </div>
+                                </div>
+                                <div class="result-actions">
+                                    <button class="btn btn-primary btn-sm" onclick="viewDetailedReport('ecommerce-001')">View Report</button>
+                                    <button class="btn btn-outline btn-sm" onclick="implementRecommendations('ecommerce-001')">Implement</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="result-card">
+                            <div class="result-header">
+                                <div class="result-info">
+                                    <h3>Learning Management System</h3>
+                                    <p>Cost Optimization Analysis • Completed yesterday</p>
+                                </div>
+                                <div class="result-score">
+                                    <div class="score-circle cost">
+                                        <span class="score-value">$12K</span>
+                                        <span class="score-label">Savings</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="result-content">
+                                <div class="result-summary">
+                                    <div class="summary-item">
+                                        <span class="summary-label">Optimization Areas:</span>
+                                        <span class="summary-value">8 identified</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span class="summary-label">Right-sizing Potential:</span>
+                                        <span class="summary-value">45% cost reduction</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span class="summary-label">Implementation Effort:</span>
+                                        <span class="summary-value">Low (2-3 weeks)</span>
+                                    </div>
+                                </div>
+                                <div class="result-actions">
+                                    <button class="btn btn-primary btn-sm" onclick="viewDetailedReport('lms-002')">View Report</button>
+                                    <button class="btn btn-outline btn-sm" onclick="scheduleImplementation('lms-002')">Schedule</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="result-card">
+                            <div class="result-header">
+                                <div class="result-info">
+                                    <h3>Mobile App Backend</h3>
+                                    <p>Security Vulnerability Scan • Completed 3 days ago</p>
+                                </div>
+                                <div class="result-score">
+                                    <div class="score-circle security">
+                                        <span class="score-value">6</span>
+                                        <span class="score-label">Critical</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="result-content">
+                                <div class="result-summary">
+                                    <div class="summary-item">
+                                        <span class="summary-label">Vulnerabilities:</span>
+                                        <span class="summary-value">6 Critical, 12 High</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span class="summary-label">Compliance Status:</span>
+                                        <span class="summary-value">78% (Needs attention)</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span class="summary-label">Risk Score:</span>
+                                        <span class="summary-value">High</span>
+                                    </div>
+                                </div>
+                                <div class="result-actions">
+                                    <button class="btn btn-danger btn-sm" onclick="viewSecurityReport('mobile-003')">Urgent Review</button>
+                                    <button class="btn btn-outline btn-sm" onclick="scheduleSecurityFix('mobile-003')">Schedule Fix</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Insights -->
+                <div class="ai-insights">
+                    <div class="section-header">
+                        <h2>🧠 AI-Powered Insights</h2>
+                        <p>Intelligent recommendations based on your architecture patterns</p>
+                    </div>
+
+                    <div class="insights-grid">
+                        <div class="insight-card priority-high">
+                            <div class="insight-header">
+                                <div class="insight-icon">⚠️</div>
+                                <div class="insight-priority">High Priority</div>
+                            </div>
+                            <div class="insight-content">
+                                <h3>Database Performance Bottleneck Detected</h3>
+                                <p>AI analysis indicates your RDS instances are consistently running at 85%+ CPU utilization. Consider implementing read replicas or upgrading instance types.</p>
+                                <div class="insight-impact">
+                                    <span class="impact-label">Potential Impact:</span>
+                                    <span class="impact-value">40% performance improvement</span>
+                                </div>
+                                <div class="insight-actions">
+                                    <button class="btn btn-primary btn-sm" onclick="implementInsight('db-performance')">Implement</button>
+                                    <button class="btn btn-outline btn-sm" onclick="learnMore('db-performance')">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="insight-card priority-medium">
+                            <div class="insight-header">
+                                <div class="insight-icon">💰</div>
+                                <div class="insight-priority">Cost Optimization</div>
+                            </div>
+                            <div class="insight-content">
+                                <h3>Reserved Instance Opportunity</h3>
+                                <p>Your usage patterns show consistent EC2 utilization. Switching to Reserved Instances could save $18,000 annually.</p>
+                                <div class="insight-impact">
+                                    <span class="impact-label">Annual Savings:</span>
+                                    <span class="impact-value">$18,000</span>
+                                </div>
+                                <div class="insight-actions">
+                                    <button class="btn btn-primary btn-sm" onclick="calculateRI('ri-opportunity')">Calculate</button>
+                                    <button class="btn btn-outline btn-sm" onclick="scheduleRIReview('ri-opportunity')">Schedule Review</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="insight-card priority-low">
+                            <div class="insight-header">
+                                <div class="insight-icon">🔒</div>
+                                <div class="insight-priority">Security Enhancement</div>
+                            </div>
+                            <div class="insight-content">
+                                <h3>Multi-Factor Authentication Gap</h3>
+                                <p>Some IAM users lack MFA configuration. Enabling MFA across all accounts would significantly improve security posture.</p>
+                                <div class="insight-impact">
+                                    <span class="impact-label">Security Improvement:</span>
+                                    <span class="impact-value">85% risk reduction</span>
+                                </div>
+                                <div class="insight-actions">
+                                    <button class="btn btn-primary btn-sm" onclick="enableMFA('mfa-gap')">Enable MFA</button>
+                                    <button class="btn btn-outline btn-sm" onclick="viewMFAGuide('mfa-gap')">View Guide</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Analysis Modal -->
+    <div class="modal" id="analysis-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Start New Architecture Analysis</h3>
+                <button class="modal-close" onclick="closeModal('analysis-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="analysis-form">
+                    <div class="form-group">
+                        <label for="analysis-type">Analysis Type</label>
+                        <select id="analysis-type" required>
+                            <option value="">Select analysis type</option>
+                            <option value="well-architected">Well-Architected Review</option>
+                            <option value="cost-optimization">Cost Optimization</option>
+                            <option value="security-scan">Security Vulnerability Scan</option>
+                            <option value="performance">Performance Analysis</option>
+                            <option value="comprehensive">Comprehensive Analysis</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="architecture-name">Architecture Name</label>
+                        <input type="text" id="architecture-name" placeholder="e.g., Production E-commerce Platform" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="aws-account">AWS Account ID</label>
+                        <input type="text" id="aws-account" placeholder="123456789012" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regions">AWS Regions</label>
+                        <select id="regions" multiple>
+                            <option value="us-east-1">US East (N. Virginia)</option>
+                            <option value="us-west-2">US West (Oregon)</option>
+                            <option value="eu-west-1">Europe (Ireland)</option>
+                            <option value="ap-south-1">Asia Pacific (Mumbai)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="analysis-scope">Analysis Scope</label>
+                        <textarea id="analysis-scope" placeholder="Describe the components and services to analyze..." rows="3"></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="include-costs" checked>
+                            <span class="checkmark"></span>
+                            Include cost analysis and optimization recommendations
+                        </label>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="include-security" checked>
+                            <span class="checkmark"></span>
+                            Include security vulnerability assessment
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" onclick="closeModal('analysis-modal')">Cancel</button>
+                <button class="btn btn-primary" onclick="startAnalysis()">Start Analysis</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer authenticated-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CloudNestle Academy</h3>
+                    <p>Advanced AI-powered tools for cloud architecture optimization</p>
+                </div>
+                <div class="footer-section">
+                    <h4>AI Tools</h4>
+                    <ul>
+                        <li><a href="auth-ai-architecture-analysis.html">Architecture Analysis</a></li>
+                        <li><a href="auth-ai-cost-optimization.html">Cost Optimization</a></li>
+                        <li><a href="auth-ai-security-scanner.html">Security Scanner</a></li>
+                        <li><a href="auth-ai-performance-analyzer.html">Performance Analyzer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="auth-help-center.html">Help Center</a></li>
+                        <li><a href="auth-expert-consultation.html">Expert Consultation</a></li>
+                        <li><a href="auth-community.html">Community Forum</a></li>
+                        <li><a href="auth-feedback.html">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Account</h4>
+                    <ul>
+                        <li><a href="auth-profile.html">Profile Settings</a></li>
+                        <li><a href="auth-billing.html">Billing & Subscription</a></li>
+                        <li><a href="auth-api-access.html">API Access</a></li>
+                        <li><a href="#" onclick="logout()">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CloudNestle Consulting & Services (OPC) Pvt. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/auth-manager.js"></script>
+    <script src="../assets/js/ai-tools.js"></script>
+    <script src="../assets/js/charts.js"></script>
+</body>
+</html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="access-level" content="registration">
+    <meta name="auth-type" content="email-only">
+    <title>AWS Framework Implementation Guide - CloudNestle</title>
+    <meta name="description" content="Comprehensive guide to implementing AWS frameworks including CAF, Well-Architected, and Security Maturity Model with step-by-step instructions.">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/registration.css">
+    <link rel="stylesheet" href="../assets/css/guide.css">
+</head>
+<body class="access-registration">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="contact-info">
+                    <span>📞 +91-XXXXXXXXXX</span>
+                    <span>✉️ info@cloudnestle.com</span>
+                    <span>🏢 CIN: U72900DL2024OPC428XXX</span>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="GitHub">💻</a>
+                </div>
+            </div>
+            <nav class="nav">
+                <div class="nav-brand">
+                    <a href="/../index.html">CloudNestle</a>
+                </div>
+                <div class="nav-menu">
+                    <a href="/../index.html">Home</a>
+                    <a href="/../about.html">About</a>
+                    <a href="/../services.html">Services</a>
+                    <a href="/../frameworks/index.html">Frameworks</a>
+                    <a href="/../industries.html">Industries</a>
+                    <a href="/../contact.html">Contact</a>
+                </div>
+                <div class="nav-cta">
+                    <a href="/../contact.html" class="btn btn-primary">Get Started</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero guide-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Premium Implementation Guide</div>
+                <h1>AWS Framework Implementation Guide</h1>
+                <p class="hero-subtitle">Complete step-by-step guide to implementing AWS Cloud Adoption Framework, Well-Architected Framework, and Security Maturity Model</p>
+                <div class="hero-features">
+                    <div class="feature">📚 200+ Page Comprehensive Guide</div>
+                    <div class="feature">🛠️ Implementation Templates</div>
+                    <div class="feature">✅ Checklists & Worksheets</div>
+                    <div class="feature">📊 Assessment Tools</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guide Preview -->
+    <section class="section">
+        <div class="container">
+            <div class="guide-preview">
+                <h2>What's Inside This Implementation Guide</h2>
+                <div class="preview-grid">
+                    <div class="preview-section">
+                        <div class="section-icon">🎯</div>
+                        <h3>CAF Implementation (80 pages)</h3>
+                        <p>Complete Cloud Adoption Framework implementation across all 6 perspectives</p>
+                        <ul>
+                            <li>54 capability assessment worksheets</li>
+                            <li>Stakeholder engagement templates</li>
+                            <li>Transformation roadmap builder</li>
+                            <li>Change management playbooks</li>
+                            <li>Success measurement frameworks</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="preview-section">
+                        <div class="section-icon">🏗️</div>
+                        <h3>Well-Architected Implementation (70 pages)</h3>
+                        <p>Detailed architecture optimization across all 6 pillars</p>
+                        <ul>
+                            <li>Pillar-by-pillar review checklists</li>
+                            <li>Architecture documentation templates</li>
+                            <li>Risk assessment matrices</li>
+                            <li>Remediation planning guides</li>
+                            <li>Continuous improvement processes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="preview-section">
+                        <div class="section-icon">🔒</div>
+                        <h3>Security Maturity Implementation (50 pages)</h3>
+                        <p>Progressive security enhancement through Crawl-Walk-Run methodology</p>
+                        <ul>
+                            <li>Maturity assessment tools</li>
+                            <li>Phase-based implementation plans</li>
+                            <li>Security control templates</li>
+                            <li>Compliance mapping guides</li>
+                            <li>Incident response playbooks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Gate -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="email-gate">
+                <div class="gate-content">
+                    <h2>Download Your Free Implementation Guide</h2>
+                    <p>Get instant access to our comprehensive 200+ page AWS Framework Implementation Guide with templates, checklists, and step-by-step instructions</p>
+                    
+                    <div class="gate-benefits">
+                        <div class="benefit">
+                            <span class="benefit-icon">✅</span>
+                            <span>Complete implementation roadmaps</span>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-icon">✅</span>
+                            <span>Ready-to-use templates and worksheets</span>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-icon">✅</span>
+                            <span>Industry best practices and lessons learned</span>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-icon">✅</span>
+                            <span>Bonus: Expert consultation session</span>
+                        </div>
+                    </div>
+                    
+                    <form class="email-capture-form" id="implementation-guide-form">
+                        <div class="form-group">
+                            <label for="email">Business Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your business email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company" placeholder="Your company name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Your Role</label>
+                            <select id="role" name="role" required>
+                                <option value="">Select your role</option>
+                                <option value="cto">CTO/Technical Leader</option>
+                                <option value="architect">Cloud Architect</option>
+                                <option value="engineer">DevOps/Cloud Engineer</option>
+                                <option value="manager">IT Manager</option>
+                                <option value="consultant">Consultant</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="implementation-focus">Primary Implementation Focus</label>
+                            <select id="implementation-focus" name="implementation_focus" required>
+                                <option value="">Select primary focus</option>
+                                <option value="caf">Cloud Adoption Framework (CAF)</option>
+                                <option value="well-architected">Well-Architected Framework</option>
+                                <option value="security">Security Maturity Model</option>
+                                <option value="integrated">Integrated Multi-Framework Approach</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="timeline">Implementation Timeline</label>
+                            <select id="timeline" name="timeline" required>
+                                <option value="">Select timeline</option>
+                                <option value="immediate">Starting immediately</option>
+                                <option value="3-months">Within 3 months</option>
+                                <option value="6-months">Within 6 months</option>
+                                <option value="planning">Still planning</option>
+                            </select>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="consultation" name="consultation" checked>
+                                <span class="checkmark"></span>
+                                Include free 30-minute expert consultation session
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-full">
+                            Download Implementation Guide
+                            <span class="btn-icon">📚</span>
+                        </button>
+                    </form>
+                    
+                    <div class="trust-indicators">
+                        <div class="trust-item">
+                            <span class="trust-icon">🔒</span>
+                            <span>Your information is secure and never shared</span>
+                        </div>
+                        <div class="trust-item">
+                            <span class="trust-icon">📧</span>
+                            <span>No spam - only valuable implementation insights</span>
+                        </div>
+                        <div class="trust-item">
+                            <span class="trust-icon">⚡</span>
+                            <span>Instant download - no waiting</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gated Content -->
+    <div class="content-registration-required gated" id="guide-content">
+        <!-- Implementation Guide Content -->
+        <section class="section">
+            <div class="container">
+                <div class="guide-content">
+                    <div class="guide-header">
+                        <h2>AWS Framework Implementation Guide</h2>
+                        <p>Your comprehensive resource for successful AWS framework implementation</p>
+                        <div class="download-options">
+                            <a href="#" class="btn btn-primary" id="download-pdf">
+                                <span class="btn-icon">📄</span>
+                                Download PDF Guide
+                            </a>
+                            <a href="#" class="btn btn-outline" id="download-templates">
+                                <span class="btn-icon">📋</span>
+                                Download Templates
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Table of Contents -->
+                    <div class="guide-toc">
+                        <h3>Table of Contents</h3>
+                        <div class="toc-sections">
+                            <div class="toc-section">
+                                <h4>Part I: Cloud Adoption Framework (CAF)</h4>
+                                <ul>
+                                    <li>Chapter 1: CAF Overview and Methodology</li>
+                                    <li>Chapter 2: Business Perspective Implementation</li>
+                                    <li>Chapter 3: People Perspective and Change Management</li>
+                                    <li>Chapter 4: Governance Perspective Framework</li>
+                                    <li>Chapter 5: Platform Perspective Architecture</li>
+                                    <li>Chapter 6: Security Perspective Controls</li>
+                                    <li>Chapter 7: Operations Perspective Excellence</li>
+                                    <li>Chapter 8: Integrated CAF Roadmap</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="toc-section">
+                                <h4>Part II: Well-Architected Framework</h4>
+                                <ul>
+                                    <li>Chapter 9: Well-Architected Principles</li>
+                                    <li>Chapter 10: Operational Excellence Pillar</li>
+                                    <li>Chapter 11: Security Pillar Implementation</li>
+                                    <li>Chapter 12: Reliability Pillar Design</li>
+                                    <li>Chapter 13: Performance Efficiency Optimization</li>
+                                    <li>Chapter 14: Cost Optimization Strategies</li>
+                                    <li>Chapter 15: Sustainability Pillar</li>
+                                    <li>Chapter 16: Continuous Architecture Review</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="toc-section">
+                                <h4>Part III: Security Maturity Model</h4>
+                                <ul>
+                                    <li>Chapter 17: Security Maturity Overview</li>
+                                    <li>Chapter 18: Crawl Phase Foundation</li>
+                                    <li>Chapter 19: Walk Phase Operationalization</li>
+                                    <li>Chapter 20: Run Phase Optimization</li>
+                                    <li>Chapter 21: Continuous Security Improvement</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="toc-section">
+                                <h4>Part IV: Integrated Implementation</h4>
+                                <ul>
+                                    <li>Chapter 22: Multi-Framework Integration</li>
+                                    <li>Chapter 23: Implementation Planning</li>
+                                    <li>Chapter 24: Success Measurement</li>
+                                    <li>Chapter 25: Troubleshooting Guide</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sample Chapter -->
+                    <div class="sample-chapter">
+                        <h3>Sample Chapter: CAF Business Perspective Implementation</h3>
+                        <div class="chapter-content">
+                            <h4>Overview</h4>
+                            <p>The Business Perspective of the AWS Cloud Adoption Framework focuses on ensuring that your cloud investments accelerate your digital transformation ambitions and business outcomes. This chapter provides a comprehensive guide to implementing the Business Perspective across all its foundational capabilities.</p>
+                            
+                            <h4>Key Capabilities</h4>
+                            <div class="capabilities-grid">
+                                <div class="capability">
+                                    <h5>Strategy Management</h5>
+                                    <p>Align cloud strategy with business strategy and establish clear success metrics</p>
+                                </div>
+                                <div class="capability">
+                                    <h5>Portfolio Management</h5>
+                                    <p>Prioritize cloud investments based on business value and strategic alignment</p>
+                                </div>
+                                <div class="capability">
+                                    <h5>Innovation Management</h5>
+                                    <p>Establish processes to drive innovation through cloud capabilities</p>
+                                </div>
+                                <div class="capability">
+                                    <h5>Product Management</h5>
+                                    <p>Apply product thinking to cloud services and solutions</p>
+                                </div>
+                            </div>
+                            
+                            <h4>Implementation Steps</h4>
+                            <ol>
+                                <li><strong>Assess Current State:</strong> Evaluate existing business alignment and cloud readiness</li>
+                                <li><strong>Define Target State:</strong> Establish clear business outcomes and success criteria</li>
+                                <li><strong>Gap Analysis:</strong> Identify gaps between current and target states</li>
+                                <li><strong>Roadmap Development:</strong> Create prioritized implementation roadmap</li>
+                                <li><strong>Execution Planning:</strong> Develop detailed execution plans with timelines</li>
+                                <li><strong>Success Measurement:</strong> Implement metrics and monitoring systems</li>
+                            </ol>
+                            
+                            <div class="chapter-note">
+                                <p><strong>Note:</strong> This is just a sample from the complete 200+ page implementation guide. The full guide includes detailed worksheets, templates, and step-by-step instructions for every aspect of framework implementation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Implementation Templates -->
+                    <div class="implementation-templates">
+                        <h3>Included Implementation Templates</h3>
+                        <div class="templates-grid">
+                            <div class="template-card">
+                                <div class="template-icon">📊</div>
+                                <h4>Assessment Worksheets</h4>
+                                <p>54 CAF capability assessment worksheets with scoring rubrics</p>
+                                <ul>
+                                    <li>Current state evaluation forms</li>
+                                    <li>Maturity scoring matrices</li>
+                                    <li>Gap analysis templates</li>
+                                    <li>Stakeholder interview guides</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="template-card">
+                                <div class="template-icon">🗺️</div>
+                                <h4>Roadmap Templates</h4>
+                                <p>Strategic planning and implementation roadmap builders</p>
+                                <ul>
+                                    <li>Multi-year transformation roadmaps</li>
+                                    <li>Quarterly milestone planners</li>
+                                    <li>Resource allocation templates</li>
+                                    <li>Risk mitigation plans</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="template-card">
+                                <div class="template-icon">✅</div>
+                                <h4>Implementation Checklists</h4>
+                                <p>Step-by-step checklists for each framework component</p>
+                                <ul>
+                                    <li>Pre-implementation checklists</li>
+                                    <li>Phase-by-phase task lists</li>
+                                    <li>Quality assurance checklists</li>
+                                    <li>Go-live verification lists</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="template-card">
+                                <div class="template-icon">📈</div>
+                                <h4>Measurement Frameworks</h4>
+                                <p>KPI tracking and success measurement templates</p>
+                                <ul>
+                                    <li>Success metrics definitions</li>
+                                    <li>KPI tracking dashboards</li>
+                                    <li>Progress reporting templates</li>
+                                    <li>ROI calculation worksheets</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Bonus Resources -->
+        <section class="section bg-light">
+            <div class="container">
+                <div class="bonus-resources">
+                    <h2>Bonus Resources Included</h2>
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <h3>🎯 Expert Consultation Session</h3>
+                            <p>30-minute one-on-one consultation with our AWS framework experts</p>
+                            <a href="/../contact.html" class="btn btn-outline">Schedule Session</a>
+                        </div>
+                        <div class="resource-card">
+                            <h3>📚 Implementation Playbooks</h3>
+                            <p>Industry-specific playbooks for Education, Retail, and SMB sectors</p>
+                            <a href="/reg-industry-playbooks.html" class="btn btn-outline">Access Playbooks</a>
+                        </div>
+                        <div class="resource-card">
+                            <h3>🛠️ Assessment Tools</h3>
+                            <p>Interactive online assessment tools for framework readiness</p>
+                            <a href="/reg-framework-assessment.html" class="btn btn-outline">Start Assessment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CloudNestle</h3>
+                    <p>Expert AWS framework implementation guidance and support</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="GitHub">💻</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Implementation Guides</h4>
+                    <ul>
+                        <li><a href="/reg-caf-implementation.html">CAF Implementation</a></li>
+                        <li><a href="/reg-waf-implementation.html">Well-Architected Implementation</a></li>
+                        <li><a href="/reg-security-implementation.html">Security Maturity Implementation</a></li>
+                        <li><a href="/reg-integrated-approach.html">Integrated Approach</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Templates & Tools</h4>
+                    <ul>
+                        <li><a href="/reg-assessment-templates.html">Assessment Templates</a></li>
+                        <li><a href="/reg-roadmap-builder.html">Roadmap Builder</a></li>
+                        <li><a href="/reg-implementation-checklists.html">Implementation Checklists</a></li>
+                        <li><a href="/reg-measurement-tools.html">Measurement Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>📞 +91-XXXXXXXXXX</p>
+                    <p>✉️ info@cloudnestle.com</p>
+                    <p>🏢 New Delhi, India</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CloudNestle Consulting & Services (OPC) Pvt. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/auth-manager.js"></script>
+    <script src="../assets/js/guide.js"></script>
+</body>
+</html>

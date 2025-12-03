@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost Optimization Assessment - CloudNestle</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/auth-manager.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><a href="/../index.html">CloudNestle</a></div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="/../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/../services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="/../solutions.html" class="nav-link">Solutions</a></li>
+                <li class="nav-item"><a href="/../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="assessment-hero">
+        <div class="container">
+            <h1>AWS Cost Optimization Assessment</h1>
+            <p>Identify potential cost savings and optimization opportunities in your AWS environment.</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">35%</div>
+                    <div class="stat-label">Average Savings</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">$2.5M</div>
+                    <div class="stat-label">Total Client Savings</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="assessment-form-section">
+        <div class="container">
+            <form class="assessment-form" id="costOptimization">
+                <div class="form-section">
+                    <h3>Contact Information</h3>
+                    <div class="form-row">
+                        <input type="text" name="firstName" placeholder="First Name" required>
+                        <input type="text" name="lastName" placeholder="Last Name" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="email" name="email" placeholder="Business Email" required>
+                        <input type="text" name="company" placeholder="Company Name" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Current AWS Spend</h3>
+                    <div class="question-group">
+                        <label>What is your monthly AWS spend?</label>
+                        <select name="monthlySpend" required>
+                            <option value="">Select range</option>
+                            <option value="under-1k">Under $1,000</option>
+                            <option value="1k-10k">$1,000 - $10,000</option>
+                            <option value="10k-50k">$10,000 - $50,000</option>
+                            <option value="50k-100k">$50,000 - $100,000</option>
+                            <option value="100k+">$100,000+</option>
+                        </select>
+                    </div>
+                    
+                    <div class="question-group">
+                        <label>Which AWS services do you use most? (Select all that apply)</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="services" value="ec2"> EC2</label>
+                            <label><input type="checkbox" name="services" value="rds"> RDS</label>
+                            <label><input type="checkbox" name="services" value="s3"> S3</label>
+                            <label><input type="checkbox" name="services" value="lambda"> Lambda</label>
+                            <label><input type="checkbox" name="services" value="ecs"> ECS/EKS</label>
+                            <label><input type="checkbox" name="services" value="redshift"> Redshift</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Cost Management Practices</h3>
+                    <div class="question-group">
+                        <label>Do you currently use Reserved Instances or Savings Plans?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="reservedInstances" value="yes-optimized"> Yes, fully optimized</label>
+                            <label><input type="radio" name="reservedInstances" value="yes-partial"> Yes, partially</label>
+                            <label><input type="radio" name="reservedInstances" value="no"> No</label>
+                            <label><input type="radio" name="reservedInstances" value="unsure"> Not sure</label>
+                        </div>
+                    </div>
+                    
+                    <div class="question-group">
+                        <label>How do you currently monitor AWS costs?</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="monitoring" value="cost-explorer"> AWS Cost Explorer</label>
+                            <label><input type="checkbox" name="monitoring" value="budgets"> AWS Budgets</label>
+                            <label><input type="checkbox" name="monitoring" value="third-party"> Third-party tools</label>
+                            <label><input type="checkbox" name="monitoring" value="manual"> Manual tracking</label>
+                            <label><input type="checkbox" name="monitoring" value="none"> No monitoring</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Optimization Goals</h3>
+                    <div class="question-group">
+                        <label>What are your primary cost optimization goals?</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="goals" value="reduce-spend"> Reduce overall spend</label>
+                            <label><input type="checkbox" name="goals" value="right-sizing"> Right-size resources</label>
+                            <label><input type="checkbox" name="goals" value="governance"> Improve cost governance</label>
+                            <label><input type="checkbox" name="goals" value="visibility"> Better cost visibility</label>
+                            <label><input type="checkbox" name="goals" value="automation"> Automate cost controls</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Get Cost Optimization Report</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('costOptimization').addEventListener('submit', function(e) {
+            e.preventDefault();
+            authManager.requireRegistration('cost-optimization-assessment', 'Get your personalized cost optimization recommendations');
+        });
+    </script>
+</body>
+</html>

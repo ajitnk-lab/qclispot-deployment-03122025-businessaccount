@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="access-level" content="registration">
+    <meta name="auth-type" content="email-only">
+    <title>Industry ROI Calculator - CloudNestle AWS Consulting</title>
+    <meta name="description" content="Calculate your industry-specific ROI for AWS cloud transformation with our advanced calculator tailored for Education, Retail, and SMB sectors.">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/registration.css">
+</head>
+<body class="access-registration">
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>CloudNestle</h1>
+                    <span>AWS Cloud Consulting Excellence</span>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../services.html">Services</a></li>
+                        <li><a href="../frameworks/index.html">Frameworks</a></li>
+                        <li><a href="../industries.html">Industries</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section registration-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="premium-badge">
+                    <i class="icon-premium"></i>
+                    <span>Premium Tool</span>
+                </div>
+                <h1>Industry-Specific ROI Calculator</h1>
+                <p class="hero-subtitle">Calculate your precise return on investment for AWS cloud transformation with industry-specific metrics, benchmarks, and cost models.</p>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <i class="icon-industry"></i>
+                        <span>Industry-Specific Models</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="icon-benchmark"></i>
+                        <span>Real Benchmarks</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="icon-detailed"></i>
+                        <span>Detailed Analysis</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="icon-export"></i>
+                        <span>Exportable Reports</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Preview -->
+    <section class="calculator-preview">
+        <div class="container">
+            <div class="preview-content">
+                <h2>Advanced Industry ROI Analysis</h2>
+                <p>Our sophisticated calculator uses real industry data, AWS pricing models, and transformation benchmarks to provide accurate ROI projections tailored to your specific sector.</p>
+                
+                <div class="preview-tabs">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="education">Education</button>
+                        <button class="tab-btn" data-tab="retail">Retail</button>
+                        <button class="tab-btn" data-tab="smb">SMB</button>
+                    </div>
+                    
+                    <div class="tab-content">
+                        <div id="education" class="tab-panel active">
+                            <div class="industry-preview">
+                                <h3>Education Sector ROI Calculator</h3>
+                                <div class="preview-metrics">
+                                    <div class="metric-item">
+                                        <span class="metric-label">Average ROI</span>
+                                        <span class="metric-value">340%</span>
+                                    </div>
+                                    <div class="metric-item">
+                                        <span class="metric-label">Payback Period</span>
+                                        <span class="metric-value">14 months</span>
+                                    </div>
+                                    <div class="metric-item">
+                                        <span class="metric-label">Cost Savings</span>
+                                        <span class="metric-value">45-65%</span>
+                                    </div>
+                                </div>
+                                <div class="preview-factors">
+                                    <h4>Education-Specific Factors:</h4>
+                                    <ul>
+                                        <li>Student enrollment and growth projections</li>
+                                        <li>FERPA/COPPA compliance requirements</li>
+                                        <li>Learning management system integration</li>
+                                        <li>Campus infrastructure modernization</li>
+                                        <li>Research computing requirements</li>
+                                        <li>Seasonal usage patterns</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="retail" class="tab-panel">
+                            <div class="industry-preview">
+                                <h3>Retail Industry ROI Calculator</h3>
+                                <div class="preview-metrics">
+                                    <div class="metric-item">
+                                        <span class="metric-label">Average ROI</span>
+                                        <span class="metric-value">280%</span>
+                                    </div>
+                                    <div class="metric-item">
+                                        <span class="metric-label">Payback Period</span>
+                                        <span class="metric-value">18 months</span>
+                                    </div>
+                                    <div class="metric-item">
+                                        <span class="metric-label">Revenue Increase</span>
+                                        <span class="metric-value">25-40%</span>
+                                    </div>
+                                </div>
+                                <div class="preview-factors">
+                                    <h4>Retail-Specific Factors:</h4>
+                                    <ul>
+                                        <li>E-commerce platform performance</li>
+                                        <li>Omnichannel integration costs</li>
+                                        <li>Inventory management optimization</li>
+                                        <li>Customer analytics and personalization</li>
+                                        <li>Peak season scaling requirements</li>
+                                        <li>PCI DSS compliance considerations</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="smb" class="tab-panel">
+                            <div class="industry-preview">
+                                <h3>SMB ROI Calculator</h3>
+                                <div class="preview-metrics">
+                                    <div class="metric-item">
+                                        <span class="metric-label">Average ROI</span>
+                                        <span class="metric-value">420%</span>
+                                    </div>
+                                    <div class="metric-item">
+                                        <span class="metric-label">Payback Period</span>
+                                        <span class="metric-value">12 months</span>
+                                    </div>
+                                    <div class="metric-item">
+                                        <span class="metric-label">Efficiency Gain</span>
+                                        <span class="metric-value">50-75%</span>
+                                    </div>
+                                </div>
+                                <div class="preview-factors">
+                                    <h4>SMB-Specific Factors:</h4>
+                                    <ul>
+                                        <li>Legacy system migration costs</li>
+                                        <li>Staff productivity improvements</li>
+                                        <li>Operational efficiency gains</li>
+                                        <li>Reduced IT maintenance overhead</li>
+                                        <li>Business continuity improvements</li>
+                                        <li>Scalability and growth enablement</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Features -->
+    <section class="calculator-features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Comprehensive ROI Analysis Features</h2>
+                <p>Our industry-specific calculator goes beyond basic cost comparisons to provide detailed financial analysis and strategic insights.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="icon-industry-data"></i>
+                    </div>
+                    <h3>Industry Benchmarks</h3>
+                    <p>Compare your projections against real industry data from hundreds of successful transformations in your sector.</p>
+                    <ul>
+                        <li>Peer company comparisons</li>
+                        <li>Industry average metrics</li>
+                        <li>Best-in-class performance data</li>
+                        <li>Regional variations</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="icon-cost-modeling"></i>
+                    </div>
+                    <h3>Advanced Cost Modeling</h3>
+                    <p>Sophisticated cost models that account for all aspects of cloud transformation and ongoing operations.</p>
+                    <ul>
+                        <li>Migration and implementation costs</li>
+                        <li>Ongoing operational expenses</li>
+                        <li>Training and change management</li>
+                        <li>Hidden cost identification</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="icon-benefit-analysis"></i>
+                    </div>
+                    <h3>Benefit Quantification</h3>
+                    <p>Quantify both hard and soft benefits with industry-specific metrics and measurement frameworks.</p>
+                    <ul>
+                        <li>Cost savings calculations</li>
+                        <li>Productivity improvements</li>
+                        <li>Revenue enhancement opportunities</li>
+                        <li>Risk mitigation value</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="icon-scenario-analysis"></i>
+                    </div>
+                    <h3>Scenario Analysis</h3>
+                    <p>Model different scenarios and approaches to find the optimal transformation strategy for your organization.</p>
+                    <ul>
+                        <li>Conservative vs. aggressive timelines</li>
+                        <li>Phased vs. big-bang approaches</li>
+                        <li>Different service tier options</li>
+                        <li>Risk sensitivity analysis</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="icon-timeline"></i>
+                    </div>
+                    <h3>Timeline Projections</h3>
+                    <p>Detailed timeline analysis showing when benefits will be realized and cash flow implications.</p>
+                    <ul>
+                        <li>Month-by-month projections</li>
+                        <li>Milestone-based benefits</li>
+                        <li>Cash flow analysis</li>
+                        <li>Break-even calculations</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="icon-reporting"></i>
+                    </div>
+                    <h3>Executive Reporting</h3>
+                    <p>Professional reports and presentations ready for board meetings and stakeholder communications.</p>
+                    <ul>
+                        <li>Executive summary reports</li>
+                        <li>Detailed financial analysis</li>
+                        <li>Risk assessment documentation</li>
+                        <li>Implementation recommendations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample Report Preview -->
+    <section class="sample-report-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2>Sample ROI Report</h2>
+                <p>See what your comprehensive ROI analysis will look like with this sample report from a recent education sector transformation.</p>
+            </div>
+            
+            <div class="report-preview">
+                <div class="report-header">
+                    <h3>AWS Cloud Transformation ROI Analysis</h3>
+                    <div class="report-meta">
+                        <span>Education Sector</span>
+                        <span>15,000 Students</span>
+                        <span>3-Year Projection</span>
+                    </div>
+                </div>
+                
+                <div class="report-summary">
+                    <div class="summary-metrics">
+                        <div class="metric-card">
+                            <span class="metric-title">Total ROI</span>
+                            <span class="metric-value">342%</span>
+                            <span class="metric-period">Over 3 Years</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-title">Payback Period</span>
+                            <span class="metric-value">14.2</span>
+                            <span class="metric-period">Months</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-title">Net Present Value</span>
+                            <span class="metric-value">$2.4M</span>
+                            <span class="metric-period">3-Year NPV</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-title">Annual Savings</span>
+                            <span class="metric-value">$850K</span>
+                            <span class="metric-period">Year 3 Projection</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="report-sections">
+                    <div class="section-item">
+                        <h4>Cost Analysis</h4>
+                        <p>Detailed breakdown of migration, implementation, and ongoing operational costs.</p>
+                    </div>
+                    <div class="section-item">
+                        <h4>Benefit Quantification</h4>
+                        <p>Comprehensive analysis of cost savings, productivity gains, and revenue opportunities.</p>
+                    </div>
+                    <div class="section-item">
+                        <h4>Risk Assessment</h4>
+                        <p>Identification and quantification of implementation risks and mitigation strategies.</p>
+                    </div>
+                    <div class="section-item">
+                        <h4>Implementation Roadmap</h4>
+                        <p>Phased approach with timeline, milestones, and resource requirements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Gate -->
+    <section class="content-registration-required gated">
+        <div class="container">
+            <div class="registration-gate">
+                <div class="gate-content">
+                    <div class="gate-icon">
+                        <i class="icon-calculator"></i>
+                    </div>
+                    <h2>Access Your Industry ROI Calculator</h2>
+                    <p>Get instant access to our comprehensive industry-specific ROI calculator and generate your personalized analysis report.</p>
+                    
+                    <div class="gate-benefits">
+                        <div class="benefit-item">
+                            <i class="icon-check"></i>
+                            <span>Industry-specific calculations</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="icon-check"></i>
+                            <span>Detailed financial projections</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="icon-check"></i>
+                            <span>Executive-ready reports</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="icon-check"></i>
+                            <span>Benchmark comparisons</span>
+                        </div>
+                    </div>
+                    
+                    <form class="registration-form" id="roi-calculator-access">
+                        <div class="form-group">
+                            <input type="email" id="user-email" placeholder="Enter your business email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="company-name" placeholder="Company name" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="industry" required>
+                                <option value="">Select your industry</option>
+                                <option value="education">Education</option>
+                                <option value="retail">Retail</option>
+                                <option value="smb">Small & Medium Business</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select id="company-size" required>
+                                <option value="">Select company size</option>
+                                <option value="startup">1-50 employees</option>
+                                <option value="smb">51-500 employees</option>
+                                <option value="enterprise">500+ employees</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="icon-calculator"></i>
+                            Access ROI Calculator
+                        </button>
+                    </form>
+                    
+                    <div class="gate-trust">
+                        <p><i class="icon-shield"></i> Your information is secure and will never be shared. Unsubscribe anytime.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Calculator (Hidden until registration) -->
+    <section class="interactive-calculator" style="display: none;">
+        <div class="container">
+            <div class="calculator-interface">
+                <div class="calculator-header">
+                    <h2>Industry ROI Calculator</h2>
+                    <div class="calculator-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">Step 1 of 5</span>
+                    </div>
+                </div>
+                
+                <div class="calculator-steps">
+                    <!-- Step 1: Company Information -->
+                    <div class="calculator-step active" data-step="1">
+                        <h3>Company Information</h3>
+                        <div class="step-content">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Annual Revenue</label>
+                                    <select id="annual-revenue">
+                                        <option value="under-1m">Under $1M</option>
+                                        <option value="1m-10m">$1M - $10M</option>
+                                        <option value="10m-100m">$10M - $100M</option>
+                                        <option value="over-100m">Over $100M</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Number of Employees</label>
+                                    <input type="number" id="employee-count" placeholder="Enter number">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Current IT Budget (Annual)</label>
+                                    <input type="number" id="it-budget" placeholder="Enter amount in USD">
+                                </div>
+                                <div class="form-group">
+                                    <label>Geographic Presence</label>
+                                    <select id="geographic-presence">
+                                        <option value="local">Local/Regional</option>
+                                        <option value="national">National</option>
+                                        <option value="international">International</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional steps would be loaded dynamically -->
+                </div>
+                
+                <div class="calculator-navigation">
+                    <button class="btn btn-secondary" id="prev-step" disabled>Previous</button>
+                    <button class="btn btn-primary" id="next-step">Next</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Our Calculator -->
+    <section class="why-choose-calculator">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Our ROI Calculator is Different</h2>
+                <p>Unlike generic calculators, our tool is built on real industry data and transformation experience from hundreds of successful projects.</p>
+            </div>
+            
+            <div class="differentiators-grid">
+                <div class="differentiator-item">
+                    <div class="diff-icon">
+                        <i class="icon-data"></i>
+                    </div>
+                    <h3>Real Industry Data</h3>
+                    <p>Based on actual transformation results from 500+ projects across Education, Retail, and SMB sectors.</p>
+                </div>
+                
+                <div class="differentiator-item">
+                    <div class="diff-icon">
+                        <i class="icon-expertise"></i>
+                    </div>
+                    <h3>Expert Validation</h3>
+                    <p>Calculations reviewed and validated by AWS-certified architects and industry specialists.</p>
+                </div>
+                
+                <div class="differentiator-item">
+                    <div class="diff-icon">
+                        <i class="icon-accuracy"></i>
+                    </div>
+                    <h3>Proven Accuracy</h3>
+                    <p>95% accuracy rate when compared to actual transformation outcomes 12 months post-implementation.</p>
+                </div>
+                
+                <div class="differentiator-item">
+                    <div class="diff-icon">
+                        <i class="icon-comprehensive"></i>
+                    </div>
+                    <h3>Comprehensive Analysis</h3>
+                    <p>Includes hidden costs, soft benefits, risk factors, and timeline considerations often missed by other tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="calculator-testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Hear from executives who used our ROI calculator to make informed transformation decisions.</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p>"The ROI calculator was incredibly accurate. Our actual savings exceeded the projections by 15%, and the timeline was spot-on."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <span>CTO, State University System</span>
+                        </div>
+                        <div class="testimonial-results">
+                            <span>Projected: 340% ROI</span>
+                            <span>Actual: 391% ROI</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p>"The detailed analysis helped us secure board approval and funding. The executive report was exactly what we needed."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <span>VP Technology, Retail Chain</span>
+                        </div>
+                        <div class="testimonial-results">
+                            <span>Projected: 280% ROI</span>
+                            <span>Actual: 295% ROI</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p>"As a growing SMB, the calculator helped us understand the true value of cloud transformation beyond just cost savings."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Lisa Rodriguez</h4>
+                            <span>CEO, Manufacturing Company</span>
+                        </div>
+                        <div class="testimonial-results">
+                            <span>Projected: 420% ROI</span>
+                            <span>Actual: 445% ROI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CloudNestle</h3>
+                    <p>Industry-leading AWS consulting with data-driven ROI analysis and transformation expertise.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Premium Tools</h4>
+                    <ul>
+                        <li><a href="reg-roi-calculator.html">ROI Calculator</a></li>
+                        <li><a href="reg-caf-readiness-assessment.html">CAF Assessment</a></li>
+                        <li><a href="reg-implementation-guide.html">Implementation Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Industries</h4>
+                    <ul>
+                        <li><a href="../industries/education.html">Education</a></li>
+                        <li><a href="../industries/retail.html">Retail</a></li>
+                        <li><a href="../industries/smb.html">SMB</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@cloudnestle.com</p>
+                    <p>Phone: +91-XXXXXXXXXX</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CloudNestle Consulting & Services (OPC) Pvt. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Registration Modal (Auto-shown for gated content) -->
+    <div class="auth-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Access Premium ROI Calculator</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Enter your email to unlock our industry-specific ROI calculator and get instant access to detailed financial analysis.</p>
+                <form class="email-capture-form">
+                    <input type="email" placeholder="Enter your business email" required>
+                    <button type="submit" class="btn btn-primary">Get Free Access</button>
+                </form>
+                <p class="privacy-note">Your information is secure and will never be shared.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/registration-manager.js"></script>
+    <script src="../assets/js/roi-calculator.js"></script>
+</body>
+</html>

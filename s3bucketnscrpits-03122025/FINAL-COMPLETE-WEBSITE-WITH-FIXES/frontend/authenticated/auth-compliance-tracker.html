@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="access-level" content="authenticated">
+    <meta name="auth-type" content="full-profile">
+    <title>Compliance Tracker - CloudNestle Academy</title>
+    <meta name="description" content="Track AWS compliance status across multiple frameworks with automated monitoring and remediation guidance.">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/authenticated.css">
+</head>
+<body class="access-authenticated">
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <a href="/../index.html">CloudNestle</a>
+            </div>
+            <div class="nav-menu">
+                <a href="/auth-academy-dashboard.html">Dashboard</a>
+                <a href="/auth-compliance-tracker.html" class="active">Compliance</a>
+                <a href="/auth-security-dashboard.html">Security</a>
+                <a href="/auth-expert-consultation.html">Experts</a>
+                <div class="user-menu">
+                    <span class="user-name">Welcome, User</span>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="content-auth-required gated">
+            <div class="dashboard-container">
+                <div class="dashboard-header">
+                    <h1>Compliance Tracker</h1>
+                    <p>Monitor and maintain compliance across multiple regulatory frameworks</p>
+                    <div class="header-actions">
+                        <button class="btn-primary" id="run-compliance-scan">Run Compliance Scan</button>
+                        <button class="btn-secondary" id="generate-report">Generate Report</button>
+                    </div>
+                </div>
+
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-content">
+                            <div class="stat-value">89%</div>
+                            <div class="stat-label">Overall Compliance</div>
+                            <div class="stat-change positive">+3% this month</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📋</div>
+                        <div class="stat-content">
+                            <div class="stat-value">6</div>
+                            <div class="stat-label">Active Frameworks</div>
+                            <div class="stat-change neutral">No change</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⚠️</div>
+                        <div class="stat-content">
+                            <div class="stat-value">23</div>
+                            <div class="stat-label">Open Findings</div>
+                            <div class="stat-change positive">-8 resolved</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-content">
+                            <div class="stat-value">15</div>
+                            <div class="stat-label">Days to Next Audit</div>
+                            <div class="stat-change neutral">SOC 2 Type II</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-content">
+                    <div class="main-content">
+                        <div class="compliance-frameworks">
+                            <h2>Compliance Frameworks</h2>
+                            <div class="frameworks-grid">
+                                <div class="framework-card soc2">
+                                    <div class="framework-header">
+                                        <div class="framework-info">
+                                            <h3>SOC 2 Type II</h3>
+                                            <span class="framework-status active">Active</span>
+                                        </div>
+                                        <div class="compliance-score">
+                                            <div class="score-circle">
+                                                <span class="score-value">94%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="framework-details">
+                                        <div class="detail-row">
+                                            <span class="detail-label">Controls Passed:</span>
+                                            <span class="detail-value">47/50</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <span class="detail-label">Last Assessment:</span>
+                                            <span class="detail-value">Jun 15, 2025</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <span class="detail-label">Next Audit:</span>
+                                            <span class="detail-value">Aug 10, 2025</span>
+                                        </div>
+                                    </div>
+                                    <div class="framework-actions">
+                                        <button class="btn-small btn-primary">View Details</button>
+                                        <button class="btn-small btn-secondary">Remediate</button>
+                                    </div>
+                                </div>
+
+                                <div class="framework-card pci">
+                                    <div class="framework-header">
+                                        <div class="framework-info">
+                                            <h3>PCI DSS</h3>
+                                            <span class="framework-status active">Active</span>
+                                        </div>
+                                        <div class="compliance-score">
+                                            <div class="score-circle">
+                                                <span class="score-value">87%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="framework-details">
+                                        <div class="detail-row">
+                                            <span class="detail-label">Requirements Met:</span>
+                                            <span class="detail-value">31/36</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <span class="detail-label">Last Assessment:</span>
+                                            <span class="detail-value">Jul 2, 2025</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <span class="detail-label">Next Review:</span>
+                                            <span class="detail-value">Oct 2, 2025</span>
+                                        </div>
+                                    </div>
+                                    <div class="framework-actions">
+                                        <button class="btn-small btn-primary">View Details</button>
+                                        <button class="btn-small btn-secondary">Remediate</button>
+                                    </div>
+                                </div>
+
+                                <div class="framework-card gdpr">
+                                    <div class="framework-header">
+                                        <div class="framework-info">
+                                            <h3>GDPR</h3>
+                                            <span class="framework-status active">Active</span>
+                                        </div>
+                                        <div class="compliance-score">
+                                            <div class="score-circle">
+                                                <span class="score-value">91%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="framework-details">
+                                        <div class="detail-row">
+                                            <span class="detail-label">Articles Compliant:</span>
+                                            <span class="detail-value">21/23</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <span class="detail-label">Last Assessment:</span>
+                                            <span class="detail-value">Jun 28, 2025</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <span class="detail-label">Next Review:</span>
+                                            <span class="detail-value">Sep 28, 2025</span>
+                                        </div>
+                                    </div>
+                                    <div class="framework-actions">
+                                        <button class="btn-small btn-primary">View Details</button>
+                                        <button class="btn-small btn-secondary">Remediate</button>
+                                    </div>
+                                </div>
+
+                                <div class="framework-card hipaa">
+                                    <div class="framework-header">
+                                        <div class="framework-info">
+                                            <h3>HIPAA</h3>
+                                            <span class="framework-status pending">Pending</span>
+                                        </div>
+                                        <div class="compliance-score">
+                                            <div class="score-circle">
+                                                <span class="score-value">76%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="framework-details">
+                                        <div class="detail-row">
+                                            <span class="detail-label">Safeguards Met:</span>
+                                            <span class="detail-value">19/25</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <span class="detail-label">Last Assessment:</span>
+                                            <span class="detail-value">Jul 10, 2025</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <span class="detail-label">Target Date:</span>
+                                            <span class="detail-value">Aug 30, 2025</span>
+                                        </div>
+                                    </div>
+                                    <div class="framework-actions">
+                                        <button class="btn-small btn-primary">View Details</button>
+                                        <button class="btn-small btn-secondary">Remediate</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="compliance-findings">
+                            <div class="section-header">
+                                <h2>Open Compliance Findings</h2>
+                                <div class="findings-filters">
+                                    <select id="framework-filter">
+                                        <option value="all">All Frameworks</option>
+                                        <option value="soc2">SOC 2</option>
+                                        <option value="pci">PCI DSS</option>
+                                        <option value="gdpr">GDPR</option>
+                                        <option value="hipaa">HIPAA</option>
+                                    </select>
+                                    <select id="severity-filter">
+                                        <option value="all">All Severities</option>
+                                        <option value="critical">Critical</option>
+                                        <option value="high">High</option>
+                                        <option value="medium">Medium</option>
+                                        <option value="low">Low</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="findings-list">
+                                <div class="finding-card critical">
+                                    <div class="finding-header">
+                                        <div class="finding-info">
+                                            <h3>Encryption at Rest Not Enabled</h3>
+                                            <div class="finding-meta">
+                                                <span class="framework-badge soc2">SOC 2</span>
+                                                <span class="severity-badge critical">Critical</span>
+                                                <span class="finding-age">3 days old</span>
+                                            </div>
+                                        </div>
+                                        <div class="finding-actions">
+                                            <button class="btn-small btn-primary">Remediate</button>
+                                            <button class="btn-small btn-secondary">Details</button>
+                                        </div>
+                                    </div>
+                                    <div class="finding-content">
+                                        <p>RDS instance 'prod-database' does not have encryption at rest enabled, violating SOC 2 CC6.1 control requirements.</p>
+                                        <div class="finding-details">
+                                            <span class="detail-item">Resource: prod-database (RDS)</span>
+                                            <span class="detail-item">Control: CC6.1</span>
+                                            <span class="detail-item">Region: us-east-1</span>
+                                        </div>
+                                        <div class="remediation-steps">
+                                            <strong>Remediation:</strong>
+                                            <ol>
+                                                <li>Create encrypted snapshot of existing database</li>
+                                                <li>Restore from encrypted snapshot</li>
+                                                <li>Update application connection strings</li>
+                                                <li>Verify encryption status</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="finding-card high">
+                                    <div class="finding-header">
+                                        <div class="finding-info">
+                                            <h3>Access Logging Not Configured</h3>
+                                            <div class="finding-meta">
+                                                <span class="framework-badge pci">PCI DSS</span>
+                                                <span class="severity-badge high">High</span>
+                                                <span class="finding-age">1 week old</span>
+                                            </div>
+                                        </div>
+                                        <div class="finding-actions">
+                                            <button class="btn-small btn-primary">Remediate</button>
+                                            <button class="btn-small btn-secondary">Details</button>
+                                        </div>
+                                    </div>
+                                    <div class="finding-content">
+                                        <p>S3 bucket 'payment-data' lacks access logging configuration required by PCI DSS requirement 10.2.</p>
+                                        <div class="finding-details">
+                                            <span class="detail-item">Resource: payment-data (S3)</span>
+                                            <span class="detail-item">Requirement: 10.2</span>
+                                            <span class="detail-item">Region: us-west-2</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="finding-card medium">
+                                    <div class="finding-header">
+                                        <div class="finding-info">
+                                            <h3>Data Retention Policy Missing</h3>
+                                            <div class="finding-meta">
+                                                <span class="framework-badge gdpr">GDPR</span>
+                                                <span class="severity-badge medium">Medium</span>
+                                                <span class="finding-age">2 weeks old</span>
+                                            </div>
+                                        </div>
+                                        <div class="finding-actions">
+                                            <button class="btn-small btn-primary">Remediate</button>
+                                            <button class="btn-small btn-secondary">Details</button>
+                                        </div>
+                                    </div>
+                                    <div class="finding-content">
+                                        <p>CloudWatch logs do not have retention policies configured, potentially violating GDPR Article 5 data minimization principle.</p>
+                                        <div class="finding-details">
+                                            <span class="detail-item">Resource: /aws/lambda/user-service</span>
+                                            <span class="detail-item">Article: 5</span>
+                                            <span class="detail-item">Region: eu-west-1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="sidebar-section">
+                            <h3>Compliance Calendar</h3>
+                            <div class="compliance-calendar">
+                                <div class="calendar-item upcoming">
+                                    <div class="calendar-date">Aug 10</div>
+                                    <div class="calendar-content">
+                                        <strong>SOC 2 Audit</strong>
+                                        <span class="calendar-type">External Audit</span>
+                                    </div>
+                                </div>
+                                <div class="calendar-item">
+                                    <div class="calendar-date">Aug 30</div>
+                                    <div class="calendar-content">
+                                        <strong>HIPAA Target</strong>
+                                        <span class="calendar-type">Internal Deadline</span>
+                                    </div>
+                                </div>
+                                <div class="calendar-item">
+                                    <div class="calendar-date">Sep 15</div>
+                                    <div class="calendar-content">
+                                        <strong>Quarterly Review</strong>
+                                        <span class="calendar-type">Internal Review</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <h3>Quick Actions</h3>
+                            <div class="quick-actions">
+                                <button class="action-btn">
+                                    <span class="action-icon">📊</span>
+                                    <span class="action-text">Compliance Report</span>
+                                </button>
+                                <button class="action-btn">
+                                    <span class="action-icon">🔍</span>
+                                    <span class="action-text">Evidence Collection</span>
+                                </button>
+                                <button class="action-btn">
+                                    <span class="action-icon">⚙️</span>
+                                    <span class="action-text">Auto-Remediation</span>
+                                </button>
+                                <button class="action-btn">
+                                    <span class="action-icon">💬</span>
+                                    <span class="action-text">Compliance Expert</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <h3>Remediation Progress</h3>
+                            <div class="remediation-progress">
+                                <div class="progress-item">
+                                    <span class="progress-label">This Week</span>
+                                    <span class="progress-value">8 resolved</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-item">
+                                    <span class="progress-label">This Month</span>
+                                    <span class="progress-value">24 resolved</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-item">
+                                    <span class="progress-label">This Quarter</span>
+                                    <span class="progress-value">67 resolved</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <h3>Compliance Trends</h3>
+                            <div class="compliance-trends">
+                                <div class="trend-item">
+                                    <span class="trend-framework">SOC 2</span>
+                                    <span class="trend-direction positive">↗ +2%</span>
+                                </div>
+                                <div class="trend-item">
+                                    <span class="trend-framework">PCI DSS</span>
+                                    <span class="trend-direction positive">↗ +5%</span>
+                                </div>
+                                <div class="trend-item">
+                                    <span class="trend-framework">GDPR</span>
+                                    <span class="trend-direction neutral">→ 0%</span>
+                                </div>
+                                <div class="trend-item">
+                                    <span class="trend-framework">HIPAA</span>
+                                    <span class="trend-direction positive">↗ +8%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>CloudNestle Academy</h4>
+                    <p>Comprehensive compliance management and monitoring</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="/../support.html">Help Center</a></li>
+                        <li><a href="/../contact.html">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CloudNestle Consulting & Services (OPC) Pvt. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/authentication-manager.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+    <script src="../assets/js/compliance-tracker.js"></script>
+</body>
+</html>

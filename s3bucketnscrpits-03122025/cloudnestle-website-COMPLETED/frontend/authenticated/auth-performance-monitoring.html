@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Monitoring - CloudNestle</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/auth-manager.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><a href="../index.html">CloudNestle</a></div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="../solutions.html" class="nav-link">Solutions</a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="authManager.logout()">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard-hero">
+        <div class="container">
+            <h1>Performance Monitoring Dashboard</h1>
+            <p>Real-time insights into your AWS infrastructure performance and health metrics.</p>
+        </div>
+    </section>
+
+    <section class="performance-dashboard">
+        <div class="container">
+            <div class="dashboard-controls">
+                <div class="time-range-selector">
+                    <button class="time-btn active" data-range="1h">1H</button>
+                    <button class="time-btn" data-range="6h">6H</button>
+                    <button class="time-btn" data-range="24h">24H</button>
+                    <button class="time-btn" data-range="7d">7D</button>
+                    <button class="time-btn" data-range="30d">30D</button>
+                </div>
+                <div class="refresh-controls">
+                    <button class="btn btn-secondary" id="refreshBtn">Refresh</button>
+                    <select id="autoRefresh">
+                        <option value="off">Auto-refresh: Off</option>
+                        <option value="30">Every 30 seconds</option>
+                        <option value="60">Every minute</option>
+                        <option value="300">Every 5 minutes</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="performance-overview">
+                <div class="overview-cards">
+                    <div class="overview-card healthy">
+                        <div class="card-icon">🟢</div>
+                        <div class="card-content">
+                            <h3>System Health</h3>
+                            <div class="card-value">Healthy</div>
+                            <div class="card-detail">All systems operational</div>
+                        </div>
+                    </div>
+                    <div class="overview-card">
+                        <div class="card-icon">⚡</div>
+                        <div class="card-content">
+                            <h3>Response Time</h3>
+                            <div class="card-value">245ms</div>
+                            <div class="card-detail">-15% from last hour</div>
+                        </div>
+                    </div>
+                    <div class="overview-card">
+                        <div class="card-icon">📊</div>
+                        <div class="card-content">
+                            <h3>Throughput</h3>
+                            <div class="card-value">1,247 req/min</div>
+                            <div class="card-detail">+8% from last hour</div>
+                        </div>
+                    </div>
+                    <div class="overview-card warning">
+                        <div class="card-icon">⚠️</div>
+                        <div class="card-content">
+                            <h3>Error Rate</h3>
+                            <div class="card-value">0.12%</div>
+                            <div class="card-detail">Within acceptable range</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-panel">
+                    <div class="panel-header">
+                        <h3>Application Performance</h3>
+                        <div class="panel-controls">
+                            <select class="metric-filter">
+                                <option value="all">All Applications</option>
+                                <option value="web">Web Tier</option>
+                                <option value="api">API Gateway</option>
+                                <option value="lambda">Lambda Functions</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <div class="chart-placeholder">
+                            [Real-time application performance chart would be rendered here]
+                        </div>
+                    </div>
+                    <div class="metric-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">Avg Response Time:</span>
+                            <span class="summary-value">245ms</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">95th Percentile:</span>
+                            <span class="summary-value">580ms</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Error Rate:</span>
+                            <span class="summary-value">0.12%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric-panel">
+                    <div class="panel-header">
+                        <h3>Infrastructure Metrics</h3>
+                        <div class="panel-controls">
+                            <select class="metric-filter">
+                                <option value="all">All Resources</option>
+                                <option value="ec2">EC2 Instances</option>
+                                <option value="rds">RDS Databases</option>
+                                <option value="elb">Load Balancers</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <div class="chart-placeholder">
+                            [Infrastructure metrics chart would be rendered here]
+                        </div>
+                    </div>
+                    <div class="metric-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">CPU Utilization:</span>
+                            <span class="summary-value">68%</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Memory Usage:</span>
+                            <span class="summary-value">72%</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Network I/O:</span>
+                            <span class="summary-value">1.2 GB/h</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric-panel">
+                    <div class="panel-header">
+                        <h3>Database Performance</h3>
+                        <div class="panel-controls">
+                            <select class="metric-filter">
+                                <option value="all">All Databases</option>
+                                <option value="primary">Primary DB</option>
+                                <option value="replica">Read Replicas</option>
+                                <option value="cache">Cache Layer</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <div class="chart-placeholder">
+                            [Database performance chart would be rendered here]
+                        </div>
+                    </div>
+                    <div class="metric-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">Query Time:</span>
+                            <span class="summary-value">12ms</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Connections:</span>
+                            <span class="summary-value">45/100</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Cache Hit Rate:</span>
+                            <span class="summary-value">94.2%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric-panel">
+                    <div class="panel-header">
+                        <h3>Cost Metrics</h3>
+                        <div class="panel-controls">
+                            <select class="metric-filter">
+                                <option value="all">All Services</option>
+                                <option value="compute">Compute</option>
+                                <option value="storage">Storage</option>
+                                <option value="network">Network</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <div class="chart-placeholder">
+                            [Cost metrics chart would be rendered here]
+                        </div>
+                    </div>
+                    <div class="metric-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">Daily Spend:</span>
+                            <span class="summary-value">$1,247</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Monthly Projection:</span>
+                            <span class="summary-value">$37,410</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">vs Budget:</span>
+                            <span class="summary-value">-8%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alerts-section">
+                <h2>Active Alerts</h2>
+                <div class="alerts-list">
+                    <div class="alert-item warning">
+                        <div class="alert-icon">⚠️</div>
+                        <div class="alert-content">
+                            <h4>High CPU Utilization</h4>
+                            <p>EC2 instance i-0123456789abcdef0 has been running at >80% CPU for 15 minutes</p>
+                            <div class="alert-meta">
+                                <span class="alert-time">5 minutes ago</span>
+                                <span class="alert-service">EC2</span>
+                            </div>
+                        </div>
+                        <div class="alert-actions">
+                            <button class="btn btn-secondary">Investigate</button>
+                            <button class="btn btn-primary">Auto-scale</button>
+                        </div>
+                    </div>
+                    <div class="alert-item info">
+                        <div class="alert-icon">ℹ️</div>
+                        <div class="alert-content">
+                            <h4>Scheduled Maintenance</h4>
+                            <p>RDS maintenance window scheduled for tonight 2:00 AM - 4:00 AM EST</p>
+                            <div class="alert-meta">
+                                <span class="alert-time">2 hours ago</span>
+                                <span class="alert-service">RDS</span>
+                            </div>
+                        </div>
+                        <div class="alert-actions">
+                            <button class="btn btn-secondary">View Details</button>
+                            <button class="btn btn-primary">Acknowledge</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recommendations-section">
+                <h2>Performance Recommendations</h2>
+                <div class="recommendations-list">
+                    <div class="recommendation-item">
+                        <div class="recommendation-priority high">High</div>
+                        <div class="recommendation-content">
+                            <h4>Enable Auto Scaling</h4>
+                            <p>Configure auto scaling for your web tier to handle traffic spikes more efficiently</p>
+                            <div class="recommendation-impact">
+                                <span class="impact-label">Expected Impact:</span>
+                                <span class="impact-value">30% better response time during peak hours</span>
+                            </div>
+                        </div>
+                        <div class="recommendation-actions">
+                            <button class="btn btn-primary">Implement</button>
+                            <button class="btn btn-secondary">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="recommendation-item">
+                        <div class="recommendation-priority medium">Medium</div>
+                        <div class="recommendation-content">
+                            <h4>Optimize Database Queries</h4>
+                            <p>3 slow queries identified that could benefit from indexing or query optimization</p>
+                            <div class="recommendation-impact">
+                                <span class="impact-label">Expected Impact:</span>
+                                <span class="impact-value">25% reduction in database response time</span>
+                            </div>
+                        </div>
+                        <div class="recommendation-actions">
+                            <button class="btn btn-primary">View Queries</button>
+                            <button class="btn btn-secondary">Schedule Review</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Check authentication
+        if (!authManager.isAuthenticated()) {
+            window.location.href = '../index.html';
+        }
+
+        // Performance monitoring functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            let autoRefreshInterval;
+
+            // Time range selector
+            document.querySelectorAll('.time-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.time-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const range = this.getAttribute('data-range');
+                    updateCharts(range);
+                });
+            });
+
+            // Refresh controls
+            document.getElementById('refreshBtn').addEventListener('click', function() {
+                refreshDashboard();
+            });
+
+            document.getElementById('autoRefresh').addEventListener('change', function() {
+                const interval = parseInt(this.value);
+                
+                if (autoRefreshInterval) {
+                    clearInterval(autoRefreshInterval);
+                }
+                
+                if (interval > 0) {
+                    autoRefreshInterval = setInterval(refreshDashboard, interval * 1000);
+                }
+            });
+
+            // Metric filters
+            document.querySelectorAll('.metric-filter').forEach(select => {
+                select.addEventListener('change', function() {
+                    const filter = this.value;
+                    const panel = this.closest('.metric-panel');
+                    updatePanel(panel, filter);
+                });
+            });
+
+            // Alert actions
+            document.querySelectorAll('.alert-actions .btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const action = this.textContent;
+                    const alertTitle = this.closest('.alert-item').querySelector('h4').textContent;
+                    handleAlertAction(alertTitle, action);
+                });
+            });
+
+            // Recommendation actions
+            document.querySelectorAll('.recommendation-actions .btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const action = this.textContent;
+                    const recTitle = this.closest('.recommendation-item').querySelector('h4').textContent;
+                    handleRecommendationAction(recTitle, action);
+                });
+            });
+
+            // Initial data load
+            refreshDashboard();
+        });
+
+        function updateCharts(timeRange) {
+            console.log(`Updating charts for time range: ${timeRange}`);
+            // Simulate chart updates
+        }
+
+        function refreshDashboard() {
+            console.log('Refreshing dashboard data...');
+            // Simulate data refresh
+            updateMetrics();
+        }
+
+        function updatePanel(panel, filter) {
+            console.log(`Updating panel with filter: ${filter}`);
+            // Simulate panel update
+        }
+
+        function updateMetrics() {
+            // Simulate real-time metric updates
+            const responseTimeElement = document.querySelector('.overview-card:nth-child(2) .card-value');
+            const currentTime = parseInt(responseTimeElement.textContent);
+            const newTime = currentTime + Math.floor(Math.random() * 20) - 10;
+            responseTimeElement.textContent = `${Math.max(newTime, 100)}ms`;
+        }
+
+        function handleAlertAction(alertTitle, action) {
+            if (action === 'Investigate') {
+                alert(`Opening investigation dashboard for: ${alertTitle}`);
+            } else if (action === 'Auto-scale') {
+                alert(`Triggering auto-scaling for: ${alertTitle}`);
+            } else if (action === 'View Details') {
+                alert(`Opening detailed view for: ${alertTitle}`);
+            } else if (action === 'Acknowledge') {
+                alert(`Acknowledging alert: ${alertTitle}`);
+            }
+        }
+
+        function handleRecommendationAction(recTitle, action) {
+            if (action === 'Implement') {
+                alert(`Implementing recommendation: ${recTitle}`);
+            } else if (action === 'Learn More') {
+                alert(`Opening documentation for: ${recTitle}`);
+            } else if (action === 'View Queries') {
+                alert(`Opening query analysis for: ${recTitle}`);
+            } else if (action === 'Schedule Review') {
+                alert(`Scheduling review for: ${recTitle}`);
+            }
+        }
+
+        // Simulate real-time updates
+        setInterval(updateMetrics, 5000);
+    </script>
+</body>
+</html>

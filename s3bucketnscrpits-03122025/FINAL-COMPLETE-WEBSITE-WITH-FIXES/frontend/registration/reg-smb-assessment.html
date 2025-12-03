@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="access-level" content="registration">
+    <meta name="auth-type" content="email-only">
+    <title>SMB Cloud Readiness Assessment - CloudNestle</title>
+    <meta name="description" content="Comprehensive cloud readiness assessment for small and medium businesses. Evaluate your IT infrastructure, identify opportunities, and get a customized cloud transformation roadmap.">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/assessments.css">
+</head>
+<body class="access-registration">
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>CloudNestle</h1>
+                    <span>Consulting & Services</span>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/../index.html">Home</a></li>
+                        <li><a href="/../solutions-by-size/index.html">Solutions by Size</a></li>
+                        <li><a href="/../industries.html">Industries</a></li>
+                        <li><a href="/../frameworks/index.html">Frameworks</a></li>
+                        <li><a href="/../contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section assessment-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>SMB Cloud Readiness Assessment</h1>
+                    <p class="hero-subtitle">Get a comprehensive evaluation of your small or medium business's cloud readiness. Discover opportunities for cost savings, operational efficiency, and business growth through strategic cloud adoption.</p>
+                    <div class="hero-benefits">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✓</span>
+                            <span>Comprehensive IT infrastructure evaluation</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✓</span>
+                            <span>Customized cloud transformation roadmap</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✓</span>
+                            <span>ROI projections and cost-benefit analysis</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✓</span>
+                            <span>Risk assessment and mitigation strategies</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="../assets/images/assessments/smb-assessment-dashboard.svg" alt="SMB Assessment Dashboard" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Preview -->
+    <section class="assessment-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2>What's Included in Your SMB Assessment</h2>
+                <p>Our comprehensive assessment evaluates your business across multiple dimensions to provide actionable insights and strategic recommendations.</p>
+            </div>
+            <div class="preview-grid">
+                <div class="preview-card">
+                    <div class="preview-icon">
+                        <img src="../assets/images/icons/infrastructure-analysis.svg" alt="Infrastructure analysis" />
+                    </div>
+                    <h3>Infrastructure Analysis</h3>
+                    <p>Complete evaluation of your current IT infrastructure, applications, and systems to identify cloud migration opportunities.</p>
+                </div>
+                <div class="preview-card">
+                    <div class="preview-icon">
+                        <img src="../assets/images/icons/business-impact.svg" alt="Business impact" />
+                    </div>
+                    <h3>Business Impact Assessment</h3>
+                    <p>Analysis of how cloud adoption will impact your business operations, productivity, and competitive advantage.</p>
+                </div>
+                <div class="preview-card">
+                    <div class="preview-icon">
+                        <img src="../assets/images/icons/cost-analysis.svg" alt="Cost analysis" />
+                    </div>
+                    <h3>Cost-Benefit Analysis</h3>
+                    <p>Detailed financial analysis including current IT costs, projected cloud costs, and potential savings opportunities.</p>
+                </div>
+                <div class="preview-card">
+                    <div class="preview-icon">
+                        <img src="../assets/images/icons/security-compliance.svg" alt="Security compliance" />
+                    </div>
+                    <h3>Security & Compliance Review</h3>
+                    <p>Assessment of your security posture and compliance requirements with recommendations for cloud security.</p>
+                </div>
+                <div class="preview-card">
+                    <div class="preview-icon">
+                        <img src="../assets/images/icons/transformation-roadmap.svg" alt="Transformation roadmap" />
+                    </div>
+                    <h3>Transformation Roadmap</h3>
+                    <p>Strategic roadmap with prioritized initiatives, timelines, and resource requirements for your cloud journey.</p>
+                </div>
+                <div class="preview-card">
+                    <div class="preview-icon">
+                        <img src="../assets/images/icons/risk-mitigation.svg" alt="Risk mitigation" />
+                    </div>
+                    <h3>Risk Mitigation Plan</h3>
+                    <p>Identification of potential risks and challenges with specific mitigation strategies and contingency plans.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Gate Modal -->
+    <div class="auth-modal" id="emailGateModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Access Your SMB Assessment</h3>
+                <p>Enter your business email to access this comprehensive cloud readiness assessment and receive your personalized results.</p>
+            </div>
+            <form class="email-capture-form" id="emailCaptureForm">
+                <div class="form-group">
+                    <input type="email" id="userEmail" placeholder="Enter your business email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="companyName" placeholder="Company name" required>
+                </div>
+                <div class="form-group">
+                    <select id="companySize" required>
+                        <option value="">Company size</option>
+                        <option value="1-10">1-10 employees</option>
+                        <option value="11-50">11-50 employees</option>
+                        <option value="51-100">51-100 employees</option>
+                        <option value="101-250">101-250 employees</option>
+                        <option value="251-500">251-500 employees</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Access Assessment</button>
+                <p class="privacy-note">We respect your privacy. Your information will only be used to provide assessment results and relevant cloud insights.</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Assessment Content (Initially Hidden) -->
+    <section class="assessment-content content-registration-required gated" id="assessmentContent">
+        <div class="container">
+            <div class="assessment-header">
+                <h2>SMB Cloud Readiness Assessment</h2>
+                <p>Complete this comprehensive assessment to receive your personalized cloud transformation roadmap and recommendations.</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="currentSection">1</span> of <span id="totalSections">8</span> sections completed
+                </div>
+            </div>
+
+            <!-- Section 1: Business Information -->
+            <div class="assessment-section active" data-section="1">
+                <h3>Business Information</h3>
+                <div class="question-group">
+                    <label class="question-label">What industry does your business operate in?</label>
+                    <select name="industry" required>
+                        <option value="">Select your industry</option>
+                        <option value="retail">Retail & E-commerce</option>
+                        <option value="manufacturing">Manufacturing</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="financial">Financial Services</option>
+                        <option value="professional">Professional Services</option>
+                        <option value="education">Education</option>
+                        <option value="technology">Technology</option>
+                        <option value="hospitality">Hospitality</option>
+                        <option value="construction">Construction</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="question-group">
+                    <label class="question-label">What is your annual revenue range?</label>
+                    <select name="revenue" required>
+                        <option value="">Select revenue range</option>
+                        <option value="under-1m">Under $1M</option>
+                        <option value="1-5m">$1M - $5M</option>
+                        <option value="5-10m">$5M - $10M</option>
+                        <option value="10-25m">$10M - $25M</option>
+                        <option value="25-50m">$25M - $50M</option>
+                        <option value="50-100m">$50M - $100M</option>
+                        <option value="over-100m">Over $100M</option>
+                    </select>
+                </div>
+                <div class="question-group">
+                    <label class="question-label">How many locations does your business have?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="locations" value="single"> Single location</label>
+                        <label><input type="radio" name="locations" value="2-5"> 2-5 locations</label>
+                        <label><input type="radio" name="locations" value="6-20"> 6-20 locations</label>
+                        <label><input type="radio" name="locations" value="20+"> 20+ locations</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Current IT Infrastructure -->
+            <div class="assessment-section" data-section="2">
+                <h3>Current IT Infrastructure</h3>
+                <div class="question-group">
+                    <label class="question-label">How would you describe your current IT infrastructure?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="infrastructure" value="mostly-onprem"> Mostly on-premises servers and systems</label>
+                        <label><input type="radio" name="infrastructure" value="hybrid"> Mix of on-premises and cloud services</label>
+                        <label><input type="radio" name="infrastructure" value="mostly-cloud"> Mostly cloud-based services</label>
+                        <label><input type="radio" name="infrastructure" value="fully-cloud"> Fully cloud-native</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <label class="question-label">What is your current monthly IT spending?</label>
+                    <select name="it_spending" required>
+                        <option value="">Select spending range</option>
+                        <option value="under-1k">Under $1,000</option>
+                        <option value="1-5k">$1,000 - $5,000</option>
+                        <option value="5-10k">$5,000 - $10,000</option>
+                        <option value="10-25k">$10,000 - $25,000</option>
+                        <option value="25-50k">$25,000 - $50,000</option>
+                        <option value="over-50k">Over $50,000</option>
+                    </select>
+                </div>
+                <div class="question-group">
+                    <label class="question-label">Which systems are critical to your business operations? (Select all that apply)</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="critical_systems" value="erp"> ERP System</label>
+                        <label><input type="checkbox" name="critical_systems" value="crm"> CRM System</label>
+                        <label><input type="checkbox" name="critical_systems" value="ecommerce"> E-commerce Platform</label>
+                        <label><input type="checkbox" name="critical_systems" value="accounting"> Accounting Software</label>
+                        <label><input type="checkbox" name="critical_systems" value="inventory"> Inventory Management</label>
+                        <label><input type="checkbox" name="critical_systems" value="email"> Email System</label>
+                        <label><input type="checkbox" name="critical_systems" value="file_sharing"> File Sharing/Storage</label>
+                        <label><input type="checkbox" name="critical_systems" value="backup"> Backup Systems</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Business Challenges -->
+            <div class="assessment-section" data-section="3">
+                <h3>Business Challenges</h3>
+                <div class="question-group">
+                    <label class="question-label">What are your biggest IT-related business challenges? (Select top 3)</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="challenges" value="high_costs"> High IT costs</label>
+                        <label><input type="checkbox" name="challenges" value="system_downtime"> System downtime and reliability issues</label>
+                        <label><input type="checkbox" name="challenges" value="slow_performance"> Slow system performance</label>
+                        <label><input type="checkbox" name="challenges" value="security_concerns"> Security and data protection concerns</label>
+                        <label><input type="checkbox" name="challenges" value="scalability"> Difficulty scaling systems with business growth</label>
+                        <label><input type="checkbox" name="challenges" value="remote_work"> Supporting remote work and collaboration</label>
+                        <label><input type="checkbox" name="challenges" value="data_management"> Data management and analytics</label>
+                        <label><input type="checkbox" name="challenges" value="compliance"> Regulatory compliance requirements</label>
+                        <label><input type="checkbox" name="challenges" value="integration"> System integration and data silos</label>
+                        <label><input type="checkbox" name="challenges" value="maintenance"> IT maintenance and support burden</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <label class="question-label">How often do you experience IT-related business disruptions?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="disruptions" value="never"> Never or very rarely</label>
+                        <label><input type="radio" name="disruptions" value="monthly"> Monthly</label>
+                        <label><input type="radio" name="disruptions" value="weekly"> Weekly</label>
+                        <label><input type="radio" name="disruptions" value="daily"> Daily</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Cloud Experience -->
+            <div class="assessment-section" data-section="4">
+                <h3>Cloud Experience</h3>
+                <div class="question-group">
+                    <label class="question-label">What is your organization's experience with cloud services?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="cloud_experience" value="none"> No cloud experience</label>
+                        <label><input type="radio" name="cloud_experience" value="basic"> Basic cloud services (email, file storage)</label>
+                        <label><input type="radio" name="cloud_experience" value="moderate"> Some business applications in the cloud</label>
+                        <label><input type="radio" name="cloud_experience" value="advanced"> Significant cloud adoption</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <label class="question-label">Which cloud services are you currently using? (Select all that apply)</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="current_cloud" value="email"> Cloud email (Office 365, Gmail)</label>
+                        <label><input type="checkbox" name="current_cloud" value="storage"> Cloud storage (Dropbox, OneDrive)</label>
+                        <label><input type="checkbox" name="current_cloud" value="backup"> Cloud backup services</label>
+                        <label><input type="checkbox" name="current_cloud" value="crm"> Cloud CRM (Salesforce, HubSpot)</label>
+                        <label><input type="checkbox" name="current_cloud" value="accounting"> Cloud accounting (QuickBooks Online)</label>
+                        <label><input type="checkbox" name="current_cloud" value="collaboration"> Collaboration tools (Slack, Teams)</label>
+                        <label><input type="checkbox" name="current_cloud" value="website"> Website hosting</label>
+                        <label><input type="checkbox" name="current_cloud" value="none"> None of the above</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5: Security & Compliance -->
+            <div class="assessment-section" data-section="5">
+                <h3>Security & Compliance</h3>
+                <div class="question-group">
+                    <label class="question-label">What compliance requirements does your business need to meet? (Select all that apply)</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="compliance" value="pci"> PCI DSS (Payment Card Industry)</label>
+                        <label><input type="checkbox" name="compliance" value="hipaa"> HIPAA (Healthcare)</label>
+                        <label><input type="checkbox" name="compliance" value="sox"> SOX (Sarbanes-Oxley)</label>
+                        <label><input type="checkbox" name="compliance" value="gdpr"> GDPR (General Data Protection Regulation)</label>
+                        <label><input type="checkbox" name="compliance" value="industry"> Industry-specific regulations</label>
+                        <label><input type="checkbox" name="compliance" value="none"> No specific compliance requirements</label>
+                        <label><input type="checkbox" name="compliance" value="unsure"> Not sure</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <label class="question-label">How would you rate your current security posture?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="security_posture" value="basic"> Basic security measures in place</label>
+                        <label><input type="radio" name="security_posture" value="moderate"> Moderate security with some advanced features</label>
+                        <label><input type="radio" name="security_posture" value="advanced"> Advanced security with comprehensive protection</label>
+                        <label><input type="radio" name="security_posture" value="unsure"> Not sure about current security level</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 6: Business Goals -->
+            <div class="assessment-section" data-section="6">
+                <h3>Business Goals</h3>
+                <div class="question-group">
+                    <label class="question-label">What are your primary business goals for the next 2-3 years? (Select top 3)</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="business_goals" value="growth"> Business growth and expansion</label>
+                        <label><input type="checkbox" name="business_goals" value="cost_reduction"> Cost reduction and efficiency</label>
+                        <label><input type="checkbox" name="business_goals" value="customer_experience"> Improved customer experience</label>
+                        <label><input type="checkbox" name="business_goals" value="innovation"> Innovation and competitive advantage</label>
+                        <label><input type="checkbox" name="business_goals" value="remote_work"> Better remote work capabilities</label>
+                        <label><input type="checkbox" name="business_goals" value="data_insights"> Better data insights and analytics</label>
+                        <label><input type="checkbox" name="business_goals" value="security"> Enhanced security and compliance</label>
+                        <label><input type="checkbox" name="business_goals" value="automation"> Process automation</label>
+                        <label><input type="checkbox" name="business_goals" value="scalability"> Improved scalability</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <label class="question-label">What is your expected timeline for cloud transformation?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="timeline" value="immediate"> Immediate (within 3 months)</label>
+                        <label><input type="radio" name="timeline" value="short"> Short-term (3-6 months)</label>
+                        <label><input type="radio" name="timeline" value="medium"> Medium-term (6-12 months)</label>
+                        <label><input type="radio" name="timeline" value="long"> Long-term (12+ months)</label>
+                        <label><input type="radio" name="timeline" value="exploring"> Just exploring options</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 7: Budget & Resources -->
+            <div class="assessment-section" data-section="7">
+                <h3>Budget & Resources</h3>
+                <div class="question-group">
+                    <label class="question-label">What is your estimated budget for cloud transformation?</label>
+                    <select name="budget" required>
+                        <option value="">Select budget range</option>
+                        <option value="under-10k">Under $10,000</option>
+                        <option value="10-25k">$10,000 - $25,000</option>
+                        <option value="25-50k">$25,000 - $50,000</option>
+                        <option value="50-100k">$50,000 - $100,000</option>
+                        <option value="100-250k">$100,000 - $250,000</option>
+                        <option value="over-250k">Over $250,000</option>
+                        <option value="unsure">Not sure yet</option>
+                    </select>
+                </div>
+                <div class="question-group">
+                    <label class="question-label">Do you have dedicated IT staff?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="it_staff" value="none"> No dedicated IT staff</label>
+                        <label><input type="radio" name="it_staff" value="part-time"> Part-time or shared IT person</label>
+                        <label><input type="radio" name="it_staff" value="full-time"> Full-time IT staff (1-2 people)</label>
+                        <label><input type="radio" name="it_staff" value="team"> IT team (3+ people)</label>
+                        <label><input type="radio" name="it_staff" value="outsourced"> Outsourced IT support</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 8: Additional Information -->
+            <div class="assessment-section" data-section="8">
+                <h3>Additional Information</h3>
+                <div class="question-group">
+                    <label class="question-label">What specific outcomes are you hoping to achieve with cloud adoption? (Optional)</label>
+                    <textarea name="desired_outcomes" rows="4" placeholder="Describe your specific goals and expected outcomes..."></textarea>
+                </div>
+                <div class="question-group">
+                    <label class="question-label">Are there any specific concerns or requirements we should know about? (Optional)</label>
+                    <textarea name="concerns" rows="4" placeholder="Share any concerns, requirements, or additional context..."></textarea>
+                </div>
+                <div class="question-group">
+                    <label class="question-label">Would you like to schedule a follow-up consultation to discuss your results?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="consultation" value="yes"> Yes, I'd like to schedule a consultation</label>
+                        <label><input type="radio" name="consultation" value="maybe"> Maybe, contact me with more information</label>
+                        <label><input type="radio" name="consultation" value="no"> No, just send me the results</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="assessment-navigation">
+                <button type="button" class="btn btn-outline" id="prevBtn" onclick="changeSection(-1)">Previous</button>
+                <button type="button" class="btn btn-primary" id="nextBtn" onclick="changeSection(1)">Next</button>
+                <button type="submit" class="btn btn-primary" id="submitBtn" style="display: none;">Get My Assessment Results</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Preview -->
+    <section class="results-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2>What You'll Receive</h2>
+                <p>Upon completion, you'll receive a comprehensive assessment report with actionable insights and recommendations.</p>
+            </div>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-icon">
+                        <img src="../assets/images/icons/assessment-score.svg" alt="Assessment score" />
+                    </div>
+                    <h3>Cloud Readiness Score</h3>
+                    <p>Overall readiness score with breakdown by category and specific improvement areas.</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-icon">
+                        <img src="../assets/images/icons/custom-roadmap.svg" alt="Custom roadmap" />
+                    </div>
+                    <h3>Custom Transformation Roadmap</h3>
+                    <p>Prioritized action plan with timelines, milestones, and resource requirements.</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-icon">
+                        <img src="../assets/images/icons/roi-projection.svg" alt="ROI projection" />
+                    </div>
+                    <h3>ROI Projections</h3>
+                    <p>Detailed cost-benefit analysis with projected savings and investment requirements.</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-icon">
+                        <img src="../assets/images/icons/risk-analysis.svg" alt="Risk analysis" />
+                    </div>
+                    <h3>Risk Analysis</h3>
+                    <p>Identification of potential risks and challenges with mitigation strategies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CloudNestle</h3>
+                    <p>Comprehensive cloud readiness assessments for small and medium businesses. Get actionable insights and strategic recommendations for your cloud transformation.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Assessment Tools</h4>
+                    <ul>
+                        <li><a href="/reg-caf-readiness-assessment.html">CAF Assessment</a></li>
+                        <li><a href="/reg-startup-assessment.html">Startup Assessment</a></li>
+                        <li><a href="/reg-roi-calculator.html">ROI Calculator</a></li>
+                        <li><a href="/reg-industry-roi-calculator.html">Industry ROI Tool</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/../solutions-by-size/small-medium-business/index.html">SMB Solutions</a></li>
+                        <li><a href="/../pricing.html">Pricing</a></li>
+                        <li><a href="/../contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: assessments@cloudnestle.com</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CloudNestle Consulting & Services (OPC) Pvt. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/registration-manager.js"></script>
+    <script src="../assets/js/assessment.js"></script>
+</body>
+</html>

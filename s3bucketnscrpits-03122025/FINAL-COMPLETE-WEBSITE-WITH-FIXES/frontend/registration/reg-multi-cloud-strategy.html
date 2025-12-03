@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Cloud Strategy Assessment - CloudNestle</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/auth-manager.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><a href="/../index.html">CloudNestle</a></div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="/../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/../services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="/../solutions.html" class="nav-link">Solutions</a></li>
+                <li class="nav-item"><a href="/../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="assessment-hero">
+        <div class="container">
+            <h1>Multi-Cloud Strategy Assessment</h1>
+            <p>Evaluate your multi-cloud approach and optimize your cloud portfolio strategy.</p>
+        </div>
+    </section>
+
+    <section class="assessment-form-section">
+        <div class="container">
+            <form class="assessment-form" id="multiCloudStrategy">
+                <div class="form-section">
+                    <h3>Contact Information</h3>
+                    <div class="form-row">
+                        <input type="text" name="firstName" placeholder="First Name" required>
+                        <input type="text" name="lastName" placeholder="Last Name" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="email" name="email" placeholder="Business Email" required>
+                        <input type="text" name="company" placeholder="Company Name" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Current Cloud Usage</h3>
+                    <div class="question-group">
+                        <label>Which cloud providers do you currently use? (Select all that apply)</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="providers" value="aws"> Amazon Web Services (AWS)</label>
+                            <label><input type="checkbox" name="providers" value="azure"> Microsoft Azure</label>
+                            <label><input type="checkbox" name="providers" value="gcp"> Google Cloud Platform</label>
+                            <label><input type="checkbox" name="providers" value="oracle"> Oracle Cloud</label>
+                            <label><input type="checkbox" name="providers" value="ibm"> IBM Cloud</label>
+                            <label><input type="checkbox" name="providers" value="other"> Other providers</label>
+                        </div>
+                    </div>
+                    
+                    <div class="question-group">
+                        <label>What is your primary cloud provider?</label>
+                        <select name="primaryProvider" required>
+                            <option value="">Select primary provider</option>
+                            <option value="aws">Amazon Web Services (AWS)</option>
+                            <option value="azure">Microsoft Azure</option>
+                            <option value="gcp">Google Cloud Platform</option>
+                            <option value="oracle">Oracle Cloud</option>
+                            <option value="ibm">IBM Cloud</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Multi-Cloud Strategy</h3>
+                    <div class="question-group">
+                        <label>What is your multi-cloud strategy approach?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="strategy" value="best-of-breed"> Best-of-breed services from each provider</label>
+                            <label><input type="radio" name="strategy" value="risk-mitigation"> Risk mitigation and vendor diversification</label>
+                            <label><input type="radio" name="strategy" value="geographic"> Geographic distribution requirements</label>
+                            <label><input type="radio" name="strategy" value="cost-optimization"> Cost optimization across providers</label>
+                            <label><input type="radio" name="strategy" value="no-strategy"> No formal multi-cloud strategy</label>
+                        </div>
+                    </div>
+                    
+                    <div class="question-group">
+                        <label>What are your main drivers for multi-cloud adoption? (Select all that apply)</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="drivers" value="avoid-lock-in"> Avoid vendor lock-in</label>
+                            <label><input type="checkbox" name="drivers" value="best-services"> Access best services from each provider</label>
+                            <label><input type="checkbox" name="drivers" value="compliance"> Regulatory and compliance requirements</label>
+                            <label><input type="checkbox" name="drivers" value="disaster-recovery"> Disaster recovery and resilience</label>
+                            <label><input type="checkbox" name="drivers" value="cost-optimization"> Cost optimization opportunities</label>
+                            <label><input type="checkbox" name="drivers" value="geographic"> Geographic presence requirements</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Management Challenges</h3>
+                    <div class="question-group">
+                        <label>What are your biggest multi-cloud challenges? (Select all that apply)</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="challenges" value="complexity"> Increased operational complexity</label>
+                            <label><input type="checkbox" name="challenges" value="skills"> Skills and expertise gaps</label>
+                            <label><input type="checkbox" name="challenges" value="security"> Security and compliance management</label>
+                            <label><input type="checkbox" name="challenges" value="cost-visibility"> Cost visibility and optimization</label>
+                            <label><input type="checkbox" name="challenges" value="data-integration"> Data integration and portability</label>
+                            <label><input type="checkbox" name="challenges" value="governance"> Governance and policy enforcement</label>
+                        </div>
+                    </div>
+                    
+                    <div class="question-group">
+                        <label>How do you manage multi-cloud operations?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="management" value="unified-platform"> Unified management platform</label>
+                            <label><input type="radio" name="management" value="native-tools"> Native tools from each provider</label>
+                            <label><input type="radio" name="management" value="third-party"> Third-party management tools</label>
+                            <label><input type="radio" name="management" value="manual"> Manual processes</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Get Multi-Cloud Assessment</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('multiCloudStrategy').addEventListener('submit', function(e) {
+            e.preventDefault();
+            authManager.requireRegistration('multi-cloud-strategy-assessment', 'Get your multi-cloud strategy optimization report');
+        });
+    </script>
+</body>
+</html>

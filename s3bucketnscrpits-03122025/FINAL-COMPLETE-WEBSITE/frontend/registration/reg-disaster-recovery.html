@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Recovery Assessment - CloudNestle</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/auth-manager.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><a href="../index.html">CloudNestle</a></div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="../solutions.html" class="nav-link">Solutions</a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="assessment-hero">
+        <div class="container">
+            <h1>Disaster Recovery Assessment</h1>
+            <p>Evaluate your disaster recovery readiness and business continuity planning.</p>
+        </div>
+    </section>
+
+    <section class="assessment-form-section">
+        <div class="container">
+            <form class="assessment-form" id="disasterRecovery">
+                <div class="form-section">
+                    <h3>Contact Information</h3>
+                    <div class="form-row">
+                        <input type="text" name="firstName" placeholder="First Name" required>
+                        <input type="text" name="lastName" placeholder="Last Name" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="email" name="email" placeholder="Business Email" required>
+                        <input type="text" name="company" placeholder="Company Name" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Current DR Strategy</h3>
+                    <div class="question-group">
+                        <label>Do you have a formal disaster recovery plan?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="drPlan" value="comprehensive"> Yes, comprehensive and tested</label>
+                            <label><input type="radio" name="drPlan" value="basic"> Yes, basic plan exists</label>
+                            <label><input type="radio" name="drPlan" value="informal"> Informal procedures only</label>
+                            <label><input type="radio" name="drPlan" value="none"> No formal plan</label>
+                        </div>
+                    </div>
+                    
+                    <div class="question-group">
+                        <label>What are your Recovery Time Objectives (RTO)?</label>
+                        <select name="rto" required>
+                            <option value="">Select RTO</option>
+                            <option value="minutes">Minutes</option>
+                            <option value="hours">Hours</option>
+                            <option value="days">Days</option>
+                            <option value="weeks">Weeks</option>
+                            <option value="undefined">Not defined</option>
+                        </select>
+                    </div>
+                    
+                    <div class="question-group">
+                        <label>What are your Recovery Point Objectives (RPO)?</label>
+                        <select name="rpo" required>
+                            <option value="">Select RPO</option>
+                            <option value="real-time">Real-time</option>
+                            <option value="minutes">Minutes</option>
+                            <option value="hours">Hours</option>
+                            <option value="days">Days</option>
+                            <option value="undefined">Not defined</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Backup & Recovery</h3>
+                    <div class="question-group">
+                        <label>How do you currently backup your data? (Select all that apply)</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="backup" value="automated"> Automated backups</label>
+                            <label><input type="checkbox" name="backup" value="manual"> Manual backups</label>
+                            <label><input type="checkbox" name="backup" value="cloud"> Cloud-based backups</label>
+                            <label><input type="checkbox" name="backup" value="offsite"> Offsite storage</label>
+                            <label><input type="checkbox" name="backup" value="none"> No regular backups</label>
+                        </div>
+                    </div>
+                    
+                    <div class="question-group">
+                        <label>How often do you test your disaster recovery procedures?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="testing" value="monthly"> Monthly</label>
+                            <label><input type="radio" name="testing" value="quarterly"> Quarterly</label>
+                            <label><input type="radio" name="testing" value="annually"> Annually</label>
+                            <label><input type="radio" name="testing" value="never"> Never tested</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Business Impact</h3>
+                    <div class="question-group">
+                        <label>What would be the financial impact of a 24-hour outage?</label>
+                        <select name="impact" required>
+                            <option value="">Select impact</option>
+                            <option value="minimal">Minimal (under $10K)</option>
+                            <option value="moderate">Moderate ($10K - $100K)</option>
+                            <option value="significant">Significant ($100K - $1M)</option>
+                            <option value="severe">Severe (over $1M)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="question-group">
+                        <label>Which systems are most critical to your business? (Select all that apply)</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="critical" value="customer-facing"> Customer-facing applications</label>
+                            <label><input type="checkbox" name="critical" value="databases"> Core databases</label>
+                            <label><input type="checkbox" name="critical" value="payment"> Payment systems</label>
+                            <label><input type="checkbox" name="critical" value="communication"> Communication systems</label>
+                            <label><input type="checkbox" name="critical" value="analytics"> Analytics and reporting</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Get DR Assessment</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('disasterRecovery').addEventListener('submit', function(e) {
+            e.preventDefault();
+            authManager.requireRegistration('disaster-recovery-assessment', 'Get your disaster recovery readiness report');
+        });
+    </script>
+</body>
+</html>

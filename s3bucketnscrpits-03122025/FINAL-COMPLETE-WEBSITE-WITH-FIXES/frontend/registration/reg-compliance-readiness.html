@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compliance Readiness Assessment - CloudNestle</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/auth-manager.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><a href="/../index.html">CloudNestle</a></div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="/../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/../services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="/../solutions.html" class="nav-link">Solutions</a></li>
+                <li class="nav-item"><a href="/../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="assessment-hero">
+        <div class="container">
+            <h1>Compliance Readiness Assessment</h1>
+            <p>Evaluate your compliance posture across major regulatory frameworks.</p>
+        </div>
+    </section>
+
+    <section class="assessment-form-section">
+        <div class="container">
+            <form class="assessment-form" id="complianceReadiness">
+                <div class="form-section">
+                    <h3>Contact Information</h3>
+                    <div class="form-row">
+                        <input type="text" name="firstName" placeholder="First Name" required>
+                        <input type="text" name="lastName" placeholder="Last Name" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="email" name="email" placeholder="Business Email" required>
+                        <input type="text" name="company" placeholder="Company Name" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Industry & Regulations</h3>
+                    <div class="question-group">
+                        <label>Which industry best describes your organization?</label>
+                        <select name="industry" required>
+                            <option value="">Select industry</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="financial">Financial Services</option>
+                            <option value="government">Government</option>
+                            <option value="education">Education</option>
+                            <option value="retail">Retail/E-commerce</option>
+                            <option value="technology">Technology</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="question-group">
+                        <label>Which compliance frameworks apply to your organization? (Select all that apply)</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="frameworks" value="hipaa"> HIPAA</label>
+                            <label><input type="checkbox" name="frameworks" value="pci-dss"> PCI DSS</label>
+                            <label><input type="checkbox" name="frameworks" value="sox"> SOX</label>
+                            <label><input type="checkbox" name="frameworks" value="gdpr"> GDPR</label>
+                            <label><input type="checkbox" name="frameworks" value="ccpa"> CCPA</label>
+                            <label><input type="checkbox" name="frameworks" value="fedramp"> FedRAMP</label>
+                            <label><input type="checkbox" name="frameworks" value="iso27001"> ISO 27001</label>
+                            <label><input type="checkbox" name="frameworks" value="soc2"> SOC 2</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Current Compliance Status</h3>
+                    <div class="question-group">
+                        <label>What is your current compliance maturity level?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="maturity" value="none"> No formal compliance program</label>
+                            <label><input type="radio" name="maturity" value="basic"> Basic compliance measures</label>
+                            <label><input type="radio" name="maturity" value="developing"> Developing compliance program</label>
+                            <label><input type="radio" name="maturity" value="mature"> Mature compliance program</label>
+                        </div>
+                    </div>
+                    
+                    <div class="question-group">
+                        <label>Do you have dedicated compliance personnel?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="personnel" value="dedicated-team"> Dedicated compliance team</label>
+                            <label><input type="radio" name="personnel" value="part-time"> Part-time compliance officer</label>
+                            <label><input type="radio" name="personnel" value="shared"> Shared responsibility</label>
+                            <label><input type="radio" name="personnel" value="none"> No dedicated personnel</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Data & Security</h3>
+                    <div class="question-group">
+                        <label>What types of sensitive data do you handle? (Select all that apply)</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="dataTypes" value="pii"> Personal Identifiable Information (PII)</label>
+                            <label><input type="checkbox" name="dataTypes" value="phi"> Protected Health Information (PHI)</label>
+                            <label><input type="checkbox" name="dataTypes" value="payment"> Payment card data</label>
+                            <label><input type="checkbox" name="dataTypes" value="financial"> Financial records</label>
+                            <label><input type="checkbox" name="dataTypes" value="intellectual"> Intellectual property</label>
+                            <label><input type="checkbox" name="dataTypes" value="government"> Government data</label>
+                        </div>
+                    </div>
+                    
+                    <div class="question-group">
+                        <label>How do you currently manage data encryption?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="encryption" value="comprehensive"> Comprehensive encryption strategy</label>
+                            <label><input type="radio" name="encryption" value="partial"> Partial encryption implementation</label>
+                            <label><input type="radio" name="encryption" value="basic"> Basic encryption only</label>
+                            <label><input type="radio" name="encryption" value="none"> No formal encryption policy</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Audit & Monitoring</h3>
+                    <div class="question-group">
+                        <label>How often do you conduct compliance audits?</label>
+                        <select name="auditFrequency" required>
+                            <option value="">Select frequency</option>
+                            <option value="continuous">Continuous monitoring</option>
+                            <option value="quarterly">Quarterly</option>
+                            <option value="annually">Annually</option>
+                            <option value="as-needed">As needed</option>
+                            <option value="never">Never</option>
+                        </select>
+                    </div>
+                    
+                    <div class="question-group">
+                        <label>Do you have automated compliance monitoring tools?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="monitoring" value="comprehensive"> Comprehensive automated monitoring</label>
+                            <label><input type="radio" name="monitoring" value="partial"> Some automated tools</label>
+                            <label><input type="radio" name="monitoring" value="manual"> Manual monitoring only</label>
+                            <label><input type="radio" name="monitoring" value="none"> No formal monitoring</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Get Compliance Assessment</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('complianceReadiness').addEventListener('submit', function(e) {
+            e.preventDefault();
+            authManager.requireRegistration('compliance-readiness-assessment', 'Get your compliance readiness report and remediation roadmap');
+        });
+    </script>
+</body>
+</html>

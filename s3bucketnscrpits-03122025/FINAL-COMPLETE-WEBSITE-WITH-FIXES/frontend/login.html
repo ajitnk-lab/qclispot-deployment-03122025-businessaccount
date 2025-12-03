@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="access-level" content="public">
+    <meta name="auth-type" content="none">
+    <title>Login - CloudNestle AWS Consulting</title>
+    <meta name="description" content="Login to your CloudNestle account to access premium AWS consulting resources, frameworks, and personalized dashboard.">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/auth.css">
+</head>
+<body class="access-public auth-page">
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/index.html">
+                        <h1>CloudNestle</h1>
+                        <span>AWS Cloud Consulting Excellence</span>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Login Section -->
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-header">
+                    <h1>Welcome Back</h1>
+                    <p>Sign in to your CloudNestle account</p>
+                </div>
+
+                <form class="auth-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required placeholder="Enter your password">
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="remember" name="remember">
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                        <a href="/forgot-password.html" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+                </form>
+
+                <div class="auth-divider">
+                    <span>or</span>
+                </div>
+
+                <div class="social-login">
+                    <button class="btn btn-social btn-aws">
+                        <img src="/assets/images/aws-icon.svg" alt="AWS" width="20" height="20">
+                        Sign in with AWS SSO
+                    </button>
+                    <button class="btn btn-social btn-google">
+                        <img src="/assets/images/google-icon.svg" alt="Google" width="20" height="20">
+                        Sign in with Google
+                    </button>
+                </div>
+
+                <div class="auth-footer">
+                    <p>Don't have an account? <a href="/register.html">Sign up here</a></p>
+                </div>
+            </div>
+
+            <!-- Benefits Sidebar -->
+            <div class="auth-benefits">
+                <h3>Access Premium Features</h3>
+                <ul class="benefits-list">
+                    <li>
+                        <img src="/assets/images/check-circle.svg" alt="Check" width="20" height="20">
+                        Personalized AWS consulting dashboard
+                    </li>
+                    <li>
+                        <img src="/assets/images/check-circle.svg" alt="Check" width="20" height="20">
+                        Exclusive framework implementations
+                    </li>
+                    <li>
+                        <img src="/assets/images/check-circle.svg" alt="Check" width="20" height="20">
+                        Priority support and consultation
+                    </li>
+                    <li>
+                        <img src="/assets/images/check-circle.svg" alt="Check" width="20" height="20">
+                        Advanced cost optimization tools
+                    </li>
+                    <li>
+                        <img src="/assets/images/check-circle.svg" alt="Check" width="20" height="20">
+                        Custom architecture reviews
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CloudNestle</h3>
+                    <p>Your trusted AWS consulting partner for cloud transformation excellence.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CloudNestle. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/auth-manager.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Simulate login process
+            if (email && password) {
+                // Show loading state
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Signing in...';
+                submitBtn.disabled = true;
+                
+                // Simulate API call
+                setTimeout(() => {
+                    // For demo purposes, accept any email/password
+                    localStorage.setItem('cloudnestle_user', JSON.stringify({
+                        email: email,
+                        name: email.split('@')[0],
+                        loginTime: new Date().toISOString(),
+                        accessLevel: 'authenticated'
+                    }));
+                    
+                    // Redirect to dashboard or intended page
+                    const returnUrl = new URLSearchParams(window.location.search).get('return') || '/authenticated/dashboard.html';
+                    window.location.href = returnUrl;
+                }, 1500);
+            }
+        });
+    </script>
+</body>
+</html>

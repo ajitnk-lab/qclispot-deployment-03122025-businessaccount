@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Maturity Assessment - CloudNestle</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/auth-manager.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/../index.html">CloudNestle</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/../about.html">About</a></li>
+                <li><a href="/../services.html">Services</a></li>
+                <li><a href="/../solutions.html">Solutions</a></li>
+                <li><a href="/../industries.html">Industries</a></li>
+                <li><a href="/index.html">Frameworks</a></li>
+                <li><a href="/../contact.html">Contact</a></li>
+                <li><a href="#" onclick="authManager.showLogin()" class="nav-cta">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>AWS Security Maturity Assessment</h1>
+                <p class="hero-subtitle">Comprehensive security posture evaluation using our proprietary crawl-walk-run methodology</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">200+</span>
+                        <span class="stat-label">Security Controls</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Maturity Levels</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">99.8%</span>
+                        <span class="stat-label">Threat Detection</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Overview -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Security Maturity Model</h2>
+            <div class="maturity-levels">
+                <div class="level-card level-1">
+                    <div class="level-number">1</div>
+                    <div class="level-content">
+                        <h3>Initial (Crawl)</h3>
+                        <p>Basic security controls and reactive security measures</p>
+                        <div class="level-characteristics">
+                            <div class="characteristic">• Basic IAM policies</div>
+                            <div class="characteristic">• Manual security processes</div>
+                            <div class="characteristic">• Limited monitoring</div>
+                            <div class="characteristic">• Reactive incident response</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="level-card level-2">
+                    <div class="level-number">2</div>
+                    <div class="level-content">
+                        <h3>Managed (Walk)</h3>
+                        <p>Structured security processes with some automation</p>
+                        <div class="level-characteristics">
+                            <div class="characteristic">• Centralized logging</div>
+                            <div class="characteristic">• Security policies documented</div>
+                            <div class="characteristic">• Basic compliance controls</div>
+                            <div class="characteristic">• Incident response procedures</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="level-card level-3">
+                    <div class="level-number">3</div>
+                    <div class="level-content">
+                        <h3>Defined (Walk+)</h3>
+                        <p>Standardized security practices across the organization</p>
+                        <div class="level-characteristics">
+                            <div class="characteristic">• Security automation</div>
+                            <div class="characteristic">• Continuous monitoring</div>
+                            <div class="characteristic">• Compliance frameworks</div>
+                            <div class="characteristic">• Security training programs</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="level-card level-4">
+                    <div class="level-number">4</div>
+                    <div class="level-content">
+                        <h3>Quantitatively Managed (Run)</h3>
+                        <p>Data-driven security with metrics and continuous improvement</p>
+                        <div class="level-characteristics">
+                            <div class="characteristic">• Security metrics dashboard</div>
+                            <div class="characteristic">• Threat intelligence integration</div>
+                            <div class="characteristic">• Automated remediation</div>
+                            <div class="characteristic">• Risk quantification</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="level-card level-5">
+                    <div class="level-number">5</div>
+                    <div class="level-content">
+                        <h3>Optimizing (Run+)</h3>
+                        <p>Continuously evolving security posture with innovation</p>
+                        <div class="level-characteristics">
+                            <div class="characteristic">• AI-powered security</div>
+                            <div class="characteristic">• Predictive threat detection</div>
+                            <div class="characteristic">• Zero-trust architecture</div>
+                            <div class="characteristic">• Security innovation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Domains -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Assessment Domains</h2>
+            <div class="domains-grid">
+                <div class="domain-card">
+                    <div class="domain-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12l2 2 4-4"/>
+                            <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/>
+                            <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"/>
+                            <path d="M3 12h6m6 0h6"/>
+                        </svg>
+                    </div>
+                    <h3>Identity & Access Management</h3>
+                    <p>Comprehensive evaluation of IAM policies, roles, and access controls</p>
+                    <div class="domain-controls">
+                        <span class="control-count">45 Controls</span>
+                        <span class="control-weight">High Priority</span>
+                    </div>
+                </div>
+
+                <div class="domain-card">
+                    <div class="domain-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 9V5a3 3 0 0 0-6 0v4"/>
+                            <rect x="2" y="9" width="20" height="12" rx="2" ry="2"/>
+                            <circle cx="12" cy="15" r="1"/>
+                        </svg>
+                    </div>
+                    <h3>Data Protection</h3>
+                    <p>Assessment of encryption, data classification, and privacy controls</p>
+                    <div class="domain-controls">
+                        <span class="control-count">38 Controls</span>
+                        <span class="control-weight">High Priority</span>
+                    </div>
+                </div>
+
+                <div class="domain-card">
+                    <div class="domain-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3>Network Security</h3>
+                    <p>Network segmentation, VPC security, and traffic monitoring evaluation</p>
+                    <div class="domain-controls">
+                        <span class="control-count">32 Controls</span>
+                        <span class="control-weight">Medium Priority</span>
+                    </div>
+                </div>
+
+                <div class="domain-card">
+                    <div class="domain-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14,2 14,8 20,8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10,9 9,9 8,9"/>
+                        </svg>
+                    </div>
+                    <h3>Logging & Monitoring</h3>
+                    <p>Security event logging, monitoring, and incident response capabilities</p>
+                    <div class="domain-controls">
+                        <span class="control-count">28 Controls</span>
+                        <span class="control-weight">High Priority</span>
+                    </div>
+                </div>
+
+                <div class="domain-card">
+                    <div class="domain-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                        </svg>
+                    </div>
+                    <h3>Application Security</h3>
+                    <p>Secure development practices and application-level security controls</p>
+                    <div class="domain-controls">
+                        <span class="control-count">35 Controls</span>
+                        <span class="control-weight">Medium Priority</span>
+                    </div>
+                </div>
+
+                <div class="domain-card">
+                    <div class="domain-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <h3>Infrastructure Security</h3>
+                    <p>Compute, storage, and infrastructure security configuration assessment</p>
+                    <div class="domain-controls">
+                        <span class="control-count">42 Controls</span>
+                        <span class="control-weight">High Priority</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Process -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Assessment Process</h2>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Initial Discovery</h3>
+                        <p>Comprehensive inventory of AWS resources and security configurations</p>
+                        <div class="step-activities">
+                            <div class="activity">• Automated resource discovery</div>
+                            <div class="activity">• Configuration baseline</div>
+                            <div class="activity">• Stakeholder interviews</div>
+                            <div class="activity">• Documentation review</div>
+                        </div>
+                        <div class="step-duration">Duration: 1-2 weeks</div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Security Control Assessment</h3>
+                        <p>Detailed evaluation of 200+ security controls across all domains</p>
+                        <div class="step-activities">
+                            <div class="activity">• Automated security scanning</div>
+                            <div class="activity">• Manual control testing</div>
+                            <div class="activity">• Compliance gap analysis</div>
+                            <div class="activity">• Risk assessment</div>
+                        </div>
+                        <div class="step-duration">Duration: 2-3 weeks</div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Maturity Level Determination</h3>
+                        <p>Analysis and scoring to determine current security maturity level</p>
+                        <div class="step-activities">
+                            <div class="activity">• Control effectiveness scoring</div>
+                            <div class="activity">• Domain maturity analysis</div>
+                            <div class="activity">• Overall maturity calculation</div>
+                            <div class="activity">• Benchmark comparison</div>
+                        </div>
+                        <div class="step-duration">Duration: 1 week</div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Roadmap Development</h3>
+                        <p>Creation of prioritized security improvement roadmap</p>
+                        <div class="step-activities">
+                            <div class="activity">• Gap prioritization</div>
+                            <div class="activity">• Implementation planning</div>
+                            <div class="activity">• Resource requirements</div>
+                            <div class="activity">• Timeline development</div>
+                        </div>
+                        <div class="step-duration">Duration: 1 week</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample Assessment Results -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Sample Assessment Results</h2>
+            <div class="results-dashboard">
+                <div class="overall-score">
+                    <div class="score-circle">
+                        <div class="score-value">2.8</div>
+                        <div class="score-label">Overall Maturity</div>
+                    </div>
+                    <div class="score-description">
+                        <h3>Defined Level (Walk+)</h3>
+                        <p>Your organization has established standardized security practices with room for improvement in automation and metrics.</p>
+                    </div>
+                </div>
+
+                <div class="domain-scores">
+                    <div class="domain-score">
+                        <div class="domain-name">Identity & Access Management</div>
+                        <div class="score-bar">
+                            <div class="score-fill" style="width: 75%"></div>
+                        </div>
+                        <div class="score-number">3.2</div>
+                    </div>
+
+                    <div class="domain-score">
+                        <div class="domain-name">Data Protection</div>
+                        <div class="score-bar">
+                            <div class="score-fill" style="width: 60%"></div>
+                        </div>
+                        <div class="score-number">2.5</div>
+                    </div>
+
+                    <div class="domain-score">
+                        <div class="domain-name">Network Security</div>
+                        <div class="score-bar">
+                            <div class="score-fill" style="width: 80%"></div>
+                        </div>
+                        <div class="score-number">3.5</div>
+                    </div>
+
+                    <div class="domain-score">
+                        <div class="domain-name">Logging & Monitoring</div>
+                        <div class="score-bar">
+                            <div class="score-fill" style="width: 45%"></div>
+                        </div>
+                        <div class="score-number">2.1</div>
+                    </div>
+
+                    <div class="domain-score">
+                        <div class="domain-name">Application Security</div>
+                        <div class="score-bar">
+                            <div class="score-fill" style="width: 65%"></div>
+                        </div>
+                        <div class="score-number">2.8</div>
+                    </div>
+
+                    <div class="domain-score">
+                        <div class="domain-name">Infrastructure Security</div>
+                        <div class="score-bar">
+                            <div class="score-fill" style="width: 70%"></div>
+                        </div>
+                        <div class="score-number">3.0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Benefits -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Assessment Benefits</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2z"/>
+                            <path d="M21 11h-4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2z"/>
+                            <path d="M7 21V9a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12"/>
+                        </svg>
+                    </div>
+                    <h3>Comprehensive Security Posture</h3>
+                    <p>Complete visibility into your current security maturity across all domains</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <h3>Prioritized Roadmap</h3>
+                    <p>Clear, actionable roadmap with prioritized security improvements</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <circle cx="12" cy="16" r="1"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                    </div>
+                    <h3>Compliance Alignment</h3>
+                    <p>Alignment with major compliance frameworks and industry standards</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12,6 12,12 16,14"/>
+                        </svg>
+                    </div>
+                    <h3>Continuous Improvement</h3>
+                    <p>Framework for ongoing security maturity advancement and measurement</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Assess Your Security Maturity</h2>
+                <p>Get a comprehensive evaluation of your AWS security posture and roadmap for improvement</p>
+                <div class="cta-buttons">
+                    <a href="#" onclick="authManager.showRegistration()" class="btn-primary">Start Assessment</a>
+                    <a href="/../contact.html" class="btn-secondary">Schedule Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CloudNestle</h3>
+                    <p>Expert AWS consulting and implementation services for businesses of all sizes.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/../services.html">AWS Consulting</a></li>
+                        <li><a href="/../solutions.html">Cloud Solutions</a></li>
+                        <li><a href="/index.html">Framework Assessment</a></li>
+                        <li><a href="/../training.html">Training Programs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/../knowledge-center/index.html">Knowledge Center</a></li>
+                        <li><a href="/../workshops/index.html">Workshops</a></li>
+                        <li><a href="/../community/index.html">Community</a></li>
+                        <li><a href="/../guarantees/index.html">Service Guarantees</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/../about.html">About Us</a></li>
+                        <li><a href="/../company.html">Leadership</a></li>
+                        <li><a href="/../contact.html">Contact</a></li>
+                        <li><a href="/../careers.html">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CloudNestle. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            authManager.init();
+        });
+    </script>
+</body>
+</html>

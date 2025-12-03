@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive Well-Architected Framework assessment tool with detailed analysis across all six pillars and personalized recommendations.">
+    <meta name="keywords" content="AWS Well-Architected assessment, architecture review, six pillars, cloud assessment">
+    <meta name="access-level" content="registration">
+    <meta name="auth-type" content="email-only">
+    <title>Well-Architected Framework Assessment - CloudNestle</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/assessments.css">
+</head>
+<body class="access-registration">
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>CloudNestle</h1>
+                    <span>Assessment Tools</span>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/../index.html">Home</a></li>
+                        <li><a href="/../frameworks/index.html">Frameworks</a></li>
+                        <li><a href="/../knowledge-center/index.html">Knowledge Center</a></li>
+                        <li><a href="/../contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Assessment Preview -->
+    <section class="assessment-preview">
+        <div class="container">
+            <div class="preview-content">
+                <h1>AWS Well-Architected Framework Assessment</h1>
+                <p class="assessment-subtitle">Comprehensive evaluation of your AWS architecture against all six Well-Architected pillars with personalized recommendations</p>
+                
+                <div class="assessment-benefits">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🏗️</div>
+                        <h3>Complete Architecture Review</h3>
+                        <p>Evaluate your architecture against all six Well-Architected pillars with detailed scoring and analysis.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">📊</div>
+                        <h3>Detailed Recommendations</h3>
+                        <p>Get specific, actionable recommendations for improving your architecture's performance and cost efficiency.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🎯</div>
+                        <h3>Priority Action Plan</h3>
+                        <p>Receive a prioritized roadmap for implementing improvements based on business impact and effort required.</p>
+                    </div>
+                </div>
+
+                <div class="assessment-pillars">
+                    <h3>Assessment Coverage</h3>
+                    <div class="pillars-grid">
+                        <div class="pillar-item">
+                            <span class="pillar-icon">⚙️</span>
+                            <span class="pillar-name">Operational Excellence</span>
+                        </div>
+                        <div class="pillar-item">
+                            <span class="pillar-icon">🔒</span>
+                            <span class="pillar-name">Security</span>
+                        </div>
+                        <div class="pillar-item">
+                            <span class="pillar-icon">🛡️</span>
+                            <span class="pillar-name">Reliability</span>
+                        </div>
+                        <div class="pillar-item">
+                            <span class="pillar-icon">⚡</span>
+                            <span class="pillar-name">Performance Efficiency</span>
+                        </div>
+                        <div class="pillar-item">
+                            <span class="pillar-icon">💰</span>
+                            <span class="pillar-name">Cost Optimization</span>
+                        </div>
+                        <div class="pillar-item">
+                            <span class="pillar-icon">🌱</span>
+                            <span class="pillar-name">Sustainability</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <button class="btn-primary" id="start-assessment">Start Free Assessment</button>
+                    <p class="cta-note">Get instant results and detailed recommendations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Capture Modal -->
+    <div class="auth-modal" id="email-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Access Your Well-Architected Assessment</h3>
+                <p>Enter your email to access this comprehensive assessment tool and receive your detailed results</p>
+            </div>
+            <form class="email-capture-form" id="email-capture-form">
+                <div class="form-group">
+                    <input type="email" id="user-email" placeholder="Enter your business email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="user-name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="user-company" placeholder="Company name" required>
+                </div>
+                <button type="submit" class="btn-primary">Get Free Assessment Access</button>
+            </form>
+            <div class="trust-indicators">
+                <div class="trust-item">
+                    <span class="trust-icon">🔒</span>
+                    <span>Your data is secure and never shared</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">📧</span>
+                    <span>No spam, only valuable AWS insights</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Assessment Tool (Hidden until email captured) -->
+    <div class="content-registration-required gated" id="assessment-content">
+        <section class="assessment-tool">
+            <div class="container">
+                <div class="assessment-header">
+                    <h2>Well-Architected Framework Assessment</h2>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                        <span class="progress-text" id="progress-text">Question 1 of 30</span>
+                    </div>
+                </div>
+
+                <div class="assessment-form" id="assessment-form">
+                    <!-- Questions will be dynamically loaded here -->
+                </div>
+
+                <div class="assessment-results" id="assessment-results" style="display: none;">
+                    <h2>Your Well-Architected Assessment Results</h2>
+                    <div class="results-summary" id="results-summary">
+                        <!-- Results will be displayed here -->
+                    </div>
+                    <div class="recommendations" id="recommendations">
+                        <!-- Recommendations will be displayed here -->
+                    </div>
+                    <div class="next-steps">
+                        <h3>Next Steps</h3>
+                        <div class="next-steps-actions">
+                            <a href="#" class="btn-primary">Schedule Expert Review</a>
+                            <a href="#" class="btn-secondary">Download Full Report</a>
+                            <a href="/../frameworks/well-architected-review.html" class="btn-secondary">Learn About Our Services</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CloudNestle</h3>
+                    <p>Expert AWS consulting with industry specialization and outcome guarantees.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Assessment Tools</h4>
+                    <ul>
+                        <li><a href="/reg-caf-readiness-assessment.html">CAF Readiness Assessment</a></li>
+                        <li><a href="/reg-well-architected-assessment.html">Well-Architected Assessment</a></li>
+                        <li><a href="/reg-security-maturity-assessment.html">Security Maturity Assessment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@cloudnestle.com</p>
+                    <p>Phone: +91-XXXXXXXXXX</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CloudNestle Consulting & Services (OPC) Pvt. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/registration-manager.js"></script>
+    <script>
+        // Well-Architected Assessment Questions
+        const assessmentQuestions = [
+            {
+                pillar: "Operational Excellence",
+                question: "How do you determine what your priorities are?",
+                options: [
+                    "We have documented business priorities and regularly review them",
+                    "We have some documented priorities but don't review them regularly",
+                    "Our priorities are mostly informal and not well documented",
+                    "We don't have clear documented priorities"
+                ],
+                weights: [4, 3, 2, 1]
+            },
+            {
+                pillar: "Operational Excellence",
+                question: "How do you design your workload to enable operability?",
+                options: [
+                    "We design for observability with comprehensive monitoring and logging",
+                    "We have basic monitoring and some logging in place",
+                    "We have minimal monitoring and limited logging",
+                    "We have little to no monitoring or logging"
+                ],
+                weights: [4, 3, 2, 1]
+            },
+            {
+                pillar: "Security",
+                question: "How do you manage identities for people and machines?",
+                options: [
+                    "We use centralized identity management with MFA and least privilege",
+                    "We have centralized identity management with some MFA",
+                    "We have basic identity management with limited MFA",
+                    "We rely on shared accounts and passwords"
+                ],
+                weights: [4, 3, 2, 1]
+            },
+            {
+                pillar: "Security",
+                question: "How do you manage permissions for people and machines?",
+                options: [
+                    "We implement least privilege with regular access reviews",
+                    "We have role-based access with some regular reviews",
+                    "We have basic role-based access with infrequent reviews",
+                    "We use broad permissions without regular reviews"
+                ],
+                weights: [4, 3, 2, 1]
+            },
+            {
+                pillar: "Reliability",
+                question: "How do you manage service quotas and constraints?",
+                options: [
+                    "We actively monitor quotas and have automated scaling",
+                    "We monitor quotas and have some scaling mechanisms",
+                    "We occasionally check quotas and have basic scaling",
+                    "We don't actively manage quotas or scaling"
+                ],
+                weights: [4, 3, 2, 1]
+            },
+            {
+                pillar: "Reliability",
+                question: "How do you plan your network topology?",
+                options: [
+                    "We have redundant network paths across multiple AZs",
+                    "We have some redundancy with multi-AZ deployment",
+                    "We have basic redundancy in single AZ",
+                    "We have minimal network redundancy"
+                ],
+                weights: [4, 3, 2, 1]
+            },
+            {
+                pillar: "Performance Efficiency",
+                question: "How do you select the best performing architecture?",
+                options: [
+                    "We use data-driven approach with benchmarking and testing",
+                    "We do some performance testing and benchmarking",
+                    "We make decisions based on basic performance considerations",
+                    "We don't systematically evaluate performance"
+                ],
+                weights: [4, 3, 2, 1]
+            },
+            {
+                pillar: "Performance Efficiency",
+                question: "How do you select your compute solution?",
+                options: [
+                    "We regularly evaluate and optimize compute choices",
+                    "We occasionally review and adjust compute choices",
+                    "We made initial compute choices but rarely review them",
+                    "We use default compute options without evaluation"
+                ],
+                weights: [4, 3, 2, 1]
+            },
+            {
+                pillar: "Cost Optimization",
+                question: "How do you govern usage?",
+                options: [
+                    "We have comprehensive cost governance with policies and monitoring",
+                    "We have some cost governance and basic monitoring",
+                    "We have minimal cost governance and limited monitoring",
+                    "We don't have formal cost governance"
+                ],
+                weights: [4, 3, 2, 1]
+            },
+            {
+                pillar: "Cost Optimization",
+                question: "How do you monitor usage and cost?",
+                options: [
+                    "We have detailed cost monitoring with automated alerts and optimization",
+                    "We have cost monitoring with some alerts and manual optimization",
+                    "We have basic cost monitoring with limited alerts",
+                    "We don't actively monitor costs"
+                ],
+                weights: [4, 3, 2, 1]
+            },
+            {
+                pillar: "Sustainability",
+                question: "How do you select Regions for your workload?",
+                options: [
+                    "We consider sustainability factors and renewable energy in region selection",
+                    "We consider some sustainability factors in region selection",
+                    "We primarily consider latency and compliance for region selection",
+                    "We don't consider sustainability in region selection"
+                ],
+                weights: [4, 3, 2, 1]
+            },
+            {
+                pillar: "Sustainability",
+                question: "How do you take advantage of data access and usage patterns to support sustainability goals?",
+                options: [
+                    "We actively optimize data lifecycle and access patterns for sustainability",
+                    "We have some data lifecycle management for sustainability",
+                    "We have basic data lifecycle management",
+                    "We don't optimize data patterns for sustainability"
+                ],
+                weights: [4, 3, 2, 1]
+            }
+        ];
+
+        let currentQuestion = 0;
+        let answers = [];
+
+        // Initialize assessment
+        function initializeAssessment() {
+            showQuestion(currentQuestion);
+        }
+
+        // Show question
+        function showQuestion(questionIndex) {
+            const question = assessmentQuestions[questionIndex];
+            const formHtml = `
+                <div class="question-card">
+                    <div class="question-pillar">${question.pillar}</div>
+                    <h3 class="question-text">${question.question}</h3>
+                    <div class="question-options">
+                        ${question.options.map((option, index) => `
+                            <label class="option-label">
+                                <input type="radio" name="question_${questionIndex}" value="${index}" />
+                                <span class="option-text">${option}</span>
+                            </label>
+                        `).join('')}
+                    </div>
+                    <div class="question-actions">
+                        ${questionIndex > 0 ? '<button type="button" class="btn-secondary" onclick="previousQuestion()">Previous</button>' : ''}
+                        <button type="button" class="btn-primary" onclick="nextQuestion()" id="next-btn" disabled>
+                            ${questionIndex === assessmentQuestions.length - 1 ? 'Complete Assessment' : 'Next Question'}
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('assessment-form').innerHTML = formHtml;
+            
+            // Add event listeners for radio buttons
+            document.querySelectorAll(`input[name="question_${questionIndex}"]`).forEach(radio => {
+                radio.addEventListener('change', () => {
+                    document.getElementById('next-btn').disabled = false;
+                });
+            });
+            
+            updateProgress();
+        }
+
+        // Next question
+        function nextQuestion() {
+            const selectedOption = document.querySelector(`input[name="question_${currentQuestion}"]:checked`);
+            if (!selectedOption) return;
+            
+            answers[currentQuestion] = parseInt(selectedOption.value);
+            
+            if (currentQuestion < assessmentQuestions.length - 1) {
+                currentQuestion++;
+                showQuestion(currentQuestion);
+            } else {
+                showResults();
+            }
+        }
+
+        // Previous question
+        function previousQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                showQuestion(currentQuestion);
+            }
+        }
+
+        // Update progress
+        function updateProgress() {
+            const progress = ((currentQuestion + 1) / assessmentQuestions.length) * 100;
+            document.getElementById('progress-fill').style.width = progress + '%';
+            document.getElementById('progress-text').textContent = `Question ${currentQuestion + 1} of ${assessmentQuestions.length}`;
+        }
+
+        // Show results
+        function showResults() {
+            document.getElementById('assessment-form').style.display = 'none';
+            document.getElementById('assessment-results').style.display = 'block';
+            
+            // Calculate scores by pillar
+            const pillarScores = {};
+            assessmentQuestions.forEach((question, index) => {
+                if (!pillarScores[question.pillar]) {
+                    pillarScores[question.pillar] = { total: 0, count: 0 };
+                }
+                pillarScores[question.pillar].total += question.weights[answers[index]];
+                pillarScores[question.pillar].count++;
+            });
+            
+            // Calculate percentages
+            const pillarPercentages = {};
+            Object.keys(pillarScores).forEach(pillar => {
+                pillarPercentages[pillar] = Math.round((pillarScores[pillar].total / (pillarScores[pillar].count * 4)) * 100);
+            });
+            
+            // Display results
+            displayResults(pillarPercentages);
+        }
+
+        // Display results
+        function displayResults(scores) {
+            const resultsHtml = `
+                <div class="pillar-scores">
+                    ${Object.keys(scores).map(pillar => `
+                        <div class="pillar-score">
+                            <div class="pillar-name">${pillar}</div>
+                            <div class="score-bar">
+                                <div class="score-fill" style="width: ${scores[pillar]}%"></div>
+                            </div>
+                            <div class="score-value">${scores[pillar]}%</div>
+                        </div>
+                    `).join('')}
+                </div>
+                <div class="overall-score">
+                    <h3>Overall Well-Architected Score</h3>
+                    <div class="overall-score-value">${Math.round(Object.values(scores).reduce((a, b) => a + b, 0) / Object.keys(scores).length)}%</div>
+                </div>
+            `;
+            
+            document.getElementById('results-summary').innerHTML = resultsHtml;
+            
+            // Generate recommendations
+            generateRecommendations(scores);
+        }
+
+        // Generate recommendations
+        function generateRecommendations(scores) {
+            const recommendations = [];
+            
+            Object.keys(scores).forEach(pillar => {
+                if (scores[pillar] < 70) {
+                    recommendations.push({
+                        pillar: pillar,
+                        priority: scores[pillar] < 50 ? 'High' : 'Medium',
+                        recommendation: getRecommendation(pillar, scores[pillar])
+                    });
+                }
+            });
+            
+            const recommendationsHtml = `
+                <h3>Priority Recommendations</h3>
+                ${recommendations.length > 0 ? recommendations.map(rec => `
+                    <div class="recommendation-item ${rec.priority.toLowerCase()}-priority">
+                        <div class="recommendation-header">
+                            <span class="recommendation-pillar">${rec.pillar}</span>
+                            <span class="recommendation-priority">${rec.priority} Priority</span>
+                        </div>
+                        <p class="recommendation-text">${rec.recommendation}</p>
+                    </div>
+                `).join('') : '<p>Excellent! Your architecture follows Well-Architected best practices across all pillars.</p>'}
+            `;
+            
+            document.getElementById('recommendations').innerHTML = recommendationsHtml;
+        }
+
+        // Get recommendation based on pillar and score
+        function getRecommendation(pillar, score) {
+            const recommendations = {
+                "Operational Excellence": "Implement comprehensive monitoring and logging, establish runbooks for common operations, and create automated deployment pipelines.",
+                "Security": "Implement least privilege access controls, enable multi-factor authentication, and establish regular security reviews and audits.",
+                "Reliability": "Design for failure with multi-AZ deployments, implement automated backup and recovery procedures, and establish disaster recovery testing.",
+                "Performance Efficiency": "Implement performance monitoring and alerting, regularly review and optimize resource allocation, and conduct load testing.",
+                "Cost Optimization": "Implement cost monitoring and alerting, regularly review resource utilization, and optimize instance types and storage classes.",
+                "Sustainability": "Consider sustainability factors in architecture decisions, optimize resource utilization, and implement data lifecycle management."
+            };
+            
+            return recommendations[pillar] || "Review and improve practices in this pillar according to AWS Well-Architected guidance.";
+        }
+
+        // Email capture and assessment initialization
+        document.getElementById('start-assessment').addEventListener('click', function() {
+            document.getElementById('email-modal').style.display = 'flex';
+        });
+
+        // Initialize registration manager
+        document.addEventListener('DOMContentLoaded', function() {
+            new RegistrationManager();
+            
+            // Override the showRegisteredContent method to initialize assessment
+            const originalShowContent = RegistrationManager.prototype.showRegisteredContent;
+            RegistrationManager.prototype.showRegisteredContent = function() {
+                originalShowContent.call(this);
+                initializeAssessment();
+            };
+        });
+    </script>
+</body>
+</html>

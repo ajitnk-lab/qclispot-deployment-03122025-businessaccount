@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="access-level" content="authenticated">
+    <meta name="auth-type" content="full-profile">
+    <title>Expert Consultation Booking - CloudNestle Academy</title>
+    <meta name="description" content="Book one-on-one consultations with AWS framework experts for personalized guidance on your cloud transformation journey.">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/authenticated.css">
+    <link rel="stylesheet" href="../assets/css/consultation.css">
+</head>
+<body class="access-authenticated">
+    <!-- Header -->
+    <header class="header authenticated-header">
+        <div class="container">
+            <div class="header-top">
+                <div class="user-info">
+                    <span class="user-greeting">Welcome back, <span id="user-name">Loading...</span></span>
+                    <span class="user-plan">Premium Member</span>
+                </div>
+                <div class="user-menu">
+                    <div class="dropdown">
+                        <button class="dropdown-toggle">
+                            <img src="../assets/images/user-avatar.png" alt="User Avatar" class="user-avatar">
+                            <span class="dropdown-arrow">▼</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="auth-profile.html">Profile Settings</a>
+                            <a href="auth-academy-dashboard.html">Academy Dashboard</a>
+                            <a href="auth-billing.html">Billing & Subscription</a>
+                            <a href="#" onclick="logout()">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="nav">
+                <div class="nav-brand">
+                    <a href="../index.html">CloudNestle</a>
+                    <span class="nav-section">Expert Consultation</span>
+                </div>
+                <div class="nav-menu authenticated-nav">
+                    <a href="auth-academy-dashboard.html">Dashboard</a>
+                    <a href="auth-learning-paths.html">Learning Paths</a>
+                    <a href="auth-ai-architecture-analysis.html">AI Analysis</a>
+                    <a href="auth-expert-consultation.html" class="active">Expert Consultation</a>
+                    <a href="auth-community.html">Community</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="page-title">
+                    <h1>👨‍💼 Expert Consultation</h1>
+                    <p>Book personalized sessions with our AWS framework experts for tailored guidance</p>
+                </div>
+                <div class="page-actions">
+                    <button class="btn btn-primary" id="book-consultation">
+                        <span class="btn-icon">📅</span>
+                        Book New Session
+                    </button>
+                    <button class="btn btn-outline" id="consultation-history">
+                        <span class="btn-icon">📊</span>
+                        Session History
+                    </button>
+                </div>
+            </div>
+
+            <!-- Consultation Dashboard -->
+            <div class="consultation-dashboard">
+                <!-- Quick Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">👨‍💼</div>
+                        <div class="stat-content">
+                            <div class="stat-value">8</div>
+                            <div class="stat-label">Sessions Completed</div>
+                            <div class="stat-trend positive">+2 this month</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-content">
+                            <div class="stat-value">12h</div>
+                            <div class="stat-label">Total Consultation Time</div>
+                            <div class="stat-trend positive">+3h this month</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-content">
+                            <div class="stat-value">15</div>
+                            <div class="stat-label">Action Items Completed</div>
+                            <div class="stat-trend positive">+5 this week</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-content">
+                            <div class="stat-value">4.9</div>
+                            <div class="stat-label">Average Rating</div>
+                            <div class="stat-trend neutral">Excellent</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Available Experts -->
+                <div class="experts-section">
+                    <div class="section-header">
+                        <h2>Available Experts</h2>
+                        <p>Choose from our team of certified AWS framework specialists</p>
+                    </div>
+
+                    <div class="experts-grid">
+                        <div class="expert-card featured">
+                            <div class="expert-badge">Most Popular</div>
+                            <div class="expert-avatar">
+                                <img src="../assets/images/experts/expert-1.jpg" alt="Dr. Rajesh Kumar" width="80" height="80">
+                                <div class="expert-status online">Online</div>
+                            </div>
+                            <div class="expert-info">
+                                <h3>Dr. Rajesh Kumar</h3>
+                                <p class="expert-title">Senior AWS Solutions Architect</p>
+                                <div class="expert-credentials">
+                                    <span class="credential">AWS Solutions Architect Professional</span>
+                                    <span class="credential">AWS Security Specialty</span>
+                                    <span class="credential">15+ Years Experience</span>
+                                </div>
+                                <div class="expert-specialties">
+                                    <span class="specialty">CAF Implementation</span>
+                                    <span class="specialty">Well-Architected Reviews</span>
+                                    <span class="specialty">Security Architecture</span>
+                                </div>
+                                <div class="expert-stats">
+                                    <div class="stat">
+                                        <span class="stat-value">4.9</span>
+                                        <span class="stat-label">Rating</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">200+</span>
+                                        <span class="stat-label">Sessions</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">98%</span>
+                                        <span class="stat-label">Success Rate</span>
+                                    </div>
+                                </div>
+                                <div class="expert-availability">
+                                    <span class="availability-label">Next Available:</span>
+                                    <span class="availability-time">Today 3:00 PM</span>
+                                </div>
+                                <div class="expert-actions">
+                                    <button class="btn btn-primary" onclick="bookExpert('rajesh-kumar')">Book Session</button>
+                                    <button class="btn btn-outline" onclick="viewExpertProfile('rajesh-kumar')">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="expert-card">
+                            <div class="expert-avatar">
+                                <img src="../assets/images/experts/expert-2.jpg" alt="Sarah Chen" width="80" height="80">
+                                <div class="expert-status busy">In Session</div>
+                            </div>
+                            <div class="expert-info">
+                                <h3>Sarah Chen</h3>
+                                <p class="expert-title">Cloud Migration Specialist</p>
+                                <div class="expert-credentials">
+                                    <span class="credential">AWS DevOps Engineer Professional</span>
+                                    <span class="credential">AWS Database Specialty</span>
+                                    <span class="credential">12+ Years Experience</span>
+                                </div>
+                                <div class="expert-specialties">
+                                    <span class="specialty">Cloud Migration</span>
+                                    <span class="specialty">DevOps Transformation</span>
+                                    <span class="specialty">Database Optimization</span>
+                                </div>
+                                <div class="expert-stats">
+                                    <div class="stat">
+                                        <span class="stat-value">4.8</span>
+                                        <span class="stat-label">Rating</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">150+</span>
+                                        <span class="stat-label">Sessions</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">96%</span>
+                                        <span class="stat-label">Success Rate</span>
+                                    </div>
+                                </div>
+                                <div class="expert-availability">
+                                    <span class="availability-label">Next Available:</span>
+                                    <span class="availability-time">Tomorrow 10:00 AM</span>
+                                </div>
+                                <div class="expert-actions">
+                                    <button class="btn btn-primary" onclick="bookExpert('sarah-chen')">Book Session</button>
+                                    <button class="btn btn-outline" onclick="viewExpertProfile('sarah-chen')">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="expert-card">
+                            <div class="expert-avatar">
+                                <img src="../assets/images/experts/expert-3.jpg" alt="Michael Rodriguez" width="80" height="80">
+                                <div class="expert-status online">Online</div>
+                            </div>
+                            <div class="expert-info">
+                                <h3>Michael Rodriguez</h3>
+                                <p class="expert-title">Cost Optimization Expert</p>
+                                <div class="expert-credentials">
+                                    <span class="credential">AWS Solutions Architect Professional</span>
+                                    <span class="credential">FinOps Certified Practitioner</span>
+                                    <span class="credential">10+ Years Experience</span>
+                                </div>
+                                <div class="expert-specialties">
+                                    <span class="specialty">Cost Optimization</span>
+                                    <span class="specialty">FinOps Implementation</span>
+                                    <span class="specialty">Reserved Instance Strategy</span>
+                                </div>
+                                <div class="expert-stats">
+                                    <div class="stat">
+                                        <span class="stat-value">4.9</span>
+                                        <span class="stat-label">Rating</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">180+</span>
+                                        <span class="stat-label">Sessions</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">97%</span>
+                                        <span class="stat-label">Success Rate</span>
+                                    </div>
+                                </div>
+                                <div class="expert-availability">
+                                    <span class="availability-label">Next Available:</span>
+                                    <span class="availability-time">Today 5:00 PM</span>
+                                </div>
+                                <div class="expert-actions">
+                                    <button class="btn btn-primary" onclick="bookExpert('michael-rodriguez')">Book Session</button>
+                                    <button class="btn btn-outline" onclick="viewExpertProfile('michael-rodriguez')">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Sessions -->
+                <div class="upcoming-sessions">
+                    <div class="section-header">
+                        <h2>Upcoming Sessions</h2>
+                        <div class="section-actions">
+                            <button class="btn btn-outline btn-sm" onclick="syncCalendar()">
+                                <span class="btn-icon">📅</span>
+                                Sync Calendar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="sessions-list">
+                        <div class="session-card upcoming">
+                            <div class="session-time">
+                                <div class="session-date">Today</div>
+                                <div class="session-hour">3:00 PM - 4:00 PM</div>
+                            </div>
+                            <div class="session-info">
+                                <h3>CAF Implementation Strategy</h3>
+                                <p>Discussion on Cloud Adoption Framework implementation approach for your organization</p>
+                                <div class="session-expert">
+                                    <img src="../assets/images/experts/expert-1.jpg" alt="Dr. Rajesh Kumar" width="32" height="32">
+                                    <span>Dr. Rajesh Kumar</span>
+                                </div>
+                                <div class="session-topics">
+                                    <span class="topic">Business Perspective</span>
+                                    <span class="topic">Governance Framework</span>
+                                    <span class="topic">Implementation Roadmap</span>
+                                </div>
+                            </div>
+                            <div class="session-actions">
+                                <button class="btn btn-primary btn-sm" onclick="joinSession('session-001')">
+                                    <span class="btn-icon">🎥</span>
+                                    Join Session
+                                </button>
+                                <button class="btn btn-outline btn-sm" onclick="rescheduleSession('session-001')">
+                                    <span class="btn-icon">📅</span>
+                                    Reschedule
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="session-card scheduled">
+                            <div class="session-time">
+                                <div class="session-date">Tomorrow</div>
+                                <div class="session-hour">2:00 PM - 3:00 PM</div>
+                            </div>
+                            <div class="session-info">
+                                <h3>Well-Architected Review Follow-up</h3>
+                                <p>Review of architecture improvements and next steps for optimization</p>
+                                <div class="session-expert">
+                                    <img src="../assets/images/experts/expert-1.jpg" alt="Dr. Rajesh Kumar" width="32" height="32">
+                                    <span>Dr. Rajesh Kumar</span>
+                                </div>
+                                <div class="session-topics">
+                                    <span class="topic">Security Pillar</span>
+                                    <span class="topic">Cost Optimization</span>
+                                    <span class="topic">Performance Review</span>
+                                </div>
+                            </div>
+                            <div class="session-actions">
+                                <button class="btn btn-outline btn-sm" onclick="prepareSession('session-002')">
+                                    <span class="btn-icon">📋</span>
+                                    Prepare
+                                </button>
+                                <button class="btn btn-outline btn-sm" onclick="rescheduleSession('session-002')">
+                                    <span class="btn-icon">📅</span>
+                                    Reschedule
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Sessions -->
+                <div class="recent-sessions">
+                    <div class="section-header">
+                        <h2>Recent Sessions</h2>
+                        <div class="section-actions">
+                            <button class="btn btn-outline btn-sm" onclick="exportSessions()">
+                                <span class="btn-icon">📊</span>
+                                Export
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="sessions-list">
+                        <div class="session-card completed">
+                            <div class="session-time">
+                                <div class="session-date">Yesterday</div>
+                                <div class="session-hour">4:00 PM - 5:00 PM</div>
+                            </div>
+                            <div class="session-info">
+                                <h3>Security Maturity Assessment</h3>
+                                <p>Comprehensive security posture evaluation and improvement recommendations</p>
+                                <div class="session-expert">
+                                    <img src="../assets/images/experts/expert-1.jpg" alt="Dr. Rajesh Kumar" width="32" height="32">
+                                    <span>Dr. Rajesh Kumar</span>
+                                </div>
+                                <div class="session-rating">
+                                    <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+                                    <span class="rating-value">5.0</span>
+                                </div>
+                            </div>
+                            <div class="session-actions">
+                                <button class="btn btn-outline btn-sm" onclick="viewSessionNotes('session-003')">
+                                    <span class="btn-icon">📝</span>
+                                    View Notes
+                                </button>
+                                <button class="btn btn-outline btn-sm" onclick="downloadRecording('session-003')">
+                                    <span class="btn-icon">🎥</span>
+                                    Recording
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="session-card completed">
+                            <div class="session-time">
+                                <div class="session-date">Last Week</div>
+                                <div class="session-hour">3:00 PM - 4:30 PM</div>
+                            </div>
+                            <div class="session-info">
+                                <h3>Cost Optimization Strategy</h3>
+                                <p>Deep dive into cost optimization opportunities and implementation plan</p>
+                                <div class="session-expert">
+                                    <img src="../assets/images/experts/expert-3.jpg" alt="Michael Rodriguez" width="32" height="32">
+                                    <span>Michael Rodriguez</span>
+                                </div>
+                                <div class="session-rating">
+                                    <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+                                    <span class="rating-value">4.8</span>
+                                </div>
+                            </div>
+                            <div class="session-actions">
+                                <button class="btn btn-outline btn-sm" onclick="viewSessionNotes('session-004')">
+                                    <span class="btn-icon">📝</span>
+                                    View Notes
+                                </button>
+                                <button class="btn btn-outline btn-sm" onclick="downloadRecording('session-004')">
+                                    <span class="btn-icon">🎥</span>
+                                    Recording
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Items -->
+                <div class="action-items">
+                    <div class="section-header">
+                        <h2>Action Items from Sessions</h2>
+                        <div class="section-actions">
+                            <button class="btn btn-outline btn-sm" onclick="markAllComplete()">
+                                <span class="btn-icon">✅</span>
+                                Mark All Complete
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="action-items-list">
+                        <div class="action-item pending">
+                            <div class="action-checkbox">
+                                <input type="checkbox" id="action-1" onchange="toggleAction('action-1')">
+                                <label for="action-1"></label>
+                            </div>
+                            <div class="action-content">
+                                <h4>Implement MFA for all IAM users</h4>
+                                <p>Enable multi-factor authentication across all user accounts as discussed in security review</p>
+                                <div class="action-meta">
+                                    <span class="action-priority high">High Priority</span>
+                                    <span class="action-due">Due: Tomorrow</span>
+                                    <span class="action-session">From: Security Maturity Assessment</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="action-item pending">
+                            <div class="action-checkbox">
+                                <input type="checkbox" id="action-2" onchange="toggleAction('action-2')">
+                                <label for="action-2"></label>
+                            </div>
+                            <div class="action-content">
+                                <h4>Review and optimize RDS instance sizing</h4>
+                                <p>Analyze current RDS utilization and right-size instances for cost optimization</p>
+                                <div class="action-meta">
+                                    <span class="action-priority medium">Medium Priority</span>
+                                    <span class="action-due">Due: Next Week</span>
+                                    <span class="action-session">From: Cost Optimization Strategy</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="action-item completed">
+                            <div class="action-checkbox">
+                                <input type="checkbox" id="action-3" checked disabled>
+                                <label for="action-3"></label>
+                            </div>
+                            <div class="action-content">
+                                <h4>Set up CloudWatch dashboards</h4>
+                                <p>Create monitoring dashboards for key application metrics</p>
+                                <div class="action-meta">
+                                    <span class="action-priority low">Low Priority</span>
+                                    <span class="action-completed">Completed: Yesterday</span>
+                                    <span class="action-session">From: Well-Architected Review</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="booking-modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Book Expert Consultation</h3>
+                <button class="modal-close" onclick="closeModal('booking-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="booking-form">
+                    <div class="expert-selection">
+                        <h4>Selected Expert</h4>
+                        <div class="selected-expert" id="selected-expert">
+                            <!-- Expert info will be populated here -->
+                        </div>
+                    </div>
+                    
+                    <form id="consultation-booking-form">
+                        <div class="form-group">
+                            <label for="session-type">Session Type</label>
+                            <select id="session-type" required>
+                                <option value="">Select session type</option>
+                                <option value="framework-assessment">Framework Assessment</option>
+                                <option value="implementation-planning">Implementation Planning</option>
+                                <option value="architecture-review">Architecture Review</option>
+                                <option value="cost-optimization">Cost Optimization</option>
+                                <option value="security-review">Security Review</option>
+                                <option value="general-consultation">General Consultation</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="session-duration">Duration</label>
+                            <select id="session-duration" required>
+                                <option value="30">30 minutes</option>
+                                <option value="60" selected>60 minutes</option>
+                                <option value="90">90 minutes</option>
+                                <option value="120">120 minutes</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="preferred-date">Preferred Date</label>
+                            <input type="date" id="preferred-date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="preferred-time">Preferred Time</label>
+                            <select id="preferred-time" required>
+                                <option value="">Select time</option>
+                                <option value="09:00">9:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="15:00">3:00 PM</option>
+                                <option value="16:00">4:00 PM</option>
+                                <option value="17:00">5:00 PM</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="session-objectives">Session Objectives</label>
+                            <textarea id="session-objectives" placeholder="What would you like to achieve in this session?" rows="3" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="background-info">Background Information</label>
+                            <textarea id="background-info" placeholder="Provide context about your current situation, challenges, or specific areas you'd like to focus on..." rows="4"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="preparation-materials">Preparation Materials</label>
+                            <div class="file-upload">
+                                <input type="file" id="preparation-materials" multiple accept=".pdf,.doc,.docx,.ppt,.pptx">
+                                <label for="preparation-materials" class="file-upload-label">
+                                    <span class="upload-icon">📎</span>
+                                    Upload documents, diagrams, or other materials
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" onclick="closeModal('booking-modal')">Cancel</button>
+                <button class="btn btn-primary" onclick="confirmBooking()">Book Session</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer authenticated-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CloudNestle Academy</h3>
+                    <p>Expert consultation services for your cloud transformation journey</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Consultation Types</h4>
+                    <ul>
+                        <li><a href="#framework-assessment">Framework Assessment</a></li>
+                        <li><a href="#implementation-planning">Implementation Planning</a></li>
+                        <li><a href="#architecture-review">Architecture Review</a></li>
+                        <li><a href="#cost-optimization">Cost Optimization</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Expert Specialties</h4>
+                    <ul>
+                        <li><a href="#caf-experts">CAF Implementation</a></li>
+                        <li><a href="#waf-experts">Well-Architected Reviews</a></li>
+                        <li><a href="#security-experts">Security Architecture</a></li>
+                        <li><a href="#cost-experts">Cost Optimization</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="auth-help-center.html">Help Center</a></li>
+                        <li><a href="auth-session-guidelines.html">Session Guidelines</a></li>
+                        <li><a href="auth-technical-support.html">Technical Support</a></li>
+                        <li><a href="#" onclick="logout()">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CloudNestle Consulting & Services (OPC) Pvt. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/auth-manager.js"></script>
+    <script src="../assets/js/consultation.js"></script>
+    <script src="../assets/js/calendar.js"></script>
+</body>
+</html>

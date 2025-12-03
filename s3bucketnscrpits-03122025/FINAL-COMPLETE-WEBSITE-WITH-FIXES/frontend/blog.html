@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Insights - CloudNestle AWS Expertise</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <meta name="description" content="Latest AWS insights, cloud transformation strategies, and industry thought leadership from CloudNestle's team of experts.">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/index.html">CloudNestle</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="/about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="/solutions.html" class="nav-link">Solutions</a></li>
+                <li class="nav-item"><a href="/industries.html" class="nav-link">Industries</a></li>
+                <li class="nav-item"><a href="/frameworks/index.html" class="nav-link">Frameworks</a></li>
+                <li class="nav-item"><a href="/contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="#" class="nav-link login-btn" onclick="authManager.showLogin()">Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section blog-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">AWS Insights & Thought Leadership</h1>
+                <p class="hero-subtitle">Stay ahead of the cloud curve with expert insights, best practices, and strategic guidance from CloudNestle's team of AWS specialists.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Expert Articles</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">Monthly Readers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">Weekly</div>
+                        <div class="stat-label">New Content</div>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="#featured-posts" class="btn btn-primary">Read Latest Posts</a>
+                    <a href="#newsletter" class="btn btn-secondary">Subscribe to Newsletter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Categories -->
+    <section class="categories-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Content Categories</h2>
+                <p>Explore our comprehensive library of AWS expertise and industry insights.</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card" data-category="architecture">
+                    <div class="category-icon">🏗️</div>
+                    <h3>Architecture & Design</h3>
+                    <p>Well-Architected principles, design patterns, and architectural best practices for scalable cloud solutions.</p>
+                    <div class="category-stats">
+                        <span class="post-count">85 articles</span>
+                        <span class="read-time">~12 min avg read</span>
+                    </div>
+                </div>
+                <div class="category-card" data-category="migration">
+                    <div class="category-icon">🚀</div>
+                    <h3>Migration Strategies</h3>
+                    <p>Cloud migration methodologies, case studies, and lessons learned from enterprise transformations.</p>
+                    <div class="category-stats">
+                        <span class="post-count">67 articles</span>
+                        <span class="read-time">~15 min avg read</span>
+                    </div>
+                </div>
+                <div class="category-card" data-category="security">
+                    <div class="category-icon">🔒</div>
+                    <h3>Security & Compliance</h3>
+                    <p>AWS security best practices, compliance frameworks, and threat mitigation strategies.</p>
+                    <div class="category-stats">
+                        <span class="post-count">92 articles</span>
+                        <span class="read-time">~10 min avg read</span>
+                    </div>
+                </div>
+                <div class="category-card" data-category="cost">
+                    <div class="category-icon">💰</div>
+                    <h3>Cost Optimization</h3>
+                    <p>FinOps strategies, cost management techniques, and optimization frameworks for maximum ROI.</p>
+                    <div class="category-stats">
+                        <span class="post-count">58 articles</span>
+                        <span class="read-time">~8 min avg read</span>
+                    </div>
+                </div>
+                <div class="category-card" data-category="devops">
+                    <div class="category-icon">⚙️</div>
+                    <h3>DevOps & Automation</h3>
+                    <p>CI/CD pipelines, infrastructure as code, and automation strategies for operational excellence.</p>
+                    <div class="category-stats">
+                        <span class="post-count">74 articles</span>
+                        <span class="read-time">~11 min avg read</span>
+                    </div>
+                </div>
+                <div class="category-card" data-category="industry">
+                    <div class="category-icon">🏢</div>
+                    <h3>Industry Insights</h3>
+                    <p>Sector-specific cloud strategies, regulatory compliance, and industry transformation trends.</p>
+                    <div class="category-stats">
+                        <span class="post-count">43 articles</span>
+                        <span class="read-time">~14 min avg read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Posts Section -->
+    <section id="featured-posts" class="featured-posts-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Articles</h2>
+                <p>Our most popular and impactful content, curated by our editorial team.</p>
+            </div>
+            <div class="featured-post-hero">
+                <div class="featured-post-content">
+                    <div class="post-meta">
+                        <span class="post-category">Architecture</span>
+                        <span class="post-date">January 15, 2025</span>
+                        <span class="read-time">12 min read</span>
+                    </div>
+                    <h2>The Complete Guide to Multi-Account AWS Architecture in 2025</h2>
+                    <p>A comprehensive deep-dive into designing scalable, secure, and cost-effective multi-account AWS architectures using the latest Control Tower and Organizations features.</p>
+                    <div class="post-author">
+                        <div class="author-info">
+                            <strong>Sarah Chen</strong> - Principal Solutions Architect
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary">Read Full Article</a>
+                </div>
+                <div class="featured-post-image">
+                    <div class="placeholder-image">Multi-Account Architecture Diagram</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Posts Grid -->
+    <section class="recent-posts-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest Articles</h2>
+                <div class="content-filters">
+                    <button class="filter-btn active" data-filter="all">All Posts</button>
+                    <button class="filter-btn" data-filter="architecture">Architecture</button>
+                    <button class="filter-btn" data-filter="migration">Migration</button>
+                    <button class="filter-btn" data-filter="security">Security</button>
+                    <button class="filter-btn" data-filter="cost">Cost Optimization</button>
+                    <button class="filter-btn" data-filter="devops">DevOps</button>
+                </div>
+            </div>
+            <div class="posts-grid">
+                <article class="post-card" data-category="migration">
+                    <div class="post-image">
+                        <div class="placeholder-image">Migration Strategy</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Migration</span>
+                            <span class="post-date">January 12, 2025</span>
+                        </div>
+                        <h3>Zero-Downtime Database Migration to AWS RDS: A Step-by-Step Guide</h3>
+                        <p>Learn how to migrate critical databases to AWS RDS with zero downtime using DMS, read replicas, and proven migration strategies.</p>
+                        <div class="post-footer">
+                            <div class="post-author">Marcus Rodriguez</div>
+                            <div class="read-time">8 min read</div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post-card" data-category="security">
+                    <div class="post-image">
+                        <div class="placeholder-image">Security Framework</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Security</span>
+                            <span class="post-date">January 10, 2025</span>
+                        </div>
+                        <h3>Implementing Zero Trust Architecture on AWS: Complete Framework</h3>
+                        <p>Build a comprehensive Zero Trust security model using AWS native services, identity management, and network segmentation.</p>
+                        <div class="post-footer">
+                            <div class="post-author">Priya Patel</div>
+                            <div class="read-time">15 min read</div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post-card" data-category="cost">
+                    <div class="post-image">
+                        <div class="placeholder-image">Cost Optimization</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Cost Optimization</span>
+                            <span class="post-date">January 8, 2025</span>
+                        </div>
+                        <h3>FinOps Best Practices: Reducing AWS Costs by 40% Without Compromising Performance</h3>
+                        <p>Proven strategies and tools for implementing effective FinOps practices that deliver significant cost savings while maintaining operational excellence.</p>
+                        <div class="post-footer">
+                            <div class="post-author">David Kim</div>
+                            <div class="read-time">12 min read</div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post-card" data-category="devops">
+                    <div class="post-image">
+                        <div class="placeholder-image">CI/CD Pipeline</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">DevOps</span>
+                            <span class="post-date">January 5, 2025</span>
+                        </div>
+                        <h3>Advanced GitOps with AWS CodePipeline and EKS: Production-Ready Patterns</h3>
+                        <p>Implement sophisticated GitOps workflows using AWS native tools for Kubernetes deployments with automated testing and rollback capabilities.</p>
+                        <div class="post-footer">
+                            <div class="post-author">Alex Thompson</div>
+                            <div class="read-time">18 min read</div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post-card" data-category="architecture">
+                    <div class="post-image">
+                        <div class="placeholder-image">Serverless Architecture</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Architecture</span>
+                            <span class="post-date">January 3, 2025</span>
+                        </div>
+                        <h3>Event-Driven Serverless Architectures: Design Patterns for Scale</h3>
+                        <p>Master event-driven design patterns using Lambda, EventBridge, and SQS to build resilient, scalable serverless applications.</p>
+                        <div class="post-footer">
+                            <div class="post-author">Lisa Wang</div>
+                            <div class="read-time">14 min read</div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post-card" data-category="security">
+                    <div class="post-image">
+                        <div class="placeholder-image">Compliance Framework</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Security</span>
+                            <span class="post-date">December 30, 2024</span>
+                        </div>
+                        <h3>HIPAA Compliance on AWS: Complete Implementation Guide for Healthcare</h3>
+                        <p>Navigate HIPAA requirements with AWS services, including BAA considerations, encryption strategies, and audit trail implementation.</p>
+                        <div class="post-footer">
+                            <div class="post-author">Dr. Jennifer Martinez</div>
+                            <div class="read-time">20 min read</div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="load-more-section">
+                <button class="btn btn-secondary load-more-btn">Load More Articles</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- AWS Updates Section -->
+    <section class="aws-updates-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>AWS Service Updates & Analysis</h2>
+                <p>Stay current with the latest AWS announcements and our expert analysis of their business impact.</p>
+            </div>
+            <div class="updates-grid">
+                <div class="update-card">
+                    <div class="update-header">
+                        <div class="update-service">Amazon Bedrock</div>
+                        <div class="update-date">January 15, 2025</div>
+                    </div>
+                    <h3>New Claude 3.5 Sonnet Model Available in Bedrock</h3>
+                    <p>Anthropic's latest model brings enhanced reasoning capabilities and improved code generation. Our analysis covers performance benchmarks and cost implications.</p>
+                    <div class="update-impact">
+                        <span class="impact-tag high">High Impact</span>
+                        <span class="impact-category">AI/ML</span>
+                    </div>
+                </div>
+                <div class="update-card">
+                    <div class="update-header">
+                        <div class="update-service">Amazon EKS</div>
+                        <div class="update-date">January 12, 2025</div>
+                    </div>
+                    <h3>EKS Pod Identity Generally Available</h3>
+                    <p>Simplified IAM integration for Kubernetes workloads eliminates the need for IRSA. Migration guide and security considerations included.</p>
+                    <div class="update-impact">
+                        <span class="impact-tag medium">Medium Impact</span>
+                        <span class="impact-category">Containers</span>
+                    </div>
+                </div>
+                <div class="update-card">
+                    <div class="update-header">
+                        <div class="update-service">AWS Lambda</div>
+                        <div class="update-date">January 10, 2025</div>
+                    </div>
+                    <h3>Lambda Response Streaming for Python and .NET</h3>
+                    <p>Real-time response streaming now available for additional runtimes. Performance improvements and use case analysis for web applications.</p>
+                    <div class="update-impact">
+                        <span class="impact-tag medium">Medium Impact</span>
+                        <span class="impact-category">Serverless</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Subscription -->
+    <section id="newsletter" class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2>Stay Ahead of the Cloud Curve</h2>
+                    <p>Get weekly insights, AWS updates, and exclusive content delivered to your inbox. Join 15,000+ cloud professionals who trust CloudNestle for their AWS intelligence.</p>
+                    <div class="newsletter-benefits">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">📧</span>
+                            <span>Weekly AWS insights digest</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🎯</span>
+                            <span>Exclusive expert analysis</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🚀</span>
+                            <span>Early access to new content</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="newsletter-form">
+                    <form class="subscription-form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Enter your email address" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </div>
+                        <div class="form-note">
+                            <p>No spam, unsubscribe anytime. Read our <a href="#">privacy policy</a>.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Authors Section -->
+    <section class="authors-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Expert Authors</h2>
+                <p>Meet the AWS specialists behind our content - certified experts with real-world experience.</p>
+            </div>
+            <div class="authors-grid">
+                <div class="author-card">
+                    <div class="author-avatar">SC</div>
+                    <div class="author-info">
+                        <h3>Sarah Chen</h3>
+                        <p class="author-title">Principal Solutions Architect</p>
+                        <p class="author-bio">15+ years in cloud architecture, AWS Hero, and author of "Well-Architected at Scale"</p>
+                        <div class="author-certifications">
+                            <span class="cert-badge">Solutions Architect Pro</span>
+                            <span class="cert-badge">Security Specialty</span>
+                        </div>
+                        <div class="author-stats">
+                            <span class="stat">85 articles</span>
+                            <span class="stat">250K+ reads</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="author-card">
+                    <div class="author-avatar">MR</div>
+                    <div class="author-info">
+                        <h3>Marcus Rodriguez</h3>
+                        <p class="author-title">Migration Specialist</p>
+                        <p class="author-bio">Led 200+ enterprise migrations, specializing in database and application modernization</p>
+                        <div class="author-certifications">
+                            <span class="cert-badge">Database Specialty</span>
+                            <span class="cert-badge">Migration Competency</span>
+                        </div>
+                        <div class="author-stats">
+                            <span class="stat">67 articles</span>
+                            <span class="stat">180K+ reads</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="author-card">
+                    <div class="author-avatar">PP</div>
+                    <div class="author-info">
+                        <h3>Priya Patel</h3>
+                        <p class="author-title">Security Architect</p>
+                        <p class="author-bio">Cybersecurity expert with focus on cloud-native security and compliance frameworks</p>
+                        <div class="author-certifications">
+                            <span class="cert-badge">Security Specialty</span>
+                            <span class="cert-badge">CISSP</span>
+                        </div>
+                        <div class="author-stats">
+                            <span class="stat">92 articles</span>
+                            <span class="stat">320K+ reads</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CloudNestle</h3>
+                    <p>Transforming businesses through AWS cloud excellence and innovation.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">GitHub</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="/services.html">Cloud Consulting</a></li>
+                        <li><a href="/services.html">Migration Services</a></li>
+                        <li><a href="/services.html">DevOps & Automation</a></li>
+                        <li><a href="/services.html">Security & Compliance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="/blog.html">Blog & Insights</a></li>
+                        <li><a href="/knowledge-center/index.html">Knowledge Center</a></li>
+                        <li><a href="/workshops/index.html">Workshops</a></li>
+                        <li><a href="/community/index.html">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/careers.html">Careers</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="#" onclick="authManager.showLogin()">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CloudNestle. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/auth-manager.js"></script>
+    <script>
+        // Content filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const postCards = document.querySelectorAll('.post-card');
+            const categoryCards = document.querySelectorAll('.category-card');
+
+            // Post filtering
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter posts
+                    postCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Category card filtering
+            categoryCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    // Update filter buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    const targetButton = document.querySelector(`[data-filter="${category}"]`);
+                    if (targetButton) {
+                        targetButton.classList.add('active');
+                    }
+                    
+                    // Filter posts
+                    postCards.forEach(postCard => {
+                        if (postCard.getAttribute('data-category') === category) {
+                            postCard.style.display = 'block';
+                        } else {
+                            postCard.style.display = 'none';
+                        }
+                    });
+
+                    // Scroll to posts section
+                    document.querySelector('.recent-posts-section').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Newsletter subscription
+            document.querySelector('.subscription-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                alert(`Thank you for subscribing with ${email}! You'll receive our weekly AWS insights digest.`);
+                this.reset();
+            });
+
+            // Load more functionality
+            document.querySelector('.load-more-btn').addEventListener('click', function() {
+                // Simulate loading more articles
+                this.textContent = 'Loading...';
+                setTimeout(() => {
+                    this.textContent = 'Load More Articles';
+                    alert('More articles loaded! (This is a demo)');
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudNestle - Redirecting to Homepage</title>
+    <meta http-equiv="refresh" content="0; url=/public/index.html">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #232F3E, #FF9900);
+            color: white;
+        }
+        .container {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .loading {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid #FF9900;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .manual-link {
+            margin-top: 2rem;
+        }
+        .manual-link a {
+            color: #FF9900;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .manual-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">CloudNestle</div>
+        <div class="loading">Loading the complete AWS consulting website...</div>
+        <div class="spinner"></div>
+        <div class="manual-link">
+            <p>If you're not redirected automatically, <a href="/public/index.html">click here</a></p>
+        </div>
+    </div>
+    
+    <script>
+        // Redirect after 2 seconds if meta refresh doesn't work
+        setTimeout(function() {
+            window.location.href = '/public/index.html';
+        }, 2000);
+    </script>
+</body>
+</html>

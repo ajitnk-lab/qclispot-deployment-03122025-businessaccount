@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Track your AWS certification progress with personalized study plans, practice exams, and expert mentorship support.">
+    <meta name="keywords" content="AWS certification tracking, study progress, practice exams, certification preparation">
+    <meta name="access-level" content="authenticated">
+    <meta name="auth-type" content="full-profile">
+    <title>Certification Tracking Dashboard - CloudNestle Academy</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body class="access-authenticated">
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>CloudNestle</h1>
+                    <span>Academy Dashboard</span>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/auth-academy-dashboard.html">Dashboard</a></li>
+                        <li><a href="/auth-learning-progress.html">Learning Progress</a></li>
+                        <li><a href="/auth-certification-tracking.html" class="active">Certifications</a></li>
+                        <li><a href="/auth-expert-consultation.html">Expert Support</a></li>
+                    </ul>
+                </nav>
+                <div class="user-menu">
+                    <span class="user-name" id="user-name">Loading...</span>
+                    <button class="logout-btn" onclick="authManager.logout()">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Login Required Overlay -->
+    <div class="auth-required-overlay" id="auth-overlay">
+        <div class="login-prompt">
+            <h3>Member Access Required</h3>
+            <p>Please log in to access your certification tracking dashboard</p>
+            <button class="login-btn" onclick="window.location.href='/login.html'">Member Login</button>
+            <a href="/register.html">Create Account</a>
+        </div>
+    </div>
+
+    <!-- Dashboard Content -->
+    <div class="content-auth-required gated" id="dashboard-content">
+        <!-- Certification Overview -->
+        <section class="certification-overview">
+            <div class="container">
+                <div class="overview-header">
+                    <h1>AWS Certification Tracking</h1>
+                    <p>Monitor your certification progress, access study materials, and get expert guidance</p>
+                </div>
+                
+                <div class="certification-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="active-certifications">3</div>
+                            <div class="stat-label">Active Certifications</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📚</div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="study-hours">127</div>
+                            <div class="stat-label">Study Hours Completed</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="practice-exams">15</div>
+                            <div class="stat-label">Practice Exams Taken</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="certifications-earned">2</div>
+                            <div class="stat-label">Certifications Earned</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Active Certifications -->
+        <section class="active-certifications">
+            <div class="container">
+                <h2>Your Certification Journey</h2>
+                <div class="certifications-grid">
+                    <!-- Solutions Architect Associate -->
+                    <div class="certification-card in-progress">
+                        <div class="certification-header">
+                            <div class="certification-badge">
+                                <img src="../assets/images/aws-solutions-architect-associate.svg" alt="Solutions Architect Associate" />
+                            </div>
+                            <div class="certification-info">
+                                <h3>AWS Certified Solutions Architect - Associate</h3>
+                                <div class="certification-status">In Progress</div>
+                                <div class="target-date">Target Date: March 15, 2025</div>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-section">
+                            <div class="progress-header">
+                                <span>Overall Progress</span>
+                                <span class="progress-percentage">75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                        </div>
+
+                        <div class="study-breakdown">
+                            <div class="breakdown-item">
+                                <span class="breakdown-label">Study Materials</span>
+                                <span class="breakdown-status completed">✓ Completed</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="breakdown-label">Practice Exams</span>
+                                <span class="breakdown-status in-progress">6/10 Completed</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="breakdown-label">Hands-on Labs</span>
+                                <span class="breakdown-status in-progress">8/12 Completed</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="breakdown-label">Expert Review</span>
+                                <span class="breakdown-status pending">Scheduled</span>
+                            </div>
+                        </div>
+
+                        <div class="recent-activity">
+                            <h4>Recent Activity</h4>
+                            <div class="activity-item">
+                                <span class="activity-date">Today</span>
+                                <span class="activity-description">Completed Practice Exam #6 - Score: 82%</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-date">Yesterday</span>
+                                <span class="activity-description">Finished VPC and Networking Lab</span>
+                            </div>
+                        </div>
+
+                        <div class="certification-actions">
+                            <button class="btn-primary">Continue Study Plan</button>
+                            <button class="btn-secondary">Take Practice Exam</button>
+                            <button class="btn-secondary">Schedule Expert Review</button>
+                        </div>
+                    </div>
+
+                    <!-- Developer Associate -->
+                    <div class="certification-card planned">
+                        <div class="certification-header">
+                            <div class="certification-badge">
+                                <img src="../assets/images/aws-developer-associate.svg" alt="Developer Associate" />
+                            </div>
+                            <div class="certification-info">
+                                <h3>AWS Certified Developer - Associate</h3>
+                                <div class="certification-status">Planned</div>
+                                <div class="target-date">Target Date: May 20, 2025</div>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-section">
+                            <div class="progress-header">
+                                <span>Overall Progress</span>
+                                <span class="progress-percentage">15%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 15%"></div>
+                            </div>
+                        </div>
+
+                        <div class="study-breakdown">
+                            <div class="breakdown-item">
+                                <span class="breakdown-label">Prerequisites</span>
+                                <span class="breakdown-status completed">✓ Met</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="breakdown-label">Study Plan</span>
+                                <span class="breakdown-status in-progress">Created</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="breakdown-label">Study Materials</span>
+                                <span class="breakdown-status pending">Ready</span>
+                            </div>
+                        </div>
+
+                        <div class="certification-actions">
+                            <button class="btn-primary">Start Study Plan</button>
+                            <button class="btn-secondary">View Prerequisites</button>
+                        </div>
+                    </div>
+
+                    <!-- Security Specialty -->
+                    <div class="certification-card planned">
+                        <div class="certification-header">
+                            <div class="certification-badge">
+                                <img src="../assets/images/aws-security-specialty.svg" alt="Security Specialty" />
+                            </div>
+                            <div class="certification-info">
+                                <h3>AWS Certified Security - Specialty</h3>
+                                <div class="certification-status">Future Goal</div>
+                                <div class="target-date">Target Date: August 15, 2025</div>
+                            </div>
+                        </div>
+                        
+                        <div class="prerequisites">
+                            <h4>Prerequisites</h4>
+                            <div class="prerequisite-item">
+                                <span class="prerequisite-status pending">⏳</span>
+                                <span>Complete Solutions Architect Associate</span>
+                            </div>
+                            <div class="prerequisite-item">
+                                <span class="prerequisite-status pending">⏳</span>
+                                <span>2+ years security experience recommended</span>
+                            </div>
+                        </div>
+
+                        <div class="certification-actions">
+                            <button class="btn-secondary" disabled>Prerequisites Required</button>
+                            <button class="btn-secondary">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Study Resources -->
+        <section class="study-resources">
+            <div class="container">
+                <h2>Study Resources & Tools</h2>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-icon">📖</div>
+                        <h3>Study Materials</h3>
+                        <p>Comprehensive study guides, video courses, and documentation tailored to your certification path.</p>
+                        <div class="resource-stats">
+                            <span>45 Modules Available</span>
+                            <span>•</span>
+                            <span>32 Completed</span>
+                        </div>
+                        <button class="btn-primary">Access Materials</button>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-icon">🧪</div>
+                        <h3>Practice Exams</h3>
+                        <p>Realistic practice exams with detailed explanations and performance analytics.</p>
+                        <div class="resource-stats">
+                            <span>15 Exams Taken</span>
+                            <span>•</span>
+                            <span>Average: 78%</span>
+                        </div>
+                        <button class="btn-primary">Take Practice Exam</button>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-icon">🔬</div>
+                        <h3>Hands-on Labs</h3>
+                        <p>Interactive labs with real AWS environments to practice skills and scenarios.</p>
+                        <div class="resource-stats">
+                            <span>20 Labs Available</span>
+                            <span>•</span>
+                            <span>12 Completed</span>
+                        </div>
+                        <button class="btn-primary">Start Lab</button>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-icon">👨‍🏫</div>
+                        <h3>Expert Mentorship</h3>
+                        <p>One-on-one sessions with AWS-certified experts for personalized guidance and support.</p>
+                        <div class="resource-stats">
+                            <span>Next Session</span>
+                            <span>•</span>
+                            <span>Feb 20, 2:00 PM</span>
+                        </div>
+                        <button class="btn-primary">Schedule Session</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Performance Analytics -->
+        <section class="performance-analytics">
+            <div class="container">
+                <h2>Performance Analytics</h2>
+                <div class="analytics-grid">
+                    <div class="analytics-card">
+                        <h3>Practice Exam Scores</h3>
+                        <div class="chart-container">
+                            <canvas id="exam-scores-chart"></canvas>
+                        </div>
+                        <div class="chart-insights">
+                            <div class="insight-item">
+                                <span class="insight-label">Latest Score:</span>
+                                <span class="insight-value">82%</span>
+                            </div>
+                            <div class="insight-item">
+                                <span class="insight-label">Improvement:</span>
+                                <span class="insight-value positive">+15%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analytics-card">
+                        <h3>Study Time Distribution</h3>
+                        <div class="chart-container">
+                            <canvas id="study-time-chart"></canvas>
+                        </div>
+                        <div class="chart-insights">
+                            <div class="insight-item">
+                                <span class="insight-label">This Week:</span>
+                                <span class="insight-value">12 hours</span>
+                            </div>
+                            <div class="insight-item">
+                                <span class="insight-label">Daily Average:</span>
+                                <span class="insight-value">1.7 hours</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analytics-card">
+                        <h3>Knowledge Areas</h3>
+                        <div class="knowledge-areas">
+                            <div class="knowledge-area">
+                                <div class="area-header">
+                                    <span class="area-name">Design Resilient Architectures</span>
+                                    <span class="area-score">85%</span>
+                                </div>
+                                <div class="area-progress">
+                                    <div class="area-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="knowledge-area">
+                                <div class="area-header">
+                                    <span class="area-name">Design High-Performing Architectures</span>
+                                    <span class="area-score">78%</span>
+                                </div>
+                                <div class="area-progress">
+                                    <div class="area-fill" style="width: 78%"></div>
+                                </div>
+                            </div>
+                            <div class="knowledge-area">
+                                <div class="area-header">
+                                    <span class="area-name">Design Secure Applications</span>
+                                    <span class="area-score">72%</span>
+                                </div>
+                                <div class="area-progress">
+                                    <div class="area-fill" style="width: 72%"></div>
+                                </div>
+                            </div>
+                            <div class="knowledge-area">
+                                <div class="area-header">
+                                    <span class="area-name">Design Cost-Optimized Architectures</span>
+                                    <span class="area-score">68%</span>
+                                </div>
+                                <div class="area-progress">
+                                    <div class="area-fill" style="width: 68%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Events -->
+        <section class="upcoming-events">
+            <div class="container">
+                <h2>Upcoming Events & Deadlines</h2>
+                <div class="events-timeline">
+                    <div class="event-item">
+                        <div class="event-date">
+                            <div class="date-day">20</div>
+                            <div class="date-month">Feb</div>
+                        </div>
+                        <div class="event-content">
+                            <h3>Expert Mentorship Session</h3>
+                            <p>One-on-one review session with AWS Solutions Architect expert</p>
+                            <div class="event-time">2:00 PM - 3:00 PM EST</div>
+                        </div>
+                        <div class="event-actions">
+                            <button class="btn-secondary">Join Session</button>
+                        </div>
+                    </div>
+
+                    <div class="event-item">
+                        <div class="event-date">
+                            <div class="date-day">25</div>
+                            <div class="date-month">Feb</div>
+                        </div>
+                        <div class="event-content">
+                            <h3>Practice Exam Deadline</h3>
+                            <p>Complete remaining practice exams before final review</p>
+                            <div class="event-time">4 exams remaining</div>
+                        </div>
+                        <div class="event-actions">
+                            <button class="btn-primary">Take Exam</button>
+                        </div>
+                    </div>
+
+                    <div class="event-item">
+                        <div class="event-date">
+                            <div class="date-day">15</div>
+                            <div class="date-month">Mar</div>
+                        </div>
+                        <div class="event-content">
+                            <h3>Certification Exam</h3>
+                            <p>AWS Certified Solutions Architect - Associate</p>
+                            <div class="event-time">Pearson VUE Testing Center</div>
+                        </div>
+                        <div class="event-actions">
+                            <button class="btn-secondary">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="quick-actions">
+            <div class="container">
+                <h2>Quick Actions</h2>
+                <div class="actions-grid">
+                    <button class="action-card">
+                        <div class="action-icon">📝</div>
+                        <div class="action-content">
+                            <h3>Take Practice Exam</h3>
+                            <p>Test your knowledge with realistic exam questions</p>
+                        </div>
+                    </button>
+
+                    <button class="action-card">
+                        <div class="action-icon">📚</div>
+                        <div class="action-content">
+                            <h3>Continue Study Plan</h3>
+                            <p>Resume your personalized study schedule</p>
+                        </div>
+                    </button>
+
+                    <button class="action-card">
+                        <div class="action-icon">🔬</div>
+                        <div class="action-content">
+                            <h3>Start Hands-on Lab</h3>
+                            <p>Practice with real AWS environments</p>
+                        </div>
+                    </button>
+
+                    <button class="action-card">
+                        <div class="action-icon">👨‍🏫</div>
+                        <div class="action-content">
+                            <h3>Book Expert Session</h3>
+                            <p>Schedule one-on-one mentorship</p>
+                        </div>
+                    </button>
+
+                    <button class="action-card">
+                        <div class="action-icon">📊</div>
+                        <div class="action-content">
+                            <h3>View Progress Report</h3>
+                            <p>Detailed analytics and insights</p>
+                        </div>
+                    </button>
+
+                    <button class="action-card">
+                        <div class="action-icon">🎯</div>
+                        <div class="action-content">
+                            <h3>Add New Certification</h3>
+                            <p>Plan your next certification journey</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CloudNestle Academy</h3>
+                    <p>Expert AWS certification preparation with guaranteed success.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Certification Tracks</h4>
+                    <ul>
+                        <li><a href="#">Solutions Architect</a></li>
+                        <li><a href="#">Developer</a></li>
+                        <li><a href="#">SysOps Administrator</a></li>
+                        <li><a href="#">Security Specialty</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Expert Support</a></li>
+                        <li><a href="#">Community Forum</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: academy@cloudnestle.com</p>
+                    <p>Phone: +91-XXXXXXXXXX</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CloudNestle Consulting & Services (OPC) Pvt. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/authentication-manager.js"></script>
+    <script src="../assets/js/chart.min.js"></script>
+    <script>
+        // Initialize authentication manager
+        const authManager = new AuthenticationManager();
+
+        // Initialize dashboard when authenticated
+        document.addEventListener('DOMContentLoaded', function() {
+            authManager.checkAuthentication().then(isAuthenticated => {
+                if (isAuthenticated) {
+                    initializeDashboard();
+                    loadUserData();
+                    initializeCharts();
+                }
+            });
+        });
+
+        // Initialize dashboard
+        function initializeDashboard() {
+            // Load certification data
+            loadCertificationData();
+            
+            // Set up event listeners
+            setupEventListeners();
+        }
+
+        // Load user data
+        function loadUserData() {
+            const userProfile = JSON.parse(localStorage.getItem('user_profile') || '{}');
+            document.getElementById('user-name').textContent = userProfile.name || 'User';
+        }
+
+        // Load certification data
+        function loadCertificationData() {
+            // This would typically come from an API
+            const certificationData = {
+                activeCertifications: 3,
+                studyHours: 127,
+                practiceExams: 15,
+                certificationsEarned: 2
+            };
+
+            document.getElementById('active-certifications').textContent = certificationData.activeCertifications;
+            document.getElementById('study-hours').textContent = certificationData.studyHours;
+            document.getElementById('practice-exams').textContent = certificationData.practiceExams;
+            document.getElementById('certifications-earned').textContent = certificationData.certificationsEarned;
+        }
+
+        // Initialize charts
+        function initializeCharts() {
+            // Practice Exam Scores Chart
+            const examScoresCtx = document.getElementById('exam-scores-chart').getContext('2d');
+            new Chart(examScoresCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Exam 1', 'Exam 2', 'Exam 3', 'Exam 4', 'Exam 5', 'Exam 6'],
+                    datasets: [{
+                        label: 'Score (%)',
+                        data: [65, 68, 72, 75, 78, 82],
+                        borderColor: '#FF9900',
+                        backgroundColor: 'rgba(255, 153, 0, 0.1)',
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+
+            // Study Time Distribution Chart
+            const studyTimeCtx = document.getElementById('study-time-chart').getContext('2d');
+            new Chart(studyTimeCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Study Materials', 'Practice Exams', 'Hands-on Labs', 'Expert Sessions'],
+                    datasets: [{
+                        data: [45, 25, 20, 10],
+                        backgroundColor: ['#232F3E', '#FF9900', '#146EB4', '#00A1C9']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Action cards
+            document.querySelectorAll('.action-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const actionTitle = this.querySelector('h3').textContent;
+                    handleQuickAction(actionTitle);
+                });
+            });
+        }
+
+        // Handle quick actions
+        function handleQuickAction(action) {
+            switch(action) {
+                case 'Take Practice Exam':
+                    window.location.href = '/practice-exam';
+                    break;
+                case 'Continue Study Plan':
+                    window.location.href = '/study-plan';
+                    break;
+                case 'Start Hands-on Lab':
+                    window.location.href = '/hands-on-labs';
+                    break;
+                case 'Book Expert Session':
+                    window.location.href = '/book-session';
+                    break;
+                case 'View Progress Report':
+                    window.location.href = '/progress-report';
+                    break;
+                case 'Add New Certification':
+                    window.location.href = '/add-certification';
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

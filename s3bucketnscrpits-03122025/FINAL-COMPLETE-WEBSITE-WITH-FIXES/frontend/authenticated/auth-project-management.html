@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management Dashboard - CloudNestle</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/auth-manager.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><a href="/../index.html">CloudNestle</a></div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="/../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/../services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="/../solutions.html" class="nav-link">Solutions</a></li>
+                <li class="nav-item"><a href="/../contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="authManager.logout()">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard-hero">
+        <div class="container">
+            <h1>Project Management Dashboard</h1>
+            <p>Track your AWS transformation projects, milestones, and deliverables in real-time.</p>
+        </div>
+    </section>
+
+    <section class="project-dashboard">
+        <div class="container">
+            <div class="dashboard-overview">
+                <div class="overview-cards">
+                    <div class="overview-card">
+                        <h3>Active Projects</h3>
+                        <div class="card-value">3</div>
+                        <div class="card-status">2 on track, 1 at risk</div>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Completed Milestones</h3>
+                        <div class="card-value">12/18</div>
+                        <div class="card-status">67% complete</div>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Budget Utilization</h3>
+                        <div class="card-value">$245K</div>
+                        <div class="card-status">73% of $335K budget</div>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Team Utilization</h3>
+                        <div class="card-value">85%</div>
+                        <div class="card-status">Optimal capacity</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects-section">
+                <h2>Active Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>AWS Migration - Phase 1</h3>
+                            <span class="project-status on-track">On Track</span>
+                        </div>
+                        <div class="project-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 65%"></div>
+                            </div>
+                            <span class="progress-text">65% Complete</span>
+                        </div>
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Timeline:</span>
+                                <span class="detail-value">Jan 15 - Apr 30, 2025</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Budget:</span>
+                                <span class="detail-value">$125K / $150K</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Team Lead:</span>
+                                <span class="detail-value">Sarah Chen</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-secondary">View Details</button>
+                            <button class="btn btn-primary">Update Status</button>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Security Compliance Audit</h3>
+                            <span class="project-status at-risk">At Risk</span>
+                        </div>
+                        <div class="project-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 45%"></div>
+                            </div>
+                            <span class="progress-text">45% Complete</span>
+                        </div>
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Timeline:</span>
+                                <span class="detail-value">Feb 1 - Mar 15, 2025</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Budget:</span>
+                                <span class="detail-value">$85K / $100K</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Team Lead:</span>
+                                <span class="detail-value">Marcus Rodriguez</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-secondary">View Details</button>
+                            <button class="btn btn-primary">Escalate</button>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Cost Optimization Initiative</h3>
+                            <span class="project-status on-track">On Track</span>
+                        </div>
+                        <div class="project-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%"></div>
+                            </div>
+                            <span class="progress-text">80% Complete</span>
+                        </div>
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Timeline:</span>
+                                <span class="detail-value">Jan 1 - Feb 28, 2025</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Budget:</span>
+                                <span class="detail-value">$35K / $85K</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Team Lead:</span>
+                                <span class="detail-value">Priya Patel</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-secondary">View Details</button>
+                            <button class="btn btn-primary">Review</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="milestones-section">
+                <h2>Upcoming Milestones</h2>
+                <div class="milestones-timeline">
+                    <div class="milestone-item">
+                        <div class="milestone-date">Feb 15</div>
+                        <div class="milestone-content">
+                            <h4>Database Migration Completion</h4>
+                            <p>Complete migration of production databases to RDS Aurora</p>
+                            <span class="milestone-project">AWS Migration - Phase 1</span>
+                        </div>
+                        <div class="milestone-status pending">Pending</div>
+                    </div>
+                    <div class="milestone-item">
+                        <div class="milestone-date">Feb 20</div>
+                        <div class="milestone-content">
+                            <h4>Security Assessment Report</h4>
+                            <p>Deliver comprehensive security assessment findings</p>
+                            <span class="milestone-project">Security Compliance Audit</span>
+                        </div>
+                        <div class="milestone-status at-risk">At Risk</div>
+                    </div>
+                    <div class="milestone-item">
+                        <div class="milestone-date">Feb 25</div>
+                        <div class="milestone-content">
+                            <h4>Cost Savings Implementation</h4>
+                            <p>Deploy cost optimization recommendations</p>
+                            <span class="milestone-project">Cost Optimization Initiative</span>
+                        </div>
+                        <div class="milestone-status on-track">On Track</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-section">
+                <h2>Team Performance</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-info">
+                            <h4>Sarah Chen</h4>
+                            <p>Principal Solutions Architect</p>
+                        </div>
+                        <div class="member-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Utilization</span>
+                                <span class="metric-value">90%</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Projects</span>
+                                <span class="metric-value">2 Active</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-info">
+                            <h4>Marcus Rodriguez</h4>
+                            <p>Security Specialist</p>
+                        </div>
+                        <div class="member-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Utilization</span>
+                                <span class="metric-value">85%</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Projects</span>
+                                <span class="metric-value">1 Active</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-info">
+                            <h4>Priya Patel</h4>
+                            <p>Cost Optimization Expert</p>
+                        </div>
+                        <div class="member-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Utilization</span>
+                                <span class="metric-value">75%</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Projects</span>
+                                <span class="metric-value">1 Active</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reports-section">
+                <h2>Project Reports</h2>
+                <div class="reports-grid">
+                    <div class="report-card">
+                        <h4>Weekly Status Report</h4>
+                        <p>Comprehensive project status across all active initiatives</p>
+                        <div class="report-meta">
+                            <span>Generated: Feb 12, 2025</span>
+                            <button class="btn btn-secondary">Download</button>
+                        </div>
+                    </div>
+                    <div class="report-card">
+                        <h4>Budget Utilization Report</h4>
+                        <p>Detailed breakdown of budget allocation and spending</p>
+                        <div class="report-meta">
+                            <span>Generated: Feb 10, 2025</span>
+                            <button class="btn btn-secondary">Download</button>
+                        </div>
+                    </div>
+                    <div class="report-card">
+                        <h4>Risk Assessment Report</h4>
+                        <p>Identified risks and mitigation strategies across projects</p>
+                        <div class="report-meta">
+                            <span>Generated: Feb 8, 2025</span>
+                            <button class="btn btn-secondary">Download</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Check authentication
+        if (!authManager.isAuthenticated()) {
+            window.location.href = '../index.html';
+        }
+
+        // Project management functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Project action handlers
+            document.querySelectorAll('.project-actions .btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const action = this.textContent;
+                    const projectName = this.closest('.project-card').querySelector('h3').textContent;
+                    
+                    if (action === 'View Details') {
+                        showProjectDetails(projectName);
+                    } else if (action === 'Update Status') {
+                        updateProjectStatus(projectName);
+                    } else if (action === 'Escalate') {
+                        escalateProject(projectName);
+                    } else if (action === 'Review') {
+                        reviewProject(projectName);
+                    }
+                });
+            });
+
+            // Report download handlers
+            document.querySelectorAll('.report-card .btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const reportName = this.closest('.report-card').querySelector('h4').textContent;
+                    downloadReport(reportName);
+                });
+            });
+        });
+
+        function showProjectDetails(projectName) {
+            alert(`Opening detailed view for: ${projectName}`);
+        }
+
+        function updateProjectStatus(projectName) {
+            alert(`Opening status update form for: ${projectName}`);
+        }
+
+        function escalateProject(projectName) {
+            alert(`Escalating project: ${projectName}\nNotifying senior management and stakeholders.`);
+        }
+
+        function reviewProject(projectName) {
+            alert(`Opening project review for: ${projectName}`);
+        }
+
+        function downloadReport(reportName) {
+            alert(`Downloading: ${reportName}`);
+        }
+    </script>
+</body>
+</html>

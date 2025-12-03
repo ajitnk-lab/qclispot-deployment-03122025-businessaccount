@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Recommendations - CloudNestle</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/auth-manager.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><a href="/../index.html">CloudNestle</a></div>
+            <ul class="nav-menu">
+                <li><a href="/../about.html">About</a></li>
+                <li><a href="/../services.html">Services</a></li>
+                <li><a href="/../solutions.html">Solutions</a></li>
+                <li><a href="/../industries.html">Industries</a></li>
+                <li><a href="/../frameworks/index.html">Frameworks</a></li>
+                <li><a href="/../contact.html">Contact</a></li>
+                <li><a href="#" onclick="authManager.logout()" class="nav-cta">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Your Personalized Recommendations</h1>
+                <p class="hero-subtitle">AI-powered recommendations tailored to your role, experience, and current projects</p>
+                <div class="auth-notice">
+                    <p><strong>Authenticated Access:</strong> Welcome back! Your recommendations are updated based on your latest activity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="recommendations-dashboard">
+                <div class="dashboard-header">
+                    <h2>Today's Recommendations</h2>
+                    <div class="last-updated">Last updated: 2 hours ago</div>
+                </div>
+
+                <div class="recommendation-categories">
+                    <div class="category-card priority">
+                        <div class="category-header">
+                            <h3>🔥 Priority Actions</h3>
+                            <span class="category-count">3 items</span>
+                        </div>
+                        <div class="recommendation-list">
+                            <div class="recommendation-item">
+                                <div class="rec-icon">⚠️</div>
+                                <div class="rec-content">
+                                    <h4>Security Group Review Required</h4>
+                                    <p>Your EC2 security groups have overly permissive rules. Review and tighten access controls.</p>
+                                    <div class="rec-meta">
+                                        <span class="priority high">High Priority</span>
+                                        <span class="effort">15 min effort</span>
+                                    </div>
+                                </div>
+                                <div class="rec-actions">
+                                    <button class="btn-small btn-primary">Review Now</button>
+                                    <button class="btn-small btn-secondary">Schedule</button>
+                                </div>
+                            </div>
+                            <div class="recommendation-item">
+                                <div class="rec-icon">💰</div>
+                                <div class="rec-content">
+                                    <h4>Cost Optimization Opportunity</h4>
+                                    <p>Switch to Reserved Instances for your production RDS instances to save 40% annually.</p>
+                                    <div class="rec-meta">
+                                        <span class="priority medium">Medium Priority</span>
+                                        <span class="savings">$2,400/year savings</span>
+                                    </div>
+                                </div>
+                                <div class="rec-actions">
+                                    <button class="btn-small btn-primary">Calculate Savings</button>
+                                    <button class="btn-small btn-secondary">Learn More</button>
+                                </div>
+                            </div>
+                            <div class="recommendation-item">
+                                <div class="rec-icon">📊</div>
+                                <div class="rec-content">
+                                    <h4>Enable CloudTrail Logging</h4>
+                                    <p>CloudTrail is not enabled in 2 regions. Enable comprehensive audit logging for compliance.</p>
+                                    <div class="rec-meta">
+                                        <span class="priority high">High Priority</span>
+                                        <span class="compliance">SOC 2 Requirement</span>
+                                    </div>
+                                </div>
+                                <div class="rec-actions">
+                                    <button class="btn-small btn-primary">Enable CloudTrail</button>
+                                    <button class="btn-small btn-secondary">View Guide</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card learning">
+                        <div class="category-header">
+                            <h3>📚 Learning Recommendations</h3>
+                            <span class="category-count">4 items</span>
+                        </div>
+                        <div class="recommendation-list">
+                            <div class="recommendation-item">
+                                <div class="rec-icon">🎓</div>
+                                <div class="rec-content">
+                                    <h4>AWS Security Specialty Certification</h4>
+                                    <p>Based on your role and recent security focus, this certification aligns with your career path.</p>
+                                    <div class="rec-meta">
+                                        <span class="match">95% match</span>
+                                        <span class="duration">3-4 weeks prep</span>
+                                    </div>
+                                </div>
+                                <div class="rec-actions">
+                                    <button class="btn-small btn-primary">Start Learning Path</button>
+                                    <button class="btn-small btn-secondary">View Details</button>
+                                </div>
+                            </div>
+                            <div class="recommendation-item">
+                                <div class="rec-icon">🔧</div>
+                                <div class="rec-content">
+                                    <h4>Infrastructure as Code Workshop</h4>
+                                    <p>Hands-on workshop on Terraform and AWS CDK, perfect for your current project needs.</p>
+                                    <div class="rec-meta">
+                                        <span class="match">88% match</span>
+                                        <span class="format">Virtual Workshop</span>
+                                    </div>
+                                </div>
+                                <div class="rec-actions">
+                                    <button class="btn-small btn-primary">Register</button>
+                                    <button class="btn-small btn-secondary">View Schedule</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card architecture">
+                        <div class="category-header">
+                            <h3>🏗️ Architecture Improvements</h3>
+                            <span class="category-count">5 items</span>
+                        </div>
+                        <div class="recommendation-list">
+                            <div class="recommendation-item">
+                                <div class="rec-icon">⚡</div>
+                                <div class="rec-content">
+                                    <h4>Implement Auto Scaling</h4>
+                                    <p>Your web tier shows consistent traffic patterns. Auto Scaling can improve performance and reduce costs.</p>
+                                    <div class="rec-meta">
+                                        <span class="impact">High Impact</span>
+                                        <span class="complexity">Medium Complexity</span>
+                                    </div>
+                                </div>
+                                <div class="rec-actions">
+                                    <button class="btn-small btn-primary">View Implementation</button>
+                                    <button class="btn-small btn-secondary">Schedule Review</button>
+                                </div>
+                            </div>
+                            <div class="recommendation-item">
+                                <div class="rec-icon">🔄</div>
+                                <div class="rec-content">
+                                    <h4>Add Multi-AZ Deployment</h4>
+                                    <p>Improve availability by deploying your application across multiple Availability Zones.</p>
+                                    <div class="rec-meta">
+                                        <span class="impact">Medium Impact</span>
+                                        <span class="availability">99.99% uptime</span>
+                                    </div>
+                                </div>
+                                <div class="rec-actions">
+                                    <button class="btn-small btn-primary">Plan Migration</button>
+                                    <button class="btn-small btn-secondary">Cost Analysis</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card tools">
+                        <div class="category-header">
+                            <h3>🛠️ Recommended Tools & Services</h3>
+                            <span class="category-count">3 items</span>
+                        </div>
+                        <div class="recommendation-list">
+                            <div class="recommendation-item">
+                                <div class="rec-icon">📈</div>
+                                <div class="rec-content">
+                                    <h4>AWS X-Ray for Distributed Tracing</h4>
+                                    <p>Debug performance issues in your microservices architecture with distributed tracing.</p>
+                                    <div class="rec-meta">
+                                        <span class="fit">Perfect Fit</span>
+                                        <span class="setup">Quick Setup</span>
+                                    </div>
+                                </div>
+                                <div class="rec-actions">
+                                    <button class="btn-small btn-primary">Enable X-Ray</button>
+                                    <button class="btn-small btn-secondary">View Tutorial</button>
+                                </div>
+                            </div>
+                            <div class="recommendation-item">
+                                <div class="rec-icon">🔍</div>
+                                <div class="rec-content">
+                                    <h4>Amazon OpenSearch for Log Analytics</h4>
+                                    <p>Centralize and analyze your application logs with OpenSearch and Kibana dashboards.</p>
+                                    <div class="rec-meta">
+                                        <span class="benefit">Operational Efficiency</span>
+                                        <span class="roi">3x faster debugging</span>
+                                    </div>
+                                </div>
+                                <div class="rec-actions">
+                                    <button class="btn-small btn-primary">Setup Guide</button>
+                                    <button class="btn-small btn-secondary">Cost Calculator</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-light">
+        <div class="container">
+            <div class="personalization-insights">
+                <h2>Your Personalization Profile</h2>
+                <div class="profile-grid">
+                    <div class="profile-card">
+                        <h3>Role Focus</h3>
+                        <div class="focus-areas">
+                            <div class="focus-item primary">Security Architecture (Primary)</div>
+                            <div class="focus-item secondary">Cost Optimization (Secondary)</div>
+                            <div class="focus-item tertiary">DevOps Practices (Growing)</div>
+                        </div>
+                    </div>
+                    <div class="profile-card">
+                        <h3>Learning Preferences</h3>
+                        <div class="preferences">
+                            <div class="preference">Hands-on workshops (Preferred)</div>
+                            <div class="preference">Technical deep-dives</div>
+                            <div class="preference">Real-world case studies</div>
+                        </div>
+                    </div>
+                    <div class="profile-card">
+                        <h3>Current Projects</h3>
+                        <div class="projects">
+                            <div class="project active">Multi-account security setup</div>
+                            <div class="project planning">Microservices migration</div>
+                            <div class="project future">Compliance automation</div>
+                        </div>
+                    </div>
+                    <div class="profile-card">
+                        <h3>Recommendation Accuracy</h3>
+                        <div class="accuracy-metrics">
+                            <div class="metric">
+                                <span class="metric-value">92%</span>
+                                <span class="metric-label">Relevance Score</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">78%</span>
+                                <span class="metric-label">Action Rate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="recommendation-settings">
+                <h2>Customize Your Recommendations</h2>
+                <div class="settings-form">
+                    <div class="setting-group">
+                        <h3>Notification Preferences</h3>
+                        <div class="setting-options">
+                            <label class="setting-option">
+                                <input type="checkbox" checked>
+                                <span class="checkmark"></span>
+                                Daily priority recommendations
+                            </label>
+                            <label class="setting-option">
+                                <input type="checkbox" checked>
+                                <span class="checkmark"></span>
+                                Weekly learning suggestions
+                            </label>
+                            <label class="setting-option">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Cost optimization alerts
+                            </label>
+                            <label class="setting-option">
+                                <input type="checkbox" checked>
+                                <span class="checkmark"></span>
+                                Security recommendations
+                            </label>
+                        </div>
+                    </div>
+                    <div class="setting-group">
+                        <h3>Focus Areas</h3>
+                        <div class="focus-sliders">
+                            <div class="slider-group">
+                                <label>Security & Compliance</label>
+                                <input type="range" min="0" max="100" value="90" class="slider">
+                                <span class="slider-value">90%</span>
+                            </div>
+                            <div class="slider-group">
+                                <label>Cost Optimization</label>
+                                <input type="range" min="0" max="100" value="70" class="slider">
+                                <span class="slider-value">70%</span>
+                            </div>
+                            <div class="slider-group">
+                                <label>Performance & Scalability</label>
+                                <input type="range" min="0" max="100" value="60" class="slider">
+                                <span class="slider-value">60%</span>
+                            </div>
+                            <div class="slider-group">
+                                <label>Innovation & New Services</label>
+                                <input type="range" min="0" max="100" value="40" class="slider">
+                                <span class="slider-value">40%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="settings-actions">
+                        <button class="btn-primary">Save Preferences</button>
+                        <button class="btn-secondary">Reset to Defaults</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CloudNestle</h3>
+                    <p>Expert AWS consulting and implementation services for businesses of all sizes.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/../services.html">AWS Consulting</a></li>
+                        <li><a href="/../solutions.html">Cloud Solutions</a></li>
+                        <li><a href="/../frameworks/index.html">Framework Assessment</a></li>
+                        <li><a href="/../training.html">Training Programs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/../knowledge-center/index.html">Knowledge Center</a></li>
+                        <li><a href="/../workshops/index.html">Workshops</a></li>
+                        <li><a href="/../community/index.html">Community</a></li>
+                        <li><a href="/../guarantees/index.html">Service Guarantees</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/../about.html">About Us</a></li>
+                        <li><a href="/../company.html">Leadership</a></li>
+                        <li><a href="/../contact.html">Contact</a></li>
+                        <li><a href="/../careers.html">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CloudNestle. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            authManager.init();
+            authManager.requireAuth();
+            
+            // Initialize sliders
+            const sliders = document.querySelectorAll('.slider');
+            sliders.forEach(slider => {
+                const valueSpan = slider.parentElement.querySelector('.slider-value');
+                slider.addEventListener('input', function() {
+                    valueSpan.textContent = this.value + '%';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+{
+  "name": "cloudnestle-backend",
+  "version": "1.0.0",
+  "description": "CloudNestle serverless backend with competitive advantages built-in",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "serverless offline --stage dev",
+    "deploy": "serverless deploy --stage dev",
+    "deploy:staging": "serverless deploy --stage staging",
+    "deploy:prod": "serverless deploy --stage prod",
+    "remove": "serverless remove --stage dev",
+    "logs": "serverless logs -f",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:integration": "jest --testPathPattern=integration",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "build": "webpack --mode production",
+    "package": "serverless package"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1400.0",
+    "jsonwebtoken": "^9.0.0",
+    "bcryptjs": "^2.4.3",
+    "uuid": "^9.0.0",
+    "joi": "^17.9.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "axios": "^1.4.0",
+    "crypto": "^1.0.1"
+  },
+  "devDependencies": {
+    "serverless": "^3.30.0",
+    "serverless-offline": "^12.0.0",
+    "serverless-webpack": "^5.11.0",
+    "serverless-domain-manager": "^7.0.0",
+    "serverless-prune-plugin": "^2.0.0",
+    "webpack": "^5.88.0",
+    "webpack-node-externals": "^3.0.0",
+    "jest": "^29.5.0",
+    "eslint": "^8.44.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "@babel/core": "^7.22.0",
+    "@babel/preset-env": "^7.22.0",
+    "babel-jest": "^29.5.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/**/*.test.js",
+      "!src/utils/test-helpers.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    }
+  },
+  "eslintConfig": {
+    "extends": ["airbnb-base"],
+    "env": {
+      "node": true,
+      "jest": true
+    },
+    "rules": {
+      "no-console": "warn",
+      "import/prefer-default-export": "off"
+    }
+  },
+  "keywords": [
+    "aws",
+    "serverless",
+    "lambda",
+    "cognito",
+    "dynamodb",
+    "cloudnestle",
+    "consulting"
+  ],
+  "author": "CloudNestle Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cloudnestle/website-backend"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}

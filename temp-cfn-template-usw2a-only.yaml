@@ -1,0 +1,496 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'TEMP - Amazon Q CLI SPOT FLEET - us-west-2a ONLY with increased prices'
+
+Parameters:
+  KeyName:
+    Type: AWS::EC2::KeyPair::KeyName
+    Description: Name of an existing EC2 KeyPair
+    Default: amazon-q-key-uswest2
+  
+  SpotPriceM5:
+    Type: String
+    Description: Maximum spot price for M5 instances
+    Default: '0.600'
+  
+  SpotPriceR5:
+    Type: String
+    Description: Maximum spot price for R5 instances
+    Default: '0.650'
+
+Resources:
+  # VPC
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsHostnames: true
+      EnableDnsSupport: true
+      Tags:
+        - Key: Name
+          Value: AmazonQ-SpotFleet-VPC-TEMP-USW2A
+
+  # Internet Gateway
+  InternetGateway:
+    Type: AWS::EC2::InternetGateway
+
+  # Attach Gateway
+  AttachGateway:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: !Ref VPC
+      InternetGatewayId: !Ref InternetGateway
+
+  # Public Subnet in us-west-2a ONLY
+  PublicSubnetA:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: 10.0.1.0/24
+      AvailabilityZone: us-west-2a
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: AmazonQ-Public-Subnet-A-TEMP
+
+  # Route Table
+  PublicRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref VPC
+      Tags:
+        - Key: Name
+          Value: AmazonQ-Public-RouteTable-TEMP
+
+  # Public Route
+  PublicRoute:
+    Type: AWS::EC2::Route
+    DependsOn: AttachGateway
+    Properties:
+      RouteTableId: !Ref PublicRouteTable
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref InternetGateway
+
+  # Associate Route Table
+  PublicSubnetARouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref PublicSubnetA
+      RouteTableId: !Ref PublicRouteTable
+
+  # Security Group
+  SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Security group for Amazon Q CLI Spot Fleet TEMP
+      VpcId: !Ref VPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+          Description: SSH access
+        - IpProtocol: tcp
+          FromPort: 8080
+          ToPort: 8080
+          CidrIp: 0.0.0.0/0
+          Description: VS Code Server
+      SecurityGroupEgress:
+        - IpProtocol: -1
+          CidrIp: 0.0.0.0/0
+          Description: All outbound traffic
+      Tags:
+        - Key: Name
+          Value: AmazonQ-SecurityGroup-TEMP
+
+  # IAM Role for EC2 instances
+  AdminRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ec2.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AdministratorAccess
+      Tags:
+        - Key: Name
+          Value: AmazonQ-AdminRole-TEMP
+
+  # Instance Profile
+  AdminInstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      Roles:
+        - !Ref AdminRole
+
+  # Elastic IP
+  ElasticIP:
+    Type: AWS::EC2::EIP
+    Properties:
+      Domain: vpc
+      Tags:
+        - Key: Name
+          Value: AmazonQ-ElasticIP-TEMP
+
+  # IAM Role for Spot Fleet
+  SpotFleetRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: spotfleet.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AmazonEC2SpotFleetTaggingRole
+      Tags:
+        - Key: Name
+          Value: AmazonQ-SpotFleetRole-TEMP
+
+  # TEMP SPOT FLEET - us-west-2a ONLY
+  SpotFleet:
+    Type: AWS::EC2::SpotFleet
+    Properties:
+      SpotFleetRequestConfigData:
+        IamFleetRole: !GetAtt SpotFleetRole.Arn
+        AllocationStrategy: diversified
+        TargetCapacity: 1
+        SpotPrice: '0.700'
+        ReplaceUnhealthyInstances: true
+        TerminateInstancesWithExpiration: false
+        LaunchSpecifications:
+          # M5 in us-west-2a ONLY
+          - ImageId: ami-0ec1bf4a8f92e7bd1
+            InstanceType: m5.2xlarge
+            KeyName: !Ref KeyName
+            SecurityGroups:
+              - GroupId: !Ref SecurityGroup
+            SubnetId: !Ref PublicSubnetA
+            IamInstanceProfile:
+              Arn: !GetAtt AdminInstanceProfile.Arn
+            SpotPrice: !Ref SpotPriceM5
+            WeightedCapacity: 1
+            BlockDeviceMappings:
+              - DeviceName: /dev/sda1
+                Ebs:
+                  VolumeSize: 40
+                  VolumeType: gp3
+                  DeleteOnTermination: true
+                  Encrypted: true
+            UserData:
+              Fn::Base64: !Sub |
+                #!/bin/bash -xe
+                
+                # Logging function
+                log() {
+                    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" | tee -a /var/log/amazon-q-setup.log >&2
+                }
+                
+                # Get instance metadata
+                INSTANCE_ID=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)
+                REGION=$(curl -s http://169.254.169.254/latest/meta-data/placement/region)
+                INSTANCE_AZ=$(curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone)
+                
+                log "🚀 Starting TEMP Amazon Q CLI setup on instance $INSTANCE_ID in AZ: $INSTANCE_AZ (m5 Family)"
+                
+                # Install essential tools
+                log "📦 Installing essential tools..."
+                apt-get update
+                apt-get install -y unzip curl wget jq
+                
+                # Install AWS CLI
+                log "📦 Installing AWS CLI..."
+                curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+                unzip awscliv2.zip
+                ./aws/install
+                
+                # VOLUME MANAGEMENT - us-west-2a ONLY
+                log "💾 Starting volume management for us-west-2a..."
+                
+                # Look for existing available volume in us-west-2a
+                log "🔍 Looking for existing volume in AZ: $INSTANCE_AZ"
+                VOLUME_ID=$(aws ec2 describe-volumes \
+                  --region $REGION \
+                  --query "Volumes[?AvailabilityZone=='$INSTANCE_AZ' && Tags[?Key=='Purpose' && Value=='AmazonQ-CLI-Storage'] && State=='available']|[0].VolumeId" \
+                  --output text)
+                
+                if [ "$VOLUME_ID" = "None" ] || [ -z "$VOLUME_ID" ]; then
+                  log "🆕 Creating fresh volume in AZ $INSTANCE_AZ"
+                  VOLUME_ID=$(aws ec2 create-volume \
+                    --region $REGION \
+                    --availability-zone $INSTANCE_AZ \
+                    --size 30 \
+                    --volume-type gp3 \
+                    --encrypted \
+                    --tag-specifications "ResourceType=volume,Tags=[{Key=Name,Value=AmazonQ-PersistentData},{Key=Purpose,Value=AmazonQ-CLI-Storage}]" \
+                    --query 'VolumeId' \
+                    --output text)
+                  
+                  log "⏳ Waiting for volume $VOLUME_ID to be available..."
+                  aws ec2 wait volume-available --region $REGION --volume-ids $VOLUME_ID
+                  log "✅ Created fresh volume: $VOLUME_ID"
+                else
+                  log "✅ Found existing volume: $VOLUME_ID"
+                fi
+                
+                # Attach volume
+                log "🔗 Attaching volume $VOLUME_ID to instance $INSTANCE_ID"
+                aws ec2 attach-volume \
+                  --region $REGION \
+                  --volume-id $VOLUME_ID \
+                  --instance-id $INSTANCE_ID \
+                  --device /dev/xvdf
+                
+                log "⏳ Waiting for volume attachment..."
+                aws ec2 wait volume-in-use --region $REGION --volume-ids $VOLUME_ID
+                
+                # Detect device name
+                log "🔍 Detecting device name..."
+                sleep 10
+                DEVICE_NAME=""
+                for i in {1..10}; do
+                  if [ -b "/dev/xvdf" ]; then
+                    DEVICE_NAME="/dev/xvdf"
+                    break
+                  elif [ -b "/dev/nvme1n1" ]; then
+                    DEVICE_NAME="/dev/nvme1n1"
+                    break
+                  elif [ -b "/dev/nvme2n1" ]; then
+                    DEVICE_NAME="/dev/nvme2n1"
+                    break
+                  else
+                    sleep 1
+                  fi
+                done
+                
+                if [ -z "$DEVICE_NAME" ]; then
+                  log "❌ Could not find attached volume device"
+                  exit 1
+                fi
+                
+                log "📁 Device found at: $DEVICE_NAME"
+                
+                # Create filesystem if needed
+                if ! blkid $DEVICE_NAME; then
+                  log "🔧 Creating filesystem on new volume..."
+                  mkfs.ext4 $DEVICE_NAME
+                fi
+                
+                # Mount volume
+                log "📂 Mounting volume..."
+                mkdir -p /persistent
+                mount $DEVICE_NAME /persistent
+                UUID=$(blkid -s UUID -o value $DEVICE_NAME)
+                echo "UUID=$UUID /persistent ext4 defaults 0 2" >> /etc/fstab
+                
+                # Associate Elastic IP
+                log "🌐 Associating Elastic IP..."
+                aws ec2 associate-address \
+                  --region $REGION \
+                  --instance-id $INSTANCE_ID \
+                  --allocation-id ${ElasticIP.AllocationId}
+                
+                # Download and execute setup script
+                log "📥 Downloading setup script..."
+                curl -o /tmp/user-data-script-s3copy.sh "https://s3.us-west-2.amazonaws.com/03-july-2025-qclvscodespot-4.14pm/user-data-script-s3copy.sh"
+                chmod +x /tmp/user-data-script-s3copy.sh
+                /tmp/user-data-script-s3copy.sh
+                
+                # Signal completion
+                log "🎉 TEMP Setup completed successfully for m5 in us-west-2a!"
+                echo "SETUP_SUCCESS_TEMP_M5_USW2A" > /tmp/setup-status.txt
+                log "✅ Amazon Q CLI + VS Code Server TEMP Setup Complete!"
+            TagSpecifications:
+              - ResourceType: instance
+                Tags:
+                  - Key: Name
+                    Value: AmazonQ-CLI-VSCode-TEMP-m5.2xlarge-us-west-2a
+                  - Key: Fleet
+                    Value: AmazonQ-SpotFleet-TEMP
+                  - Key: InstanceFamily
+                    Value: m5
+                  - Key: AZ
+                    Value: us-west-2a
+
+          # R5 in us-west-2a ONLY
+          - ImageId: ami-0ec1bf4a8f92e7bd1
+            InstanceType: r5.2xlarge
+            KeyName: !Ref KeyName
+            SecurityGroups:
+              - GroupId: !Ref SecurityGroup
+            SubnetId: !Ref PublicSubnetA
+            IamInstanceProfile:
+              Arn: !GetAtt AdminInstanceProfile.Arn
+            SpotPrice: !Ref SpotPriceR5
+            WeightedCapacity: 1
+            BlockDeviceMappings:
+              - DeviceName: /dev/sda1
+                Ebs:
+                  VolumeSize: 40
+                  VolumeType: gp3
+                  DeleteOnTermination: true
+                  Encrypted: true
+            UserData:
+              Fn::Base64: !Sub |
+                #!/bin/bash -xe
+                
+                # Logging function
+                log() {
+                    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" | tee -a /var/log/amazon-q-setup.log >&2
+                }
+                
+                # Get instance metadata
+                INSTANCE_ID=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)
+                REGION=$(curl -s http://169.254.169.254/latest/meta-data/placement/region)
+                INSTANCE_AZ=$(curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone)
+                
+                log "🚀 Starting TEMP Amazon Q CLI setup on instance $INSTANCE_ID in AZ: $INSTANCE_AZ (r5 Family)"
+                
+                # Install essential tools
+                log "📦 Installing essential tools..."
+                apt-get update
+                apt-get install -y unzip curl wget jq
+                
+                # Install AWS CLI
+                log "📦 Installing AWS CLI..."
+                curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+                unzip awscliv2.zip
+                ./aws/install
+                
+                # VOLUME MANAGEMENT - us-west-2a ONLY
+                log "💾 Starting volume management for us-west-2a..."
+                
+                # Look for existing available volume in us-west-2a
+                log "🔍 Looking for existing volume in AZ: $INSTANCE_AZ"
+                VOLUME_ID=$(aws ec2 describe-volumes \
+                  --region $REGION \
+                  --query "Volumes[?AvailabilityZone=='$INSTANCE_AZ' && Tags[?Key=='Purpose' && Value=='AmazonQ-CLI-Storage'] && State=='available']|[0].VolumeId" \
+                  --output text)
+                
+                if [ "$VOLUME_ID" = "None" ] || [ -z "$VOLUME_ID" ]; then
+                  log "🆕 Creating fresh volume in AZ $INSTANCE_AZ"
+                  VOLUME_ID=$(aws ec2 create-volume \
+                    --region $REGION \
+                    --availability-zone $INSTANCE_AZ \
+                    --size 30 \
+                    --volume-type gp3 \
+                    --encrypted \
+                    --tag-specifications "ResourceType=volume,Tags=[{Key=Name,Value=AmazonQ-PersistentData},{Key=Purpose,Value=AmazonQ-CLI-Storage}]" \
+                    --query 'VolumeId' \
+                    --output text)
+                  
+                  log "⏳ Waiting for volume $VOLUME_ID to be available..."
+                  aws ec2 wait volume-available --region $REGION --volume-ids $VOLUME_ID
+                  log "✅ Created fresh volume: $VOLUME_ID"
+                else
+                  log "✅ Found existing volume: $VOLUME_ID"
+                fi
+                
+                # Attach volume
+                log "🔗 Attaching volume $VOLUME_ID to instance $INSTANCE_ID"
+                aws ec2 attach-volume \
+                  --region $REGION \
+                  --volume-id $VOLUME_ID \
+                  --instance-id $INSTANCE_ID \
+                  --device /dev/xvdf
+                
+                log "⏳ Waiting for volume attachment..."
+                aws ec2 wait volume-in-use --region $REGION --volume-ids $VOLUME_ID
+                
+                # Detect device name
+                log "🔍 Detecting device name..."
+                sleep 10
+                DEVICE_NAME=""
+                for i in {1..10}; do
+                  if [ -b "/dev/xvdf" ]; then
+                    DEVICE_NAME="/dev/xvdf"
+                    break
+                  elif [ -b "/dev/nvme1n1" ]; then
+                    DEVICE_NAME="/dev/nvme1n1"
+                    break
+                  elif [ -b "/dev/nvme2n1" ]; then
+                    DEVICE_NAME="/dev/nvme2n1"
+                    break
+                  else
+                    sleep 1
+                  fi
+                done
+                
+                if [ -z "$DEVICE_NAME" ]; then
+                  log "❌ Could not find attached volume device"
+                  exit 1
+                fi
+                
+                log "📁 Device found at: $DEVICE_NAME"
+                
+                # Create filesystem if needed
+                if ! blkid $DEVICE_NAME; then
+                  log "🔧 Creating filesystem on new volume..."
+                  mkfs.ext4 $DEVICE_NAME
+                fi
+                
+                # Mount volume
+                log "📂 Mounting volume..."
+                mkdir -p /persistent
+                mount $DEVICE_NAME /persistent
+                UUID=$(blkid -s UUID -o value $DEVICE_NAME)
+                echo "UUID=$UUID /persistent ext4 defaults 0 2" >> /etc/fstab
+                
+                # Associate Elastic IP
+                log "🌐 Associating Elastic IP..."
+                aws ec2 associate-address \
+                  --region $REGION \
+                  --instance-id $INSTANCE_ID \
+                  --allocation-id ${ElasticIP.AllocationId}
+                
+                # Download and execute setup script
+                log "📥 Downloading setup script..."
+                curl -o /tmp/user-data-script-s3copy.sh "https://s3.us-west-2.amazonaws.com/03-july-2025-qclvscodespot-4.14pm/user-data-script-s3copy.sh"
+                chmod +x /tmp/user-data-script-s3copy.sh
+                /tmp/user-data-script-s3copy.sh
+                
+                # Signal completion
+                log "🎉 TEMP Setup completed successfully for r5 in us-west-2a!"
+                echo "SETUP_SUCCESS_TEMP_R5_USW2A" > /tmp/setup-status.txt
+                log "✅ Amazon Q CLI + VS Code Server TEMP Setup Complete!"
+            TagSpecifications:
+              - ResourceType: instance
+                Tags:
+                  - Key: Name
+                    Value: AmazonQ-CLI-VSCode-TEMP-r5.2xlarge-us-west-2a
+                  - Key: Fleet
+                    Value: AmazonQ-SpotFleet-TEMP
+                  - Key: InstanceFamily
+                    Value: r5
+                  - Key: AZ
+                    Value: us-west-2a
+
+Outputs:
+  ElasticIP:
+    Description: Elastic IP address for the instance
+    Value: !Ref ElasticIP
+
+  VSCodeServerURL:
+    Description: VS Code Server URL
+    Value: !Sub "http://${ElasticIP}:8080"
+
+  SSHCommand:
+    Description: SSH command to connect to the instance
+    Value: !Sub "ssh -i ${KeyName}.pem ubuntu@${ElasticIP}"
+
+  SpotFleetId:
+    Description: Spot Fleet Request ID
+    Value: !Ref SpotFleet
+
+  AvailabilityZone:
+    Description: Availability zone used
+    Value: "us-west-2a ONLY"
+
+  SpotPrices:
+    Description: Increased spot prices
+    Value: "M5: $0.60, R5: $0.65 (+$0.20 increase)"
