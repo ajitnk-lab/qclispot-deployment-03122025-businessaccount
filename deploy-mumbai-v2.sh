@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-# Amazon Q CLI V10 - US-WEST-2A ONLY Deployment Script
+# Amazon Q CLI V10 - MUMBAI ONLY Deployment Script
 # 8 Launch Configurations in single AZ with persistent volumes
 # Version: 1.0 - Single AZ with Volume Persistence
 
@@ -30,10 +30,10 @@ log() {
 }
 
 # Configuration
-REGION="us-west-2"
-STACK_NAME="amazon-q-cli-uswest2a-only-$(date +%d%b%Y | tr '[:upper:]' '[:lower:]')"
-TEMPLATE_FILE="uswest2a-only-template.yaml"
-KEY_NAME="amazon-q-key-uswest2"
+REGION="ap-south-1"
+STACK_NAME="amazon-q-cli-mumbai-v2-$(date +%d%b%Y | tr '[:upper:]' '[:lower:]')"
+TEMPLATE_FILE="mumbai-template-v2.yaml"
+KEY_NAME="amazon-q-key-mumbai"
 
 # Instance families - 8 types for maximum diversity
 declare -A INSTANCE_FAMILIES=(
@@ -62,9 +62,9 @@ declare -A DEFAULT_SPOT_PRICES=(
 # Dynamic spot prices
 declare -A SPOT_PRICES
 
-# Get current spot prices for us-west-2a
+# Get current spot prices for ap-south-1a
 get_current_spot_prices() {
-    log "PRICE" "🔍 Fetching current spot prices for us-west-2a..."
+    log "PRICE" "🔍 Fetching current spot prices for ap-south-1a..."
     
     local instance_types=("m5.2xlarge" "m6i.2xlarge" "c5.2xlarge" "c6i.2xlarge" "r5.2xlarge" "r6i.2xlarge" "t3.2xlarge" "m6a.2xlarge")
     
@@ -75,7 +75,7 @@ get_current_spot_prices() {
             --region "$REGION" \
             --instance-types "$instance_type" \
             --product-descriptions "Linux/UNIX" \
-            --availability-zone "us-west-2a" \
+            --availability-zone "ap-south-1a" \
             --start-time "$(date -u -d '1 hour ago' '+%Y-%m-%dT%H:%M:%S')" \
             --query 'SpotPrices[0].SpotPrice' \
             --output text 2>/dev/null || echo "")
@@ -96,10 +96,10 @@ get_current_spot_prices() {
 
 # Display configuration summary
 display_summary() {
-    log "CONFIG" "📊 US-WEST-2A ONLY DEPLOYMENT SUMMARY"
+    log "CONFIG" "📊 MUMBAI ONLY DEPLOYMENT SUMMARY"
     echo "=============================================="
-    echo -e "${CYAN}Region:${NC} us-west-2"
-    echo -e "${CYAN}Availability Zone:${NC} us-west-2a only"
+    echo -e "${CYAN}Region:${NC} ap-south-1"
+    echo -e "${CYAN}Availability Zone:${NC} ap-south-1a only"
     echo -e "${CYAN}Instance Types (8):${NC}"
     
     for family in "${!INSTANCE_FAMILIES[@]}"; do
@@ -149,7 +149,7 @@ validate_prerequisites() {
 
 # Deploy stack
 deploy_stack() {
-    log "INFO" "🚀 Deploying US-WEST-2A ONLY stack: $STACK_NAME"
+    log "INFO" "🚀 Deploying MUMBAI ONLY stack: $STACK_NAME"
     
     local parameters=""
     parameters+="ParameterKey=KeyName,ParameterValue=$KEY_NAME "
@@ -212,7 +212,7 @@ get_outputs() {
     
     if [ "$outputs" != "null" ]; then
         echo
-        log "SUCCESS" "🎉 US-WEST-2A DEPLOYMENT COMPLETE!"
+        log "SUCCESS" "🎉 MUMBAI DEPLOYMENT COMPLETE!"
         echo "=============================================="
         
         local elastic_ip=$(echo "$outputs" | jq -r '.[] | select(.OutputKey=="ElasticIP") | .OutputValue')
@@ -222,7 +222,7 @@ get_outputs() {
         echo -e "${GREEN}🌐 Elastic IP:${NC} $elastic_ip"
         echo -e "${GREEN}💻 VS Code Server:${NC} $vscode_url"
         echo -e "${GREEN}🔑 SSH Command:${NC} $ssh_command"
-        echo -e "${GREEN}📍 Location:${NC} us-west-2a only"
+        echo -e "${GREEN}📍 Location:${NC} ap-south-1a only"
         echo -e "${GREEN}💾 Persistent Storage:${NC} Automatic EBS volume attachment"
         echo "=============================================="
     fi
@@ -231,7 +231,7 @@ get_outputs() {
 # Main function
 main() {
     echo "=============================================="
-    echo "🚀 Amazon Q CLI - US-WEST-2A ONLY Deployment"
+    echo "🚀 Amazon Q CLI - MUMBAI ONLY Deployment"
     echo "   8 Instance Types | Persistent Volumes"
     echo "=============================================="
     echo
@@ -247,7 +247,7 @@ main() {
     monitor_deployment
     get_outputs
     
-    log "SUCCESS" "🎉 US-WEST-2A deployment completed!"
+    log "SUCCESS" "🎉 MUMBAI deployment completed!"
 }
 
 # Run main function

@@ -90,13 +90,13 @@ Resources:
       VpcId: !Ref VPC
       InternetGatewayId: !Ref InternetGateway
 
-  # Single Public Subnet in us-west-2a ONLY
+  # Single Public Subnet in ap-south-1a ONLY
   PublicSubnetA:
     Type: AWS::EC2::Subnet
     Properties:
       VpcId: !Ref VPC
       CidrBlock: 10.0.1.0/24
-      AvailabilityZone: us-west-2a
+      AvailabilityZone: ap-south-1a
       MapPublicIpOnLaunch: true
       Tags:
         - Key: Name
@@ -136,7 +136,7 @@ Resources:
       DestinationCidrBlock: 0.0.0.0/0
       GatewayId: !Ref InternetGateway
 
-  # Associate Route Table - ONLY us-west-2a
+  # Associate Route Table - ONLY ap-south-1a
   PublicSubnetARouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
@@ -272,8 +272,8 @@ Resources:
         ReplaceUnhealthyInstances: true
         TerminateInstancesWithExpiration: false
         LaunchSpecifications:
-          # M6A in us-west-2a (AMD General Purpose - Best Availability)
-          - ImageId: ami-0ec1bf4a8f92e7bd1
+          # M6A in ap-south-1a (AMD General Purpose - Best Availability)
+          - ImageId: ami-0ade68f094cc81635
             InstanceType: m6a.2xlarge
             KeyName: !Ref KeyName
             SecurityGroups:
@@ -414,16 +414,16 @@ Resources:
               - ResourceType: instance
                 Tags:
                   - Key: Name
-                    Value: AmazonQ-CLI-VSCode-V10-m6a.2xlarge-us-west-2a
+                    Value: AmazonQ-CLI-VSCode-V10-m6a.2xlarge-ap-south-1a
                   - Key: Fleet
                     Value: AmazonQ-SpotFleet-V10-Enhanced
                   - Key: InstanceFamily
                     Value: m6a
                   - Key: AZ
-                    Value: us-west-2a
+                    Value: ap-south-1a
 
-          # M6I in us-west-2b (Latest General Purpose)
-          - ImageId: ami-0ec1bf4a8f92e7bd1
+          # M6I in ap-south-1b (Latest General Purpose)
+          - ImageId: ami-0ade68f094cc81635
             InstanceType: m6i.2xlarge
             KeyName: !Ref KeyName
             SecurityGroups:
@@ -564,16 +564,16 @@ Resources:
               - ResourceType: instance
                 Tags:
                   - Key: Name
-                    Value: AmazonQ-CLI-VSCode-V10-m6i.2xlarge-us-west-2b
+                    Value: AmazonQ-CLI-VSCode-V10-m6i.2xlarge-ap-south-1b
                   - Key: Fleet
                     Value: AmazonQ-SpotFleet-V10-Enhanced
                   - Key: InstanceFamily
                     Value: m6i
                   - Key: AZ
-                    Value: us-west-2b
+                    Value: ap-south-1b
 
-          # C5 in us-west-2c (Compute Optimized)
-          - ImageId: ami-0ec1bf4a8f92e7bd1
+          # C5 in ap-south-1c (Compute Optimized)
+          - ImageId: ami-0ade68f094cc81635
             InstanceType: c5.2xlarge
             KeyName: !Ref KeyName
             SecurityGroups:
@@ -714,16 +714,16 @@ Resources:
               - ResourceType: instance
                 Tags:
                   - Key: Name
-                    Value: AmazonQ-CLI-VSCode-V10-c5.2xlarge-us-west-2c
+                    Value: AmazonQ-CLI-VSCode-V10-c5.2xlarge-ap-south-1c
                   - Key: Fleet
                     Value: AmazonQ-SpotFleet-V10-Enhanced
                   - Key: InstanceFamily
                     Value: c5
                   - Key: AZ
-                    Value: us-west-2c
+                    Value: ap-south-1c
 
-          # C6I in us-west-2d (Latest Compute Optimized)
-          - ImageId: ami-0ec1bf4a8f92e7bd1
+          # C6I in ap-south-1d (Latest Compute Optimized)
+          - ImageId: ami-0ade68f094cc81635
             InstanceType: c6i.2xlarge
             KeyName: !Ref KeyName
             SecurityGroups:
@@ -864,16 +864,16 @@ Resources:
               - ResourceType: instance
                 Tags:
                   - Key: Name
-                    Value: AmazonQ-CLI-VSCode-V10-c6i.2xlarge-us-west-2d
+                    Value: AmazonQ-CLI-VSCode-V10-c6i.2xlarge-ap-south-1d
                   - Key: Fleet
                     Value: AmazonQ-SpotFleet-V10-Enhanced
                   - Key: InstanceFamily
                     Value: c6i
                   - Key: AZ
-                    Value: us-west-2d
+                    Value: ap-south-1d
 
-          # R5 in us-west-2a (Memory Optimized)
-          - ImageId: ami-0ec1bf4a8f92e7bd1
+          # R5 in ap-south-1a (Memory Optimized)
+          - ImageId: ami-0ade68f094cc81635
             InstanceType: r5.2xlarge
             KeyName: !Ref KeyName
             SecurityGroups:
@@ -1014,16 +1014,16 @@ Resources:
               - ResourceType: instance
                 Tags:
                   - Key: Name
-                    Value: AmazonQ-CLI-VSCode-V10-r5.2xlarge-us-west-2a
+                    Value: AmazonQ-CLI-VSCode-V10-r5.2xlarge-ap-south-1a
                   - Key: Fleet
                     Value: AmazonQ-SpotFleet-V10-Enhanced
                   - Key: InstanceFamily
                     Value: r5
                   - Key: AZ
-                    Value: us-west-2a
+                    Value: ap-south-1a
 
-          # R6I in us-west-2b (Latest Memory Optimized)
-          - ImageId: ami-0ec1bf4a8f92e7bd1
+          # R6I in ap-south-1b (Latest Memory Optimized)
+          - ImageId: ami-0ade68f094cc81635
             InstanceType: r6i.2xlarge
             KeyName: !Ref KeyName
             SecurityGroups:
@@ -1164,13 +1164,13 @@ Resources:
               - ResourceType: instance
                 Tags:
                   - Key: Name
-                    Value: AmazonQ-CLI-VSCode-V10-r6i.2xlarge-us-west-2b
+                    Value: AmazonQ-CLI-VSCode-V10-r6i.2xlarge-ap-south-1b
                   - Key: Fleet
                     Value: AmazonQ-SpotFleet-V10-Enhanced
                   - Key: InstanceFamily
                     Value: r6i
                   - Key: AZ
-                    Value: us-west-2b
+                    Value: ap-south-1b
 
 
 Outputs:
@@ -1218,7 +1218,7 @@ Outputs:
 
   AvailabilityZone:
     Description: Availability zone used
-    Value: "us-west-2a"
+    Value: "ap-south-1a"
     Export:
       Name: !Sub "${AWS::StackName}-AvailabilityZone"
 

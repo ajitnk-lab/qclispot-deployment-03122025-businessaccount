@@ -1,0 +1,23 @@
+# VS Code Server - SSH Tunnel Access (Faster Loading)
+
+Instead of accessing via browser directly, use SSH tunnel for faster performance:
+
+## Step 1: Create SSH Tunnel
+Run this command on your LOCAL machine:
+
+ssh -i amazon-q-key-uswest2.pem -L 8080:localhost:8080 ubuntu@44.224.150.192
+
+## Step 2: Access VS Code
+Open browser and go to:
+
+http://localhost:8080
+
+This routes traffic through SSH tunnel which is much faster and more reliable.
+
+## Alternative: Check your network
+The 11MB JavaScript files are taking too long to download from us-west-2.
+- Try from a different network
+- Check if you have bandwidth limitations
+- Consider deploying in a region closer to your location
+
+Current instance: us-west-2a
