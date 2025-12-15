@@ -72,7 +72,7 @@ https://s3.us-west-2.amazonaws.com/03-july-2025-qclvscodespot-4.14pm/user-data-s
 
 ### Configuration
 - **Idle Threshold**: 60 minutes (12 checks × 5 minutes)
-- **CPU Threshold**: 0.5%
+- **CPU Threshold**: 5.0%
 - **Check Interval**: Every 5 minutes (cron job)
 - **Log File**: `/var/log/auto-shutdown.log`
 - **State File**: `/var/run/idle-check-count`
@@ -81,7 +81,7 @@ https://s3.us-west-2.amazonaws.com/03-july-2025-qclvscodespot-4.14pm/user-data-s
 Edit `/usr/local/bin/auto-shutdown-idle.sh` on the instance:
 ```bash
 IDLE_THRESHOLD=12  # Change to 6 for 30 min, 24 for 2 hours
-CPU_THRESHOLD=0.5  # Adjust CPU sensitivity
+CPU_THRESHOLD=5.0  # Adjust CPU sensitivity (5% works well for VS Code)
 ```
 
 ## 🔧 Instance Configuration

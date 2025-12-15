@@ -194,7 +194,7 @@ cat > /usr/local/bin/auto-shutdown-idle.sh << 'AUTOSHUTDOWN_EOF'
 LOG_FILE="/var/log/auto-shutdown.log"
 STATE_FILE="/var/run/idle-check-count"
 IDLE_THRESHOLD=12  # 12 checks * 5 min = 60 minutes
-CPU_THRESHOLD=0.5  # 0.5% CPU threshold
+CPU_THRESHOLD=5.0  # 5% CPU threshold
 
 # Initialize state file if doesn't exist
 [ ! -f "$STATE_FILE" ] && echo "0" > "$STATE_FILE"
