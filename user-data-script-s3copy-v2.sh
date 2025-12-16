@@ -289,7 +289,7 @@ chmod +x /usr/local/bin/auto-shutdown-idle.sh
 
 # Add cron job to run every 5 minutes
 log "INFO" "⏰ Setting up cron job for auto-shutdown..."
-(crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/auto-shutdown-idle.sh") | crontab -
+sudo -u ubuntu bash -c '(crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/auto-shutdown-idle.sh") | crontab -'
 
 log "SUCCESS" "✅ Auto-shutdown script installed (60 min idle threshold)"
 log "INFO" "💡 Auto-shutdown will DELETE the CloudFormation stack after 60 min of inactivity"
