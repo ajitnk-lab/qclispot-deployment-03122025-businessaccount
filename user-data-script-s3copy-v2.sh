@@ -186,6 +186,24 @@ date > /tmp/setup-complete-time.txt
 # Install auto-shutdown script for idle detection
 log "INFO" "📥 Installing auto-shutdown script for idle detection..."
 
+# Save stack name for auto-shutdown script
+INSTANCE_ID=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)
+REGION=$(curl -s http://169.254.169.254/latest/meta-data/placement/region)
+FLEET_ID=$(aws ec2 describe-tags --region $REGION \
+    --filters "Name=resource-id,Values=$INSTANCE_ID" "Name=key,Values=aws:ec2spot:fleet-request-id" \
+    --query 'Tags[0].Value' --output text 2>/dev/null)
+
+if [ -n "$FLEET_ID" ] && [ "$FLEET_ID" != "None" ]; then
+    for stack in $(aws cloudformation list-stacks --region $REGION --stack-status-filter CREATE_COMPLETE UPDATE_COMPLETE --query 'StackSummaries[*].StackName' --output text); do
+        FOUND=$(aws cloudformation list-stack-resources --region $REGION --stack-name $stack --query "StackResourceSummaries[?PhysicalResourceId=='$FLEET_ID'].StackName" --output text 2>/dev/null)
+        if [ -n "$FOUND" ]; then
+            echo "$stack" > /var/run/cfn-stack-name
+            log "INFO" "💾 Saved stack name: $stack"
+            break
+        fi
+    done
+fi
+
 cat > /usr/local/bin/auto-shutdown-idle.sh << 'AUTOSHUTDOWN_EOF'
 #!/bin/bash
 # Auto-shutdown script for idle VS Code instances
@@ -193,6 +211,7 @@ cat > /usr/local/bin/auto-shutdown-idle.sh << 'AUTOSHUTDOWN_EOF'
 
 LOG_FILE="/var/log/auto-shutdown.log"
 STATE_FILE="/var/run/idle-check-count"
+STACK_NAME_FILE="/var/run/cfn-stack-name"
 IDLE_THRESHOLD=12  # 12 checks * 5 min = 60 minutes
 CPU_THRESHOLD=5.0  # 5% CPU threshold
 
@@ -226,23 +245,30 @@ if [ "$IS_IDLE" = "1" ]; then
     echo "$(date): IDLE - CPU: ${TOTAL_CPU}%, Count: ${IDLE_COUNT}/${IDLE_THRESHOLD}" >> "$LOG_FILE"
     
     if [ $IDLE_COUNT -ge $IDLE_THRESHOLD ]; then
-        echo "$(date): SHUTDOWN - Idle threshold reached, deleting CloudFormation stack" >> "$LOG_FILE"
+        echo "$(date): SHUTDOWN - Idle threshold reached" >> "$LOG_FILE"
         
         # Get instance metadata
         INSTANCE_ID=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)
         REGION=$(curl -s http://169.254.169.254/latest/meta-data/placement/region)
         
-        # Find CloudFormation stack name from instance tags
-        STACK_NAME=$(aws ec2 describe-tags --region $REGION \
-            --filters "Name=resource-id,Values=$INSTANCE_ID" "Name=key,Values=aws:cloudformation:stack-name" \
-            --query 'Tags[0].Value' --output text)
+        # Try to get stack name from saved file first
+        if [ -f "$STACK_NAME_FILE" ]; then
+            STACK_NAME=$(cat "$STACK_NAME_FILE")
+            echo "$(date): Found stack name from file: $STACK_NAME" >> "$LOG_FILE"
+        fi
         
+        # Verify stack exists and delete it
         if [ -n "$STACK_NAME" ] && [ "$STACK_NAME" != "None" ]; then
-            echo "$(date): Deleting CloudFormation stack: $STACK_NAME" >> "$LOG_FILE"
-            aws cloudformation delete-stack --region $REGION --stack-name "$STACK_NAME"
-            echo "$(date): Stack deletion initiated successfully" >> "$LOG_FILE"
+            if aws cloudformation describe-stacks --region $REGION --stack-name "$STACK_NAME" >/dev/null 2>&1; then
+                echo "$(date): Deleting CloudFormation stack: $STACK_NAME" >> "$LOG_FILE"
+                aws cloudformation delete-stack --region $REGION --stack-name "$STACK_NAME"
+                echo "$(date): Stack deletion command executed successfully" >> "$LOG_FILE"
+            else
+                echo "$(date): Stack $STACK_NAME not found, terminating instance" >> "$LOG_FILE"
+                aws ec2 terminate-instances --region $REGION --instance-ids $INSTANCE_ID
+            fi
         else
-            echo "$(date): No CloudFormation stack found, terminating instance only" >> "$LOG_FILE"
+            echo "$(date): No stack name found, terminating instance only" >> "$LOG_FILE"
             aws ec2 terminate-instances --region $REGION --instance-ids $INSTANCE_ID
         fi
         
