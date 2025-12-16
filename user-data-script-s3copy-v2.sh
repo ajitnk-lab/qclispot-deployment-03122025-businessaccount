@@ -194,14 +194,17 @@ FLEET_ID=$(aws ec2 describe-tags --region $REGION \
     --query 'Tags[0].Value' --output text 2>/dev/null)
 
 if [ -n "$FLEET_ID" ] && [ "$FLEET_ID" != "None" ]; then
+    log "INFO" "🔍 Finding CloudFormation stack for Fleet ID: $FLEET_ID"
     for stack in $(aws cloudformation list-stacks --region $REGION --stack-status-filter CREATE_COMPLETE UPDATE_COMPLETE --query 'StackSummaries[*].StackName' --output text); do
-        FOUND=$(aws cloudformation list-stack-resources --region $REGION --stack-name $stack --query "StackResourceSummaries[?PhysicalResourceId=='$FLEET_ID'].StackName" --output text 2>/dev/null)
+        FOUND=$(aws cloudformation list-stack-resources --region $REGION --stack-name $stack --query "StackResourceSummaries[?PhysicalResourceId=='$FLEET_ID'].PhysicalResourceId" --output text 2>/dev/null)
         if [ -n "$FOUND" ]; then
-            echo "$stack" > /var/run/cfn-stack-name
+            echo "$stack" | sudo tee /var/run/cfn-stack-name > /dev/null
             log "INFO" "💾 Saved stack name: $stack"
             break
         fi
     done
+else
+    log "WARN" "Fleet ID not found, stack name will not be saved"
 fi
 
 cat > /usr/local/bin/auto-shutdown-idle.sh << 'AUTOSHUTDOWN_EOF'
