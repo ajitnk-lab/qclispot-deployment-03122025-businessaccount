@@ -7,3 +7,5 @@ q/bin/qterm
 # Private keys
 *.pem
 *.ppk
+spot-watcher-lambda/
+spot-deployer-lambda/
