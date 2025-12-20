@@ -402,7 +402,7 @@ Resources:
                 
                 # Download and execute V10 ENHANCED setup script from PUBLIC S3
                 log "📥 Downloading V10 ENHANCED setup script with complete 17 MCP servers..."
-                curl --retry 5 --retry-delay 3 --retry-max-time 60 --connect-timeout 10 -o /tmp/user-data-script-s3copy.sh "https://s3.us-west-2.amazonaws.com/03-july-2025-qclvscodespot-4.14pm/user-data-script-s3copy-v2.sh"
+                sleep 3; curl -f --max-time 30 -o /tmp/user-data-script-s3copy.sh "https://s3.us-west-2.amazonaws.com/03-july-2025-qclvscodespot-4.14pm/user-data-script-s3copy-v2.sh" || wget -T 30 -O /tmp/user-data-script-s3copy.sh "https://s3.us-west-2.amazonaws.com/03-july-2025-qclvscodespot-4.14pm/user-data-script-s3copy-v2.sh" || { log "Download failed"; exit 1; }
                 chmod +x /tmp/user-data-script-s3copy.sh
                 /tmp/user-data-script-s3copy.sh
                 
@@ -421,6 +421,8 @@ Resources:
                     Value: m6a
                   - Key: AZ
                     Value: ap-south-1a
+                  - Key: AutoShutdown
+                    Value: enabled
 
           # M6I in ap-south-1b (Latest General Purpose)
           - ImageId: ami-0ade68f094cc81635
@@ -552,7 +554,7 @@ Resources:
                 
                 # Download and execute V10 ENHANCED setup script from PUBLIC S3
                 log "📥 Downloading V10 ENHANCED setup script with complete 17 MCP servers..."
-                curl --retry 5 --retry-delay 3 --retry-max-time 60 --connect-timeout 10 -o /tmp/user-data-script-s3copy.sh "https://s3.us-west-2.amazonaws.com/03-july-2025-qclvscodespot-4.14pm/user-data-script-s3copy-v2.sh"
+                sleep 3; curl -f --max-time 30 -o /tmp/user-data-script-s3copy.sh "https://s3.us-west-2.amazonaws.com/03-july-2025-qclvscodespot-4.14pm/user-data-script-s3copy-v2.sh" || wget -T 30 -O /tmp/user-data-script-s3copy.sh "https://s3.us-west-2.amazonaws.com/03-july-2025-qclvscodespot-4.14pm/user-data-script-s3copy-v2.sh" || { log "Download failed"; exit 1; }
                 chmod +x /tmp/user-data-script-s3copy.sh
                 /tmp/user-data-script-s3copy.sh
                 
@@ -571,6 +573,8 @@ Resources:
                     Value: m6i
                   - Key: AZ
                     Value: ap-south-1b
+                  - Key: AutoShutdown
+                    Value: enabled
 
           # C5 in ap-south-1c (Compute Optimized)
           - ImageId: ami-0ade68f094cc81635
@@ -702,7 +706,7 @@ Resources:
                 
                 # Download and execute V10 ENHANCED setup script from PUBLIC S3
                 log "📥 Downloading V10 ENHANCED setup script with complete 17 MCP servers..."
-                curl --retry 5 --retry-delay 3 --retry-max-time 60 --connect-timeout 10 -o /tmp/user-data-script-s3copy.sh "https://s3.us-west-2.amazonaws.com/03-july-2025-qclvscodespot-4.14pm/user-data-script-s3copy-v2.sh"
+                sleep 3; curl -f --max-time 30 -o /tmp/user-data-script-s3copy.sh "https://s3.us-west-2.amazonaws.com/03-july-2025-qclvscodespot-4.14pm/user-data-script-s3copy-v2.sh" || wget -T 30 -O /tmp/user-data-script-s3copy.sh "https://s3.us-west-2.amazonaws.com/03-july-2025-qclvscodespot-4.14pm/user-data-script-s3copy-v2.sh" || { log "Download failed"; exit 1; }
                 chmod +x /tmp/user-data-script-s3copy.sh
                 /tmp/user-data-script-s3copy.sh
                 
@@ -721,6 +725,8 @@ Resources:
                     Value: c5
                   - Key: AZ
                     Value: ap-south-1c
+                  - Key: AutoShutdown
+                    Value: enabled
 
           # C6I in ap-south-1d (Latest Compute Optimized)
           - ImageId: ami-0ade68f094cc81635
@@ -852,7 +858,7 @@ Resources:
                 
                 # Download and execute V10 ENHANCED setup script from PUBLIC S3
                 log "📥 Downloading V10 ENHANCED setup script with complete 17 MCP servers..."
-                curl --retry 5 --retry-delay 3 --retry-max-time 60 --connect-timeout 10 -o /tmp/user-data-script-s3copy.sh "https://s3.us-west-2.amazonaws.com/03-july-2025-qclvscodespot-4.14pm/user-data-script-s3copy-v2.sh"
+                sleep 3; curl -f --max-time 30 -o /tmp/user-data-script-s3copy.sh "https://s3.us-west-2.amazonaws.com/03-july-2025-qclvscodespot-4.14pm/user-data-script-s3copy-v2.sh" || wget -T 30 -O /tmp/user-data-script-s3copy.sh "https://s3.us-west-2.amazonaws.com/03-july-2025-qclvscodespot-4.14pm/user-data-script-s3copy-v2.sh" || { log "Download failed"; exit 1; }
                 chmod +x /tmp/user-data-script-s3copy.sh
                 /tmp/user-data-script-s3copy.sh
                 
@@ -871,6 +877,8 @@ Resources:
                     Value: c6i
                   - Key: AZ
                     Value: ap-south-1d
+                  - Key: AutoShutdown
+                    Value: enabled
 
           # R5 in ap-south-1a (Memory Optimized)
           - ImageId: ami-0ade68f094cc81635
@@ -1002,7 +1010,7 @@ Resources:
                 
                 # Download and execute V10 ENHANCED setup script from PUBLIC S3
                 log "📥 Downloading V10 ENHANCED setup script with complete 17 MCP servers..."
-                curl --retry 5 --retry-delay 3 --retry-max-time 60 --connect-timeout 10 -o /tmp/user-data-script-s3copy.sh "https://s3.us-west-2.amazonaws.com/03-july-2025-qclvscodespot-4.14pm/user-data-script-s3copy-v2.sh"
+                sleep 3; curl -f --max-time 30 -o /tmp/user-data-script-s3copy.sh "https://s3.us-west-2.amazonaws.com/03-july-2025-qclvscodespot-4.14pm/user-data-script-s3copy-v2.sh" || wget -T 30 -O /tmp/user-data-script-s3copy.sh "https://s3.us-west-2.amazonaws.com/03-july-2025-qclvscodespot-4.14pm/user-data-script-s3copy-v2.sh" || { log "Download failed"; exit 1; }
                 chmod +x /tmp/user-data-script-s3copy.sh
                 /tmp/user-data-script-s3copy.sh
                 
@@ -1021,6 +1029,8 @@ Resources:
                     Value: r5
                   - Key: AZ
                     Value: ap-south-1a
+                  - Key: AutoShutdown
+                    Value: enabled
 
           # R6I in ap-south-1b (Latest Memory Optimized)
           - ImageId: ami-0ade68f094cc81635
@@ -1152,7 +1162,7 @@ Resources:
                 
                 # Download and execute V10 ENHANCED setup script from PUBLIC S3
                 log "📥 Downloading V10 ENHANCED setup script with complete 17 MCP servers..."
-                curl --retry 5 --retry-delay 3 --retry-max-time 60 --connect-timeout 10 -o /tmp/user-data-script-s3copy.sh "https://s3.us-west-2.amazonaws.com/03-july-2025-qclvscodespot-4.14pm/user-data-script-s3copy-v2.sh"
+                sleep 3; curl -f --max-time 30 -o /tmp/user-data-script-s3copy.sh "https://s3.us-west-2.amazonaws.com/03-july-2025-qclvscodespot-4.14pm/user-data-script-s3copy-v2.sh" || wget -T 30 -O /tmp/user-data-script-s3copy.sh "https://s3.us-west-2.amazonaws.com/03-july-2025-qclvscodespot-4.14pm/user-data-script-s3copy-v2.sh" || { log "Download failed"; exit 1; }
                 chmod +x /tmp/user-data-script-s3copy.sh
                 /tmp/user-data-script-s3copy.sh
                 
@@ -1171,6 +1181,8 @@ Resources:
                     Value: r6i
                   - Key: AZ
                     Value: ap-south-1b
+                  - Key: AutoShutdown
+                    Value: enabled
 
 
 Outputs:

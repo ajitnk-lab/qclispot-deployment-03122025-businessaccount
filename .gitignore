@@ -7,3 +7,6 @@ q/bin/qterm
 # Private keys
 *.pem
 *.ppk
+
+# Amazon Q CLI metadata
+.amazonq/
